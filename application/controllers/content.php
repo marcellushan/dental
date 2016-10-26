@@ -3,9 +3,14 @@
 class Content extends CI_Controller {
 	
 	public function index() 
-	{
+	{	
+
+			$this->load->model('state_model');
+			$data['states'] = $this->state_model->get_states();
+// 		}
+// 		$data['states'] = $this->state_model->getall();
 		$this->load->view('templates/header');
-		$this->load->view('personal');	
+		$this->load->view('application', $data);	
 	}
 	
 	public function school()
@@ -27,21 +32,19 @@ class Content extends CI_Controller {
 // 		if ($this->form_validation->run() == FALSE)
 // 		{
 // 			$this->load->view('templates/header');
-// 			$this->load->view('personal');
+// 			$this->load->view('application');
 // 		}
 // 		else
 // 		{
-			$this->load->model('personal_Model');
-// 			$this->load->library('session');
-			$this->session->id = '1';
-			$person = new Personal_model();
+			session_start();
+			$this->load->model('application_Model');
+			$person = new Application_model();
 			foreach ($_POST as $key=>$value)
 			{
 				$person->$key = $this->input->post($key);
 			}
-			echo $person->save();
-			$person->personal_id;
-			echo $this->session->id;
+			$person->save();
+			$_SESSION['id'] = $person->application_id;
 			$this->load->view('templates/header');
 			$this->load->view('school');
 // 		}
@@ -49,7 +52,7 @@ class Content extends CI_Controller {
 		
 		
 		
-// 		$this->personal_Model->index();
+// 		$this->application_Model->index();
 // 		foreach ($_POST as $key=>$value)
 // 		{
 // 			echo"$key=$value";
@@ -59,55 +62,105 @@ class Content extends CI_Controller {
 	
 	public function license()
 	{
-		if(@$_POST['add']=="1")
+		session_start();
+		echo $_SESSION['id'];
+		$this->load->model('school_Model');
+		$school = new School_model();
+		$school->application_id = $_SESSION['id'];
+		foreach ($_POST as $key=>$value)
 		{
-			$this->load->model('school_Model');
-			$school = new School_model();
-// 			$this->load->library('session');
-			echo $_SESSION['id'];
-			foreach ($_POST as $key=>$value)
-			{
-				$person->$key = $this->input->post($key);
-			}
-			$school->save();
-			$this->load->view('templates/header');
-			$this->load->view('school');
+			$school->$key = $this->input->post($key);
 		}
-		else 
+		$school->save();
+		$this->load->view('templates/header');
+		$this->load->view('license');
+}
+	
+public function more_licenses()
+{
+		session_start();
+		echo $_SESSION['id'];
+		$this->load->model('license_Model');
+		$license = new License_model();
+		$license->application_id = $_SESSION['id'];
+		foreach ($_POST as $key=>$value)
 		{
-			$this->load->view('templates/header');
-			$this->load->view('license');
+			$license->$key = $this->input->post($key);
 		}
-	}
+		$license->save();
+	$this->load->view('templates/header');
+	$this->load->view('more_licenses');
+}
 	
 	public function emergency()
 	{
-		// 		echo "got here";
-		// 		echo "<pre>";
-		// 		var_dump($_POST);
-		// 		echo "</pre>";
 		$this->load->view('templates/header');
 		$this->load->view('emergency');
 	}
 	
-	public function employment()
+	public function employer()
 	{
-		// 		echo "got here";
-		// 		echo "<pre>";
-		// 		var_dump($_POST);
-		// 		echo "</pre>";
+		session_start();
+		echo $_SESSION['id'];
+		$this->load->model('emergency_Model');
+		$emergency = new Emergency_model();
+		$emergency->application_id = $_SESSION['id'];
+		foreach ($_POST as $key=>$value)
+		{
+			$emergency->$key = $this->input->post($key);
+		}
+		$emergency->save();
 		$this->load->view('templates/header');
-		$this->load->view('employment');
+		$this->load->view('employer');
 	}
 	
-	public function program()
+	public function more_employers()
 	{
-		// 		echo "got here";
-		// 		echo "<pre>";
-		// 		var_dump($_POST);
-		// 		echo "</pre>";
+		session_start();
+
+		$this->load->model('employer_Model');
+		$employer = new Employer_model();
+		$employer->application_id = $_SESSION['id'];
+		foreach ($_POST as $key=>$value)
+		{
+			$employer->$key = $this->input->post($key);
+		}
+		$employer->save();
 		$this->load->view('templates/header');
-		$this->load->view('program');
+		$this->load->view('more_employers');
+	}
+	
+public function demo()
+	{
+		$this->load->view('templates/header');
+		$this->load->view('demo');
+	}
+	
+	
+	public function submit()
+	{
+		session_start();
+// 		echo $_SESSION['id'];
+// 				echo "<pre>";
+// 				var_dump($_POST);
+// 				echo "</pre>";
+		$this->load->model('demo_Model');
+		$demo = new Demo_model();
+		$demo->application_id = $_SESSION['id'];
+		foreach ($_POST as $key=>$value)
+		{
+			$demo->$key = $this->input->post($key);
+		}
+		 $demo->save();
+		$this->load->view('templates/header');
+		$this->load->view('thankyou');
+	}
+	
+	public function driver()
+	{
+		$this->load->library('upload');
+		$this->load->view('templates/header');
+		$this->load->view('driver');
 	}
 	
 

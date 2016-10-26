@@ -8,7 +8,7 @@ class School_model extends My_Model {
 	public $school_name;
 	public $school_year;
 	public $school_state;
-	public $personal_id;
+	public $application_id;
 	
 	
 }

@@ -9,7 +9,7 @@ DENTAL HYGIENE SCHOOL
 				<h2>School Attended</h2>
 			</div>
 			<div class="col-md-3">
-				<h2><input type="text" name="school"></h2>
+				<h2><input type="text" name="school_name"></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -17,7 +17,7 @@ DENTAL HYGIENE SCHOOL
 				<h2>State</h2>
 			</div>
 			<div class="col-md-3">
-				<h2><input type="text" name="school"></h2>
+				<h2><input type="text" name="school_state"></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -25,17 +25,12 @@ DENTAL HYGIENE SCHOOL
 				<h2>Year of Graduation</h2>
 			</div>
 			<div class="col-md-3">
-				<h2><input type="text" name="school"></h2>
+				<h2><input type="text" name="school_year"></h2>
 			</div>
 		</div>
-<div class="row">
-	<div class="col-md-4 col-md-offset-2">
-		<button type="submit" class="btn-lg btn-primary" name="add" value="1">Add Additional Schools</button>
-	</div>
-		<div class="col-md-4">
-		<button type="submit" class="btn-lg btn-primary" name="license">Go to Licensure Information</button>
-	</div>
-</div>   
+			<div class="wrapper">
+				<button type="submit" class="btn-lg btn-primary">Submit School Information</button>
+			</div>
 	</form>
 	
 </div><!-- container -->

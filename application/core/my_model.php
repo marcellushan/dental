@@ -16,7 +16,7 @@ class MY_Model extends CI_Model {
      * Update record.
      */
     private function update() {
-        $this->db->update($this::DB_TABLE, $this, $this::DB_TABLE_PK);
+        echo $this->db->update_string($this::DB_TABLE, $this, $this::DB_TABLE_PK);
     }
     
     /**

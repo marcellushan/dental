@@ -7,8 +7,9 @@
 	<h1 class= "mytitle">
 	APPLICANT PERSONAL INFORMATION
 	</h1>
+
 <?php echo validation_errors(); ?>
-	<?php echo form_open('content/school'); ?>
+	<?php echo form_open('content/driver'); ?>
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">
@@ -31,8 +32,18 @@
 					<div class="row">
 						<label class="col-lg-2 col-xs-4">Street</label><input type="text" class="col-lg-10 col-xs-7" name="street" >
 						<label class="col-lg-2 col-xs-4">City</label><input type="text" class="col-lg-4 col-xs-7" name="city" >
-						<label class="col-lg-2 col-xs-4">State</label><input type="text" class="col-lg-1 col-xs-7" name="state" >
-						<label class="col-lg-2 col-xs-4">Zip</label><input type="text" class="col-lg-1 col-xs-7" name="zip" >
+						<label class="col-lg-1 col-xs-4">State</label>	<select class="col-lg-1 col-xs-7">
+																				<?php
+																					foreach ($states as $state):?>
+																				  <option value="volvo"><?=$state->abbreviation?></option>
+																					<? endforeach;?>
+																				</select>
+
+		
+
+						
+						<?php ?>
+						<label class="col-lg-2 col-xs-4">Zip</label><input type="text" class="col-lg-2 col-xs-7" name="zip" >
 					</div><!-- row -->
 				</div><!-- col-md-6 col-xs-12 -->
 				<div class="col-md-6 col-xs-12">
@@ -44,13 +55,9 @@
 					</div><!-- row -->
 				</div><!-- col-md-6 col-xs-12 -->
 			</div><!-- row -->
-			
-					<div class="row">
-			<label class="col-md-3 col-xs-4">Upload Driver's license</label><input type="file" name="drivers_license" id="fileToUpload" class="col-md-3 col-xs-4">
-			<label class="col-md-3 col-xs-5">Upload CPR Certificate</label><input type="file" name="cpr" id="fileToUpload" class="col-md-3 col-xs-6">
-			</div><!-- row -->
+	
 			<div class="wrapper">
-				<button type="submit" class="btn-lg btn-primary">Go to Dental Hygiene School</button>
+				<button type="submit" class="btn-lg btn-primary">Upload Documents</button>
 			</div>
    		</fieldset>
 	</form>

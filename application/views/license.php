@@ -3,13 +3,13 @@
 		LICENSURE INFORMATION
 	</h1>
 
-	<form action="emergency" method="post">
+	<form action="more_licenses" method="post">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<h2>State</h2>
 			</div>
 			<div class="col-md-3">
-				<h2><input type="text" name="school"></h2>
+				<h2><input type="text" name="state"></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -17,7 +17,7 @@
 				<h2>License Number</h2>
 			</div>
 			<div class="col-md-3">
-				<h2><input type="text" name="school"></h2>
+				<h2><input type="text" name="number"></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -25,18 +25,12 @@
 				<h2>Active?</h2>
 			</div>
 			<div class="col-md-3">
-				<h2><input type="text" name="school"></h2>
+				<h2><input type="text" name="active"></h2>
 			</div>
 		</div>
-		
-		<div class="row">
-	<div class="col-md-4 col-md-offset-2">
-		<button type="submit" class="btn-lg btn-primary" name="add">Add Additional Licenses</button>
-	</div>
-		<div class="col-md-4">
-		<button type="submit" class="btn-lg btn-primary" name="emergency">Go to Emergency Contact</button>
-	</div>
-</div>   
+			<div class="wrapper">
+				<button type="submit" class="btn-lg btn-primary">Submit License Information</button>
+			</div>
 		</form>
 	
 	
