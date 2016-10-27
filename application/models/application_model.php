@@ -20,8 +20,7 @@ class Application_model extends My_Model {
 	public $cell_phone;
 	public $home_email;
 	public $work_email;
-	public $drivers_license;
-	public $cpr;
+	
 	
 	
 	public function update($id)

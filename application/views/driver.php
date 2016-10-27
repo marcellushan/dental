@@ -1,20 +1,13 @@
-<html>
-<head>
-<title>Upload Form</title>
-</head>
-<body>
+ <div class="main container">
+	<h1>
+	DRIVER'S LICENSE
+	</h1>
+<form action="cpr" method="post" enctype="multipart/form-data">
+<input type="file" name="fileToUpload" id="fileToUpload"><br>
 
-<?php //echo $error;?>
-
-<?php echo form_open_multipart('upload/do_upload');?>
-
-<input type="file" name="userfile" size="20" />
-
-<br /><br />
-
-<input type="submit" value="upload" />
+	<input type="submit" class="btn btn-primary btn-lg center-block" value="Submit" />
 
 </form>
-
+</div>
 </body>
 </html>

@@ -96,4 +96,13 @@ class MY_Model extends CI_Model {
     	}
     	return $data;
     }
+    
+    public function get_item ($id_name, $id) 
+    {
+    
+    	$q = $this->db->query('select * from ' . $this::DB_TABLE . ' where ' . $id_name . '=' . $id);
+    	$row= $q->row(3);
+    	echo $row->state;
+    	return $row;
+    }
 }

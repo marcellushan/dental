@@ -6,26 +6,29 @@
 	<form action="more_licenses" method="post">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
-				<h2>State</h2>
+				<h3>State</h3>
+			</div>
+			<select class="col-lg-1 col-xs-7" name="state">
+			<?php
+				foreach ($states as $state):?>
+			  <option value="<?=$state->abbreviation?>"><?=$state->abbreviation?></option>
+				<? endforeach;?>
+			</select>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-md-offset-3">
+				<h3>License Number</h3>
 			</div>
 			<div class="col-md-3">
-				<h2><input type="text" name="state"></h2>
+				<h3><input type="text" name="number"></h3>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
-				<h2>License Number</h2>
+				<h3>Active?</h3>
 			</div>
 			<div class="col-md-3">
-				<h2><input type="text" name="number"></h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3 col-md-offset-3">
-				<h2>Active?</h2>
-			</div>
-			<div class="col-md-3">
-				<h2><input type="text" name="active"></h2>
+				<h3><input type="checkbox" name="active" value="1"></h3>
 			</div>
 		</div>
 			<div class="wrapper">

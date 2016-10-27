@@ -5,15 +5,13 @@ class Content extends CI_Controller {
 	public function index() 
 	{	
 
-			$this->load->model('state_model');
-			$data['states'] = $this->state_model->get_states();
-// 		}
-// 		$data['states'] = $this->state_model->getall();
+		$this->load->model('state_model');
+		$data['states'] = $this->state_model->get_states();
 		$this->load->view('templates/header');
 		$this->load->view('application', $data);	
 	}
 	
-	public function school()
+	public function driver()
 	{
 // 		$this->load->library('form_validation');
 // 		$this->form_validation->set_rules('first_name', 'First Name', 'required|alpha');
@@ -46,24 +44,79 @@ class Content extends CI_Controller {
 			$person->save();
 			$_SESSION['id'] = $person->application_id;
 			$this->load->view('templates/header');
-			$this->load->view('school');
+			$this->load->view('driver');
 // 		}
 		
-		
-		
-		
-// 		$this->application_Model->index();
-// 		foreach ($_POST as $key=>$value)
-// 		{
-// 			echo"$key=$value";
-// 		}
-
+	}
+	
+	public function cpr()
+	{
+		session_start();
+		if(!@$_FILES['fileToUpload']['error']) {
+				
+			$myRandom = rand(1, 10000);
+			// 			echo "<pre>";
+			// 			print_r($_FILES);
+			// 			echo "</pre>";
+			// 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
+			$target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
+			// 			echo $target_dir = "/var/www/html/signage/uploads/";
+			$target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+			$myFile = basename($_FILES["fileToUpload"]["name"]);
+			$uploadOk = 1;
+			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+			move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+			$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
+			$this->load->model('document_Model');
+			$document = new Document_model();
+			$document->application_id = $_SESSION['id'];
+			$document->document_type = 1;
+			$document->url = $image_url;
+			$document->save();
+				
+		}
+	
+		$this->load->view('templates/header');
+		$this->load->view('cpr');
+	}
+	
+	public function school()
+	{
+		session_start();
+		$this->load->model('state_model');
+		$data['states'] = $this->state_model->get_states();
+		if(!@$_FILES['fileToUpload']['error']) {
+				
+			$myRandom = rand(1, 10000);
+			// 			echo "<pre>";
+			// 			print_r($_FILES);
+			// 			echo "</pre>";
+			// 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
+			$target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
+			// 			echo $target_dir = "/var/www/html/signage/uploads/";
+			$target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+			$myFile = basename($_FILES["fileToUpload"]["name"]);
+			$uploadOk = 1;
+			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+			move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+			$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
+			$this->load->model('document_Model');
+			$document = new Document_model();
+			$document->application_id = $_SESSION['id'];
+			$document->document_type = 2;
+			$document->url = $image_url;
+			$document->save();
+				
+		}
+		$this->load->view('templates/header');
+		$this->load->view('school', $data);
 	}
 	
 	public function license()
 	{
 		session_start();
-		echo $_SESSION['id'];
+		$this->load->model('state_model');
+		$data['states'] = $this->state_model->get_states();
 		$this->load->model('school_Model');
 		$school = new School_model();
 		$school->application_id = $_SESSION['id'];
@@ -73,13 +126,12 @@ class Content extends CI_Controller {
 		}
 		$school->save();
 		$this->load->view('templates/header');
-		$this->load->view('license');
+		$this->load->view('license', $data);
 }
 	
 public function more_licenses()
 {
 		session_start();
-		echo $_SESSION['id'];
 		$this->load->model('license_Model');
 		$license = new License_model();
 		$license->application_id = $_SESSION['id'];
@@ -94,14 +146,15 @@ public function more_licenses()
 	
 	public function emergency()
 	{
+		$this->load->model('state_model');
+		$data['states'] = $this->state_model->get_states();
 		$this->load->view('templates/header');
-		$this->load->view('emergency');
+		$this->load->view('emergency', $data);
 	}
 	
 	public function employer()
 	{
 		session_start();
-		echo $_SESSION['id'];
 		$this->load->model('emergency_Model');
 		$emergency = new Emergency_model();
 		$emergency->application_id = $_SESSION['id'];
@@ -156,12 +209,16 @@ public function demo()
 		$this->load->view('thankyou');
 	}
 	
-	public function driver()
-	{
-		$this->load->library('upload');
-		$this->load->view('templates/header');
-		$this->load->view('driver');
-	}
+// 	public function driver()
+// 	{
+// 		$this->load->library('upload');
+// 		$this->load->view('templates/header');
+// 		$this->load->view('driver');
+// 	}
+	
+	
+	
+	
 	
 
 	

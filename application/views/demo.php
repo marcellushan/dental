@@ -44,10 +44,10 @@
 						<h4><input type="radio" name="male" value="1">Male</h4>
 						<h4><input type="radio" name="male" value="0">Female</h4>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 col-xs-8">
 					<h4>Foreign Student?</h4>
 					</div>
-					<div class="col-md-8">
+					<div class="col-md-8 col-xs-4">
 						<h4><input type="checkbox" name="foreign"></h4>
 						
 					</div>

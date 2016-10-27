@@ -6,26 +6,29 @@ DENTAL HYGIENE SCHOOL
 	<form action="license" method="post">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
-				<h2>School Attended</h2>
+				<h3>School Attended</h3>
 			</div>
 			<div class="col-md-3">
-				<h2><input type="text" name="school_name"></h2>
+				<h3><input type="text" name="name"></h3>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
-				<h2>State</h2>
+				<h3>State</h3>
 			</div>
-			<div class="col-md-3">
-				<h2><input type="text" name="school_state"></h2>
-			</div>
+			<select class="col-lg-1 col-xs-7" name="state">
+			<?php
+				foreach ($states as $state):?>
+			  <option value="<?=$state->abbreviation?>"><?=$state->abbreviation?></option>
+				<? endforeach;?>
+			</select>
 		</div>
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
-				<h2>Year of Graduation</h2>
+				<h3>Year of Graduation</h3>
 			</div>
 			<div class="col-md-3">
-				<h2><input type="text" name="school_year"></h2>
+				<h3><input type="text" name="year"></h3>
 			</div>
 		</div>
 			<div class="wrapper">

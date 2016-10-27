@@ -9,6 +9,10 @@ header {
     font-family: Impact;
 }
 
+h4 {
+	margin-left: 10px;
+}
+
 .main {
 	border-style: solid;
 	border-width: 2px;

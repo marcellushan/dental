@@ -32,18 +32,13 @@
 					<div class="row">
 						<label class="col-lg-2 col-xs-4">Street</label><input type="text" class="col-lg-10 col-xs-7" name="street" >
 						<label class="col-lg-2 col-xs-4">City</label><input type="text" class="col-lg-4 col-xs-7" name="city" >
-						<label class="col-lg-1 col-xs-4">State</label>	<select class="col-lg-1 col-xs-7">
+						<label class="col-lg-1 col-xs-4">State</label>	<select class="col-lg-1 col-xs-7" name="state">
 																				<?php
 																					foreach ($states as $state):?>
-																				  <option value="volvo"><?=$state->abbreviation?></option>
+																				  <option value="<?=$state->abbreviation?>"><?=$state->abbreviation?></option>
 																					<? endforeach;?>
 																				</select>
-
-		
-
-						
-						<?php ?>
-						<label class="col-lg-2 col-xs-4">Zip</label><input type="text" class="col-lg-2 col-xs-7" name="zip" >
+						<label class="col-lg-2 col-xs-12">Zip</label><input type="text" class="col-lg-2 col-xs-6" name="zip" >
 					</div><!-- row -->
 				</div><!-- col-md-6 col-xs-12 -->
 				<div class="col-md-6 col-xs-12">
