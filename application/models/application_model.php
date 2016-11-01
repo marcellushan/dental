@@ -30,4 +30,6 @@ class Application_model extends My_Model {
 		$this->db->where('application_id', $id);
 		$this->db->update('application', $this);
 	}
+	
+	
 }

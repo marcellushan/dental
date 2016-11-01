@@ -10,5 +10,14 @@ class License_model extends My_Model {
 	public $number;
 	public $application_id;
 	
+	public function get_list ($id_name, $id) {
+		$data =[];
+		$q = $this->db->query('select * from ' . $this::DB_TABLE . ' where ' . $id_name . '=' . $id);
+		foreach ($q->result() as $row) {
+			$data[] = $row;
+		}
+		return $data;
+	}
+	
 	
 }
