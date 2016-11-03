@@ -8,9 +8,9 @@
 			<h2>Name</h2>
 				<div class="row">
 					<?php //echo form_error('first'); ?>
-					<label class="col-sm-2 col-xs-5" >First</label><input type="text" class="col-sm-2 col-xs-6" name="first_name" value="<?php echo set_value('first'); ?>" >
-					<label class="col-sm-2 col-xs-5" >Middle</label><input type="text" class="col-sm-2 col-xs-6"  name="middle_name"  >
+					<label class="col-sm-1 col-xs-5" >First</label><input type="text" class="col-sm-2 col-xs-6" name="first_name" value="<?php echo set_value('first'); ?>" >
 					<label class="col-sm-1 col-xs-5" >Last</label><input type="text" class="col-sm-2 col-xs-6"  name="last_name" >
+					<label class="col-sm-2 col-xs-5" >Relationship</label><input type="text" class="col-sm-2 col-xs-6"  name="relationship" >
 				</div><!-- row -->
 			<div class="row">
 				<h2 class="col-lg-6 col-xs-12">Address</h2>

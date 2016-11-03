@@ -2,11 +2,16 @@
 
 class Admin extends CI_Controller {
 	
-	public function index() 
-	{	$id = 76;
+	public function index($id) 
+	{	
+// 		$id = 76;
 		$this->load->view('templates/header');
 		$this->load->model('application_model');
 		$data['application'] = $this->application_model->load($id);
+		$this->load->model('document_model');
+		$data['driver'] = $this->document_model->get_item('application_id',$id,1);
+		$this->load->model('document_model');
+		$data['cpr'] = $this->document_model->get_item('application_id',$id,2);
 		$this->load->model('school_model');
 		$data['school'] = $this->school_model->get_item('application_id',$id);
 		$this->load->model('license_model');
@@ -18,8 +23,17 @@ class Admin extends CI_Controller {
 		$this->load->model('demo_model');
 		$data['demo'] = $this->demo_model->get_item('application_id',$id);
 // 		var_dump($data);
-// 		echo $data['application']->first_name;
+		echo $data['demo']->race;
 
 		$this->load->view('show_application',$data);	
+	}
+	
+	public function all_applications()
+	{
+		$this->load->view('templates/header');
+		$this->load->model('application_model');
+		$data['applications'] = $this->application_model->get();
+// 		var_dump($data['applications']);
+		$this->load->view('all_applications',$data);
 	}
 }

@@ -6,8 +6,8 @@ class Emergency_model extends My_Model {
 	const DB_TABLE_PK = 'emergency_id';
 	
 	public $first_name;
-	public $middle_name;
 	public $last_name;
+	public $relationship;
 	public $street;
 	public $city;
 	public $state;
