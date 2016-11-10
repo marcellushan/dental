@@ -21,21 +21,21 @@
 					<div class="row">
 						<label class="col-lg-2 col-xs-4">Street</label><input type="text" class="col-lg-10 col-xs-7" name="street" >
 						<label class="col-lg-2 col-xs-4">City</label><input type="text" class="col-lg-4 col-xs-7" name="city" >
-						<label class="col-lg-2 col-xs-4">State</label><select class="col-lg-1 col-xs-7" name="state">
+						<label class="col-lg-1 col-xs-4">State</label><select class="col-lg-1 col-xs-7" name="state">
+							<option value="GA">GA</option>
 			<?php
 				foreach ($states as $state):?>
 			  <option value="<?=$state->abbreviation?>"><?=$state->abbreviation?></option>
 				<? endforeach;?>
 			</select>
-						<label class="col-lg-2 col-xs-4">Zip</label><input type="text" class="col-lg-1 col-xs-7" name="zip" >
+						<label class="col-lg-1 col-xs-4">Zip</label><input type="text" class="col-lg-2 col-xs-7" name="zip" >
 					</div><!-- row -->
 				</div><!-- col-md-6 col-xs-12 -->
 				<div class="col-md-6 col-xs-12">
 					<div class="row">
-						<label class="col-xs-5">Home Phone</label><input type="text" class="col-xs-6" name="home_phone" >
-						<label class="col-xs-5">Cell Phone</label><input type="text" class="col-xs-6" name="cell_phone" >
-						<label class="col-xs-5">Home Email</label><input type="text" class="col-xs-6" name="home_email" >
-						<label class="col-xs-5">Work Email</label><input type="text" class="col-xs-6" name="work_email" >
+						<label class="col-xs-5">Preferred Phone</label><input type="text" class="col-xs-6" name="home_phone" >
+						<label class="col-xs-5">Backup Phone</label><input type="text" class="col-xs-6" name="cell_phone" >
+						<label class="col-xs-5">Email</label><input type="text" class="col-xs-6" name="home_email" >
 					</div><!-- row -->
 				</div><!-- col-md-6 col-xs-12 -->
 			</div><!-- row -->

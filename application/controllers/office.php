@@ -20,4 +20,16 @@ class Office extends CI_Controller {
 		var_dump($test);
 		echo $test->state;
 	}
+	
+	public function tester()
+	{
+		$this->load->view('templates/header');
+		$this->load->model('test_model');
+		$demo = new Test_model();
+		
+		$demo->load(94);
+		echo $demo->first_name;
+		$demo->first_name = "Jack";
+		$demo->update();
+	}
 }

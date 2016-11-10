@@ -85,9 +85,9 @@
 	
 <h3 class="wrapper">Demographics</h3>
 	<div class="row">
-		<h4 class="col-md-3">Race:</h4>
-		<h4 class="item col-md-2"><?=$demo->race?></h4>
-		<h4 class="col-md-3">Gender:</h4>
+		<h4 class="col-md-1">Race:</h4>
+		<h4 class="item col-md-4"><?=$race_text->race_text?></h4>
+		<h4 class="col-md-2">Gender:</h4>
 		<h4 class="item col-md-2"><? echo ($demo->male ? "Male" : "Female"); ?></h4>
 		<h4 class="col-md-3">Foreign Student?</h4>
 		<h4 class="item col-md-2"><? echo ($demo->foreign ? "Yes" : "No"); ?></h4>

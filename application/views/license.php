@@ -9,6 +9,7 @@
 				<h3>State</h3>
 			</div>
 			<select class="col-lg-1 col-xs-7" name="state">
+			<option value="GA">GA</option>
 			<?php
 				foreach ($states as $state):?>
 			  <option value="<?=$state->abbreviation?>"><?=$state->abbreviation?></option>

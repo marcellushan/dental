@@ -6,6 +6,7 @@ class Application_model extends My_Model {
 	const DB_TABLE_PK = 'application_id';
 	
 	public $application_id;
+	public $application_date;
 	public $first_name;
 	public $middle_name;
 	public $last_name;

@@ -1,6 +1,6 @@
  <div class="main container">
 	<h1>
-	DRIVER'S LICENSE
+	Please upload a copy of your current valid Driver's License
 	</h1>
 <form action="cpr" method="post" enctype="multipart/form-data">
 <input type="file" name="fileToUpload" id="fileToUpload"><br>

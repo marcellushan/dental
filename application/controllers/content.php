@@ -186,7 +186,7 @@ public function more_licenses()
 public function demo()
 	{
 		$this->load->view('templates/header');
-		$this->load->view('demo');
+		$this->load->view('program');
 	}
 	
 	

@@ -22,8 +22,9 @@ class Admin extends CI_Controller {
 		$data['employers'] = $this->employer_model->get_list('application_id',$id);
 		$this->load->model('demo_model');
 		$data['demo'] = $this->demo_model->get_item('application_id',$id);
+		$data['race_text'] =$this->demo_model->race_text($data['demo']->race);
 // 		var_dump($data);
-		echo $data['demo']->race;
+// 		echo $data['demo']->race;
 
 		$this->load->view('show_application',$data);	
 	}
@@ -35,5 +36,13 @@ class Admin extends CI_Controller {
 		$data['applications'] = $this->application_model->get();
 // 		var_dump($data['applications']);
 		$this->load->view('all_applications',$data);
+	}
+	
+	public function change()
+	{
+		$this->load->model('demo_model');
+		$data['demo']= $this->demo_model->get_item('application_id',94);
+		$data['race_text'] =$this->demo_model->race_text($data['demo']->race);
+		echo $data['race_text']->race_text;
 	}
 }

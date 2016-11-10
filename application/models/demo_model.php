@@ -12,5 +12,16 @@ class Demo_model extends My_Model {
 	public $foreign;
 	public $application_id;
 	
+	public function race_text($race_id)
+	{	
+// 		$data=[];
+		$this->db->where('race_id', $race_id);
+		$query = $this->db->get('race');
+		$row = $query->row();
+// 		echo $row->race_text;
+		return $row;
+		
+	}
+	
 	
 }
