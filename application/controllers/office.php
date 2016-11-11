@@ -27,7 +27,7 @@ class Office extends CI_Controller {
 		$this->load->model('test_model');
 		$demo = new Test_model();
 		
-		$demo->load(94);
+		$demo->load(74);
 		echo $demo->first_name;
 		$demo->first_name = "Jack";
 		$demo->update();

@@ -33,23 +33,20 @@ class MY_Model extends CI_Model {
      * Load from the database.
      * @param int $id
      */
-//     public function load($id) {
-//         $query = $this->db->get_where($this::DB_TABLE, array(
-//             $this::DB_TABLE_PK => $id,
-//         ));
-//        return $this->populate($query->row());
-//     }
+    public function load($id) {
+        $query = $this->db->get_where($this::DB_TABLE, array(
+            $this::DB_TABLE_PK => $id,
+        ));
+       return $this->populate($query->row());
+    }
 
-    public function load($id)
-    {
-    	$this->db->where($this::DB_TABLE_PK, $id);
-    	$query = $this->db->get($this::DB_TABLE);
-    	$row = $query->row();
-    	// 		foreach ($query->result() as $row)
-    		// 		{
-    	return $data[$this::DB_TABLE] = $row;
-    	// 		}
-    		}
+//     public function load($id)
+//     {
+//     	$this->db->where($this::DB_TABLE_PK, $id);
+//     	$query = $this->db->get($this::DB_TABLE);
+//     	$row = $query->row();
+//     	return $data[$this::DB_TABLE] = $row;
+//     		}
     
     /**
      * Delete the current record.
