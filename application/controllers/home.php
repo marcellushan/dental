@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Content extends CI_Controller {
+class Home extends CI_Controller {
 	
 	public function index() 
 	{	
@@ -60,6 +60,9 @@ class Content extends CI_Controller {
 			// 			echo "</pre>";
 			// 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
 			$target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
+			// webdev
+// 			$target_dir = "/var/www/html/dental/assets/uploads/";
+			
 			// 			echo $target_dir = "/var/www/html/signage/uploads/";
 			$target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
 			$myFile = basename($_FILES["fileToUpload"]["name"]);
@@ -93,7 +96,8 @@ class Content extends CI_Controller {
 			// 			echo "</pre>";
 			// 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
 			$target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
-			// 			echo $target_dir = "/var/www/html/signage/uploads/";
+			// webdev
+// 			$target_dir = "/var/www/html/dental/assets/uploads/";
 			$target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
 			$myFile = basename($_FILES["fileToUpload"]["name"]);
 			$uploadOk = 1;
@@ -183,10 +187,30 @@ public function more_licenses()
 		$this->load->view('more_employers');
 	}
 	
-public function demo()
+public function program()
 	{
 		$this->load->view('templates/header');
 		$this->load->view('program');
+	}
+	
+	public function demo()
+	{
+		session_start();
+		// 		echo $_SESSION['id'];
+		// 				echo "<pre>";
+		// 				var_dump($_POST);
+		// 				echo "</pre>";
+		$this->load->model('program_Model');
+		$program = new Program_model();
+		$program->application_id = $_SESSION['id'];
+		foreach ($_POST as $key=>$value)
+		{
+			$program->$key = $this->input->post($key);
+		}
+		$program->save();
+// 		echo $_SESSION['demo_id'] = $demo->demo_id;
+		$this->load->view('templates/header');
+		$this->load->view('demo');
 	}
 	
 	
@@ -199,22 +223,32 @@ public function demo()
 // 				echo "</pre>";
 		$this->load->model('demo_Model');
 		$demo = new Demo_model();
+// 		$demo->demo_id = $_SESSION['demo_id'];
+// 		$demo->load($_SESSION['demo_id']);
+// 		echo "<pre>";
+// 		var_dump($demo);
+// 		echo "</pre>";
 		$demo->application_id = $_SESSION['id'];
+		
 		foreach ($_POST as $key=>$value)
 		{
 			$demo->$key = $this->input->post($key);
 		}
-		 $demo->save();
+// echo "<pre>";
+// var_dump($demo);
+// echo "</pre>";
+
+// $demo->load(32);
+// echo $demo->race;
+// $demo->race = '4';
+// $demo->update();
+// 		 echo $demo->update();
+$demo->save();
 		$this->load->view('templates/header');
 		$this->load->view('thankyou');
 	}
 	
-// 	public function driver()
-// 	{
-// 		$this->load->library('upload');
-// 		$this->load->view('templates/header');
-// 		$this->load->view('driver');
-// 	}
+
 	
 	
 	

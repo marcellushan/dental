@@ -7,5 +7,5 @@
 <br>
 <br>
 <div class="wrapper">
-		<a href="demo" class="btn-lg btn-primary">Go to Program Questions</a>
+		<a href="program" class="btn-lg btn-primary">Go to Program Questions</a>
 </div>   

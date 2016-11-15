@@ -24,6 +24,10 @@
 */
 $config['base_url'] = 'http://localhost/dental';
 
+//webdev
+// $config['base_url'] = 'http://webdev.highlands.edu/dental';
+ //
+
 /*
 |--------------------------------------------------------------------------
 | Index File

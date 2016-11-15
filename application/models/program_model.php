@@ -1,14 +1,13 @@
 <?php
 
-class Demo_model extends My_Model {
+class Program_model extends My_Model {
 	
-	const DB_TABLE = 'demo';
-	const DB_TABLE_PK = 'demo_id';
+	const DB_TABLE = 'program';
+	const DB_TABLE_PK = 'program_id';
 	
-	public $race;
-	public $latino;
-	public $male;
-	public $foreign;
+
+	public $fulltime;
+	public $hear;
 	public $application_id;
 	
 	public function race_text($race_id)

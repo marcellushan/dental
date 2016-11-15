@@ -9,7 +9,7 @@
 	</h1>
 
 <?php echo validation_errors(); ?>
-	<?php echo form_open('content/driver'); ?>
+	<?php echo form_open('home/driver'); ?>
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">

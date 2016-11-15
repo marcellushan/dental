@@ -51,6 +51,9 @@ $active_record = TRUE;
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'marc';
 $db['default']['password'] = 'F1agstaff';
+// webdev
+// $db['default']['username'] = 'root';
+// $db['default']['password'] = 'europe-guilty-kaleidoscope-head';
 $db['default']['database'] = 'dental';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
