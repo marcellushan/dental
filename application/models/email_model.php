@@ -1,12 +1,13 @@
 <?php
 
-class Application_model extends My_Model {
+class Email_model extends My_Model {
 	
-	const DB_TABLE = 'application';
-	const DB_TABLE_PK = 'application_id';
+	const DB_TABLE = 'email';
+	const DB_TABLE_PK = 'email_id';
 	
-	public $application_id;
-	public $application_date;
+	public $email_address;
+	public $email_type;
+	public $person_id;
 	
 	
 	

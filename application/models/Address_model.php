@@ -1,12 +1,15 @@
 <?php
 
-class Application_model extends My_Model {
+class Address_model extends My_Model {
 	
-	const DB_TABLE = 'application';
-	const DB_TABLE_PK = 'application_id';
+	const DB_TABLE = 'address';
+	const DB_TABLE_PK = 'address_id';
 	
-	public $application_id;
-	public $application_date;
+	public $street;
+	public $city;
+	public $state;
+	public $zip;
+	public $person_id;
 	
 	
 	

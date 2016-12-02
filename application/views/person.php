@@ -9,11 +9,10 @@
 	</h1>
 
 <?php echo validation_errors(); ?>
-	<?php echo form_open('home/driver'); ?>
+	<?php echo form_open('home/address'); ?>
 		<fieldset>
 			<h2>Name</h2>
-				<div class="row">
-					
+				<div class="row">	
 					<label class="col-sm-2 col-xs-5" >First</label><input type="text" class="col-sm-2 col-xs-6" name="first_name" placeholder="required" value="<?php echo set_value('first_name'); ?>">
 					<label class="col-sm-2 col-xs-5" >Middle</label><input type="text" class="col-sm-2 col-xs-6"  name="middle_name" value="<?php echo set_value('middle_name'); ?>">
 					<label class="col-sm-1 col-xs-5" >Last</label><input type="text" class="col-sm-2 col-xs-6"  name="last_name" placeholder="required" value="<?php echo set_value('last_name'); ?>">
@@ -23,34 +22,6 @@
 					<label class="col-sm-2 col-xs-5" >GHC ID</label><input type="text" class="col-sm-2 col-xs-6"  name="GHC_ID" value="<?php echo set_value('GHC_ID'); ?>">
 					<label class="col-sm-1 col-xs-5" >Maiden </label><input type="text" class="col-sm-2 col-xs-6"  name="maiden_name" value="<?php echo set_value('maiden_name'); ?>" placeholder="if applicable">
 				</div><!-- row -->
-			<div class="row">
-				<h2 class="col-lg-6 col-xs-12">Address</h2>
-				<h2 class="col-lg-6 visible-lg">Phone and Email</h2>
-			</div><!-- row -->
-			<div class="row">
-				<div class="col-md-6 col-xs-12">
-					<div class="row">
-						<label class="col-lg-2 col-xs-4">Street</label><input type="text" class="col-lg-10 col-xs-7" name="street" placeholder="required" >
-						<label class="col-lg-2 col-xs-4">City</label><input type="text" class="col-lg-4 col-xs-7" name="city" placeholder="required">
-						<label class="col-lg-1 col-xs-4">State</label>	<select class="col-lg-1 col-xs-7" name="state">
-																			<option value="GA">GA</option>
-																				<?php
-																					foreach ($states as $state):?>
-																				  <option value="<?=$state->abbreviation?>"><?=$state->abbreviation?></option>
-																					<? endforeach;?>
-																				</select>
-						<label class="col-lg-2 col-xs-12">Zip</label><input type="text" class="col-lg-2 col-xs-6" name="zip" >
-					</div><!-- row -->
-				</div><!-- col-md-6 col-xs-12 -->
-				<div class="col-md-6 col-xs-12">
-					<div class="row">
-						<label class="col-xs-5">Preferred Phone</label><input type="text" class="col-xs-6" name="home_phone" placeholder="required">
-						<label class="col-xs-5">Backup Phone</label><input type="text" class="col-xs-6" name="cell_phone" >
-						<label class="col-xs-5">Preferred Email</label><input type="text" class="col-xs-6" name="home_email" placeholder="required">
-						<label class="col-xs-5">Backup Email</label><input type="text" class="col-xs-6" name="work_email" >
-					</div><!-- row -->
-				</div><!-- col-md-6 col-xs-12 -->
-			</div><!-- row -->
 	
 			<div class="wrapper">
 				<button type="submit" class="btn-lg btn-primary">Next</button>

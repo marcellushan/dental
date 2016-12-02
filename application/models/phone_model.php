@@ -1,12 +1,13 @@
 <?php
 
-class Application_model extends My_Model {
+class Phone_model extends My_Model {
 	
-	const DB_TABLE = 'application';
-	const DB_TABLE_PK = 'application_id';
+	const DB_TABLE = 'phone';
+	const DB_TABLE_PK = 'phone_id';
 	
-	public $application_id;
-	public $application_date;
+	public $phone_number;
+	public $phone_type;
+	public $person_id;
 	
 	
 	

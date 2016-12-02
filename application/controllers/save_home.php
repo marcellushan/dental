@@ -10,34 +10,72 @@ class Home extends CI_Controller {
 		$this->load->view('applicant');	
 	}
 	
+// 	public function application()
+// 	{
+// 		$this->load->view('templates/header');
+// 		$this->load->view('person');
+		
+// 	}
+	
+// 	public function address()
+// 	{
+// 		session_start();
+// 		$this->load->model('person_model');
+// 		$person = new Person_model();
+// 		foreach ($_POST as $key=>$value)
+// 		{
+// 			$person->$key = $this->input->post($key);
+// 		}
+// 		$person->save();
+// 		$_SESSION['id'] = $person->person_id;
+// 		$this->load->view('templates/header');
+// 		$this->load->view('address');
+// 	}
 	public function address()
-	{		
+	{
+// 		$this->load->library('form_validation');
+// 		$this->form_validation->set_rules('first_name', 'First Name', 'required|alpha');
+// 		$this->form_validation->set_rules('middle_name', 'Middle Name');
+// 		$this->form_validation->set_rules('last_name', 'Last Name', 'required');
+// 		$this->form_validation->set_rules('birthdate', 'Date of Birth', 'required');
+// 		$this->form_validation->set_rules('GHC_ID', 'GHC_ID');
+// 		$this->form_validation->set_rules('maiden', 'maiden');
+// 		$this->form_validation->set_rules('street', 'Street Address', 'required');
+// 		$this->form_validation->set_rules('city', 'City', 'required');
+// 		$this->form_validation->set_rules('State', 'State', 'required');
+// 		$this->form_validation->set_rules('home_phone', 'Home Phone', 'required');
+// 		$this->form_validation->set_rules('cell_phone', 'Cell Phone');
+// 		$this->form_validation->set_rules('home_email', 'Home Email Address', 'required');
+// 		$this->form_validation->set_rules('work_email', 'Work Email Address');
+// 		if ($this->form_validation->run() == FALSE)
+// 		{
+// 			$this->load->view('templates/header');
+// 			$this->load->view('application');
+// 		}
+// 		else
+// 		{
 			session_start();
-			if(! @$_SESSION['application_id'])
-			{
-				$this->load->model('application_Model');
-				$application = new Application_model();
-				$application->application_date = date('Y-m-d');
-				$application->save();
-				$_SESSION['application_id'] = $application->application_id;
-				$person_type='1';
-			}
 			$this->load->model('state_model');
 			$data['states'] = $this->state_model->get_states();
+			$this->load->model('application_Model');
+			$application = new Application_model();
+			$application->application_date = date('Y-m-d');
+// 			$application->person_id = $person->person_id;
+			$application->save();
 			$this->load->model('person_Model');
 			$person = new Person_model();
 			foreach ($_POST as $key=>$value)
 			{
 				$person->$key = $this->input->post($key);
 			}
-			$person->application_id = $_SESSION['application_id'];
-			(! @$person_type ? $person_type = '2':"");
-			$person->person_type = $person_type;
+			$person->application_id = $application->application_id;
+			$person->person_type = '1';
 			$person->save();
 			$_SESSION['person_id'] = $person->person_id;
+			$_SESSION['application_id'] = $application->application_id;
 			$this->load->view('templates/header');
 			$this->load->view('address', $data);
-
+// 		}
 		
 	}
 	
@@ -91,15 +129,7 @@ class Home extends CI_Controller {
 			$email->save();
 		}
 		$this->load->view('templates/header');
-		if(@$_SESSION['driver'])
-		{
-			$this->load->view('employer');
-		}
-		else 
-		{
-			$this->load->view('driver');
-		}
-		
+		$this->load->view('driver');
 		
 	}
 	
@@ -107,7 +137,6 @@ class Home extends CI_Controller {
 	public function cpr()
 	{
 		session_start();
-		$_SESSION['driver'] =true;
 		if(!@$_FILES['fileToUpload']['error']) {
 				
 			$myRandom = rand(1, 10000);
@@ -215,6 +244,54 @@ public function more_licenses()
 // 		$this->load->view('address', $data);
 	}
 	
+	public function emergency_address()
+	{
+		// 		$this->load->library('form_validation');
+		// 		$this->form_validation->set_rules('first_name', 'First Name', 'required|alpha');
+		// 		$this->form_validation->set_rules('middle_name', 'Middle Name');
+		// 		$this->form_validation->set_rules('last_name', 'Last Name', 'required');
+		// 		$this->form_validation->set_rules('birthdate', 'Date of Birth', 'required');
+		// 		$this->form_validation->set_rules('GHC_ID', 'GHC_ID');
+		// 		$this->form_validation->set_rules('maiden', 'maiden');
+		// 		$this->form_validation->set_rules('street', 'Street Address', 'required');
+		// 		$this->form_validation->set_rules('city', 'City', 'required');
+		// 		$this->form_validation->set_rules('State', 'State', 'required');
+		// 		$this->form_validation->set_rules('home_phone', 'Home Phone', 'required');
+		// 		$this->form_validation->set_rules('cell_phone', 'Cell Phone');
+		// 		$this->form_validation->set_rules('home_email', 'Home Email Address', 'required');
+		// 		$this->form_validation->set_rules('work_email', 'Work Email Address');
+		// 		if ($this->form_validation->run() == FALSE)
+			// 		{
+			// 			$this->load->view('templates/header');
+			// 			$this->load->view('application');
+			// 		}
+			// 		else
+				// 		{
+				session_start();
+// 				$this->load->model('state_model');
+// 				$data['states'] = $this->state_model->get_states();
+// 				$this->load->model('application_Model');
+// 				$application = new Application_model();
+// 				$application->application_date = date('Y-m-d');
+// 				// 			$application->person_id = $person->person_id;
+// 				$application->save();
+				$this->load->model('person_Model');
+				$person = new Person_model();
+				foreach ($_POST as $key=>$value)
+				{
+					$person->$key = $this->input->post($key);
+				}
+				$person->application_id = $application->application_id;
+				$person->person_type = '2';
+				$person->save();
+				$_SESSION['person_id'] = $person->person_id;
+				$_SESSION['application_id'] = $application->application_id;
+				$this->load->view('templates/header');
+				$this->load->view('address', $data);
+				// 		}
+	
+			}
+	
 	public function employer()
 	{
 		session_start();
@@ -237,7 +314,7 @@ public function more_licenses()
 
 		$this->load->model('employer_Model');
 		$employer = new Employer_model();
-		$employer->application_id = $_SESSION['application_id'];
+		$employer->application_id = $_SESSION['id'];
 		foreach ($_POST as $key=>$value)
 		{
 			$employer->$key = $this->input->post($key);
@@ -262,7 +339,7 @@ public function program()
 		// 				echo "</pre>";
 		$this->load->model('program_Model');
 		$program = new Program_model();
-		$program->application_id = $_SESSION['application_id'];
+		$program->application_id = $_SESSION['id'];
 		foreach ($_POST as $key=>$value)
 		{
 			$program->$key = $this->input->post($key);
@@ -288,7 +365,7 @@ public function program()
 // 		echo "<pre>";
 // 		var_dump($demo);
 // 		echo "</pre>";
-		$demo->application_id = $_SESSION['application_id'];
+		$demo->application_id = $_SESSION['id'];
 		
 		foreach ($_POST as $key=>$value)
 		{

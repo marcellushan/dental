@@ -8,6 +8,7 @@ class Document_model extends My_Model {
 	public $document_type;
 	public $url;
 	public $application_id;
+	public $expiration_date;
 	
 	public function get_item ($id_name, $id, $type)
 	{
