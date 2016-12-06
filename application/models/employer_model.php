@@ -8,7 +8,7 @@ class Employer_model extends My_Model {
 	public $current;
 	public $company;
 	public $phone;
-	public $application_id;
+	public $applicant_id;
 	
 	
 }

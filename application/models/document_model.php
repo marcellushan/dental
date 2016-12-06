@@ -20,5 +20,14 @@ class Document_model extends My_Model {
 		return $data[$this::DB_TABLE] = $row;
 	}
 	
+	public function get_document ($id_name, $id, $type)
+	{
+	
+		$query = $this->db->query('select * from ' . $this::DB_TABLE . ' where ' . $id_name . '=' . $id  . '
+				 AND document.document_type =' . $type);
+		$row = $query->row();
+		return $data[$this::DB_TABLE] = $row;
+	}
+	
 	
 }

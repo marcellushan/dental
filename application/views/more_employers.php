@@ -2,7 +2,7 @@
 <br>
 <br>
 <div class="wrapper">
-		<a href="employer" class="btn-lg btn-primary">Submit Additional Employers</a>
+		<a href="add_employer" class="btn-lg btn-primary">Submit Additional Employers</a>
 </div>
 <br>
 <br>

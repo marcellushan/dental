@@ -4,45 +4,33 @@ class Admin extends CI_Controller {
 	
 	public function index($id) 
 	{	
-// 		$id = 76;
-		$this->load->view('templates/header');
-		$this->load->model('application_model');
-		$data['application'] = $this->application_model->load($id);
-		$this->load->model('document_model');
-		$data['driver'] = $this->document_model->get_item('application_id',$id,1);
-		$this->load->model('document_model');
-		$data['cpr'] = $this->document_model->get_item('application_id',$id,2);
-		$this->load->model('school_model');
-		$data['school'] = $this->school_model->get_item('application_id',$id);
-		$this->load->model('license_model');
-		$data['licenses'] = $this->license_model->get_list('application_id',$id);
-		$this->load->model('emergency_model');
-		$data['emergency'] = $this->emergency_model->get_item('application_id',$id);
+		$this->load->model('applicant_model');
+		$data['applicant'] = $this->applicant_model->load($id);
 		$this->load->model('employer_model');
-		$data['employers'] = $this->employer_model->get_list('application_id',$id);
-		$this->load->model('demo_model');
-		$data['demo'] = $this->demo_model->get_item('application_id',$id);
-		$data['race_text'] =$this->demo_model->race_text($data['demo']->race);
-// 		var_dump($data);
-// 		echo $data['demo']->race;
+		$data['employers'] = $this->employer_model->get_list('applicant_id',$id);
+		$this->load->model('license_model');
+		$data['licenses'] = $this->license_model->get_list('applicant_id',$id);
+// 		$this->load->model('demo_model');
+// 		$data['demo'] = $this->demo_model->get_item('application_id',$id);
+		$this->load->model('school_model');
+		$data['school'] = $this->school_model->get_item('applicant_id',$id);
+// 		$this->load->model('program_model');
+// 		$data['program'] = $this->program_model->get_item('application_id',$id);
+		echo "<pre>";
+		var_dump($data['school']);
+		echo "</pre>";
 
+		$this->load->view('templates/header');
 		$this->load->view('show_application',$data);	
 	}
 	
 	public function all_applications()
 	{
 		$this->load->view('templates/header');
-		$this->load->model('application_model');
-		$data['applications'] = $this->application_model->get();
-// 		var_dump($data['applications']);
+		$this->load->model('applicant_model');
+		$data['applicants'] = $this->applicant_model->get();
+// 		var_dump($data['applicants']);
 		$this->load->view('all_applications',$data);
 	}
 	
-	public function change()
-	{
-		$this->load->model('demo_model');
-		$data['demo']= $this->demo_model->get_item('application_id',94);
-		$data['race_text'] =$this->demo_model->race_text($data['demo']->race);
-		echo $data['race_text']->race_text;
-	}
 }

@@ -8,7 +8,7 @@ class License_model extends My_Model {
 	public $state;
 	public $active;
 	public $number;
-	public $application_id;
+	public $applicant_id;
 	
 	public function get_list ($id_name, $id) {
 		$data =[];

@@ -12,12 +12,12 @@
 			<th></th>
 		</tr>
 	</thead>
-	 <?php foreach ($applications as $application): ?>
+	 <?php foreach ($applicants as $applicant): ?>
 	 	<tr>
-	 		<td><?=$application->last_name?></td>
-	 		<td><?=$application->first_name?></td>
-	 		<td><?=$application->GHC_ID?></td>
-	 		<td><a href="index/<?=$application->application_id?>">View Application</a></td>
+	 		<td><?=$applicant->last_name?></td>
+	 		<td><?=$applicant->first_name?></td>
+	 		<td><?=$applicant->GHC_ID?></td>
+	 		<td><a href="index/<?=$applicant->applicant_id?>">View Application</a></td>
 	 	</tr>
 	 <?php endforeach;?>
 </table>
