@@ -2,7 +2,7 @@
 	<h1 class= "mytitle">
 DENTAL HYGIENE SCHOOL
 	</h1>
-
+<?php echo validation_errors(); ?>
 	<form action="license" method="post">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">

@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css" />
 	     <script src="<?php echo base_url() ?>assets/jquery/jquery.min.js"></script>
+	      <script src="<?php echo base_url() ?>assets/js/js_functions.js"></script>
      </head>
 	<body>
 		<header class="container">

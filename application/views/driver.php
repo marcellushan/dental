@@ -2,10 +2,12 @@
 	<h1>
 	Please upload a copy of your current valid Driver's License
 	</h1>
-<form action="cpr" method="post" enctype="multipart/form-data">
-<input type="file" name="fileToUpload" id="fileToUpload"><br>
+	<?php echo validation_errors(); ?>
 
-	<input type="submit" class="btn btn-primary btn-lg center-block" value="Submit" />
+<form action="cpr" method="post" enctype="multipart/form-data"  onsubmit="return Validate(this);"> 
+<input type="file" name="fileToUpload" id="driver"><br>
+
+	<input type="submit" class="btn btn-primary btn-lg center-block" id="driverBtn" value="Submit" />
 
 </form>
 </div>

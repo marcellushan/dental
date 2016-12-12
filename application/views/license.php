@@ -2,7 +2,7 @@
 	<h1 class= "mytitle">
 		LICENSURE INFORMATION
 	</h1>
-
+<?php echo validation_errors(); ?>
 	<form action="more_licenses" method="post">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
