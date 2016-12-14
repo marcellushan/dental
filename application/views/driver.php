@@ -1,6 +1,6 @@
  <div class="main container">
 	<h1>
-	Please upload a copy of your current valid Driver's License
+	Please upload a copy of a valid form of Identification
 	</h1>
 	<?php echo validation_errors(); ?>
 

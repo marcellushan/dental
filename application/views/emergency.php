@@ -6,7 +6,7 @@
 	</h1>
 
 <?php echo validation_errors(); ?>
-	<?php echo form_open('home/employer'); ?>
+	<form action="employer" method="post">
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">

@@ -3,7 +3,7 @@
 DENTAL HYGIENE SCHOOL
 	</h1>
 <?php echo validation_errors(); ?>
-	<form action="license" method="post">
+	<form action="license" method="post" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<h3>School Attended</h3>
@@ -32,6 +32,7 @@ DENTAL HYGIENE SCHOOL
 				<h3><input type="text" name="year"></h3>
 			</div>
 		</div>
+		<input type="file" name="fileToUpload" id="driver"><br>
 			<div class="wrapper">
 				<button type="submit" class="btn-lg btn-primary">Submit School Information</button>
 			</div>

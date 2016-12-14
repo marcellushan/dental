@@ -54,6 +54,8 @@ $db['default']['password'] = 'F1agstaff';
 // webdev
 // $db['default']['username'] = 'root';
 // $db['default']['password'] = 'europe-guilty-kaleidoscope-head';
+// forms - Leela
+// $db['default']['password'] = 'everyonemotiveexplorelately';
 $db['default']['database'] = 'dental2';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

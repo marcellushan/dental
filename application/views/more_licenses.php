@@ -6,6 +6,6 @@
 		<a href="license" class="btn-lg btn-primary">Submit Additional Licenses</a>
 	</div>
 		<div class="col-md-3">
-		<a href="emergency" class="btn-lg btn-primary">Enter Emergency Contact Information</a>
+		<a href="disciplinary" class="btn-lg btn-primary">Disciplinary Action</a>
 	</div>
 </div>   

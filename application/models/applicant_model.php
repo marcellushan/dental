@@ -37,11 +37,6 @@ class Applicant_model extends My_Model {
  	public $latino;
  	public $gender;
  	public $foreign;
-//  	public $school;
-//  	public $grad_year;
- 	public $driver;
- 	public $cpr;
- 	public $cpr_expire;
  	
  	
 	
@@ -50,7 +45,7 @@ class Applicant_model extends My_Model {
 	
 	public function update($id, $data)
 	{
-		echo $id;
+// 		echo $id;
 // 		echo $this->db->update($this::DB_TABLE, $this, "application_id='63'");
 		$this->db->where('applicant_id', $id);
 		$this->db->update('applicant', $data);

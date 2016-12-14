@@ -3,7 +3,7 @@
 		LICENSURE INFORMATION
 	</h1>
 <?php echo validation_errors(); ?>
-	<form action="more_licenses" method="post">
+	<form action="more_licenses" method="post" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<h3>State</h3>
@@ -32,6 +32,7 @@
 				<h3><input type="checkbox" name="active" value="1"></h3>
 			</div>
 		</div>
+<input type="file" name="fileToUpload" id="driver"><br>
 			<div class="wrapper">
 				<button type="submit" class="btn-lg btn-primary">Submit License Information</button>
 			</div>
