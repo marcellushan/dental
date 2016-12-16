@@ -13,36 +13,81 @@ class ReturningApplicant extends CI_Controller {
 	public function sections()
 	{  
 	    session_start();
-	    $this->load->model('applicant_Model');
-	    $applicant = new Applicant_model();
-	    $returning_app= $applicant->get_item('preferred_email', $_POST['email']);
-
-// 	    			echo $returning_app->applicant_id;
-	  echo $_SESSION['applicant_id'] = $returning_app->applicant_id;
+	    if(@$_POST['email']) {
+	        $this->load->model('ApplicantModel');
+	        $applicant = new ApplicantModel();
+	        $returning_app= $applicant->get_item('preferred_email', $_POST['email']);
+	        $_SESSION['applicant_id'] = $returning_app->applicant_id;
+	    }
 	    $this->load->view('templates/header');
-	    $this->load->view('sections');
+	    $this->load->view('returning/sections');
+	    
 	}
 	
 	public function personal()
 	{
-		$this->load->model('applicant_Model');
-		$applicant = new Applicant_model();
-		$this->load->model('State_model');
-		$data['states'] = $this->State_model->get_states();
+	    session_start();
+	    $this->load->model('ApplicantModel');
+		$applicant = new ApplicantModel();
+		$this->load->model('StateModel');
+		$data['states'] = $this->StateModel->get_states();
 		$data['applicant'] = $applicant->load($_SESSION['applicant_id']);
 		$this->load->view('templates/header');
-		$this->load->view('personal', $data);
+		$this->load->view('returning/personal', $data);
+		$this->load->view('templates/footer');
 	
 	}
 	
+	public function update() 
+	{
+	    session_start();
+		$this->load->model('ApplicantModel');
+		$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
+		$this->load->view('templates/header');
+		$this->load->view('returning/sections');
+	}
 	
-	public function driver()
+	public function addIdentification() 
+	{
+	    session_start();
+    	if(!@$_FILES['fileToUpload']['error']) {	
+    		$myRandom = rand(1, 10000);
+    		// 			echo "<pre>";
+    		// 			print_r($_FILES);
+    		// 			echo "</pre>";
+    		// 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
+    		$target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
+    		// webdev
+    		// 	$target_dir = "/var/www/html/dental/assets/uploads/";
+    		$target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+    		$myFile = basename($_FILES["fileToUpload"]["name"]);
+    		$uploadOk = 1;
+    		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    		move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+    		$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
+    		$this->load->model('identificationModel');
+			$identification = new IdentificationModel();
+			$identification->applicant_id = $_SESSION['applicant_id'];
+// 			$document->document_type = 1;
+			$identification->submission_date = date('Y-m-d');
+			$identification->image = $image_url;
+			$identification->save();
+    	}
+    	$this->load->view('templates/header');
+    	$this->load->view('sections');
+    	 
+	}
+	
+	
+	public function identification()
 	{
  		session_start();
- 		$this->load->model('applicant_model');
- 		$applicant=$this->applicant_model->update($_SESSION['applicant_id'], $_POST);
+ 		$this->load->model('identificationModel');
+ 		$data['identifications']=$this->identificationModel->get_list('applicant_id', $_SESSION['applicant_id']);
+//  		var_dump($identification);
  		$this->load->view('templates/header');
- 		$this->load->view('driver');
+ 		$this->load->view('identification',$data);
+ 		$this->load->view('templates/footer');
 	
 	}
 	
@@ -50,99 +95,68 @@ class ReturningApplicant extends CI_Controller {
 	public function cpr()
 	{
 		
-		
-		
-		session_start();
-		if(!@$_FILES['fileToUpload']['error']) {
-				
-			$myRandom = rand(1, 10000);
-			// 			echo "<pre>";
-			// 			print_r($_FILES);
-			// 			echo "</pre>";
-			// 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
-			$target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
-			// webdev
-			// 	$target_dir = "/var/www/html/dental/assets/uploads/";
-			$target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
-			$myFile = basename($_FILES["fileToUpload"]["name"]);
-			$uploadOk = 1;
-			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-			move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-			$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
-			$this->load->model('applicant_model');
-			$data = array('driver' => $image_url);
-			$applicant=$this->applicant_model->update($_SESSION['applicant_id'], $data);
-		}
+	    session_start();
+	    $this->load->model('CPRModel');
+	    $data['CPRs']=$this->CPRModel->get_list('applicant_id', $_SESSION['applicant_id']);
+// 	     		var_dump($data['CPRs']);
+	    $this->load->view('templates/header');
+		$this->load->view('cpr',$data);
+		$this->load->view('templates/footer');
+	}
 	
-		$this->load->view('templates/header');
-		$this->load->view('cpr');
+	public function addCPR() 
+	{
+	    session_start();
+	    if(!@$_FILES['fileToUpload']['error']) {
+	        $myRandom = rand(1, 10000);
+	        // 			echo "<pre>";
+	        // 			print_r($_FILES);
+	        // 			echo "</pre>";
+	        // 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
+	        $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
+	        // webdev
+	        // 	$target_dir = "/var/www/html/dental/assets/uploads/";
+	        $target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+	        $myFile = basename($_FILES["fileToUpload"]["name"]);
+	        $uploadOk = 1;
+	        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+	        move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+	        $image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
+	        $this->load->model('CPRModel');
+	        $CPR = new CPRModel();
+	        $CPR->applicant_id = $_SESSION['applicant_id'];
+	        // 			$document->document_type = 1;
+	        $CPR->submission_date = date('Y-m-d');
+	        $CPR->expiration_date = $_POST['expiration_date'];
+	        $CPR->image = $image_url;
+	        $CPR->save();
+	    }
+	    $this->load->view('templates/header');
+	    $this->load->view('sections');
+	
 	}
 	
 	public function school()
 	{
-		$this->load->helper(array('form', 'url'));
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('expiration_date', 'Expiration Date', 'required');
-		$this->load->view('templates/header');
-		if ($this->form_validation->run() == FALSE)
-		{
-			$this->load->view('cpr');		
-		}
-		else
-		{
+
+			$this->load->model('StateModel');
+			$data['states'] = $this->StateModel->get_states();
 			session_start();
-			if(!@$_FILES['fileToUpload']['error']) {
-					
-				$myRandom = rand(1, 10000);
-				// 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
-				$target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
-				// webdev
-	// 			$target_dir = "/var/www/html/dental/assets/uploads/";
-				$target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
-				$myFile = basename($_FILES["fileToUpload"]["name"]);
-				$uploadOk = 1;
-				$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-				move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-				$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
-				$this->load->model('applicant_model');
-				$data = array('cpr' => $image_url, 'cpr_expire' => $_POST['expiration_date']);
-				$applicant=$this->applicant_model->update($_SESSION['applicant_id'], $data);
-					
-			}
-			$this->load->model('state_model');
-			$data['states'] = $this->state_model->get_states();
-// 			$this->load->view('templates/header');
-			$this->load->view('school', $data);
-		}
+			$this->load->model('SchoolModel');
+			$data['school'] = $this->SchoolModel->get_item('applicant_id', $_SESSION['applicant_id']);
+			$this->load->view('templates/header');
+			$this->load->view('returning_school', $data);
+			$this->load->view('templates/footer');
 	}
 	
 	public function license()
 	{
-		$this->load->view('templates/header');
-		$myRandom = rand(1, 10000);
-		// 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
-		$target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
-		// webdev
-		// 			$target_dir = "/var/www/html/dental/assets/uploads/";
-		$target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
-		$myFile = basename($_FILES["fileToUpload"]["name"]);
-		$uploadOk = 1;
-		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-		move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-		$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
-
 			session_start();
-			$this->load->model('state_model');
-			$data['states'] = $this->state_model->get_states();
-			$this->load->model('school_Model');
-			$school = new School_model();
-			$school->applicant_id = $_SESSION['applicant_id'];
-			$school->name = $_POST['name'];
-			$school->state = $_POST['state'];
-			$school->year = $_POST['year'];
-			$school->image = $image_url;
-			$school->save();
+			$this->load->model('stateModel');
+			$data['states'] = $this->stateModel->get_states();
+	    	$this->load->view('templates/header');
 			$this->load->view('license', $data);
+			$this->load->view('templates/footer');
 	}
 	
 	
@@ -160,10 +174,10 @@ class ReturningApplicant extends CI_Controller {
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 		move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
 		$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
-// 		$this->load->model('applicant_model');
+// 		$this->load->model('ApplicantModel');
 		$this->load->model('license_Model');
 // 		$data = array('image' => $image_url);
-// 		$applicant=$this->applicant_model->update($_SESSION['applicant_id'], $data);
+// 		$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $data);
 			session_start();
 
 			$license = new License_model();
@@ -181,19 +195,21 @@ class ReturningApplicant extends CI_Controller {
 	{
 		$this->load->view('templates/header');
 		$this->load->view('disciplinary');
+		$this->load->view('templates/footer');
 	}
 	public function emergency()
 	{
 		session_start();
 		if(@$_POST['discipline'])
 		{
-			$this->load->model('applicant_model');
-			$applicant=$this->applicant_model->update($_SESSION['applicant_id'], array('discipline' => $_POST['discipline_text']));
+			$this->load->model('ApplicantModel');
+			$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], array('discipline' => $_POST['discipline_text']));
 		}
-		$this->load->model('state_model');
-		$data['states'] = $this->state_model->get_states();
+		$this->load->model('stateModel');
+		$data['states'] = $this->stateModel->get_states();
 		$this->load->view('templates/header');
 		$this->load->view('emergency', $data);
+		$this->load->view('templates/footer');
 	}
 	
 	public function employer()
@@ -202,8 +218,8 @@ class ReturningApplicant extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->view('templates/header');
 			session_start();
-			$this->load->model('applicant_model');
-			$applicant=$this->applicant_model->update($_SESSION['applicant_id'], $_POST);
+			$this->load->model('ApplicantModel');
+			$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
 			$this->load->view('employer');
 	}
 	
@@ -240,6 +256,7 @@ class ReturningApplicant extends CI_Controller {
 		{
 			$this->load->view('templates/header');
 			$this->load->view('program');
+			$this->load->view('templates/footer');
 		}
 	
 	public function demo()
@@ -256,8 +273,8 @@ class ReturningApplicant extends CI_Controller {
 		else
 		{
 			session_start();
-			$this->load->model('applicant_model');
-			$applicant=$this->applicant_model->update($_SESSION['applicant_id'], $_POST);
+			$this->load->model('ApplicantModel');
+			$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
 // 			$this->load->view('templates/header');
 			$this->load->view('demo');
 		}
@@ -268,8 +285,8 @@ class ReturningApplicant extends CI_Controller {
 	{
 		
 	session_start();
-	$this->load->model('applicant_model');
-	$applicant=$this->applicant_model->update($_SESSION['applicant_id'], $_POST);
+	$this->load->model('ApplicantModel');
+	$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
 	$this->load->view('templates/header');
 	$this->load->view('thankyou');
 	}

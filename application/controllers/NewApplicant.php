@@ -5,20 +5,9 @@ class NewApplicant extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('templates/header');
-		$this->load->view('new_applicant');
+		$this->load->view('new/applicant');
 	}
-	
-// 	public function newApplicant() 
-// 	{
-//         $this->load->view('templates/header');
-//         $this->load->view('new_applicant');
-// 	}
 
-    public function returningApplicant () 
-    {
-        $this->load->view('templates/header');
-        $this->load->view('returning_applicant');
-	}
 	public function createApplication()
 	{
 		session_start();
@@ -30,10 +19,10 @@ class NewApplicant extends CI_Controller {
 		}
 		else 
 		{
-			$this->load->model('applicant_Model');
-			$applicant = new Applicant_model();
-			$this->load->model('State_model');
-			$data['states'] = $this->State_model->get_states();
+			$this->load->model('ApplicantModel');
+			$applicant = new ApplicantModel();
+			$this->load->model('StateModel');
+			$data['states'] = $this->StateModel->get_states();
 			$applicant->application_date = date('Y-m-d');
 			$applicant->preferred_email = $_POST['email'];
 			$applicant->password = $_POST['password'];
@@ -41,7 +30,7 @@ class NewApplicant extends CI_Controller {
 			$_SESSION['applicant_id'] = $applicant->applicant_id;
 			$data['applicant'] = $applicant->load($applicant->applicant_id);
 			$this->load->view('templates/header');
-			$this->load->view('new_personal', $data);
+			$this->load->view('new/personal', $data);
 		}
 
 		
@@ -49,49 +38,13 @@ class NewApplicant extends CI_Controller {
 	
 	}
 	
-	public function existingPersonal()
-	{
-// 		session_start();
-// 		if ($this->form_validation->run() == FALSE)
-// 		{
-// 			$this->load->view('templates/header');
-// 			$this->load->view('login');
-// 		}
-// 		else
-// 		{
-	
-			$this->load->model('applicant_Model');
-			$applicant = new Applicant_model();
-			$this->load->model('State_model');
-			$data['states'] = $this->State_model->get_states();
-				// 			echo "<pre>";
-				// 			var_dump($_POST);
-				// 			echo "</pre>";
-				$returning_app= $applicant->get_item('preferred_email', $_POST['email']);
-				// 			echo $returning_app->applicant_id;
-				$data['applicant'] = $applicant->load($returning_app->applicant_id);
-				var_dump($data['applicant']);
-				$_SESSION['applicant_id'] = $returning_app->applicant_id;
-
-				
-				
-			$this->load->view('templates/header');
-			$this->load->view('existing_personal', $data);
-
-	
-// 		}
-	
-	
-	}
-	
-	
 	public function identification()
 	{
  		session_start();
- 		$this->load->model('applicant_model');
- 		$applicant=$this->applicant_model->update($_SESSION['applicant_id'], $_POST);
+ 		$this->load->model('ApplicantModel');
+ 		$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
  		$this->load->view('templates/header');
- 		$this->load->view('driver');
+ 		$this->load->view('new/identification');
 	
 	}
 	
@@ -118,7 +71,7 @@ class NewApplicant extends CI_Controller {
 			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 			move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
 			$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
-			$this->load->model('applicant_model');
+			$this->load->model('ApplicantModel');
 			$data = array('driver' => $image_url);
 			$this->load->model('identificationModel');
 			$identification = new IdentificationModel();
@@ -130,7 +83,7 @@ class NewApplicant extends CI_Controller {
 		}
 	
 		$this->load->view('templates/header');
-		$this->load->view('cpr');
+		$this->load->view('new/cpr');
 	}
 	
 	public function school()
@@ -166,10 +119,11 @@ class NewApplicant extends CI_Controller {
     			$CPR->expiration_date = $_POST['expiration_date'];
     			$CPR->image = $image_url;
     			$CPR->save();
+var_dump($_POST);
 					
 			}
-			$this->load->model('state_model');
-			$data['states'] = $this->state_model->get_states();
+			$this->load->model('StateModel');
+			$data['states'] = $this->StateModel->get_states();
 // 			$this->load->view('templates/header');
 			$this->load->view('school', $data);
 		}
@@ -177,22 +131,21 @@ class NewApplicant extends CI_Controller {
 	
 	public function license()
 	{
-		$this->load->view('templates/header');
-		$myRandom = rand(1, 10000);
-		// 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
-		$target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
-		// webdev
-		// 			$target_dir = "/var/www/html/dental/assets/uploads/";
-		$target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
-		$myFile = basename($_FILES["fileToUpload"]["name"]);
-		$uploadOk = 1;
-		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-		move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-		$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
-
-			session_start();
-			$this->load->model('state_model');
-			$data['states'] = $this->state_model->get_states();
+	    session_start();
+	    $this->load->view('templates/header');
+	    if(@$_FILES) {
+		    
+    		$myRandom = rand(1, 10000);
+    		// 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
+    		$target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
+    		// webdev
+    		// 			$target_dir = "/var/www/html/dental/assets/uploads/";
+    		$target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+    		$myFile = basename($_FILES["fileToUpload"]["name"]);
+    		$uploadOk = 1;
+    		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    		move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+    		$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
 			$this->load->model('schoolModel');
 			$school = new SchoolModel();
 			$school->applicant_id = $_SESSION['applicant_id'];
@@ -201,6 +154,9 @@ class NewApplicant extends CI_Controller {
 			$school->year = $_POST['year'];
 			$school->image = $image_url;
 			$school->save();
+	    }
+			$this->load->model('StateModel');
+			$data['states'] = $this->StateModel->get_states();
 			$this->load->view('license', $data);
 	}
 	
@@ -219,17 +175,17 @@ class NewApplicant extends CI_Controller {
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 		move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
 		$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
-// 		$this->load->model('applicant_model');
+// 		$this->load->model('ApplicantModel');
 		$this->load->model('license_Model');
 // 		$data = array('image' => $image_url);
-// 		$applicant=$this->applicant_model->update($_SESSION['applicant_id'], $data);
+// 		$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $data);
 			session_start();
 
 			$license = new License_model();
 			$license->applicant_id = $_SESSION['applicant_id'];
 			$license->number = $_POST['number'];
 			$license->state = $_POST['state'];
-			$license->active = $_POST['active'];
+			$license->active = @$_POST['active'];
 			$license->image = $image_url;
 			$license->save();
 			$this->load->view('more_licenses');
@@ -246,11 +202,11 @@ class NewApplicant extends CI_Controller {
 		session_start();
 		if(@$_POST['discipline'])
 		{
-			$this->load->model('applicant_model');
-			$applicant=$this->applicant_model->update($_SESSION['applicant_id'], array('discipline' => $_POST['discipline_text']));
+			$this->load->model('ApplicantModel');
+			$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], array('discipline' => $_POST['discipline_text']));
 		}
-		$this->load->model('state_model');
-		$data['states'] = $this->state_model->get_states();
+		$this->load->model('StateModel');
+		$data['states'] = $this->StateModel->get_states();
 		$this->load->view('templates/header');
 		$this->load->view('emergency', $data);
 	}
@@ -261,8 +217,8 @@ class NewApplicant extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->view('templates/header');
 			session_start();
-			$this->load->model('applicant_model');
-			$applicant=$this->applicant_model->update($_SESSION['applicant_id'], $_POST);
+			$this->load->model('ApplicantModel');
+			$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
 			$this->load->view('employer');
 	}
 	
@@ -315,8 +271,8 @@ class NewApplicant extends CI_Controller {
 		else
 		{
 			session_start();
-			$this->load->model('applicant_model');
-			$applicant=$this->applicant_model->update($_SESSION['applicant_id'], $_POST);
+			$this->load->model('ApplicantModel');
+			$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
 // 			$this->load->view('templates/header');
 			$this->load->view('demo');
 		}
@@ -327,8 +283,8 @@ class NewApplicant extends CI_Controller {
 	{
 		
 	session_start();
-	$this->load->model('applicant_model');
-	$applicant=$this->applicant_model->update($_SESSION['applicant_id'], $_POST);
+	$this->load->model('ApplicantModel');
+	$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
 	$this->load->view('templates/header');
 	$this->load->view('thankyou');
 	}

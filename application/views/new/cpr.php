@@ -25,7 +25,7 @@
 	Please upload a copy of your current valid CPR certificate
 	</h1>
 <?php echo validation_errors(); ?>
-<form action="addCPR" method="post" enctype="multipart/form-data" onsubmit="return Validate(this);">
+<form action="school" method="post" enctype="multipart/form-data" onsubmit="return Validate(this);">
 <input type="file" name="fileToUpload" id="cpr"><br>
 
 Expiration Date

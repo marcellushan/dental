@@ -8,7 +8,9 @@
 	APPLICANT PERSONAL INFORMATION
 	</h1>
 
-	<form action="update" method="post">
+<?php echo validation_errors(); ?>
+
+	<form action="identification" method="post">
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">
@@ -53,7 +55,6 @@
 	
 			<div class="wrapper">
 				<button type="submit" class="btn-lg btn-primary">Next</button>
-				
 			</div>
    		</fieldset>
 	</form>
