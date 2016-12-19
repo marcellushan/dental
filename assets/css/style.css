@@ -29,8 +29,14 @@ h4 {
     
 }
 
-footer {
-
+.footer {
+	background-color: lightcyan;
+	min-height: 100px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+    border-left-width: 2px;
     
 }
 

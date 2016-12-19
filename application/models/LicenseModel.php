@@ -1,10 +1,11 @@
 <?php
 
-class License_model extends My_Model {
+class LicenseModel extends My_Model {
 	
 	const DB_TABLE = 'license';
 	const DB_TABLE_PK = 'license_id';
 	
+	public $submission_date;
 	public $state;
 	public $active;
 	public $number;

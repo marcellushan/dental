@@ -15,8 +15,16 @@ class MY_Model extends CI_Model {
     /**
      * Update record.
      */
-    public function update() {
-        $this->db->update($this::DB_TABLE, $this, $this::DB_TABLE_PK);
+//     public function update() {
+//         $this->db->update($this::DB_TABLE, $this, $this::DB_TABLE_PK);
+//     }
+
+    public function update($id, $data)
+    {
+    	// 		echo $id;
+    	// 		echo $this->db->update($this::DB_TABLE, $this, "application_id='63'");
+    	$this->db->where($this::DB_TABLE_PK, $id);
+    	$this->db->update($this::DB_TABLE, $data);
     }
     
     /**

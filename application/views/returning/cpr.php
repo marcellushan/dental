@@ -1,31 +1,14 @@
  <div class="main container">
-  <? if(@$CPRs):?>
-    <table class="table">
-    	<tr>
-    		<th>Submission Date</th>
-    		<th>Expiration Date</th>
-    		<th>Image</th>
-    	</tr>
-    	<? foreach ($CPRs as $CPR):?>
-    	<tr>
-    		<td><?=$CPR->submission_date ?></td>
-    		<td><?=$CPR->expiration_date ?></td>
-    		<td><a href="<?=$CPR->image ?>" >Image</a></td>
-    	</tr>
-    	<?php endforeach;?>
-    </table>
-    <? else :?>	
-    
-    No Images
-    
-    <? endif?>
-	
- 
+ <h2>The following CPR information has been submitted:</h2>
+ <h3><?=$cpr->submission_date ?>
+ <a href="<?=$cpr->image ?>" >Image</a>
+ <?=$cpr->expiration_date ?></h3>
+
 	<h1>
 	Please upload a copy of your current valid CPR certificate
 	</h1>
 <?php echo validation_errors(); ?>
-<form action="addCPR" method="post" enctype="multipart/form-data" onsubmit="return Validate(this);">
+<form action="updateCpr" method="post" enctype="multipart/form-data" onsubmit="return Validate(this);">
 <input type="file" name="fileToUpload" id="cpr"><br>
 
 Expiration Date

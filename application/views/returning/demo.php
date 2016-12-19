@@ -9,12 +9,12 @@
 					<h4>Race</h4>
 					</div>
 					<div class="col-md-8">
-						<h4><input type="radio" name="race" value="1">White</h4>
-						<h4><input type="radio" name="race" value="2">Black</h4>
-						<h4><input type="radio" name="race" value="3">Asian American Indian / Alaska Native</h4>
-						<h4><input type="radio" name="race" value="4">Native Hawaiian/other Pacific Islander</h4>
-						<h4><input type="radio" name="race" value="5">Multiracial</h4>
-						<h4><input type="radio" name="race" value="6">Other</h4>
+						<h4><input type="radio" name="race" value="1" <?=(@$applicant->race=='1' ? "checked" :"" )?>>White</h4>
+						<h4><input type="radio" name="race" value="2" <?=(@$applicant->race=='2' ? "checked" :"" )?>>Black</h4>
+						<h4><input type="radio" name="race" value="3" <?=(@$applicant->race=='3' ? "checked" :"" )?>>Asian American Indian / Alaska Native</h4>
+						<h4><input type="radio" name="race" value="4" <?=(@$applicant->race=='4' ? "checked" :"" )?>>Native Hawaiian/other Pacific Islander</h4>
+						<h4><input type="radio" name="race" value="5" <?=(@$applicant->race=='5' ? "checked" :"" )?>>Multiracial</h4>
+						<h4><input type="radio" name="race" value="6" <?=(@$applicant->race=='6' ? "checked" :"" )?>>Other</h4>
 					</div>
 				</div>
 		</div>
@@ -25,21 +25,21 @@
 						<h4>Ethnicity</h4>
 					</div>
 					<div class="col-md-8">
-						<h4><input type="radio" name="latino" value="1">Hispanic/Latino</h4>
-						<h4><input type="radio" name="latino" value="0">Non Hispanic/Latino</h4>
+						<h4><input type="radio" name="latino" value="1" <?=(@$applicant->latino ? "checked" :"" )?>>Hispanic/Latino</h4>
+						<h4><input type="radio" name="latino" value="0" <?=(! @$applicant->latino ? "checked" :"" )?>>Non Hispanic/Latino</h4>
 					</div>
 					<div class="col-md-4">
 						<h4>Gender</h4>
 					</div>
 					<div class="col-md-8">
-						<h4><input type="radio" name="gender" value="1">Male</h4>
-						<h4><input type="radio" name="gender" value="0">Female</h4>
+						<h4><input type="radio" name="gender" value="1"  <?=(@$applicant->gender ? "checked" :"" )?>>Male</h4>
+						<h4><input type="radio" name="gender" value="0" <?=(! @$applicant->gender ? "checked" :"" )?>>Female</h4>
 					</div>
 					<div class="col-md-4 col-xs-8">
 					<h4>Foreign Student?</h4>
 					</div>
 					<div class="col-md-8 col-xs-4">
-						<h4><input type="checkbox" name="foreign" value="1"></h4>
+						<h4><input type="checkbox" name="foreign" value="1"  <?=(@$applicant->foreign ? "checked" :"" )?>></h4>
 						
 					</div>
 				</div>

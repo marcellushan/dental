@@ -176,12 +176,12 @@ var_dump($_POST);
 		move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
 		$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
 // 		$this->load->model('ApplicantModel');
-		$this->load->model('license_Model');
+		$this->load->model('LicenseModel');
 // 		$data = array('image' => $image_url);
 // 		$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $data);
 			session_start();
 
-			$license = new License_model();
+			$license = new LicenseModel();
 			$license->applicant_id = $_SESSION['applicant_id'];
 			$license->number = $_POST['number'];
 			$license->state = $_POST['state'];
@@ -203,12 +203,12 @@ var_dump($_POST);
 		if(@$_POST['discipline'])
 		{
 			$this->load->model('ApplicantModel');
-			$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], array('discipline' => $_POST['discipline_text']));
+			$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], array('disciplinary' => $_POST['discipline_text']));
 		}
 		$this->load->model('StateModel');
 		$data['states'] = $this->StateModel->get_states();
 		$this->load->view('templates/header');
-		$this->load->view('emergency', $data);
+		$this->load->view('new/emergency', $data);
 	}
 	
 	public function employer()

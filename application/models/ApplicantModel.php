@@ -21,6 +21,7 @@ class ApplicantModel extends My_Model {
  	public $backup_phone;
  	public $preferred_email;
  	public $backup_email;
+ 	public $disciplinary;
  	public $e_first_name;
  	public $e_last_name;
  	public $relationship;

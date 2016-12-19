@@ -9,6 +9,7 @@ class SchoolModel extends My_Model {
 	public $year;
 	public $state;
 	public $image;
+	public $submission_date;
 	public $applicant_id;
 	
 	

@@ -1,14 +1,9 @@
  <div class="main container">
- <h3 class="mytitle">Admission Information</h3>
- 
- The admission process is competitive and a minimum cumulative GPA of 2.5 out of 4.0 is required 
- for consideration.  Acceptance is based on cumulative GPA, completed application and supporting 
- materials.  Classes will begin in the Summer.
 	<h1 class= "mytitle">
 	APPLICANT PERSONAL INFORMATION
 	</h1>
 
-	<form action="update" method="post">
+	<form action="updateApplicant" method="post">
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">
@@ -30,15 +25,15 @@
 				<div class="col-md-6 col-xs-12">
 					<div class="row">
 						<label class="col-lg-2 col-xs-4">Street</label><input type="text" class="col-lg-10 col-xs-7" name="street" placeholder="required" value="<?=@$applicant->street?>">
-						<label class="col-lg-2 col-xs-4">City</label><input type="text" class="col-lg-4 col-xs-7" name="city" placeholder="required" value="<?=@$applicant->city?>">
-						<label class="col-lg-1 col-xs-4">State</label>	<select class="col-lg-1 col-xs-7" name="state">
+						<label class="col-lg-2 col-xs-4">City</label><input type="text" class="col-lg-10 col-xs-8" name="city" placeholder="required" value="<?=@$applicant->city?>">
+						<label class="col-lg-2 col-md-4">State</label>	<select class="col-lg-4 col-md-8" name="state">
 																			<option value="GA">GA</option>
 																				<?php
 																					foreach ($states as $state):?>
 																				  <option value="<?=$state->abbreviation?>"><?=$state->abbreviation?></option>
 																					<? endforeach;?>
 																				</select>
-						<label class="col-lg-2 col-xs-12">Zip</label><input type="text" class="col-lg-2 col-xs-6" name="zip" value="<?=@$applicant->zip?>" >
+						<label class="col-lg-2 col-md-10">Zip</label><input type="text" class="col-lg-4 col-md-6" name="zip" value="<?=@$applicant->zip?>" >
 					</div><!-- row -->
 				</div><!-- col-md-6 col-xs-12 -->
 				<div class="col-md-6 col-xs-12">
@@ -52,7 +47,7 @@
 			</div><!-- row -->
 	
 			<div class="wrapper">
-				<button type="submit" class="btn-lg btn-primary">Next</button>
+				<button type="submit" class="btn-lg btn-primary">Update Personal Information</button>
 				
 			</div>
    		</fieldset>
