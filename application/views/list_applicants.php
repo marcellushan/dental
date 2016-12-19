@@ -17,7 +17,7 @@
 	 		<td><?=$applicant->last_name?></td>
 	 		<td><?=$applicant->first_name?></td>
 	 		<td><?=$applicant->GHC_ID?></td>
-	 		<td><a href="index/<?=$applicant->applicant_id?>">View Application</a></td>
+	 		<td><a href="viewApplicant/<?=$applicant->applicant_id?>">View Application</a></td>
 	 	</tr>
 	 <?php endforeach;?>
 </table>

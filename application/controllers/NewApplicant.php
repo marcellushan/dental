@@ -7,15 +7,20 @@ class NewApplicant extends CI_Controller {
 		$this->load->view('templates/header');
 		$this->load->view('new/applicant');
 	}
+	
+	public function login()
+	{
+	    $this->load->view('templates/header');
+	    $this->load->view('new/applicant');
+	}
 
 	public function createApplication()
 	{
 		session_start();
-// 		if ($this->form_validation->run() == FALSE)
-		if (1==2)
+		if ($this->form_validation->run() == TRUE)
 		{
 			$this->load->view('templates/header');
-			$this->load->view('new_applicant');
+			$this->load->view('new/applicant');
 		}
 		else 
 		{
@@ -41,10 +46,16 @@ class NewApplicant extends CI_Controller {
 	public function identification()
 	{
  		session_start();
- 		$this->load->model('ApplicantModel');
- 		$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
- 		$this->load->view('templates/header');
- 		$this->load->view('new/identification');
+ 		if ($this->form_validation->run() == FALSE)
+ 		{
+ 		    $this->load->view('templates/header');
+ 		    $this->load->view('new/personal');   
+ 		} else {
+     		$this->load->model('ApplicantModel');
+     		$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
+     		$this->load->view('templates/header');
+     		$this->load->view('new/identification');
+ 		}
 	
 	}
 	
@@ -119,7 +130,7 @@ class NewApplicant extends CI_Controller {
     			$CPR->expiration_date = $_POST['expiration_date'];
     			$CPR->image = $image_url;
     			$CPR->save();
-var_dump($_POST);
+// var_dump($_POST);
 					
 			}
 			$this->load->model('StateModel');
@@ -149,6 +160,7 @@ var_dump($_POST);
 			$this->load->model('schoolModel');
 			$school = new SchoolModel();
 			$school->applicant_id = $_SESSION['applicant_id'];
+			$school->submission_date = date('Y-m-d');
 			$school->name = $_POST['name'];
 			$school->state = $_POST['state'];
 			$school->year = $_POST['year'];
@@ -183,6 +195,7 @@ var_dump($_POST);
 
 			$license = new LicenseModel();
 			$license->applicant_id = $_SESSION['applicant_id'];
+			$license->submission_date = date('Y-m-d');
 			$license->number = $_POST['number'];
 			$license->state = $_POST['state'];
 			$license->active = @$_POST['active'];
@@ -203,7 +216,7 @@ var_dump($_POST);
 		if(@$_POST['discipline'])
 		{
 			$this->load->model('ApplicantModel');
-			$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], array('disciplinary' => $_POST['discipline_text']));
+			$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], array('discipline' => $_POST['discipline_text']));
 		}
 		$this->load->model('StateModel');
 		$data['states'] = $this->StateModel->get_states();
@@ -283,6 +296,7 @@ var_dump($_POST);
 	{
 		
 	session_start();
+	var_dump($_POST);
 	$this->load->model('ApplicantModel');
 	$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
 	$this->load->view('templates/header');

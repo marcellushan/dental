@@ -11,24 +11,31 @@
 		<h4 class="col-md-2">Address</h4>
 		<h4 class="item col-md-8"><?=$applicant->street?>, <?=$applicant->city?> <?=$applicant->state?>, <?=$applicant->zip?></h4>
 	</div><!-- row  -->
-	<h3 class="wrapper">Documents</h3>
+	<h3 class="wrapper">Identification</h3>
 	<div class="row">
-		<h4 class="col-md-5"><a href="<?=$applicant->driver?>" target="_blank">Driver's License</a></h4>
-		<h4 class="col-md-6"><a href="<?=$applicant->cpr?>" target="_blank">CPR Certificate</a></h4>
+		<h4 class="col-md-6">Submission Date:<?=$identification->submission_date?></h4>
+		<h4 class="col-md-5"><a href="<?=$identification->image?>" target="_blank">Image</a></h4>
+	</div><!-- row -->
+		<h3 class="wrapper">CPR</h3>
+	<div class="row">
+		<h4 class="col-md-6">Submission Date:<?=$cpr->submission_date?></h4>
+		<h4 class="col-md-4">Expiration Date: <?=$cpr->expiration_date?></h4>
+		<h4 class="col-md-3"><a href="<?=$cpr->image?>" target="_blank">Image</a></h4>
+		
 	</div><!-- row -->
 	<h3 class="wrapper">Phone Numbers</h3>
 	<div class="row">
 		<h4 class="col-md-2">Preferred</h4>
 		<h4 class="item col-md-3"><?=$applicant->preferred_phone?></h4>
 		<h4 class="col-md-2">Backup</h4>
-		<h4 class="item col-md-3"><?=$applicant->backup_phone?></h4>
+		<h4 class="item col-md-3"><?=($applicant->backup_phone ? $applicant->backup_phone : 'Not Provided')?></h4>
 	</div><!-- row -->
 	<h3 class="wrapper">Email Addresses</h3>
 	<div class="row">
 		<h4 class="col-md-2">Preferred</h4>
 		<h4 class="item col-md-3"><?=$applicant->preferred_email?></h4>
 		<h4 class="col-md-2">Backup</h4>
-		<h4 class="item col-md-3"><?=$applicant->backup_email?></h4>
+		<h4 class="item col-md-3"><?=($applicant->backup_email ? $applicant->backup_email : 'Not Provided')?></h4>
 	</div><!-- row -->
 	<h3 class="wrapper">School</h3>
 	<div class="row">
@@ -64,35 +71,33 @@
 		<h4 class="col-md-2">Preferred</h4>
 		<h4 class="item col-md-3"><?=$applicant->e_preferred_phone?></h4>
 		<h4 class="col-md-2">Backup</h4>
-		<h4 class="item col-md-3"><?=$applicant->e_backup_phone?></h4>
+		<h4 class="item col-md-3"><?=($applicant->e_backup_phone ? $applicant->e_backup_phone : 'Not Provided')?></h4>
 	</div><!-- row -->
 	<h3 class="wrapper">Employer(s)</h3>
 	<div class="row">
 		<?php foreach ($employers as $employer):?>
 			<h4 class="col-md-2">Company</h4>
-			<h4 class="item col-md-2"><?=$employer->company?></h4>
+			<h4 class="item col-md-3"><?=$employer->company?></h4>
 			<h4 class="col-md-2">Phone</h4>
-			<h4 class="item col-md-2"><?=$employer->phone?></h4>
-			<h4 class="col-md-1">Current</h4>
-			<h4 class="item col-md-2"><? echo ($employer->current ? "Yes" : "No"); ?></h4>
+			<h4 class="item col-md-3"><?=$employer->phone?></h4>
 		<?php endforeach;?>
 	</div><!-- row -->
 	<h3 class="wrapper">Program Questions</h3>
 	<div class="row">
 		<h4 class="col-md-3">How do you plan to attend?</h4>
-		<h4 class="item col-md-2"><? echo ($applicant->student_type ? "Full Time" : "Part Time"); ?></h4>
+		<h4 class="item col-md-8"><? echo ($applicant->student_type ? "Full Time" : "Part Time"); ?></h4>
 		<h4 class="col-md-3">How did you hear about us?</h4>
-		<h4 class="item col-md-2"><?=$applicant->hear ?></h4>
+		<h4 class="item col-md-8"><?=$applicant->hear ?></h4>
 	</div><!-- row -->
 	
 <h3 class="wrapper">Demographics</h3>
 	<div class="row">
 		<h4 class="col-md-1">Race:</h4>
-		<h4 class="item col-md-4"><?=$applicant->race?></h4>
-		<h4 class="col-md-2">Gender:</h4>
-		<h4 class="item col-md-2"><? echo ($applicant->gender ? "Male" : "Female"); ?></h4>
-		<h4 class="col-md-3">Foreign Student?</h4>
-		<h4 class="item col-md-2"><? echo ($applicant->foreign ? "Yes" : "No"); ?></h4>
+		<h4 class="item col-md-2"><?=($applicant->race ? $applicant->race : 'Not Provided')?></h4>
+		<h4 class="col-md-1">Gender:</h4>
+		<h4 class="item col-md-2"><? echo ($applicant->gender ? ($applicant->gender== '2' ?"Female" : "Male") :"Not Provided") ?></h4>
+		<h4 class="col-md-2">Foreign Student?</h4>
+		<h4 class="item col-md-2"><? echo ($applicant->foreign ? ($applicant->foreign== '2' ? "No" : "Yes") :"Not Provided") ?></h4>
 	</div><!-- row -->
 
 </div><!-- container -->

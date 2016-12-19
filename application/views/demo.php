@@ -14,7 +14,7 @@
 						<h4><input type="radio" name="race" value="3">Asian American Indian / Alaska Native</h4>
 						<h4><input type="radio" name="race" value="4">Native Hawaiian/other Pacific Islander</h4>
 						<h4><input type="radio" name="race" value="5">Multiracial</h4>
-						<h4><input type="radio" name="race" value="6">Other</h4>
+
 					</div>
 				</div>
 		</div>

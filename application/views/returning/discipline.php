@@ -1,11 +1,11 @@
  <div class="main container">
 
-	<form action="updateDisciplinary" method="post">
+	<form action="updateApplicant" method="post">
 			<fieldset class="mytitle">
 						
 						<div class="row">
 				<div class="col-md-7">Disciplinary action reported.
-					<textarea rows="5" class="form-control" cols="" name="discipline_text"><?=$applicant->disciplinary ?></textarea>
+					<textarea rows="5" class="form-control" cols="" name="discipline"><?=$applicant->discipline ?></textarea>
 				</div>
 		</div><!-- row -->
 						<div class="wrapper">

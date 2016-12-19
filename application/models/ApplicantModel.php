@@ -7,6 +7,7 @@ class ApplicantModel extends My_Model {
 	
 // 	public $applicant_id;
 	public $application_date;
+	public $password;
 	public $first_name;
 	public $middle_name;
 	public $last_name;
@@ -21,7 +22,7 @@ class ApplicantModel extends My_Model {
  	public $backup_phone;
  	public $preferred_email;
  	public $backup_email;
- 	public $disciplinary;
+ 	public $discipline;
  	public $e_first_name;
  	public $e_last_name;
  	public $relationship;
@@ -63,6 +64,16 @@ class ApplicantModel extends My_Model {
 // 		}
 // 		return $data;
 // 	}
+
+public function get_login ($id_name, $id, $password)
+{
+
+    $this->db->where($id_name, $id);
+    $this->db->where("password", $password);
+    $query = $this->db->get($this::DB_TABLE);
+    $row = $query->row();
+    return $data[$this::DB_TABLE] = $row;
+}
 	
 	
 }

@@ -6,7 +6,7 @@
 	</h1>
 
 <?php echo validation_errors(); ?>
-	<form action="update" method="post">
+	<form action="updateApplicant" method="post">
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">
@@ -22,29 +22,23 @@
 			<div class="row">
 				<div class="col-md-6 col-xs-12">
 					<div class="row">
-						<label class="col-lg-2 col-xs-4">Street</label><input type="text" class="col-lg-10 col-xs-7" name="e_street" placeholder="required" value="<?=$applicant->relationship ?>" >
-						<label class="col-lg-2 col-xs-4">City</label><input type="text" class="col-lg-4 col-xs-7" name="e_city" placeholder="required" value="<?=$applicant->relationship ?>">
-						<label class="col-lg-1 col-xs-4">State</label>	<select class="col-lg-1 col-xs-7" name="e_state">
-																			<option value="GA">GA</option>
-																				<?php
-																					foreach ($states as $state):?>
-																				  <option value="<?=$state->abbreviation?>"><?=$state->abbreviation?></option>
-																					<? endforeach;?>
-																				</select>
-						<label class="col-lg-2 col-xs-12">Zip</label><input type="text" class="col-lg-2 col-xs-6" name="e_zip" value="<?=$applicant->relationship ?>">
+						<label class="col-lg-2 col-xs-4">Street</label><input type="text" class="col-lg-10 col-xs-7" name="e_street" placeholder="required" value="<?=$applicant->e_street ?>" >
+						<label class="col-lg-2 col-xs-4">City</label><input type="text" class="col-lg-4 col-xs-7" name="e_city" placeholder="required" value="<?=$applicant->e_city ?>">
+						<label class="col-lg-1 col-xs-4">State</label>	<input type="text" class="col-lg-4 col-xs-7" name="e_state" placeholder="required" value="<?=$applicant->e_state ?>">
+						<label class="col-lg-2 col-xs-12">Zip</label><input type="text" class="col-lg-2 col-xs-6" name="e_zip" value="<?=$applicant->e_zip ?>">
 					</div><!-- row -->
 				</div><!-- col-md-6 col-xs-12 -->
 				<div class="col-md-6 col-xs-12">
 					<div class="row">
-						<label class="col-xs-5">Preferred Phone</label><input type="text" class="col-xs-6" name="e_preferred_phone" placeholder="required" value="<?=$applicant->relationship ?>">
-						<label class="col-xs-5">Backup Phone</label><input type="text" class="col-xs-6" name="e_backup_phone" value="<?=$applicant->relationship ?>">
-						<label class="col-xs-5">Preferred Email</label><input type="text" class="col-xs-6" name="e_email" placeholder="required" value="<?=$applicant->relationship ?>">
+						<label class="col-xs-5">Preferred Phone</label><input type="text" class="col-xs-6" name="e_preferred_phone" placeholder="required" value="<?=$applicant->e_preferred_phone ?>">
+						<label class="col-xs-5">Backup Phone</label><input type="text" class="col-xs-6" name="e_backup_phone" value="<?=$applicant->e_backup_phone ?>">
+						<label class="col-xs-5">Preferred Email</label><input type="text" class="col-xs-6" name="e_email" placeholder="required" value="<?=$applicant->e_email ?>">
 					</div><!-- row -->
 				</div><!-- col-md-6 col-xs-12 -->
 			</div><!-- row -->
 	
 			<div class="wrapper">
-				<button type="submit" class="btn-lg btn-primary">Next</button>
+				<button type="submit" class="btn-lg btn-primary">Update Emergency Contact</button>
 			</div>
    		</fieldset>
 	</form>

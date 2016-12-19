@@ -8,7 +8,7 @@
 		<a href="viewCpr">CPR</a><br>
 		<a href="viewSchool">School</a><br>
 		<a href="listLicenses">License(s)</a><br>
-		<a href="viewDisciplinary">Disciplinary</a><br>
+		<a href="viewDiscipline">Discipline</a><br>
 		<a href="viewEmergency">Emergency Contact</a><br>
 		<a href="viewProgram">Program</a><br>
 		<a href="viewDemo">Demographics</a>

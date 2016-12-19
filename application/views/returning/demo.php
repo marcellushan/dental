@@ -1,7 +1,7 @@
  <div class="main container">
 	<h1 class= "mytitle">Demographic Questions</h1>
 
-	<form action="submit" method="post">
+	<form action="updateApplicant" method="post">
 		<div class="row">
 			<div class="col-md-6">
 				<div class="row">
@@ -14,7 +14,7 @@
 						<h4><input type="radio" name="race" value="3" <?=(@$applicant->race=='3' ? "checked" :"" )?>>Asian American Indian / Alaska Native</h4>
 						<h4><input type="radio" name="race" value="4" <?=(@$applicant->race=='4' ? "checked" :"" )?>>Native Hawaiian/other Pacific Islander</h4>
 						<h4><input type="radio" name="race" value="5" <?=(@$applicant->race=='5' ? "checked" :"" )?>>Multiracial</h4>
-						<h4><input type="radio" name="race" value="6" <?=(@$applicant->race=='6' ? "checked" :"" )?>>Other</h4>
+						
 					</div>
 				</div>
 		</div>
@@ -39,14 +39,15 @@
 					<h4>Foreign Student?</h4>
 					</div>
 					<div class="col-md-8 col-xs-4">
-						<h4><input type="checkbox" name="foreign" value="1"  <?=(@$applicant->foreign ? "checked" :"" )?>></h4>
+						<h4><input type="radio" name="foreign" value="1"  <?=(@$applicant->foreign ? "checked" :"" )?>></h4>
+						<h4><input type="radio" name="foreign" value="0"  <?=(@$applicant->foreign ? "checked" :"" )?>></h4>
 						
 					</div>
 				</div>
 		</div>
 	</div>
 			<div class="wrapper">			
-        <button type="submit" class="btn-lg btn-primary">Submit Application</button>
+        <button type="submit" class="btn-lg btn-primary">Update Demographics</button>
         	    </div>
 	</form>
 

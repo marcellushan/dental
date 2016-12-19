@@ -44,7 +44,7 @@
 			</div><!-- row -->
 	
 			<div class="wrapper">
-				<button type="submit" class="btn-lg btn-primary">Next</button>
+				<button type="submit" class="btn-lg btn-primary">Update Emergency Contact</button>
 			</div>
    		</fieldset>
 	</form>

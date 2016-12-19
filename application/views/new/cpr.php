@@ -1,25 +1,4 @@
  <div class="main container">
-  <? if(@$CPRs):?>
-    <table class="table">
-    	<tr>
-    		<th>Submission Date</th>
-    		<th>Expiration Date</th>
-    		<th>Image</th>
-    	</tr>
-    	<? foreach ($CPRs as $CPR):?>
-    	<tr>
-    		<td><?=$CPR->submission_date ?></td>
-    		<td><?=$CPR->expiration_date ?></td>
-    		<td><a href="<?=$CPR->image ?>" >Image</a></td>
-    	</tr>
-    	<?php endforeach;?>
-    </table>
-    <? else :?>	
-    
-    No Images
-    
-    <? endif?>
-	
  
 	<h1>
 	Please upload a copy of your current valid CPR certificate

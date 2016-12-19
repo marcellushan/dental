@@ -16,11 +16,18 @@ class ReturningApplicant extends CI_Controller {
 	    if(@$_POST['email']) {
 	        $this->load->model('ApplicantModel');
 	        $applicant = new ApplicantModel();
-	        $returning_app= $applicant->get_item('preferred_email', $_POST['email']);
-	        $_SESSION['applicant_id'] = $returning_app->applicant_id;
+	        $returning_app= $applicant->get_login('preferred_email', $_POST['email'], $_POST['password']);
+// 	        var_dump($returning_app);
+            if(@$returning_app) {
+                $_SESSION['applicant_id'] = $returning_app->applicant_id;
+                $this->load->view('templates/header');
+                $this->load->view('returning/viewSections');
+            } else {
+                $this->load->view('templates/header');
+            }
+	       
 	    }
-	    $this->load->view('templates/header');
-	    $this->load->view('returning/viewSections');
+	    
 	    
 	}
 	
@@ -41,6 +48,7 @@ class ReturningApplicant extends CI_Controller {
 	public function updateApplicant() 
 	{
 	    session_start();
+	    var_dump($_POST);
 		$this->load->model('ApplicantModel');
 		$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
 		$this->load->view('templates/header');
@@ -54,6 +62,7 @@ class ReturningApplicant extends CI_Controller {
 		$data['identification']=$this->IdentificationModel->get_item('applicant_id', $_SESSION['applicant_id']);
 // 		var_dump($data['identification']);
 		$_SESSION['identification_id'] = $data['identification']->identification_id;
+//         echo $data['identification']->identification_id;
 		$this->load->view('templates/header');
 		$this->load->view('returning/identification',$data);
 		$this->load->view('templates/footer');
@@ -80,8 +89,9 @@ class ReturningApplicant extends CI_Controller {
 			move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
 			$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
 		}
+// 		echo $_SESSION['identification_id'];
 		$this->load->model('IdentificationModel');
-		$applicant=$this->IdentificationModel->update($_SESSION['identification_id'], array('image' => $image_url,'submission_date' => date('Y-m-d')));
+		echo $applicant=$this->IdentificationModel->update($_SESSION['identification_id'], array('image' => $image_url,'submission_date' => date('Y-m-d')));
 		$this->load->view('templates/header');
 		$this->load->view('returning/viewSections');
 	}
@@ -265,18 +275,21 @@ class ReturningApplicant extends CI_Controller {
 	}
 	
 		
-	public function viewDisciplinary()
+	public function viewDiscipline()
 	{
 		session_start();
 		$this->load->view('templates/header');
 		$this->load->model('ApplicantModel');
 		$applicant = new ApplicantModel();
 		$data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-		if(@$data['applicant']->disciplinary) {
-			$this->load->view('returning/disciplinary', $data);
-		} else {
-			$this->load->view('returning/new_disciplinary');
-		}
+// 		if(@$data['applicant']->disciplinary) {
+        echo "<pre>";
+        var_dump($data['applicant']);
+        echo "</pre>";
+			$this->load->view('returning/discipline', $data);
+// 		} else {
+// 			$this->load->view('returning/new_disciplinary');
+// 		}
 
 		$this->load->view('templates/footer');
 	}
