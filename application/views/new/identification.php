@@ -4,7 +4,7 @@
 	</h1>
 	<?php echo validation_errors(); ?>
 
-<form action="cpr" method="post" enctype="multipart/form-data"  onsubmit="return Validate(this);"> 
+<form action="../createImage/identification/cpr" method="post" enctype="multipart/form-data"  onsubmit="return Validate(this);"> 
 <input type="file" name="fileToUpload" id="driver"><br>
 
 	<input type="submit" class="btn btn-primary btn-lg center-block" id="driverBtn" value="Submit" />

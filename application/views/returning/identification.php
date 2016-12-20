@@ -1,9 +1,10 @@
  <div class="main container">
+ <?php if($identification) :?>
 <h2>The following identification has been submitted:</h2>
  <h3><?=$identification->submission_date ?>
  <a href="<?=$identification->image ?>" >Image</a></h3>
    
-	
+	<?php endif ?>
 	<h1>
 Select a new file to update identification
 	</h1>

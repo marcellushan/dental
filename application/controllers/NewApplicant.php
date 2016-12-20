@@ -8,7 +8,7 @@ class NewApplicant extends CI_Controller {
 		$this->load->view('new/applicant');
 	}
 	
-	public function login()
+	public function createLogin()
 	{
 	    $this->load->view('templates/header');
 	    $this->load->view('new/applicant');
@@ -43,28 +43,35 @@ class NewApplicant extends CI_Controller {
 	
 	}
 	
-	public function identification()
-	{
- 		session_start();
- 		if ($this->form_validation->run() == FALSE)
- 		{
- 		    $this->load->view('templates/header');
- 		    $this->load->view('new/personal');   
- 		} else {
-     		$this->load->model('ApplicantModel');
-     		$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
-     		$this->load->view('templates/header');
-     		$this->load->view('new/identification');
- 		}
+// 	public function identification()
+// 	{
+//  		session_start();
+//  		if ($this->form_validation->run() == FALSE)
+//  		{
+//  		    $this->load->view('templates/header');
+//  		    $this->load->view('new/personal');   
+//  		} else {
+//      		$this->load->model('ApplicantModel');
+//      		$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
+//      		$this->load->view('templates/header');
+//      		$this->load->view('new/identification');
+//  		}
 	
+// 	}
+	
+public function updateApplicant($destination) 
+	{
+	    session_start();
+// 	    var_dump($_POST);
+		$this->load->model('ApplicantModel');
+		$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
+		$this->load->view('templates/header');
+		$this->load->view('new/' . $destination);
 	}
 	
 	
-	public function cpr()
+	public function createImage($imageType, $nextPage)
 	{
-		
-		
-		
 		session_start();
 		if(!@$_FILES['fileToUpload']['error']) {
 				
@@ -83,18 +90,20 @@ class NewApplicant extends CI_Controller {
 			move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
 			$image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
 			$this->load->model('ApplicantModel');
-			$data = array('driver' => $image_url);
-			$this->load->model('identificationModel');
-			$identification = new IdentificationModel();
-			$identification->applicant_id = $_SESSION['applicant_id'];
-// 			$document->document_type = 1;
-			$identification->submission_date = date('Y-m-d');
-			$identification->image = $image_url;
-			$identification->save();
+// 			$data = array('driver' => $image_url);
+			$modelName = $imageType . 'Model';
+			$this->load->model($imageType . 'Model');
+			$image = new $modelName();
+			$image->applicant_id = $_SESSION['applicant_id'];
+			($imageType == 'cpr' ? $image->expiration_date = $_POST['expiration_date'] :"");
+			$image->submission_date = date('Y-m-d');
+			$image->image = $image_url;
+// 			var_dump($image);
+			$image->save();
 		}
 	
 		$this->load->view('templates/header');
-		$this->load->view('new/cpr');
+		$this->load->view('new/' . $nextPage);
 	}
 	
 	public function school()
