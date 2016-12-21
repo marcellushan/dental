@@ -10,7 +10,7 @@
 
 <h2 class="mytitle"><?php echo validation_errors(); ?></h2>
 
-	<form action="updateApplicant/identification" method="post">
+	<form action="../updateApplicant/identification" method="post">
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">

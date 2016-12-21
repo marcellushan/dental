@@ -43,23 +43,8 @@ class NewApplicant extends CI_Controller {
 	
 	}
 	
-// 	public function identification()
-// 	{
-//  		session_start();
-//  		if ($this->form_validation->run() == FALSE)
-//  		{
-//  		    $this->load->view('templates/header');
-//  		    $this->load->view('new/personal');   
-//  		} else {
-//      		$this->load->model('ApplicantModel');
-//      		$applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
-//      		$this->load->view('templates/header');
-//      		$this->load->view('new/identification');
-//  		}
 	
-// 	}
-	
-public function updateApplicant($destination) 
+    public function updateApplicant($destination) 
 	{
 	    session_start();
 // 	    var_dump($_POST);

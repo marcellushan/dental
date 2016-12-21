@@ -8,11 +8,170 @@ class Home extends CI_Controller {
 		$this->load->view('welcome');
 	}
 	
+    public function createLogin()
+	{
+	    $this->load->view('templates/header');
+	    $this->load->view('new/create_applicant');
+	}
+	
 	public function login()
 	{
-		$this->load->view('templates/header');
-		$this->load->view('login');
+	    $this->load->view('templates/header');
+	    $this->load->view('returning/login');
 	}
+	
+	
+	
+	public function viewPersonal($applicant_type=0 )
+	{
+	    session_start();
+	    $this->load->model('ApplicantModel');
+	    $applicant = new ApplicantModel();
+	    $this->load->model('StateModel');
+	    $data['states'] = $this->StateModel->get_states();
+	    $this->load->view('templates/header');
+	    if($applicant_type) {
+	        $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
+	        $this->load->view('returning/personal', $data);
+	        $this->load->view('templates/footer');
+	    } else {
+	        $applicant->application_date = date('Y-m-d');
+	        $applicant->preferred_email = $_POST['email'];
+	        $applicant->password = $_POST['password'];
+	        $applicant->save();
+	        $_SESSION['applicant_id'] = $applicant->applicant_id;
+	        $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
+	        $this->load->view('new/personal', $data);
+	    }
+	}
+
+        public function viewSections()
+        {
+            session_start();
+            if(@$_POST['email']) {
+                $this->load->model('ApplicantModel');
+                $applicant = new ApplicantModel();
+                $returning_app= $applicant->get_login('preferred_email', $_POST['email'], $_POST['password']);
+                if(@$returning_app) {
+                    $_SESSION['applicant_id'] = $returning_app->applicant_id;
+                    $this->load->view('templates/header');
+                    $this->load->view('viewSections');
+                } else {
+                    $this->load->view('templates/header');
+                }
+            } else {
+                $this->load->view('templates/header');
+                $this->load->view('viewSections');
+        
+            }
+             
+             
+        }
+	     
+    public function updateApplicant($destination)
+    {
+        session_start();
+        // 	    var_dump($_POST);
+        $this->load->model('ApplicantModel');
+        $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
+        $this->load->view('templates/header');
+        $this->load->view('new/' . $destination);
+    }
+    
+    public function viewImage($imageType)
+    {
+        session_start();
+        $upperImage = ucfirst($imageType);
+        $lowerImage = lcfirst($imageType);
+        $imageModel = $upperImage . 'Model';
+        $image_id = $lowerImage . '_id';
+        $this->load->model($upperImage . 'Model');
+        $data[$lowerImage]=$this->$imageModel->get_item('applicant_id', $_SESSION['applicant_id']);
+        if($data[$lowerImage]) {
+            $_SESSION[$lowerImage . '_id'] = $data[$lowerImage]->$image_id;
+        }
+        $this->load->view('templates/header');
+        $this->load->view('returning/' . $lowerImage,$data);
+        $this->load->view('templates/footer');
+    
+    }
+    
+    public function createImage($imageType, $nextPage)
+    {
+        session_start();
+        if(!@$_FILES['fileToUpload']['error']) {
+    
+            $myRandom = rand(1, 10000);
+            // 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
+            $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
+            // webdev
+            // 	$target_dir = "/var/www/html/dental/assets/uploads/";
+            $target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+            $myFile = basename($_FILES["fileToUpload"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+            $image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
+            $this->load->model('ApplicantModel');
+            // 			$data = array('driver' => $image_url);
+            $modelName = $imageType . 'Model';
+            $this->load->model($imageType . 'Model');
+            $image = new $modelName();
+            $image->applicant_id = $_SESSION['applicant_id'];
+            ($imageType == 'cpr' ? $image->expiration_date = $_POST['expiration_date'] :"");
+            $image->submission_date = date('Y-m-d');
+            $image->image = $image_url;
+            // 			var_dump($image);
+            $image->save();
+        }
+    
+        $this->load->view('templates/header');
+        $this->load->view('new/' . $nextPage);
+    }
+    
+    public function updateImage($imageType)
+    {
+        session_start();
+        if(!@$_FILES['fileToUpload']['error']) {
+            $myRandom = rand(1, 10000);
+            // 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
+            $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
+            // webdev
+            // 	$target_dir = "/var/www/html/dental/assets/uploads/";
+            $target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+            $myFile = basename($_FILES["fileToUpload"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+            $image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
+        }
+        $this->load->model('IdentificationModel');
+        if(@$_SESSION['identification_id']) {
+            $applicant=$this->IdentificationModel->update($_SESSION['identification_id'],
+                    array('image' => $image_url,'submission_date' => date('Y-m-d')));
+        } else {
+            $identification = new IdentificationModel();
+            $identification->applicant_id = $_SESSION['applicant_id'];
+            $identification->submission_date = date('Y-m-d');
+            $identification->image = $image_url;
+            $identification->save();
+        }
+    
+        $this->load->view('templates/header');
+        $this->load->view('viewSections');
+    }
+    
+    public function viewCpr()
+    {
+    
+        session_start();
+        $this->load->model('CprModel');
+        $data['cpr']=$this->CprModel->get_item('applicant_id', $_SESSION['applicant_id']);
+        $_SESSION['cpr_id'] = $data['cpr']->cpr_id;
+        $this->load->view('templates/header');
+        $this->load->view('returning/cpr',$data);
+        $this->load->view('templates/footer');
+    }
 	
 	public function viewApplicant($id)
 	{

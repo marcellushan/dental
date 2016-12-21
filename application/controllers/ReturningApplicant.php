@@ -6,7 +6,7 @@ class ReturningApplicant extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('templates/header');
-		$this->load->view('returning/applicant');
+		$this->load->view('returning/login');
 	}
 	
 	
