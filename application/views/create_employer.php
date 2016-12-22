@@ -4,15 +4,6 @@
 	<form action='<?=base_url("home/createEmployer")?>' method="post">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
-				<h3>Are you Currently Employed?</h3>
-			</div>
-			<div class="col-md-3">
-				<h3>Yes&nbsp;<input type="radio" name="current" value="1"></h3>
-				<h3>No&nbsp;<input type="radio" name="current" value="0"></h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3 col-md-offset-3">
 				<h3>Name of Employer</h3>
 			</div>
 			<div class="col-md-3">

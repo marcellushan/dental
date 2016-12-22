@@ -11,7 +11,7 @@ class Home extends CI_Controller {
     public function createLogin()
 	{
 	    $this->load->view('templates/header');
-	    $this->load->view('new/create_applicant');
+	    $this->load->view('create_login');
 	}
 	
 	public function login()
@@ -25,14 +25,15 @@ class Home extends CI_Controller {
 	public function viewPersonal($applicant_type=0 )
 	{
 	    session_start();
+	    ($applicant_type ? $_SESSION["applicant_type"] = 'returning' : $_SESSION["applicant_type"] = 'new');
 	    $this->load->model('ApplicantModel');
 	    $applicant = new ApplicantModel();
 	    $this->load->model('StateModel');
 	    $data['states'] = $this->StateModel->get_states();
 	    $this->load->view('templates/header');
-	    if($applicant_type) {
+	    if($_SESSION["applicant_type"] == 'returning') {
 	        $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-	        $this->load->view('returning/personal', $data);
+	        $this->load->view('update_personal', $data);
 	        $this->load->view('templates/footer');
 	    } else {
 	        $applicant->application_date = date('Y-m-d');
@@ -41,7 +42,7 @@ class Home extends CI_Controller {
 	        $applicant->save();
 	        $_SESSION['applicant_id'] = $applicant->applicant_id;
 	        $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-	        $this->load->view('new/personal', $data);
+	        $this->load->view('create_personal', $data);
 	    }
 	}
 
@@ -75,7 +76,7 @@ class Home extends CI_Controller {
         $this->load->model('ApplicantModel');
         $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
         $this->load->view('templates/header');
-        $this->load->view('new/' . $destination);
+        $this->load->view($destination);
     }
     
     public function viewImage($imageType)
@@ -99,6 +100,8 @@ class Home extends CI_Controller {
     public function createImage($imageType, $nextPage)
     {
         session_start();
+        $this->load->model('StateModel');
+        $data['states'] = $this->StateModel->get_states();
         if(!@$_FILES['fileToUpload']['error']) {
     
             $myRandom = rand(1, 10000);
@@ -119,14 +122,70 @@ class Home extends CI_Controller {
             $image = new $modelName();
             $image->applicant_id = $_SESSION['applicant_id'];
             ($imageType == 'cpr' ? $image->expiration_date = $_POST['expiration_date'] :"");
+            ($imageType == 'license' ? $image->state = $_POST['state'] :"");
+            ($imageType == 'license' ? $image->active = @$_POST['active'] :"");
+            ($imageType == 'license' ? $image->number = $_POST['number'] :"");
             $image->submission_date = date('Y-m-d');
             $image->image = $image_url;
-            // 			var_dump($image);
+            			var_dump($_POST);
             $image->save();
         }
     
         $this->load->view('templates/header');
-        $this->load->view('new/' . $nextPage);
+        $this->load->view($nextPage, $data);
+    }
+    
+    public function moreLicenses()
+    {
+        $this->load->model('StateModel');
+        $data['states'] = $this->StateModel->get_states();
+        $this->load->view('templates/header');
+        $this->load->view('create_license', $data);
+    }
+    
+    public function createDiscipline()
+    {
+        $this->load->view('templates/header');
+        $this->load->view('discipline');
+    }
+    
+    public function employed()
+    {
+        $this->load->view('templates/header');
+        $this->load->view('employed');
+    }
+    
+    public function employer()
+    {
+        $this->load->view('templates/header');
+        $this->load->view('create_employer');
+    }
+    
+//     public function createEmployer()
+//     {
+//         $this->load->view('templates/header');
+//         $this->load->view('create_employer');
+//     }
+    
+    public function createEmployer()
+    {
+         session_start();
+//      $this->load->helper(array('form', 'url'));
+//       $this->load->library('form_validation');
+        $this->load->model('EmployerModel');
+		$employer = new EmployerModel();
+		$employer->applicant_id = $_SESSION['applicant_id'];
+		$employer->company = $_POST['company'];
+		$employer->phone = $_POST['phone'];
+		$employer->save();
+		$this->load->view('templates/header');
+        $this->load->view('more_employers');
+    }
+    
+    public function program()
+    {
+        $this->load->view('templates/header');
+        $this->load->view('program');
     }
     
     public function updateImage($imageType)
