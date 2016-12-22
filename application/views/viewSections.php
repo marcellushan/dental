@@ -3,13 +3,13 @@
 		<div class="col-md-12">
 		<h1 class="wrapper">Returning Applicant</h1>
 		
-		<a href="viewPersonal/1">Personal</a><br>
-		<a href="viewImage/Identification">Identification</a><br>
-		<a href="viewCpr">CPR</a><br>
-		<a href="viewSchool">School</a><br>
-		<a href="listLicenses">License(s)</a><br>
-		<a href="viewDiscipline">Discipline</a><br>
-		<a href="viewEmergency">Emergency Contact</a><br>
-		<a href="viewProgram">Program</a><br>
-		<a href="viewDemo">Demographics</a>
+		<a href='<?=base_url("home/viewPersonal/1")?>'>Personal</a><br>
+		<a href='<?=base_url("home/viewImage/Identification")?>'>Identification</a><br>
+		<a href='<?=base_url("home/viewCpr")?>'>CPR</a><br>
+		<a href='<?=base_url("home/viewImage/school")?>'>School</a><br>
+		<a href='<?=base_url("home/listLicenses")?>'>License(s)</a><br>
+		<a href='<?=base_url("home/viewDiscipline")?>'viewDiscipline">Discipline</a><br>
+		<a href='<?=base_url("home/viewEmergency")?>'>Emergency Contact</a><br>
+		<a href='<?=base_url("home/viewProgram")?>'>Program</a><br>
+		<a href='<?=base_url("home/viewDemo")?>'>Demographics</a>
 		

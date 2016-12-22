@@ -127,7 +127,6 @@ class Home extends CI_Controller {
             ($imageType == 'license' ? $image->number = $_POST['number'] :"");
             $image->submission_date = date('Y-m-d');
             $image->image = $image_url;
-            			var_dump($_POST);
             $image->save();
         }
     
@@ -261,7 +260,6 @@ class Home extends CI_Controller {
 	    $this->load->view('templates/header');
 	    $this->load->model('ApplicantModel');
 	    $data['applicants'] = $this->ApplicantModel->get();
-	    // 		var_dump($data['applicants']);
 	    $this->load->view('list_applicants',$data);
 	}
 	

@@ -3,7 +3,7 @@
 DENTAL HYGIENE SCHOOL
 	</h1>
 <?php echo validation_errors(); ?>
-	<form action="updateSchool" method="post" enctype="multipart/form-data">
+	<form action='<?=base_url("home/updateImage/school")?>' method="post" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<h3>School Attended</h3>
