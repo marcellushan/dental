@@ -8,7 +8,7 @@
 	Please upload a copy of your license
 	</h1>
 <?php echo validation_errors(); ?>
-<form action="/dental/returningApplicant/updateLicense" method="post" enctype="multipart/form-data" onsubmit="return Validate(this);">
+<form action='<?=base_url("home/updateLicense")?>' method="post" enctype="multipart/form-data" onsubmit="return Validate(this);">
 <input type="file" name="fileToUpload" id="cpr"><br>
 
 State

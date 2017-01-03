@@ -7,14 +7,14 @@
 		<h4 class="col-md-2">Date of Birth</h4>
 		<h4 class="item col-md-3"><?=$applicant->birth_date?></h4>
 		<h4 class="col-md-2">GHC ID</h4>
-		<h4 class="item col-md-3"><?=$applicant->GHC_ID?></h4>
+		<h4 class="item col-md-3"><?=($applicant->GHC_ID ? $applicant->GHC_ID : "No Provided") ?></h4>
 		<h4 class="col-md-2">Address</h4>
 		<h4 class="item col-md-8"><?=$applicant->street?>, <?=$applicant->city?> <?=$applicant->state?>, <?=$applicant->zip?></h4>
 	</div><!-- row  -->
 	<h3 class="wrapper">Documents</h3>
 	<div class="row">
-		<h4 class="col-md-5"><a href="<?=$applicant->driver?>" target="_blank">Driver's License</a></h4>
-		<h4 class="col-md-6"><a href="<?=$applicant->cpr?>" target="_blank">CPR Certificate</a></h4>
+		<h4 class="col-md-5"><a href="<?=$identification->image?>" target="_blank">Driver's License</a></h4>
+		<h4 class="col-md-6"><a href="<?=$cpr->image?>" target="_blank">CPR Certificate</a></h4>
 	</div><!-- row -->
 	<h3 class="wrapper">Phone Numbers</h3>
 	<div class="row">
@@ -73,8 +73,6 @@
 			<h4 class="item col-md-2"><?=$employer->company?></h4>
 			<h4 class="col-md-2">Phone</h4>
 			<h4 class="item col-md-2"><?=$employer->phone?></h4>
-			<h4 class="col-md-1">Current</h4>
-			<h4 class="item col-md-2"><? echo ($employer->current ? "Yes" : "No"); ?></h4>
 		<?php endforeach;?>
 	</div><!-- row -->
 	<h3 class="wrapper">Program Questions</h3>
@@ -91,6 +89,8 @@
 		<h4 class="item col-md-4"><?=$applicant->race?></h4>
 		<h4 class="col-md-2">Gender:</h4>
 		<h4 class="item col-md-2"><? echo ($applicant->gender ? "Male" : "Female"); ?></h4>
+		<h4 class="col-md-2">Latino:</h4>
+		<h4 class="item col-md-2"><? echo ($applicant->latino ? "Yes" : "No"); ?></h4>
 		<h4 class="col-md-3">Foreign Student?</h4>
 		<h4 class="item col-md-2"><? echo ($applicant->foreign ? "Yes" : "No"); ?></h4>
 	</div><!-- row -->

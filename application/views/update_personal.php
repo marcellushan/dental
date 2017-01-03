@@ -3,7 +3,7 @@
 	APPLICANT PERSONAL INFORMATION
 	</h1>
 
-	<form action='<?=base_url("home/updateApplicant/viewSections")?>' method="post">
+	<form action="../updateApplicant/view_sections" method="post">
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">

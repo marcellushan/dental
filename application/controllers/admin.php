@@ -4,23 +4,27 @@ class Admin extends CI_Controller {
 	
 	public function index($id) 
 	{	
-		$this->load->model('applicant_model');
-		$data['applicant'] = $this->applicant_model->load($id);
-		$this->load->model('employer_model');
-		$data['employers'] = $this->employer_model->get_list('applicant_id',$id);
-		$this->load->model('license_model');
-		$data['licenses'] = $this->license_model->get_list('applicant_id',$id);
-		$this->load->model('school_model');
-		$data['school'] = $this->school_model->get_item('applicant_id',$id);
+		$this->load->model('ApplicantModel');
+		$data['applicant'] = $this->ApplicantModel->load($id);
+        $this->load->model('IdentificationModel');
+        $data['identification'] = $this->IdentificationModel->get_item('applicant_id',$id);
+        $this->load->model('CprModel');
+        $data['cpr'] = $this->CprModel->get_item('applicant_id',$id);
+		$this->load->model('EmployerModel');
+		$data['employers'] = $this->EmployerModel->get_list('applicant_id',$id);
+		$this->load->model('LicenseModel');
+		$data['licenses'] = $this->LicenseModel->get_list('applicant_id',$id);
+		$this->load->model('SchoolModel');
+		$data['school'] = $this->SchoolModel->get_item('applicant_id',$id);
 		$this->load->view('templates/header');
-		$this->load->view('show_application',$data);	
+		$this->load->view('view_applicant',$data);
 	}
 	
-	public function all_applications()
+	public function get()
 	{
 		$this->load->view('templates/header');
-		$this->load->model('applicant_model');
-		$data['applicants'] = $this->applicant_model->get();
+		$this->load->model('ApplicantModel');
+		$data['applicants'] = $this->ApplicantModel->get();
 // 		var_dump($data['applicants']);
 		$this->load->view('all_applications',$data);
 	}

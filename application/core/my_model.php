@@ -12,6 +12,11 @@ class MY_Model extends CI_Model {
         $this->{$this::DB_TABLE_PK} = $this->db->insert_id();
     }
     
+    public function insert_post($my_array) {
+    	$this->db->insert($this::DB_TABLE, $my_array);
+//     	$this->{$this::DB_TABLE_PK} = $this->db->insert_id();
+    }
+    
     /**
      * Update record.
      */
