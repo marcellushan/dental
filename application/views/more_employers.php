@@ -7,5 +7,5 @@
 <br>
 <br>
 <div class="wrapper">
-		<a href='<?=base_url("home/program")?>'"program" class="btn-lg btn-primary">Go to Program Questions</a>
+		<a href='<?=base_url("home/createProgram")?>'"program" class="btn-lg btn-primary">Go to Program Questions</a>
 </div>   

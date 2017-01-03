@@ -1,28 +1,40 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Home extends CI_Controller {
-    
-	public function index()
+
+    /**
+     *Present welcome screen to new and returning applicants
+     */
+    public function index()
 	{
 		$this->load->view('templates/header');
 		$this->load->view('welcome');
 	}
-	
+
+    /**
+     * Create a new user in the system
+     */
     public function createLogin()
 	{
 	    $this->load->view('templates/header');
 	    $this->load->view('create_login');
 	}
-	
-	public function login()
+
+    /**
+     * Allows an existing user to login to the system
+     */
+    public function login()
 	{
 	    $this->load->view('templates/header');
 	    $this->load->view('returning/login');
 	}
-	
-	
-	
-	public function viewPersonal($applicant_type=0 )
+
+
+    /**
+     * View existing personal information
+     * @param int $applicant_type
+     */
+    public function viewPersonal($applicant_type=0 )
 	{
 	    session_start();
 	    ($applicant_type ? $_SESSION["applicant_type"] = 'returning' : $_SESSION["applicant_type"] = 'new');
@@ -46,7 +58,10 @@ class Home extends CI_Controller {
 	    }
 	}
 
-        public function viewSections()
+    /**
+     * Display application sections to returning applicants
+     */
+    public function viewSections()
         {
             session_start();
             if(@$_POST['email']) {
@@ -56,19 +71,26 @@ class Home extends CI_Controller {
                 if(@$returning_app) {
                     $_SESSION['applicant_id'] = $returning_app->applicant_id;
                     $this->load->view('templates/header');
-                    $this->load->view('viewSections');
+                    $this->load->view('view_sections');
                 } else {
                     $this->load->view('templates/header');
                 }
             } else {
                 $this->load->view('templates/header');
-                $this->load->view('viewSections');
+                $this->load->view('view_sections');
         
             }
              
              
         }
-	     
+
+    /**
+     * Update the applicant table with info stored in the $_POST array
+     *
+     * Display the $destination view
+     *
+     * @param string $destination
+     */
     public function updateApplicant($destination)
     {
         session_start();
@@ -78,7 +100,11 @@ class Home extends CI_Controller {
         $this->load->view('templates/header');
         $this->load->view($destination);
     }
-    
+
+    /**
+     * Display link to $imagetype
+     * @param $imageType
+     */
     public function viewImage($imageType)
     {
         session_start();
@@ -96,7 +122,14 @@ class Home extends CI_Controller {
         $this->load->view('templates/footer');
     
     }
-    
+
+    /**
+     * Upload image of $imagetype
+     *
+     * Display $nextpage view
+     * @param string $imageType
+     * @param string $nextPage
+     */
     public function createImage($imageType, $nextPage)
     {
         session_start();
@@ -115,26 +148,123 @@ class Home extends CI_Controller {
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
             $image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
-            $this->load->model('ApplicantModel');
-            // 			$data = array('driver' => $image_url);
-            $modelName = $imageType . 'Model';
-            $this->load->model($imageType . 'Model');
-            $image = new $modelName();
-            $image->applicant_id = $_SESSION['applicant_id'];
-            ($imageType == 'cpr' ? $image->expiration_date = $_POST['expiration_date'] :"");
-            ($imageType == 'license' ? $image->state = $_POST['state'] :"");
-            ($imageType == 'license' ? $image->active = @$_POST['active'] :"");
-            ($imageType == 'license' ? $image->number = $_POST['number'] :"");
-            $image->submission_date = date('Y-m-d');
-            $image->image = $image_url;
-            			var_dump($_POST);
-            $image->save();
         }
+        $this->load->model('ApplicantModel');
+        $modelName = $imageType . 'Model';
+        $this->load->model($imageType . 'Model');
+        $image = new $modelName();
+        $image->applicant_id = $_SESSION['applicant_id'];
+		$image_array = $_POST;
+		(@$_FILES["fileToUpload"]["name"] ? $image_array['image'] = $image_url: $image_array['image'] = "No Image");
+		$image_array['applicant_id'] = $_SESSION['applicant_id'];
+        $image_array['submission_date'] = date('Y-m-d');
+        var_dump($image_array);
+        $image->insert_post($image_array);
     
         $this->load->view('templates/header');
         $this->load->view($nextPage, $data);
     }
-    
+
+    /**
+     *Display school associated with applicant
+     *
+     */
+    public function viewSchool()
+	{
+			session_start();
+			$this->load->view('templates/header');
+			$this->load->model('SchoolModel');
+			$data['school'] = $this->SchoolModel->get_item('applicant_id', $_SESSION['applicant_id']);
+			if($data['school']) {
+				echo $_SESSION['school_id'] = $data['school']->school_id;
+				echo $_SESSION['image'] = $data['school']->image;
+				$this->load->view('returning/school', $data);
+			} else {
+				$this->load->model('StateModel');
+				$data['states'] = $this->StateModel->get_states();
+				$this->load->view('returning/new_school', $data);
+			}
+			$this->load->view('templates/footer');
+	}
+
+    /**
+     * List all licenses
+     */
+    public function listLicenses()
+	{
+		session_start();
+		$this->load->model('StateModel');
+		$data['states'] = $this->StateModel->get_states();
+		$this->load->view('templates/header');
+		$this->load->model('LicenseModel');
+		$data['licenses'] = $this->LicenseModel->get_list('applicant_id', $_SESSION['applicant_id']);
+		// 		var_dump($data['licenses']);
+		if($data['licenses']) {
+			$this->load->view('returning/list_licenses', $data);
+		} else {
+			$this->load->model('StateModel');
+			$data['states'] = $this->StateModel->get_states();
+			$this->load->view('returning/new_license', $data);
+		}
+		$this->load->view('templates/footer');
+	}
+
+    /**
+     * Display discipline if present
+     */
+    public function viewDiscipline()
+	{
+		session_start();
+		$this->load->view('templates/header');
+		$this->load->model('ApplicantModel');
+		$applicant = new ApplicantModel();
+		$data['applicant'] = $applicant->load($_SESSION['applicant_id']);
+		echo "<pre>";
+		echo "</pre>";
+		$this->load->view('returning/discipline', $data);	
+		$this->load->view('templates/footer');
+	}
+
+    /**
+     * List employers
+     */
+    public function listEmployers()
+	{
+		session_start();
+		$this->load->model('StateModel');
+		$data['states'] = $this->StateModel->get_states();
+		$this->load->view('templates/header');
+		$this->load->model('EmployerModel');
+		$data['employers'] = $this->EmployerModel->get_list('applicant_id', $_SESSION['applicant_id']);
+		if($data['employers']) {
+			$this->load->view('returning/list_employers', $data);
+		} else {
+			$this->load->model('StateModel');
+			$data['states'] = $this->StateModel->get_states();
+			$this->load->view('create_employer', $data);
+		}
+		$this->load->view('templates/footer');
+	}
+
+    /**
+     * Display emergency contact
+     */
+    public function viewEmergency()
+	{
+		session_start();
+		$this->load->model('ApplicantModel');
+		$applicant = new ApplicantModel();
+		$data['applicant'] = $applicant->load($_SESSION['applicant_id']);
+		$this->load->model('stateModel');
+		$data['states'] = $this->stateModel->get_states();
+		$this->load->view('templates/header');
+		$this->load->view('returning/emergency', $data);
+		$this->load->view('templates/footer');
+	}
+
+    /**
+     * Prompt for additional licenses or continue
+     */
     public function moreLicenses()
     {
         $this->load->model('StateModel');
@@ -142,36 +272,42 @@ class Home extends CI_Controller {
         $this->load->view('templates/header');
         $this->load->view('create_license', $data);
     }
-    
+
+    /**
+     * Create discipline
+     */
     public function createDiscipline()
     {
         $this->load->view('templates/header');
         $this->load->view('discipline');
     }
-    
+
+    /**
+     * Asks if employed
+     */
     public function employed()
     {
         $this->load->view('templates/header');
         $this->load->view('employed');
     }
-    
+
+    /**
+     * Prompt for employer info
+     */
     public function employer()
     {
         $this->load->view('templates/header');
         $this->load->view('create_employer');
     }
-    
-//     public function createEmployer()
-//     {
-//         $this->load->view('templates/header');
-//         $this->load->view('create_employer');
-//     }
-    
+
+    /**
+     * Create new employer
+     *
+     * Ask if additional employers
+     */
     public function createEmployer()
     {
          session_start();
-//      $this->load->helper(array('form', 'url'));
-//       $this->load->library('form_validation');
         $this->load->model('EmployerModel');
 		$employer = new EmployerModel();
 		$employer->applicant_id = $_SESSION['applicant_id'];
@@ -181,13 +317,49 @@ class Home extends CI_Controller {
 		$this->load->view('templates/header');
         $this->load->view('more_employers');
     }
-    
-    public function program()
+
+    /**
+     * Create program info
+     */
+    public function createProgram()
     {
         $this->load->view('templates/header');
         $this->load->view('program');
     }
-    
+
+    /**
+     * Display program info
+     */
+    public function viewProgram()
+    {
+    	session_start();
+    	$this->load->model('ApplicantModel');
+    	$applicant = new ApplicantModel();
+    	$data['applicant'] = $applicant->load($_SESSION['applicant_id']);
+    	$this->load->view('templates/header');
+    	$this->load->view('view_program',$data);
+    	$this->load->view('templates/footer');
+    }
+
+    /**
+     * Display demographic info
+     */
+    public function viewDemo()
+    {
+    	session_start();
+    	$this->load->model('ApplicantModel');
+    	$applicant = new ApplicantModel();
+    	$data['applicant'] = $applicant->load($_SESSION['applicant_id']);
+    	$this->load->view('templates/header');
+    	$this->load->view('view_demo',$data);
+    	$this->load->view('templates/footer');
+    }
+
+    /**
+     * Update image and submit date for $imageType
+     *
+     * @param $imageType
+     */
     public function updateImage($imageType)
     {
         session_start();
@@ -219,7 +391,10 @@ class Home extends CI_Controller {
         $this->load->view('templates/header');
         $this->load->view('viewSections');
     }
-    
+
+    /**
+     * Display CPR info
+     */
     public function viewCpr()
     {
     
@@ -231,8 +406,12 @@ class Home extends CI_Controller {
         $this->load->view('returning/cpr',$data);
         $this->load->view('templates/footer');
     }
-	
-	public function viewApplicant($id)
+
+    /**
+     * Display applicant info for $id
+     * @param $id
+     */
+    public function viewApplicant($id)
 	{
 	    $this->load->model('ApplicantModel');
 	    $data['applicant'] = $this->ApplicantModel->load($id);
@@ -255,8 +434,11 @@ class Home extends CI_Controller {
 	    $this->load->view('templates/header');
 	    $this->load->view('view_applicant',$data);
 	}
-	
-	public function listApplicants()
+
+    /**
+     * List all applicants
+     */
+    public function listApplicants()
 	{
 	    $this->load->view('templates/header');
 	    $this->load->model('ApplicantModel');
