@@ -11,6 +11,12 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css" />
 	     <script src="<?php echo base_url() ?>assets/jquery/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/webshim/1.16.0/dev/polyfiller.js"></script>
+		<script>
+			webshim.activeLang('en');
+			webshims.polyfill('forms');
+			webshims.cfg.no$Switch = true;
+		</script>
 	      <script src="<?php echo base_url() ?>assets/js/js_functions.js"></script>
      </head>
 	<body>
