@@ -87,3 +87,7 @@ h4 {
     border-style: solid;
     border-width: 1px;
 }
+
+.ghc-id {
+    display: none;
+}

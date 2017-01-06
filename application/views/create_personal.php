@@ -7,8 +7,12 @@
 	<h1 class= "mytitle">
 	APPLICANT PERSONAL INFORMATION
 	</h1>
+Are you currently a Georgia Highlands Student?
 
-<h2 class="mytitle"><?php echo validation_errors(); ?></h2>
+     <h4><input type="radio" name="GHC" value="yes">Yes</h4>
+     <h4><input type="radio" name="GHC" value="no">No</h4>
+     <div class="ghc-id"><label>GHC ID</label><h4><input type="text" name="GHC_ID" required></h4></div>
+
 
 	<form action='<?=base_url("home/updateApplicant/create_identification")?>' method="post">
 		<fieldset>

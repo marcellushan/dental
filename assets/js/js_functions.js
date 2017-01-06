@@ -8,16 +8,17 @@
     	 	}
     	 });
     	 });
-     
-     jQuery(function(){
-    	 $("#driverBtn").click(function(){
-    	 	if(! $('#driver').val())
-    	 	{
-    	 	 alert("Please attach a copy of a valid form of identification");
-    	 	 return false;
-    	 	}
-    	 });
-    	 });
+
+     $(document).ready(function() {
+         $('input[type=radio][name=GHC]').change(function() {
+             if (this.value == 'yes') {
+                 alert("Allot Thai Gayo Bhai");
+             }
+             else if (this.value == 'no') {
+                 alert("Transfer Thai Gayo");
+             }
+         });
+     });
 
      jQuery(function(){
     	 $("#cprBtn").click(function(){
