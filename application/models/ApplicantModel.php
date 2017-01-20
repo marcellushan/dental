@@ -74,6 +74,16 @@ public function get_login ($id_name, $id, $password)
     $row = $query->row();
     return $data[$this::DB_TABLE] = $row;
 }
+
+    public function get_email($email)
+    {
+
+        $this->db->where("preferred_email", $email);
+//        $this->db->where("password", $password);
+        $query = $this->db->get($this::DB_TABLE);
+        $row = $query->row();
+        return $data[$this::DB_TABLE] = $row;
+    }
 	
 	
 }

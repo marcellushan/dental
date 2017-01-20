@@ -155,7 +155,9 @@ class Home extends CI_Controller {
         $image = new $modelName();
         $image->applicant_id = $_SESSION['applicant_id'];
 		$image_array = $_POST;
-		(@$_FILES["fileToUpload"]["name"] ? $image_array['image'] = $image_url: $image_array['image'] = "No Image");
+        if($nextPage <> 'create_license') {
+            (@$_FILES["fileToUpload"]["name"] ? $image_array['image'] = $image_url : $image_array['image'] = "No Image");
+        }
 		$image_array['applicant_id'] = $_SESSION['applicant_id'];
         $image_array['submission_date'] = date('Y-m-d');
 //         var_dump($image_array);
@@ -598,7 +600,12 @@ class Home extends CI_Controller {
 	}
 	
 
-	
+	public function get_email()
+    {
+        $this->load->model('ApplicantModel');
+        $data = $this->ApplicantModel->get_email('t@home.co');
+        var_dump($data);
+    }
 
 	
 	

@@ -105,7 +105,7 @@
 	<h3 class="wrapper">Demographics</h3>
 	<div class="row">
 		<h4 class="col-md-1">Race:</h4>
-		<h4 class="item col-md-1"><?=$applicant->race?></h4>
+		<h4 class="item col-md-4"><?=$race->race_text?></h4>
 		<h4 class="col-md-1">Gender:</h4>
 		<h4 class="item col-md-1"><? echo ($applicant->gender ? "Male" : "Female"); ?></h4>
 		<h4 class="col-md-1">Latino:</h4>

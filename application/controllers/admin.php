@@ -6,6 +6,8 @@ class Admin extends CI_Controller {
 	{	
 		$this->load->model('ApplicantModel');
 		$data['applicant'] = $this->ApplicantModel->load($id);
+		$this->load->model('RaceModel');
+		$data['race']= $this->RaceModel->load($data['applicant']->race);
         $this->load->model('IdentificationModel');
         $data['identification'] = $this->IdentificationModel->get_item('applicant_id',$id);
         $this->load->model('CprModel');
@@ -27,6 +29,14 @@ class Admin extends CI_Controller {
 		$data['applicants'] = $this->ApplicantModel->get();
 // 		var_dump($data['applicants']);
 		$this->load->view('all_applications',$data);
+	}
+	
+	public function getrace()
+	{
+	    $this->load->model('RaceModel');
+	    $data['race']= $this->RaceModel->load(1);
+	    var_dump($data['race']);
+	    echo $data['race']->race_text;
 	}
 	
 }
