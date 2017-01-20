@@ -75,10 +75,10 @@ public function get_login ($id_name, $id, $password)
     return $data[$this::DB_TABLE] = $row;
 }
 
-    public function get_email($email)
+    public function entry_exists($id_name, $id)
     {
 
-        $this->db->where("preferred_email", $email);
+        $this->db->where($id_name, $id);
 //        $this->db->where("password", $password);
         $query = $this->db->get($this::DB_TABLE);
         $row = $query->row();

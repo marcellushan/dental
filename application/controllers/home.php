@@ -21,14 +21,38 @@ class Home extends CI_Controller {
 	}
 
     /**
+ * Allows an existing user to login to the system
+ */
+    public function login()
+    {
+        $this->load->view('templates/header');
+        $this->load->view('returning/login');
+    }
+
+    /**
      * Allows an existing user to login to the system
      */
-    public function login()
-	{
-	    $this->load->view('templates/header');
-	    $this->load->view('returning/login');
-	}
+    public function student()
+    {
+        session_start();
+        $this->load->model('ApplicantModel');
+        $applicant = new ApplicantModel();
+        $this->load->view('templates/header');
+        if(! $data = $this->ApplicantModel->entry_exists('preferred_email', $_POST['email'])) {
+            $applicant->application_date = date('Y-m-d');
+            $applicant->preferred_email = $_POST['email'];
+            $applicant->password = $_POST['password'];
+            $applicant->save();
+            $_SESSION['applicant_id'] = $applicant->applicant_id;
+            $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
+            $this->load->view('student', $data);
+        } else {
+            $data = array('email' => $_POST['email']);
+            $this->load->view('exists', $data);
+            $this->load->view('welcome');
+        }
 
+    }
 
     /**
      * View existing personal information
@@ -48,13 +72,19 @@ class Home extends CI_Controller {
 	        $this->load->view('update_personal', $data);
 	        $this->load->view('templates/footer');
 	    } else {
-	        $applicant->application_date = date('Y-m-d');
-	        $applicant->preferred_email = $_POST['email'];
-	        $applicant->password = $_POST['password'];
-	        $applicant->save();
-	        $_SESSION['applicant_id'] = $applicant->applicant_id;
-	        $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-	        $this->load->view('create_personal', $data);
+            if(! $data = $this->ApplicantModel->entry_exists('preferred_email', $_POST['email'])) {
+                $applicant->application_date = date('Y-m-d');
+                $applicant->preferred_email = $_POST['email'];
+                $applicant->password = $_POST['password'];
+                $applicant->save();
+                $_SESSION['applicant_id'] = $applicant->applicant_id;
+                $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
+                $this->load->view('create_personal', $data);
+            } else {
+                $data = array('email' => $_POST['email']);
+                $this->load->view('exists', $data);
+                $this->load->view('welcome');
+            }
 	    }
 	}
 
@@ -603,7 +633,7 @@ class Home extends CI_Controller {
 	public function get_email()
     {
         $this->load->model('ApplicantModel');
-        $data = $this->ApplicantModel->get_email('t@home.co');
+        $data = $this->ApplicantModel->entry_exists('preferred_email', 't@home.co');
         var_dump($data);
     }
 
