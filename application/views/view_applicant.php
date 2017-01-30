@@ -2,6 +2,22 @@
 	<h1 class= "mytitle">
         Name:  <?=$applicant->first_name?>   <?=$applicant->middle_name?> <?=$applicant->last_name?>
 	</h1>
+	 <div>
+	    <h2  class= "mytitle">Application Status</h2>
+        <div class="row">
+        <h3 class="col-md-5">Application Received</h3>
+            <h3 class="item col-md-5"><?=$applicant->application_date?></h3>
+             <h4 class="col-md-3">Application Complete</h4>
+            <h4 class="item col-md-2"><?=$applicant->complete?></h4>
+            <h4 class="col-md-3">Completion Date</h4>
+            <h4 class="item col-md-2"><?=$applicant->complete_date?></h4>
+             <h4 class="col-md-3">Funds Received</h4>
+            <h4 class="item col-md-2"><?=$applicant->funds?></h4>
+            <h4 class="col-md-3">Funds Received Date</h4>
+            <h4 class="item col-md-2"><?=$applicant->funds_date?></h4>
+
+
+        </div>
      <div class="section-border">
 	    <h2  class= "mytitle">Personal Information</h2>
         <div class="row">
@@ -19,12 +35,14 @@
                         <h4 class="col-md-4">Submission Date</h4>
                         <h4 class="col-md-3"><?=$identification->submission_date?></h4>
                         <h4 class="col-md-3"><a href="<?=$identification->image?>" target="_blank">Image</a></h4>
+                         <h4 class="col-md-5">Verify? &nbsp <input type="checkbox"></h4>
                     </div><!-- row -->
                     <h3>&nbsp;CPR Certification</h3>
                     <div class="row">
                         <h4 class="col-md-4">Submission Date</h4>
                         <h4 class="col-md-3"><?=$cpr->submission_date?></h4>
-                        <h4 class="col-md-3"><a href="<?=$cpr->image?>" target="_blank">Image</a></h4>
+                        <h4 class="col-md-2"><a href="<?=$cpr->image?>" target="_blank">Image</a></h4>
+                        <h4 class="col-md-5">Verify? &nbsp <input type="checkbox"></h4>
                     </div><!-- row -->
                 </div><!--col-md-6 -->
              	<div class="col-md-6">
@@ -59,11 +77,13 @@
     	<div class="row">
     		<?php foreach ($licenses as $license):?>
     			<h4 class="col-md-2">State of Licensure</h4>
-    			<h4 class="item col-md-2"><?=$license->state?></h4>
+    			<h4 class="item col-md-1"><?=$license->state?></h4>
     			<h4 class="col-md-2">License Number</h4>
-    			<h4 class="item col-md-2"><?=$license->number?></h4>
+    			<h4 class="item col-md-1"><?=$license->number?></h4>
     			<h4 class="col-md-1">Active</h4>
     			<h4 class="item col-md-2"><? echo ($license->active ? "Yes" : "No"); ?></h4>
+    			<h4 class="col-md-1"><a href="<?=$license->image?>" target="_blank">Image</a></h4>
+    			<h4 class="col-md-5">Verify? &nbsp <input type="checkbox"></h4>
     		<?php endforeach;?>
     	</div><!-- row -->
 	</div><!-- section-border -->

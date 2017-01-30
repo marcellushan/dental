@@ -39,4 +39,10 @@ class Admin extends CI_Controller {
 	    echo $data['race']->race_text;
 	}
 	
+	public function user()
+	{
+	    $this->load->model('AdminModel');
+	    $admin = $this->AdminModel->load(1);
+	   var_dump($admin);
+	}
 }

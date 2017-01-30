@@ -7,12 +7,6 @@
 	<h1 class= "mytitle">
 	APPLICANT PERSONAL INFORMATION
 	</h1>
-Are you currently a Georgia Highlands Student?
-
-     <h4><input type="radio" name="GHC" value="yes">Yes</h4>
-     <h4><input type="radio" name="GHC" value="no">No</h4>
-     <div class="ghc-id"><label>GHC ID</label><h4><input type="text" name="GHC_ID" required></h4></div>
-
 
 	<form action='<?=base_url("home/updateApplicant/create_identification")?>' method="post">
 		<fieldset>
@@ -25,7 +19,11 @@ Are you currently a Georgia Highlands Student?
 				</div><!-- row -->
 				<div class="row">
 					<label class="col-sm-2 col-xs-5" >Date of Birth</label><input type="date" class="col-sm-2 col-xs-6"  name="birth_date" placeholder="required" value="<?=set_value('birth_date') ?>"" >
-					<label class="col-sm-2 col-xs-5" >GHC ID</label><input type="text" class="col-sm-2 col-xs-6"  name="GHC_ID" value="<?=@$applicant->GHC_ID?>">
+					 <?if($student):?>
+					<label class="col-sm-2 col-xs-5" >GHC ID</label><input type="text" class="col-sm-2 col-xs-6"  name="GHC_ID" placeholder="required" value="<?=@$applicant->GHC_ID?>">
+					<?else:?>
+					<label class="col-sm-2 col-xs-5" >GHC ID</label><input type="text" class="col-sm-2 col-xs-6"  name="GHC_ID" value="Not applicable" disabled>
+					<?endif?>
 					<label class="col-sm-1 col-xs-5" >Maiden </label><input type="text" class="col-sm-2 col-xs-6"  name="maiden_name" value="<?php echo set_value('maiden_name'); ?>" placeholder="if applicable">
 				</div><!-- row -->
 			<div class="row">

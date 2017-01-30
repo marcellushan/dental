@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08b594db-f8a7-4f10-9626-132d7f7f71fc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/exists.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/student.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/home.php" afterPath="$PROJECT_DIR$/application/controllers/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/ApplicantModel.php" afterPath="$PROJECT_DIR$/application/models/ApplicantModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/create_login.php" afterPath="$PROJECT_DIR$/application/views/create_login.php" />
     </list>
     <ignored path="dental.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -214,12 +209,12 @@
       <workItem from="1483536104016" duration="1109000" />
       <workItem from="1483628420341" duration="2603000" />
       <workItem from="1483646310583" duration="2556000" />
-      <workItem from="1484918490079" duration="6017000" />
+      <workItem from="1484918490079" duration="6743000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41059000" />
+    <option name="totallyTimeSpent" value="41785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />

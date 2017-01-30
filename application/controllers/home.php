@@ -58,34 +58,18 @@ class Home extends CI_Controller {
      * View existing personal information
      * @param int $applicant_type
      */
-    public function viewPersonal($applicant_type=0 )
+    public function viewPersonal($student=0 )
 	{
 	    session_start();
-	    ($applicant_type ? $_SESSION["applicant_type"] = 'returning' : $_SESSION["applicant_type"] = 'new');
 	    $this->load->model('ApplicantModel');
 	    $applicant = new ApplicantModel();
 	    $this->load->model('StateModel');
 	    $data['states'] = $this->StateModel->get_states();
 	    $this->load->view('templates/header');
-	    if($_SESSION["applicant_type"] == 'returning') {
-	        $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-	        $this->load->view('update_personal', $data);
-	        $this->load->view('templates/footer');
-	    } else {
-            if(! $data = $this->ApplicantModel->entry_exists('preferred_email', $_POST['email'])) {
-                $applicant->application_date = date('Y-m-d');
-                $applicant->preferred_email = $_POST['email'];
-                $applicant->password = $_POST['password'];
-                $applicant->save();
-                $_SESSION['applicant_id'] = $applicant->applicant_id;
-                $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-                $this->load->view('create_personal', $data);
-            } else {
-                $data = array('email' => $_POST['email']);
-                $this->load->view('exists', $data);
-                $this->load->view('welcome');
-            }
-	    }
+        $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
+        $data['student']= $student;
+        $this->load->view('create_personal', $data);
+
 	}
 
     /**
