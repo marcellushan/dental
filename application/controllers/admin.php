@@ -57,14 +57,14 @@ class Admin extends CI_Controller {
 
     public function verify($id)
     {
-        $this->load->model('ApplicantModel');
-        $applicant = $this->ApplicantModel->load($id);
+
         foreach($_POST as $item)
         {
             $mymodel = $item . 'Model';
+            $type_id= $item . '_id';
             $this->load->model($mymodel);
-
-            $verify=$this->$mymodel->update($id, array('verified' => 'jjones', 'verified_date' => date('Y-m-d')));
+            $type = $this->$mymodel->get_item('applicant_id', $id);
+            $verify=$this->$mymodel->update($type->$type_id, array('verified' => 'jjones', 'verified_date' => date('Y-m-d')));
 
         }
 

@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08b594db-f8a7-4f10-9626-132d7f7f71fc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/review.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin.php" afterPath="$PROJECT_DIR$/application/controllers/admin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/home.php" afterPath="$PROJECT_DIR$/application/controllers/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/my_model.php" afterPath="$PROJECT_DIR$/application/core/my_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/ApplicantModel.php" afterPath="$PROJECT_DIR$/application/models/ApplicantModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/view_applicant.php" afterPath="$PROJECT_DIR$/application/views/view_applicant.php" />
     </list>
     <ignored path="dental.iws" />
@@ -28,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
+      <file leaf-file-name="review.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/review.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="849">
-              <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+            <state relative-caret-position="105">
+              <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -63,12 +62,14 @@
         <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/models/ApplicantModel.php" />
         <option value="$PROJECT_DIR$/application/views/exists.php" />
-        <option value="$PROJECT_DIR$/application/controllers/home.php" />
         <option value="$PROJECT_DIR$/application/views/create_login.php" />
         <option value="$PROJECT_DIR$/application/views/student.php" />
-        <option value="$PROJECT_DIR$/application/views/view_applicant.php" />
         <option value="$PROJECT_DIR$/application/core/my_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin.php" />
+        <option value="$PROJECT_DIR$/application/views/view_applicant.php" />
+        <option value="$PROJECT_DIR$/application/views/demo.php" />
+        <option value="$PROJECT_DIR$/application/controllers/home.php" />
+        <option value="$PROJECT_DIR$/application/views/review.php" />
       </list>
     </option>
   </component>
@@ -216,12 +217,12 @@
       <workItem from="1483628420341" duration="2603000" />
       <workItem from="1483646310583" duration="2556000" />
       <workItem from="1484918490079" duration="6743000" />
-      <workItem from="1485889455419" duration="10512000" />
+      <workItem from="1485889455419" duration="14248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52297000" />
+    <option name="totallyTimeSpent" value="56033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
@@ -286,20 +287,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="5" selection-start-line="4" selection-start-column="0" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/mail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -312,97 +299,98 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1485800638000" expanded="true" signature="110:22493" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="216:295" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="304:349" ph=" Create a new user in the system ..." />
-            <marker date="1485800638000" expanded="true" signature="385:475" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="484:536" ph=" Allows an existing user to login to the system ..." />
-            <marker date="1485800638000" expanded="true" signature="566:671" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="680:740" ph=" Allows an existing user to login to the system ..." />
-            <marker date="1485800638000" expanded="true" signature="772:1649" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="1073:1479" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="1487:1641" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="1658:1740" ph=" View existing personal information ..." />
-            <marker date="1485800638000" expanded="true" signature="1788:2202" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="2211:2277" ph=" Display application sections to returning applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="2314:3126" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="2388:2950" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2642:2852" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2860:2936" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2958:3087" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="3135:3297" ph=" Update the applicant table with info stored in the $_POST array ..." />
-            <marker date="1485800638000" expanded="true" signature="3349:3639" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="3648:3713" ph=" Display link to $imagetype ..." />
-            <marker date="1485800638000" expanded="true" signature="3757:4396" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="4144:4229" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="4405:4545" ph=" Upload image of $imagetype ..." />
-            <marker date="1485800638000" expanded="true" signature="4602:6469" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="4821:5747" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6039:6170" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6478:6538" ph="Display school associated with applicant ..." />
-            <marker date="1485800638000" expanded="true" signature="6573:7160" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="6795:6955" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6963:7114" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7169:7200" ph=" List all licenses ..." />
-            <marker date="1485800638000" expanded="true" signature="7237:7845" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="7585:7644" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7652:7800" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7851:7875" ph=" Asks if employed ..." />
-            <marker date="1485800638000" expanded="true" signature="7907:7999" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8012:8055" ph=" Display discipline if present ..." />
-            <marker date="1485800638000" expanded="true" signature="8094:8432" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8441:8469" ph=" List employers ..." />
-            <marker date="1485800638000" expanded="true" signature="8507:9034" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8861:8936" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="9043:9082" ph=" Display emergency contact ..." />
-            <marker date="1485800638000" expanded="true" signature="9120:9512" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="9521:9577" ph=" Prompt for additional licenses or continue ..." />
-            <marker date="1485800638000" expanded="true" signature="9614:9826" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="9835:9866" ph=" Create discipline ..." />
-            <marker date="1485800638000" expanded="true" signature="9907:10007" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10020:10051" ph=" Create discipline ..." />
-            <marker date="1485800638000" expanded="true" signature="10088:10194" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10203:10233" ph=" Asks if employed ..." />
-            <marker date="1485800638000" expanded="true" signature="10266:10364" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10373:10411" ph=" Prompt for employer info ..." />
-            <marker date="1485800638000" expanded="true" signature="10444:10549" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10558:10633" ph=" Create new employer ..." />
-            <marker date="1485800638000" expanded="true" signature="10686:11098" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11107:11140" ph=" Create program info ..." />
-            <marker date="1485800638000" expanded="true" signature="11178:11275" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11284:11318" ph=" Display program info ..." />
-            <marker date="1485800638000" expanded="true" signature="11354:11676" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11685:11723" ph=" Display demographic info ..." />
-            <marker date="1485800638000" expanded="true" signature="11756:12075" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="12084:12173" ph=" Update image and submit date for $imageType ..." />
-            <marker date="1485800638000" expanded="true" signature="12219:15267" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="12299:13169" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="13914:15261" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="15276:15306" ph=" Display CPR info ..." />
-            <marker date="1485800638000" expanded="true" signature="15338:15707" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="15716:15778" ph=" Display applicant info for $id ..." />
-            <marker date="1485800638000" expanded="true" signature="15819:16993" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="17034:18770" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="17105:18033" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="17154:17403" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="18125:18301" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18181:18293" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18309:18679" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18801:20161" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="18919:19847" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18968:19217" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="19926:20072" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="19953:20071" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="20205:20520" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="20555:21957" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="20661:21589" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="20710:20959" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="21676:21867" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="21707:21866" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="21964:21997" ph=" List all applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="22036:22276" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="22308:22476" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="110:23474" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="216:295" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="329:1277" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1285:1330" ph=" Create a new user in the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1366:1456" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1465:1517" ph=" Allows an existing user to login to the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1547:1652" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1661:1721" ph=" Allows an existing user to login to the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1753:2630" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="2054:2460" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="2468:2622" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="2639:2721" ph=" View existing personal information ..." />
+            <marker date="1485983884000" expanded="true" signature="2769:3183" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="3192:3258" ph=" Display application sections to returning applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="3295:4107" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="3369:3931" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3623:3833" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3841:3917" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3939:4068" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="4116:4278" ph=" Update the applicant table with info stored in the $_POST array ..." />
+            <marker date="1485983884000" expanded="true" signature="4330:4620" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="4629:4694" ph=" Display link to $imagetype ..." />
+            <marker date="1485983884000" expanded="true" signature="4738:5377" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="5125:5210" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="5386:5526" ph=" Upload image of $imagetype ..." />
+            <marker date="1485983884000" expanded="true" signature="5583:7450" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="5802:6728" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7020:7151" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7459:7519" ph="Display school associated with applicant ..." />
+            <marker date="1485983884000" expanded="true" signature="7554:8141" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="7776:7936" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7944:8095" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8150:8181" ph=" List all licenses ..." />
+            <marker date="1485983884000" expanded="true" signature="8218:8826" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="8566:8625" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8633:8781" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8832:8856" ph=" Asks if employed ..." />
+            <marker date="1485983884000" expanded="true" signature="8888:8980" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="8993:9036" ph=" Display discipline if present ..." />
+            <marker date="1485983884000" expanded="true" signature="9075:9413" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="9422:9450" ph=" List employers ..." />
+            <marker date="1485983884000" expanded="true" signature="9488:10015" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="9842:9917" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="10024:10063" ph=" Display emergency contact ..." />
+            <marker date="1485983884000" expanded="true" signature="10101:10493" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="10502:10558" ph=" Prompt for additional licenses or continue ..." />
+            <marker date="1485983884000" expanded="true" signature="10595:10807" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="10816:10847" ph=" Create discipline ..." />
+            <marker date="1485983884000" expanded="true" signature="10888:10988" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11001:11032" ph=" Create discipline ..." />
+            <marker date="1485983884000" expanded="true" signature="11069:11175" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11184:11214" ph=" Asks if employed ..." />
+            <marker date="1485983884000" expanded="true" signature="11247:11345" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11354:11392" ph=" Prompt for employer info ..." />
+            <marker date="1485983884000" expanded="true" signature="11425:11530" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11539:11614" ph=" Create new employer ..." />
+            <marker date="1485983884000" expanded="true" signature="11667:12079" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12088:12121" ph=" Create program info ..." />
+            <marker date="1485983884000" expanded="true" signature="12159:12256" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12265:12299" ph=" Display program info ..." />
+            <marker date="1485983884000" expanded="true" signature="12335:12657" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12666:12704" ph=" Display demographic info ..." />
+            <marker date="1485983884000" expanded="true" signature="12737:13056" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="13065:13154" ph=" Update image and submit date for $imageType ..." />
+            <marker date="1485983884000" expanded="true" signature="13200:16248" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="13280:14150" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="14895:16242" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="16257:16287" ph=" Display CPR info ..." />
+            <marker date="1485983884000" expanded="true" signature="16319:16688" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="16697:16759" ph=" Display applicant info for $id ..." />
+            <marker date="1485983884000" expanded="true" signature="16800:17974" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="18015:19751" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="18086:19014" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="18135:18384" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="19106:19282" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19162:19274" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19290:19660" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19782:21142" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="19900:20828" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19949:20198" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="20907:21053" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="20934:21052" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="21186:21501" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="21536:22938" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="21642:22570" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="21691:21940" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="22657:22848" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="22688:22847" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="22945:22978" ph=" List all applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="23017:23257" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="23289:23457" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -412,97 +400,98 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1485800638000" expanded="true" signature="110:22493" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="216:295" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="304:349" ph=" Create a new user in the system ..." />
-            <marker date="1485800638000" expanded="true" signature="385:475" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="484:536" ph=" Allows an existing user to login to the system ..." />
-            <marker date="1485800638000" expanded="true" signature="566:671" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="680:740" ph=" Allows an existing user to login to the system ..." />
-            <marker date="1485800638000" expanded="true" signature="772:1649" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="1073:1479" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="1487:1641" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="1658:1740" ph=" View existing personal information ..." />
-            <marker date="1485800638000" expanded="true" signature="1788:2202" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="2211:2277" ph=" Display application sections to returning applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="2314:3126" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="2388:2950" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2642:2852" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2860:2936" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2958:3087" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="3135:3297" ph=" Update the applicant table with info stored in the $_POST array ..." />
-            <marker date="1485800638000" expanded="true" signature="3349:3639" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="3648:3713" ph=" Display link to $imagetype ..." />
-            <marker date="1485800638000" expanded="true" signature="3757:4396" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="4144:4229" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="4405:4545" ph=" Upload image of $imagetype ..." />
-            <marker date="1485800638000" expanded="true" signature="4602:6469" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="4821:5747" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6039:6170" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6478:6538" ph="Display school associated with applicant ..." />
-            <marker date="1485800638000" expanded="true" signature="6573:7160" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="6795:6955" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6963:7114" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7169:7200" ph=" List all licenses ..." />
-            <marker date="1485800638000" expanded="true" signature="7237:7845" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="7585:7644" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7652:7800" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7851:7875" ph=" Asks if employed ..." />
-            <marker date="1485800638000" expanded="true" signature="7907:7999" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8012:8055" ph=" Display discipline if present ..." />
-            <marker date="1485800638000" expanded="true" signature="8094:8432" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8441:8469" ph=" List employers ..." />
-            <marker date="1485800638000" expanded="true" signature="8507:9034" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8861:8936" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="9043:9082" ph=" Display emergency contact ..." />
-            <marker date="1485800638000" expanded="true" signature="9120:9512" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="9521:9577" ph=" Prompt for additional licenses or continue ..." />
-            <marker date="1485800638000" expanded="true" signature="9614:9826" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="9835:9866" ph=" Create discipline ..." />
-            <marker date="1485800638000" expanded="true" signature="9907:10007" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10020:10051" ph=" Create discipline ..." />
-            <marker date="1485800638000" expanded="true" signature="10088:10194" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10203:10233" ph=" Asks if employed ..." />
-            <marker date="1485800638000" expanded="true" signature="10266:10364" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10373:10411" ph=" Prompt for employer info ..." />
-            <marker date="1485800638000" expanded="true" signature="10444:10549" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10558:10633" ph=" Create new employer ..." />
-            <marker date="1485800638000" expanded="true" signature="10686:11098" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11107:11140" ph=" Create program info ..." />
-            <marker date="1485800638000" expanded="true" signature="11178:11275" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11284:11318" ph=" Display program info ..." />
-            <marker date="1485800638000" expanded="true" signature="11354:11676" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11685:11723" ph=" Display demographic info ..." />
-            <marker date="1485800638000" expanded="true" signature="11756:12075" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="12084:12173" ph=" Update image and submit date for $imageType ..." />
-            <marker date="1485800638000" expanded="true" signature="12219:15267" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="12299:13169" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="13914:15261" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="15276:15306" ph=" Display CPR info ..." />
-            <marker date="1485800638000" expanded="true" signature="15338:15707" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="15716:15778" ph=" Display applicant info for $id ..." />
-            <marker date="1485800638000" expanded="true" signature="15819:16993" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="17034:18770" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="17105:18033" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="17154:17403" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="18125:18301" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18181:18293" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18309:18679" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18801:20161" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="18919:19847" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18968:19217" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="19926:20072" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="19953:20071" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="20205:20520" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="20555:21957" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="20661:21589" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="20710:20959" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="21676:21867" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="21707:21866" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="21964:21997" ph=" List all applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="22036:22276" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="22308:22476" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="110:23474" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="216:295" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="329:1277" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1285:1330" ph=" Create a new user in the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1366:1456" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1465:1517" ph=" Allows an existing user to login to the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1547:1652" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1661:1721" ph=" Allows an existing user to login to the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1753:2630" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="2054:2460" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="2468:2622" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="2639:2721" ph=" View existing personal information ..." />
+            <marker date="1485983884000" expanded="true" signature="2769:3183" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="3192:3258" ph=" Display application sections to returning applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="3295:4107" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="3369:3931" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3623:3833" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3841:3917" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3939:4068" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="4116:4278" ph=" Update the applicant table with info stored in the $_POST array ..." />
+            <marker date="1485983884000" expanded="true" signature="4330:4620" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="4629:4694" ph=" Display link to $imagetype ..." />
+            <marker date="1485983884000" expanded="true" signature="4738:5377" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="5125:5210" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="5386:5526" ph=" Upload image of $imagetype ..." />
+            <marker date="1485983884000" expanded="true" signature="5583:7450" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="5802:6728" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7020:7151" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7459:7519" ph="Display school associated with applicant ..." />
+            <marker date="1485983884000" expanded="true" signature="7554:8141" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="7776:7936" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7944:8095" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8150:8181" ph=" List all licenses ..." />
+            <marker date="1485983884000" expanded="true" signature="8218:8826" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="8566:8625" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8633:8781" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8832:8856" ph=" Asks if employed ..." />
+            <marker date="1485983884000" expanded="true" signature="8888:8980" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="8993:9036" ph=" Display discipline if present ..." />
+            <marker date="1485983884000" expanded="true" signature="9075:9413" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="9422:9450" ph=" List employers ..." />
+            <marker date="1485983884000" expanded="true" signature="9488:10015" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="9842:9917" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="10024:10063" ph=" Display emergency contact ..." />
+            <marker date="1485983884000" expanded="true" signature="10101:10493" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="10502:10558" ph=" Prompt for additional licenses or continue ..." />
+            <marker date="1485983884000" expanded="true" signature="10595:10807" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="10816:10847" ph=" Create discipline ..." />
+            <marker date="1485983884000" expanded="true" signature="10888:10988" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11001:11032" ph=" Create discipline ..." />
+            <marker date="1485983884000" expanded="true" signature="11069:11175" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11184:11214" ph=" Asks if employed ..." />
+            <marker date="1485983884000" expanded="true" signature="11247:11345" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11354:11392" ph=" Prompt for employer info ..." />
+            <marker date="1485983884000" expanded="true" signature="11425:11530" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11539:11614" ph=" Create new employer ..." />
+            <marker date="1485983884000" expanded="true" signature="11667:12079" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12088:12121" ph=" Create program info ..." />
+            <marker date="1485983884000" expanded="true" signature="12159:12256" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12265:12299" ph=" Display program info ..." />
+            <marker date="1485983884000" expanded="true" signature="12335:12657" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12666:12704" ph=" Display demographic info ..." />
+            <marker date="1485983884000" expanded="true" signature="12737:13056" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="13065:13154" ph=" Update image and submit date for $imageType ..." />
+            <marker date="1485983884000" expanded="true" signature="13200:16248" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="13280:14150" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="14895:16242" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="16257:16287" ph=" Display CPR info ..." />
+            <marker date="1485983884000" expanded="true" signature="16319:16688" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="16697:16759" ph=" Display applicant info for $id ..." />
+            <marker date="1485983884000" expanded="true" signature="16800:17974" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="18015:19751" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="18086:19014" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="18135:18384" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="19106:19282" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19162:19274" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19290:19660" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19782:21142" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="19900:20828" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19949:20198" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="20907:21053" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="20934:21052" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="21186:21501" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="21536:22938" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="21642:22570" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="21691:21940" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="22657:22848" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="22688:22847" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="22945:22978" ph=" List all applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="23017:23257" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="23289:23457" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -519,97 +508,98 @@
         <state relative-caret-position="3450">
           <caret line="230" column="20" selection-start-line="230" selection-start-column="20" selection-end-line="230" selection-end-column="20" />
           <folding>
-            <marker date="1485800638000" expanded="true" signature="110:22493" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="216:295" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="304:349" ph=" Create a new user in the system ..." />
-            <marker date="1485800638000" expanded="true" signature="385:475" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="484:536" ph=" Allows an existing user to login to the system ..." />
-            <marker date="1485800638000" expanded="true" signature="566:671" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="680:740" ph=" Allows an existing user to login to the system ..." />
-            <marker date="1485800638000" expanded="true" signature="772:1649" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="1073:1479" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="1487:1641" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="1658:1740" ph=" View existing personal information ..." />
-            <marker date="1485800638000" expanded="true" signature="1788:2202" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="2211:2277" ph=" Display application sections to returning applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="2314:3126" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="2388:2950" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2642:2852" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2860:2936" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2958:3087" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="3135:3297" ph=" Update the applicant table with info stored in the $_POST array ..." />
-            <marker date="1485800638000" expanded="true" signature="3349:3639" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="3648:3713" ph=" Display link to $imagetype ..." />
-            <marker date="1485800638000" expanded="true" signature="3757:4396" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="4144:4229" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="4405:4545" ph=" Upload image of $imagetype ..." />
-            <marker date="1485800638000" expanded="true" signature="4602:6469" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="4821:5747" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6039:6170" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6478:6538" ph="Display school associated with applicant ..." />
-            <marker date="1485800638000" expanded="true" signature="6573:7160" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="6795:6955" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6963:7114" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7169:7200" ph=" List all licenses ..." />
-            <marker date="1485800638000" expanded="true" signature="7237:7845" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="7585:7644" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7652:7800" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7851:7875" ph=" Asks if employed ..." />
-            <marker date="1485800638000" expanded="true" signature="7907:7999" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8012:8055" ph=" Display discipline if present ..." />
-            <marker date="1485800638000" expanded="true" signature="8094:8432" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8441:8469" ph=" List employers ..." />
-            <marker date="1485800638000" expanded="true" signature="8507:9034" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8861:8936" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="9043:9082" ph=" Display emergency contact ..." />
-            <marker date="1485800638000" expanded="true" signature="9120:9512" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="9521:9577" ph=" Prompt for additional licenses or continue ..." />
-            <marker date="1485800638000" expanded="true" signature="9614:9826" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="9835:9866" ph=" Create discipline ..." />
-            <marker date="1485800638000" expanded="true" signature="9907:10007" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10020:10051" ph=" Create discipline ..." />
-            <marker date="1485800638000" expanded="true" signature="10088:10194" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10203:10233" ph=" Asks if employed ..." />
-            <marker date="1485800638000" expanded="true" signature="10266:10364" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10373:10411" ph=" Prompt for employer info ..." />
-            <marker date="1485800638000" expanded="true" signature="10444:10549" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10558:10633" ph=" Create new employer ..." />
-            <marker date="1485800638000" expanded="true" signature="10686:11098" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11107:11140" ph=" Create program info ..." />
-            <marker date="1485800638000" expanded="true" signature="11178:11275" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11284:11318" ph=" Display program info ..." />
-            <marker date="1485800638000" expanded="true" signature="11354:11676" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11685:11723" ph=" Display demographic info ..." />
-            <marker date="1485800638000" expanded="true" signature="11756:12075" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="12084:12173" ph=" Update image and submit date for $imageType ..." />
-            <marker date="1485800638000" expanded="true" signature="12219:15267" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="12299:13169" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="13914:15261" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="15276:15306" ph=" Display CPR info ..." />
-            <marker date="1485800638000" expanded="true" signature="15338:15707" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="15716:15778" ph=" Display applicant info for $id ..." />
-            <marker date="1485800638000" expanded="true" signature="15819:16993" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="17034:18770" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="17105:18033" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="17154:17403" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="18125:18301" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18181:18293" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18309:18679" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18801:20161" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="18919:19847" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18968:19217" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="19926:20072" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="19953:20071" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="20205:20520" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="20555:21957" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="20661:21589" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="20710:20959" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="21676:21867" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="21707:21866" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="21964:21997" ph=" List all applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="22036:22276" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="22308:22476" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="110:23474" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="216:295" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="329:1277" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1285:1330" ph=" Create a new user in the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1366:1456" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1465:1517" ph=" Allows an existing user to login to the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1547:1652" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1661:1721" ph=" Allows an existing user to login to the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1753:2630" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="2054:2460" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="2468:2622" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="2639:2721" ph=" View existing personal information ..." />
+            <marker date="1485983884000" expanded="true" signature="2769:3183" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="3192:3258" ph=" Display application sections to returning applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="3295:4107" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="3369:3931" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3623:3833" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3841:3917" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3939:4068" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="4116:4278" ph=" Update the applicant table with info stored in the $_POST array ..." />
+            <marker date="1485983884000" expanded="true" signature="4330:4620" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="4629:4694" ph=" Display link to $imagetype ..." />
+            <marker date="1485983884000" expanded="true" signature="4738:5377" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="5125:5210" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="5386:5526" ph=" Upload image of $imagetype ..." />
+            <marker date="1485983884000" expanded="true" signature="5583:7450" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="5802:6728" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7020:7151" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7459:7519" ph="Display school associated with applicant ..." />
+            <marker date="1485983884000" expanded="true" signature="7554:8141" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="7776:7936" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7944:8095" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8150:8181" ph=" List all licenses ..." />
+            <marker date="1485983884000" expanded="true" signature="8218:8826" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="8566:8625" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8633:8781" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8832:8856" ph=" Asks if employed ..." />
+            <marker date="1485983884000" expanded="true" signature="8888:8980" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="8993:9036" ph=" Display discipline if present ..." />
+            <marker date="1485983884000" expanded="true" signature="9075:9413" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="9422:9450" ph=" List employers ..." />
+            <marker date="1485983884000" expanded="true" signature="9488:10015" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="9842:9917" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="10024:10063" ph=" Display emergency contact ..." />
+            <marker date="1485983884000" expanded="true" signature="10101:10493" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="10502:10558" ph=" Prompt for additional licenses or continue ..." />
+            <marker date="1485983884000" expanded="true" signature="10595:10807" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="10816:10847" ph=" Create discipline ..." />
+            <marker date="1485983884000" expanded="true" signature="10888:10988" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11001:11032" ph=" Create discipline ..." />
+            <marker date="1485983884000" expanded="true" signature="11069:11175" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11184:11214" ph=" Asks if employed ..." />
+            <marker date="1485983884000" expanded="true" signature="11247:11345" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11354:11392" ph=" Prompt for employer info ..." />
+            <marker date="1485983884000" expanded="true" signature="11425:11530" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11539:11614" ph=" Create new employer ..." />
+            <marker date="1485983884000" expanded="true" signature="11667:12079" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12088:12121" ph=" Create program info ..." />
+            <marker date="1485983884000" expanded="true" signature="12159:12256" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12265:12299" ph=" Display program info ..." />
+            <marker date="1485983884000" expanded="true" signature="12335:12657" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12666:12704" ph=" Display demographic info ..." />
+            <marker date="1485983884000" expanded="true" signature="12737:13056" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="13065:13154" ph=" Update image and submit date for $imageType ..." />
+            <marker date="1485983884000" expanded="true" signature="13200:16248" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="13280:14150" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="14895:16242" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="16257:16287" ph=" Display CPR info ..." />
+            <marker date="1485983884000" expanded="true" signature="16319:16688" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="16697:16759" ph=" Display applicant info for $id ..." />
+            <marker date="1485983884000" expanded="true" signature="16800:17974" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="18015:19751" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="18086:19014" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="18135:18384" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="19106:19282" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19162:19274" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19290:19660" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19782:21142" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="19900:20828" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19949:20198" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="20907:21053" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="20934:21052" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="21186:21501" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="21536:22938" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="21642:22570" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="21691:21940" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="22657:22848" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="22688:22847" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="22945:22978" ph=" List all applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="23017:23257" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="23289:23457" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -626,97 +616,98 @@
         <state relative-caret-position="3255">
           <caret line="217" column="4" selection-start-line="217" selection-start-column="4" selection-end-line="217" selection-end-column="4" />
           <folding>
-            <marker date="1485800638000" expanded="true" signature="110:22493" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="216:295" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="304:349" ph=" Create a new user in the system ..." />
-            <marker date="1485800638000" expanded="true" signature="385:475" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="484:536" ph=" Allows an existing user to login to the system ..." />
-            <marker date="1485800638000" expanded="true" signature="566:671" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="680:740" ph=" Allows an existing user to login to the system ..." />
-            <marker date="1485800638000" expanded="true" signature="772:1649" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="1073:1479" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="1487:1641" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="1658:1740" ph=" View existing personal information ..." />
-            <marker date="1485800638000" expanded="true" signature="1788:2202" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="2211:2277" ph=" Display application sections to returning applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="2314:3126" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="2388:2950" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2642:2852" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2860:2936" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2958:3087" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="3135:3297" ph=" Update the applicant table with info stored in the $_POST array ..." />
-            <marker date="1485800638000" expanded="true" signature="3349:3639" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="3648:3713" ph=" Display link to $imagetype ..." />
-            <marker date="1485800638000" expanded="true" signature="3757:4396" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="4144:4229" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="4405:4545" ph=" Upload image of $imagetype ..." />
-            <marker date="1485800638000" expanded="true" signature="4602:6469" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="4821:5747" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6039:6170" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6478:6538" ph="Display school associated with applicant ..." />
-            <marker date="1485800638000" expanded="true" signature="6573:7160" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="6795:6955" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6963:7114" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7169:7200" ph=" List all licenses ..." />
-            <marker date="1485800638000" expanded="true" signature="7237:7845" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="7585:7644" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7652:7800" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7851:7875" ph=" Asks if employed ..." />
-            <marker date="1485800638000" expanded="true" signature="7907:7999" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8012:8055" ph=" Display discipline if present ..." />
-            <marker date="1485800638000" expanded="true" signature="8094:8432" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8441:8469" ph=" List employers ..." />
-            <marker date="1485800638000" expanded="true" signature="8507:9034" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8861:8936" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="9043:9082" ph=" Display emergency contact ..." />
-            <marker date="1485800638000" expanded="true" signature="9120:9512" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="9521:9577" ph=" Prompt for additional licenses or continue ..." />
-            <marker date="1485800638000" expanded="true" signature="9614:9826" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="9835:9866" ph=" Create discipline ..." />
-            <marker date="1485800638000" expanded="true" signature="9907:10007" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10020:10051" ph=" Create discipline ..." />
-            <marker date="1485800638000" expanded="true" signature="10088:10194" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10203:10233" ph=" Asks if employed ..." />
-            <marker date="1485800638000" expanded="true" signature="10266:10364" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10373:10411" ph=" Prompt for employer info ..." />
-            <marker date="1485800638000" expanded="true" signature="10444:10549" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10558:10633" ph=" Create new employer ..." />
-            <marker date="1485800638000" expanded="true" signature="10686:11098" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11107:11140" ph=" Create program info ..." />
-            <marker date="1485800638000" expanded="true" signature="11178:11275" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11284:11318" ph=" Display program info ..." />
-            <marker date="1485800638000" expanded="true" signature="11354:11676" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11685:11723" ph=" Display demographic info ..." />
-            <marker date="1485800638000" expanded="true" signature="11756:12075" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="12084:12173" ph=" Update image and submit date for $imageType ..." />
-            <marker date="1485800638000" expanded="true" signature="12219:15267" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="12299:13169" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="13914:15261" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="15276:15306" ph=" Display CPR info ..." />
-            <marker date="1485800638000" expanded="true" signature="15338:15707" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="15716:15778" ph=" Display applicant info for $id ..." />
-            <marker date="1485800638000" expanded="true" signature="15819:16993" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="17034:18770" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="17105:18033" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="17154:17403" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="18125:18301" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18181:18293" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18309:18679" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18801:20161" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="18919:19847" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18968:19217" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="19926:20072" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="19953:20071" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="20205:20520" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="20555:21957" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="20661:21589" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="20710:20959" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="21676:21867" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="21707:21866" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="21964:21997" ph=" List all applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="22036:22276" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="22308:22476" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="110:23474" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="216:295" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="329:1277" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1285:1330" ph=" Create a new user in the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1366:1456" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1465:1517" ph=" Allows an existing user to login to the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1547:1652" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1661:1721" ph=" Allows an existing user to login to the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1753:2630" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="2054:2460" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="2468:2622" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="2639:2721" ph=" View existing personal information ..." />
+            <marker date="1485983884000" expanded="true" signature="2769:3183" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="3192:3258" ph=" Display application sections to returning applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="3295:4107" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="3369:3931" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3623:3833" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3841:3917" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3939:4068" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="4116:4278" ph=" Update the applicant table with info stored in the $_POST array ..." />
+            <marker date="1485983884000" expanded="true" signature="4330:4620" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="4629:4694" ph=" Display link to $imagetype ..." />
+            <marker date="1485983884000" expanded="true" signature="4738:5377" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="5125:5210" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="5386:5526" ph=" Upload image of $imagetype ..." />
+            <marker date="1485983884000" expanded="true" signature="5583:7450" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="5802:6728" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7020:7151" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7459:7519" ph="Display school associated with applicant ..." />
+            <marker date="1485983884000" expanded="true" signature="7554:8141" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="7776:7936" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7944:8095" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8150:8181" ph=" List all licenses ..." />
+            <marker date="1485983884000" expanded="true" signature="8218:8826" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="8566:8625" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8633:8781" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8832:8856" ph=" Asks if employed ..." />
+            <marker date="1485983884000" expanded="true" signature="8888:8980" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="8993:9036" ph=" Display discipline if present ..." />
+            <marker date="1485983884000" expanded="true" signature="9075:9413" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="9422:9450" ph=" List employers ..." />
+            <marker date="1485983884000" expanded="true" signature="9488:10015" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="9842:9917" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="10024:10063" ph=" Display emergency contact ..." />
+            <marker date="1485983884000" expanded="true" signature="10101:10493" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="10502:10558" ph=" Prompt for additional licenses or continue ..." />
+            <marker date="1485983884000" expanded="true" signature="10595:10807" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="10816:10847" ph=" Create discipline ..." />
+            <marker date="1485983884000" expanded="true" signature="10888:10988" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11001:11032" ph=" Create discipline ..." />
+            <marker date="1485983884000" expanded="true" signature="11069:11175" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11184:11214" ph=" Asks if employed ..." />
+            <marker date="1485983884000" expanded="true" signature="11247:11345" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11354:11392" ph=" Prompt for employer info ..." />
+            <marker date="1485983884000" expanded="true" signature="11425:11530" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11539:11614" ph=" Create new employer ..." />
+            <marker date="1485983884000" expanded="true" signature="11667:12079" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12088:12121" ph=" Create program info ..." />
+            <marker date="1485983884000" expanded="true" signature="12159:12256" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12265:12299" ph=" Display program info ..." />
+            <marker date="1485983884000" expanded="true" signature="12335:12657" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12666:12704" ph=" Display demographic info ..." />
+            <marker date="1485983884000" expanded="true" signature="12737:13056" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="13065:13154" ph=" Update image and submit date for $imageType ..." />
+            <marker date="1485983884000" expanded="true" signature="13200:16248" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="13280:14150" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="14895:16242" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="16257:16287" ph=" Display CPR info ..." />
+            <marker date="1485983884000" expanded="true" signature="16319:16688" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="16697:16759" ph=" Display applicant info for $id ..." />
+            <marker date="1485983884000" expanded="true" signature="16800:17974" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="18015:19751" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="18086:19014" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="18135:18384" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="19106:19282" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19162:19274" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19290:19660" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19782:21142" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="19900:20828" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19949:20198" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="20907:21053" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="20934:21052" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="21186:21501" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="21536:22938" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="21642:22570" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="21691:21940" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="22657:22848" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="22688:22847" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="22945:22978" ph=" List all applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="23017:23257" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="23289:23457" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -733,97 +724,98 @@
         <state relative-caret-position="3255">
           <caret line="217" column="4" selection-start-line="217" selection-start-column="4" selection-end-line="217" selection-end-column="4" />
           <folding>
-            <marker date="1485800638000" expanded="true" signature="110:22493" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="216:295" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="304:349" ph=" Create a new user in the system ..." />
-            <marker date="1485800638000" expanded="true" signature="385:475" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="484:536" ph=" Allows an existing user to login to the system ..." />
-            <marker date="1485800638000" expanded="true" signature="566:671" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="680:740" ph=" Allows an existing user to login to the system ..." />
-            <marker date="1485800638000" expanded="true" signature="772:1649" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="1073:1479" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="1487:1641" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="1658:1740" ph=" View existing personal information ..." />
-            <marker date="1485800638000" expanded="true" signature="1788:2202" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="2211:2277" ph=" Display application sections to returning applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="2314:3126" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="2388:2950" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2642:2852" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2860:2936" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2958:3087" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="3135:3297" ph=" Update the applicant table with info stored in the $_POST array ..." />
-            <marker date="1485800638000" expanded="true" signature="3349:3639" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="3648:3713" ph=" Display link to $imagetype ..." />
-            <marker date="1485800638000" expanded="true" signature="3757:4396" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="4144:4229" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="4405:4545" ph=" Upload image of $imagetype ..." />
-            <marker date="1485800638000" expanded="true" signature="4602:6469" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="4821:5747" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6039:6170" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6478:6538" ph="Display school associated with applicant ..." />
-            <marker date="1485800638000" expanded="true" signature="6573:7160" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="6795:6955" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6963:7114" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7169:7200" ph=" List all licenses ..." />
-            <marker date="1485800638000" expanded="true" signature="7237:7845" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="7585:7644" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7652:7800" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7851:7875" ph=" Asks if employed ..." />
-            <marker date="1485800638000" expanded="true" signature="7907:7999" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8012:8055" ph=" Display discipline if present ..." />
-            <marker date="1485800638000" expanded="true" signature="8094:8432" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8441:8469" ph=" List employers ..." />
-            <marker date="1485800638000" expanded="true" signature="8507:9034" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8861:8936" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="9043:9082" ph=" Display emergency contact ..." />
-            <marker date="1485800638000" expanded="true" signature="9120:9512" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="9521:9577" ph=" Prompt for additional licenses or continue ..." />
-            <marker date="1485800638000" expanded="true" signature="9614:9826" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="9835:9866" ph=" Create discipline ..." />
-            <marker date="1485800638000" expanded="true" signature="9907:10007" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10020:10051" ph=" Create discipline ..." />
-            <marker date="1485800638000" expanded="true" signature="10088:10194" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10203:10233" ph=" Asks if employed ..." />
-            <marker date="1485800638000" expanded="true" signature="10266:10364" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10373:10411" ph=" Prompt for employer info ..." />
-            <marker date="1485800638000" expanded="true" signature="10444:10549" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10558:10633" ph=" Create new employer ..." />
-            <marker date="1485800638000" expanded="true" signature="10686:11098" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11107:11140" ph=" Create program info ..." />
-            <marker date="1485800638000" expanded="true" signature="11178:11275" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11284:11318" ph=" Display program info ..." />
-            <marker date="1485800638000" expanded="true" signature="11354:11676" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11685:11723" ph=" Display demographic info ..." />
-            <marker date="1485800638000" expanded="true" signature="11756:12075" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="12084:12173" ph=" Update image and submit date for $imageType ..." />
-            <marker date="1485800638000" expanded="true" signature="12219:15267" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="12299:13169" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="13914:15261" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="15276:15306" ph=" Display CPR info ..." />
-            <marker date="1485800638000" expanded="true" signature="15338:15707" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="15716:15778" ph=" Display applicant info for $id ..." />
-            <marker date="1485800638000" expanded="true" signature="15819:16993" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="17034:18770" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="17105:18033" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="17154:17403" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="18125:18301" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18181:18293" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18309:18679" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18801:20161" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="18919:19847" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18968:19217" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="19926:20072" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="19953:20071" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="20205:20520" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="20555:21957" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="20661:21589" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="20710:20959" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="21676:21867" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="21707:21866" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="21964:21997" ph=" List all applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="22036:22276" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="22308:22476" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="110:23474" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="216:295" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="329:1277" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1285:1330" ph=" Create a new user in the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1366:1456" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1465:1517" ph=" Allows an existing user to login to the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1547:1652" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1661:1721" ph=" Allows an existing user to login to the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1753:2630" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="2054:2460" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="2468:2622" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="2639:2721" ph=" View existing personal information ..." />
+            <marker date="1485983884000" expanded="true" signature="2769:3183" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="3192:3258" ph=" Display application sections to returning applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="3295:4107" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="3369:3931" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3623:3833" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3841:3917" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3939:4068" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="4116:4278" ph=" Update the applicant table with info stored in the $_POST array ..." />
+            <marker date="1485983884000" expanded="true" signature="4330:4620" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="4629:4694" ph=" Display link to $imagetype ..." />
+            <marker date="1485983884000" expanded="true" signature="4738:5377" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="5125:5210" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="5386:5526" ph=" Upload image of $imagetype ..." />
+            <marker date="1485983884000" expanded="true" signature="5583:7450" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="5802:6728" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7020:7151" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7459:7519" ph="Display school associated with applicant ..." />
+            <marker date="1485983884000" expanded="true" signature="7554:8141" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="7776:7936" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7944:8095" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8150:8181" ph=" List all licenses ..." />
+            <marker date="1485983884000" expanded="true" signature="8218:8826" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="8566:8625" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8633:8781" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8832:8856" ph=" Asks if employed ..." />
+            <marker date="1485983884000" expanded="true" signature="8888:8980" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="8993:9036" ph=" Display discipline if present ..." />
+            <marker date="1485983884000" expanded="true" signature="9075:9413" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="9422:9450" ph=" List employers ..." />
+            <marker date="1485983884000" expanded="true" signature="9488:10015" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="9842:9917" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="10024:10063" ph=" Display emergency contact ..." />
+            <marker date="1485983884000" expanded="true" signature="10101:10493" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="10502:10558" ph=" Prompt for additional licenses or continue ..." />
+            <marker date="1485983884000" expanded="true" signature="10595:10807" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="10816:10847" ph=" Create discipline ..." />
+            <marker date="1485983884000" expanded="true" signature="10888:10988" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11001:11032" ph=" Create discipline ..." />
+            <marker date="1485983884000" expanded="true" signature="11069:11175" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11184:11214" ph=" Asks if employed ..." />
+            <marker date="1485983884000" expanded="true" signature="11247:11345" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11354:11392" ph=" Prompt for employer info ..." />
+            <marker date="1485983884000" expanded="true" signature="11425:11530" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11539:11614" ph=" Create new employer ..." />
+            <marker date="1485983884000" expanded="true" signature="11667:12079" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12088:12121" ph=" Create program info ..." />
+            <marker date="1485983884000" expanded="true" signature="12159:12256" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12265:12299" ph=" Display program info ..." />
+            <marker date="1485983884000" expanded="true" signature="12335:12657" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12666:12704" ph=" Display demographic info ..." />
+            <marker date="1485983884000" expanded="true" signature="12737:13056" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="13065:13154" ph=" Update image and submit date for $imageType ..." />
+            <marker date="1485983884000" expanded="true" signature="13200:16248" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="13280:14150" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="14895:16242" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="16257:16287" ph=" Display CPR info ..." />
+            <marker date="1485983884000" expanded="true" signature="16319:16688" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="16697:16759" ph=" Display applicant info for $id ..." />
+            <marker date="1485983884000" expanded="true" signature="16800:17974" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="18015:19751" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="18086:19014" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="18135:18384" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="19106:19282" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19162:19274" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19290:19660" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19782:21142" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="19900:20828" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19949:20198" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="20907:21053" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="20934:21052" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="21186:21501" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="21536:22938" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="21642:22570" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="21691:21940" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="22657:22848" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="22688:22847" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="22945:22978" ph=" List all applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="23017:23257" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="23289:23457" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -975,32 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/demo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="26" selection-start-line="26" selection-start-column="20" selection-end-line="29" selection-end-column="26" />
-          <folding>
-            <marker date="1482431029000" expanded="true" signature="28:1792" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="157:1783" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="177:1776" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="203:793" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="225:784" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="253:284" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="312:773" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="813:1641" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="839:1633" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="861:1624" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="889:926" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="954:1120" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="1148:1182" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="1210:1352" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="1389:1432" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="1469:1613" ph="..." />
-            <marker date="1482431029000" expanded="true" signature="1666:1774" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/js_functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -1116,149 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="177" column="42" selection-start-line="177" selection-start-column="42" selection-end-line="177" selection-end-column="55" />
-          <folding>
-            <marker date="1485800638000" expanded="true" signature="110:22493" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="216:295" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="304:349" ph=" Create a new user in the system ..." />
-            <marker date="1485800638000" expanded="true" signature="385:475" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="484:536" ph=" Allows an existing user to login to the system ..." />
-            <marker date="1485800638000" expanded="true" signature="566:671" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="680:740" ph=" Allows an existing user to login to the system ..." />
-            <marker date="1485800638000" expanded="true" signature="772:1649" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="1073:1479" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="1487:1641" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="1658:1740" ph=" View existing personal information ..." />
-            <marker date="1485800638000" expanded="true" signature="1788:2202" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="2211:2277" ph=" Display application sections to returning applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="2314:3126" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="2388:2950" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2642:2852" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2860:2936" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="2958:3087" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="3135:3297" ph=" Update the applicant table with info stored in the $_POST array ..." />
-            <marker date="1485800638000" expanded="true" signature="3349:3639" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="3648:3713" ph=" Display link to $imagetype ..." />
-            <marker date="1485800638000" expanded="true" signature="3757:4396" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="4144:4229" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="4405:4545" ph=" Upload image of $imagetype ..." />
-            <marker date="1485800638000" expanded="true" signature="4602:6469" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="4821:5747" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6039:6170" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6478:6538" ph="Display school associated with applicant ..." />
-            <marker date="1485800638000" expanded="true" signature="6573:7160" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="6795:6955" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="6963:7114" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7169:7200" ph=" List all licenses ..." />
-            <marker date="1485800638000" expanded="true" signature="7237:7845" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="7585:7644" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7652:7800" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="7851:7875" ph=" Asks if employed ..." />
-            <marker date="1485800638000" expanded="true" signature="7907:7999" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8012:8055" ph=" Display discipline if present ..." />
-            <marker date="1485800638000" expanded="true" signature="8094:8432" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8441:8469" ph=" List employers ..." />
-            <marker date="1485800638000" expanded="true" signature="8507:9034" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="8861:8936" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="9043:9082" ph=" Display emergency contact ..." />
-            <marker date="1485800638000" expanded="true" signature="9120:9512" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="9521:9577" ph=" Prompt for additional licenses or continue ..." />
-            <marker date="1485800638000" expanded="true" signature="9614:9826" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="9835:9866" ph=" Create discipline ..." />
-            <marker date="1485800638000" expanded="true" signature="9907:10007" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10020:10051" ph=" Create discipline ..." />
-            <marker date="1485800638000" expanded="true" signature="10088:10194" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10203:10233" ph=" Asks if employed ..." />
-            <marker date="1485800638000" expanded="true" signature="10266:10364" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10373:10411" ph=" Prompt for employer info ..." />
-            <marker date="1485800638000" expanded="true" signature="10444:10549" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="10558:10633" ph=" Create new employer ..." />
-            <marker date="1485800638000" expanded="true" signature="10686:11098" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11107:11140" ph=" Create program info ..." />
-            <marker date="1485800638000" expanded="true" signature="11178:11275" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11284:11318" ph=" Display program info ..." />
-            <marker date="1485800638000" expanded="true" signature="11354:11676" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="11685:11723" ph=" Display demographic info ..." />
-            <marker date="1485800638000" expanded="true" signature="11756:12075" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="12084:12173" ph=" Update image and submit date for $imageType ..." />
-            <marker date="1485800638000" expanded="true" signature="12219:15267" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="12299:13169" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="13914:15261" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="15276:15306" ph=" Display CPR info ..." />
-            <marker date="1485800638000" expanded="true" signature="15338:15707" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="15716:15778" ph=" Display applicant info for $id ..." />
-            <marker date="1485800638000" expanded="true" signature="15819:16993" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="17034:18770" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="17105:18033" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="17154:17403" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="18125:18301" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18181:18293" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18309:18679" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18801:20161" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="18919:19847" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="18968:19217" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="19926:20072" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="19953:20071" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="20205:20520" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="20555:21957" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="20661:21589" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="20710:20959" ph="//..." />
-            <marker date="1485800638000" expanded="true" signature="21676:21867" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="21707:21866" ph="..." />
-            <marker date="1485800638000" expanded="true" signature="21964:21997" ph=" List all applicants ..." />
-            <marker date="1485800638000" expanded="true" signature="22036:22276" ph="{...}" />
-            <marker date="1485800638000" expanded="true" signature="22308:22476" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/view_applicant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-          <folding>
-            <marker date="1485973446000" expanded="true" signature="28:7162" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="51:159" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="167:7137" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="239:1288" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="408:830" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="604:829" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="868:1271" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="1063:1270" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="1321:3791" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="1396:3785" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="1468:1884" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="1905:3769" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="1933:2986" ph="..." />
-            <marker date="1485973446000" expanded="false" signature="1945:1951" ph=" " />
-            <marker date="1485973446000" expanded="true" signature="1993:2479" ph="..." />
-            <marker date="1485973446000" expanded="false" signature="2503:2509" ph=" " />
-            <marker date="1485973446000" expanded="true" signature="2554:2962" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="3030:3742" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="3085:3367" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="3277:3361" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="3436:3718" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="3628:3712" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="3871:4161" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="4206:4786" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="4266:4765" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="4310:4743" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="4875:5296" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="5372:5645" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="5689:6037" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="5748:6016" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="5793:5995" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="6125:6404" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="6447:7096" ph="..." />
-            <marker date="1485973446000" expanded="true" signature="6507:6971" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/core/my_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1297,10 +1120,209 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/thank_you.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1481042854000" expanded="true" signature="28:43" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/view_applicant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="124" column="47" selection-start-line="0" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+          <folding>
+            <marker date="1485979574000" expanded="true" signature="28:7529" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="51:159" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="167:7504" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="239:1288" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="408:830" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="604:829" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="868:1271" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="1063:1270" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="1321:3771" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="1396:3765" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="1468:1884" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="1905:3749" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="1933:2966" ph="..." />
+            <marker date="1485979574000" expanded="false" signature="1945:1951" ph=" " />
+            <marker date="1485979574000" expanded="true" signature="1993:2472" ph="..." />
+            <marker date="1485979574000" expanded="false" signature="2496:2502" ph=" " />
+            <marker date="1485979574000" expanded="true" signature="2547:2942" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="3010:3722" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="3065:3347" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="3257:3341" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="3416:3698" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="3608:3692" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="3851:4141" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="4186:4766" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="4246:4745" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="4290:4723" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="4856:5163" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="5030:5146" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="5242:5663" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="5739:6012" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="6056:6404" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="6115:6383" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="6160:6362" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="6492:6771" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="6814:7463" ph="..." />
+            <marker date="1485979574000" expanded="true" signature="6874:7338" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/demo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="83" selection-start-line="35" selection-start-column="83" selection-end-line="35" selection-end-column="83" />
+          <folding>
+            <marker date="1485983662000" expanded="true" signature="28:1792" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="157:1783" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="177:1776" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="203:793" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="225:784" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="253:284" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="312:773" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="813:1641" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="839:1633" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="861:1624" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="889:926" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="954:1120" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="1148:1182" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="1210:1352" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="1389:1432" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="1469:1613" ph="..." />
+            <marker date="1485983662000" expanded="true" signature="1666:1774" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="849">
-          <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
+        <state relative-caret-position="330">
+          <caret line="22" column="5" selection-start-line="4" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <marker date="1485978402000" expanded="true" signature="111:2247" ph="..." />
+            <marker date="1485978402000" expanded="true" signature="141:1019" ph="{...}" />
+            <marker date="1485978402000" expanded="true" signature="1044:1268" ph="{...}" />
+            <marker date="1485978402000" expanded="true" signature="1297:1454" ph="{...}" />
+            <marker date="1485978402000" expanded="true" signature="1480:1589" ph="{...}" />
+            <marker date="1485978402000" expanded="true" signature="1630:1831" ph="{...}" />
+            <marker date="1485978402000" expanded="true" signature="1864:2246" ph="{...}" />
+            <marker date="1485978402000" expanded="true" signature="1904:2239" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+          <folding>
+            <marker date="1485983884000" expanded="true" signature="110:23474" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="216:295" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="329:1277" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1285:1330" ph=" Create a new user in the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1366:1456" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1465:1517" ph=" Allows an existing user to login to the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1547:1652" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="1661:1721" ph=" Allows an existing user to login to the system ..." />
+            <marker date="1485983884000" expanded="true" signature="1753:2630" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="2054:2460" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="2468:2622" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="2639:2721" ph=" View existing personal information ..." />
+            <marker date="1485983884000" expanded="true" signature="2769:3183" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="3192:3258" ph=" Display application sections to returning applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="3295:4107" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="3369:3931" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3623:3833" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3841:3917" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="3939:4068" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="4116:4278" ph=" Update the applicant table with info stored in the $_POST array ..." />
+            <marker date="1485983884000" expanded="true" signature="4330:4620" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="4629:4694" ph=" Display link to $imagetype ..." />
+            <marker date="1485983884000" expanded="true" signature="4738:5377" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="5125:5210" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="5386:5526" ph=" Upload image of $imagetype ..." />
+            <marker date="1485983884000" expanded="true" signature="5583:7450" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="5802:6728" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7020:7151" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7459:7519" ph="Display school associated with applicant ..." />
+            <marker date="1485983884000" expanded="true" signature="7554:8141" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="7776:7936" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="7944:8095" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8150:8181" ph=" List all licenses ..." />
+            <marker date="1485983884000" expanded="true" signature="8218:8826" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="8566:8625" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8633:8781" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="8832:8856" ph=" Asks if employed ..." />
+            <marker date="1485983884000" expanded="true" signature="8888:8980" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="8993:9036" ph=" Display discipline if present ..." />
+            <marker date="1485983884000" expanded="true" signature="9075:9413" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="9422:9450" ph=" List employers ..." />
+            <marker date="1485983884000" expanded="true" signature="9488:10015" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="9842:9917" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="10024:10063" ph=" Display emergency contact ..." />
+            <marker date="1485983884000" expanded="true" signature="10101:10493" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="10502:10558" ph=" Prompt for additional licenses or continue ..." />
+            <marker date="1485983884000" expanded="true" signature="10595:10807" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="10816:10847" ph=" Create discipline ..." />
+            <marker date="1485983884000" expanded="true" signature="10888:10988" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11001:11032" ph=" Create discipline ..." />
+            <marker date="1485983884000" expanded="true" signature="11069:11175" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11184:11214" ph=" Asks if employed ..." />
+            <marker date="1485983884000" expanded="true" signature="11247:11345" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11354:11392" ph=" Prompt for employer info ..." />
+            <marker date="1485983884000" expanded="true" signature="11425:11530" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="11539:11614" ph=" Create new employer ..." />
+            <marker date="1485983884000" expanded="true" signature="11667:12079" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12088:12121" ph=" Create program info ..." />
+            <marker date="1485983884000" expanded="true" signature="12159:12256" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12265:12299" ph=" Display program info ..." />
+            <marker date="1485983884000" expanded="true" signature="12335:12657" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="12666:12704" ph=" Display demographic info ..." />
+            <marker date="1485983884000" expanded="true" signature="12737:13056" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="13065:13154" ph=" Update image and submit date for $imageType ..." />
+            <marker date="1485983884000" expanded="true" signature="13200:16248" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="13280:14150" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="14895:16242" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="16257:16287" ph=" Display CPR info ..." />
+            <marker date="1485983884000" expanded="true" signature="16319:16688" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="16697:16759" ph=" Display applicant info for $id ..." />
+            <marker date="1485983884000" expanded="true" signature="16800:17974" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="18015:19751" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="18086:19014" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="18135:18384" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="19106:19282" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19162:19274" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19290:19660" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19782:21142" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="19900:20828" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="19949:20198" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="20907:21053" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="20934:21052" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="21186:21501" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="21536:22938" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="21642:22570" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="21691:21940" ph="//..." />
+            <marker date="1485983884000" expanded="true" signature="22657:22848" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="22688:22847" ph="..." />
+            <marker date="1485983884000" expanded="true" signature="22945:22978" ph=" List all applicants ..." />
+            <marker date="1485983884000" expanded="true" signature="23017:23257" ph="{...}" />
+            <marker date="1485983884000" expanded="true" signature="23289:23457" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/review.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
           <folding />
         </state>
       </provider>

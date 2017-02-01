@@ -11,6 +11,28 @@ class Home extends CI_Controller {
 		$this->load->view('welcome');
 	}
 
+
+    public function review($id)
+    {
+
+        $this->load->model('ApplicantModel');
+        $data['applicant'] = $this->ApplicantModel->load($id);
+        $this->load->model('RaceModel');
+        $data['race']= $this->RaceModel->load($data['applicant']->race);
+        $this->load->model('IdentificationModel');
+        $data['identification'] = $this->IdentificationModel->get_item('applicant_id',$id);
+        $this->load->model('CprModel');
+        $data['cpr'] = $this->CprModel->get_item('applicant_id',$id);
+        $this->load->model('EmployerModel');
+        $data['employers'] = $this->EmployerModel->get_list('applicant_id',$id);
+        $this->load->model('LicenseModel');
+        $data['licenses'] = $this->LicenseModel->get_list('applicant_id',$id);
+        $this->load->model('SchoolModel');
+        $data['school'] = $this->SchoolModel->get_item('applicant_id',$id);
+        $this->load->view('templates/header');
+        $this->load->view('review',$data);
+
+    }
     /**
      * Create a new user in the system
      */

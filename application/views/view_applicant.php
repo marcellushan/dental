@@ -39,14 +39,14 @@
 							<h4 class="col-md-4">Submission Date</h4>
 							<h4 class="col-md-3"><?=$identification->submission_date?></h4>
 							<h4 class="col-md-3"><a href="<?=$identification->image?>" target="_blank">Image</a></h4>
-							<h4 class="col-md-5"><?=($identification->verified ? "Verified by: " .$identification->verified . " <br>Date verified: " . $identification->verified_date : "Verify? &nbsp<input type='checkbox'  name='identification' value='identification'>")?></h4>
+							<h4 class="col-md-7"><?=($identification->verified ? "Verified by: " .$identification->verified . "       Date: " . $identification->verified_date : "Verify? &nbsp<input type='checkbox'  name='identification' value='identification'>")?></h4>
 						</div><!-- row -->
 						<h3>&nbsp;CPR Certification</h3>
 						<div class="row">
 							<h4 class="col-md-4">Submission Date</h4>
 							<h4 class="col-md-3"><?=$cpr->submission_date?></h4>
-							<h4 class="col-md-2"><a href="<?=$cpr->image?>" target="_blank">Image</a></h4>
-							<h4 class="col-md-5"><?=($cpr->verified ? "Verified by: " .$cpr->verified . " <br>Date verified: " . $cpr->verified_date : "Verify? &nbsp<input type='checkbox' name='cpr' value='cpr'>")?></h4>
+							<h4 class="col-md-3"><a href="<?=$cpr->image?>" target="_blank">Image</a></h4>
+							<h4 class="col-md-7"><?=($cpr->verified ? "Verified by: " .$cpr->verified . " Date: " . $cpr->verified_date : "Verify? &nbsp<input type='checkbox' name='cpr' value='cpr'>")?></h4>
 						</div><!-- row -->
 					</div><!--col-md-6 -->
 					<div class="col-md-6">
@@ -91,7 +91,16 @@
 				<?php endforeach;?>
 			</div><!-- row -->
 		</div><!-- section-border -->
-		<h3 class="wrapper">Emergency Contact</h3>
+		 <h3 class="wrapper">Other Information</h3>
+		 <div class="row">
+			 <h4 class="col-md-3">Disciplinary Action?</h4>
+			 <h4 class="item col-md-8"><? echo ($applicant->discipline ? "Yes" : "No"); ?></h4>
+			 <? if($applicant->discipline):?>
+			 <h4 class="col-md-3">Explanation</h4>
+			 <h4 class="item col-md-8"><?=$applicant->discipline ?></h4>
+			 <? endif;?>
+		 </div><!-- row -->
+		 <h3 class="wrapper">Emergency Contact</h3>
 		 <div class="row">
 			 <h4 class="col-md-1">Name</h4>
 			 <h4 class="item col-md-2"><?=$applicant->e_last_name?>, <?=$applicant->e_first_name?></h4>
