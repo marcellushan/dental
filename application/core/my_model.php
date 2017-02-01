@@ -1,6 +1,6 @@
 <?php
 
-class MY_Model extends CI_Model {
+class my_model extends CI_Model {
     const DB_TABLE = 'abstract';
     const DB_TABLE_PK = 'abstract';
     
@@ -30,6 +30,7 @@ class MY_Model extends CI_Model {
     	// 		echo $this->db->update($this::DB_TABLE, $this, "application_id='63'");
     	$this->db->where($this::DB_TABLE_PK, $id);
     	$this->db->update($this::DB_TABLE, $data);
+
     }
     
     /**

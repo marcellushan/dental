@@ -34,6 +34,7 @@ class Home extends CI_Controller {
      */
     public function student()
     {
+        ini_set("display_errors", 1);
         session_start();
         $this->load->model('ApplicantModel');
         $applicant = new ApplicantModel();
@@ -146,14 +147,15 @@ class Home extends CI_Controller {
      */
     public function createImage($imageType, $nextPage)
     {
+        ini_set("display_errors", 1);
         session_start();
         $this->load->model('StateModel');
         $data['states'] = $this->StateModel->get_states();
         if(!@$_FILES['fileToUpload']['error']) {
-    
+    echo $_SERVER['SERVER_NAME'];
             $myRandom = rand(1, 10000);
-            // 			($servername=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/printing/uploads/" : $target_dir = "/var/www/html/printing/uploads/");
-            $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
+            			($_SERVER['SERVER_NAME']=='localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/" : $target_dir = "/var/www/html/dental/assets/uploads/");
+//             $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/";
             // webdev
             // 	$target_dir = "/var/www/html/dental/assets/uploads/";
             $target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
@@ -164,8 +166,8 @@ class Home extends CI_Controller {
             $image_url = base_url() . "assets/uploads/" .  $myRandom . basename($_FILES["fileToUpload"]["name"]);
         }
         $this->load->model('ApplicantModel');
-        $modelName = $imageType . 'Model';
-        $this->load->model($imageType . 'Model');
+        $modelName = $imageType . 'model';
+        $this->load->model($modelName);
         $image = new $modelName();
         $image->applicant_id = $_SESSION['applicant_id'];
 		$image_array = $_POST;

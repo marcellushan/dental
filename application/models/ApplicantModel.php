@@ -1,6 +1,6 @@
 <?php
 
-class ApplicantModel extends My_Model {
+class ApplicantModel extends my_model {
 	
 	const DB_TABLE = 'applicant';
 	const DB_TABLE_PK = 'applicant_id';

@@ -45,4 +45,28 @@ class Admin extends CI_Controller {
 	    $admin = $this->AdminModel->load(1);
 	   var_dump($admin);
 	}
+
+
+
+    public function update($type,$id)
+    {
+        $this->load->model('ApplicantModel');
+        $applicant=$this->ApplicantModel->update($id, array( $type => 'jjones', $type .'_date' => date('Y-m-d')));
+//        var_dump($admin);
+    }
+
+    public function verify($id)
+    {
+        $this->load->model('ApplicantModel');
+        $applicant = $this->ApplicantModel->load($id);
+        foreach($_POST as $item)
+        {
+            $mymodel = $item . 'Model';
+            $this->load->model($mymodel);
+
+            $verify=$this->$mymodel->update($id, array('verified' => 'jjones', 'verified_date' => date('Y-m-d')));
+
+        }
+
+    }
 }
