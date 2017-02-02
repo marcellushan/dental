@@ -6,7 +6,7 @@
 	</h1>
 
 <?php echo validation_errors(); ?>
-	<form action='<?=base_url("home/updateApplicant/employed")?>' method="post">
+	<form action='<?=base_url("applicant/put/employed")?>' method="post">
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">

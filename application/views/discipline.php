@@ -1,6 +1,6 @@
  <div class="main container">
 
-	<form action='<?=base_url("home/updateApplicant/create_emergency")?>' method="post">
+	<form action='<?=base_url("applicant/put/emergency")?>' method="post">
 			<fieldset class="mytitle">
 						<h2>&nbsp;Please explain disciplinary action and include any documentation</h2>
 						<div class="row">

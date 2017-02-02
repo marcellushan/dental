@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="Webdev">
+  <component name="PublishConfigData" autoUpload="Always" serverName="Dental">
     <serverData>
-      <paths name="Webdev">
+      <paths name="Dental">
         <serverdata>
           <mappings>
             <mapping deploy="/var/www/html/dental" local="$PROJECT_DIR$" web="/dental" />

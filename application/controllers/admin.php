@@ -3,8 +3,9 @@
 class Admin extends CI_Controller {
 	
 	public function index($id) 
-	{	
-		$this->load->model('ApplicantModel');
+	{
+        ini_set('display_errors', '1');
+        $this->load->model('ApplicantModel');
 		$data['applicant'] = $this->ApplicantModel->load($id);
 		$this->load->model('RaceModel');
 		$data['race']= $this->RaceModel->load($data['applicant']->race);
@@ -52,12 +53,13 @@ class Admin extends CI_Controller {
     {
         $this->load->model('ApplicantModel');
         $applicant=$this->ApplicantModel->update($id, array( $type => 'jjones', $type .'_date' => date('Y-m-d')));
-//        var_dump($admin);
+        header( "Location: ".base_url() . "admin/index/".$id);
     }
 
     public function verify($id)
     {
-
+        ini_set('display_errors', '1');
+        $this->load->helper('url');
         foreach($_POST as $item)
         {
             $mymodel = $item . 'Model';
@@ -65,8 +67,14 @@ class Admin extends CI_Controller {
             $this->load->model($mymodel);
             $type = $this->$mymodel->get_item('applicant_id', $id);
             $verify=$this->$mymodel->update($type->$type_id, array('verified' => 'jjones', 'verified_date' => date('Y-m-d')));
+//            redirect('index);
+//            header( "Location: /admin/index" );
+//            $this->load->view('templates/header');
+//            $this->load->view('view_applicant',$data);
+
 
         }
+                    header( "Location: ".base_url() . "admin/index/".$id);
 
     }
 }

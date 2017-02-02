@@ -10,8 +10,8 @@
         </div>
 
         <div class="section-border">
+            <form method="post" action="../verify/<?=$applicant->applicant_id ?>">
                 <h2  class= "mytitle">Personal Information</h2>
-            <div class="wrapper"><input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../home/viewPersonal'"value="Update"></div>
                 <div class="row">
                     <h4 class="col-md-1">Birthdate</h4>
                     <h4 class="item col-md-2"><?=$applicant->birth_date?></h4>

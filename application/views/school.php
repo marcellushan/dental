@@ -1,9 +1,17 @@
  <div class="main container">
 	<h1 class= "mytitle">
-		LICENSURE INFORMATION
+DENTAL HYGIENE SCHOOL
 	</h1>
 <?php echo validation_errors(); ?>
-	<form action='<?=base_url("home/createImage/license/more_licenses")?>' method="post" enctype="multipart/form-data">
+	<form action='<?=base_url("additional/post/school/license")?>' method="post" enctype="multipart/form-data">
+		<div class="row">
+			<div class="col-md-3 col-md-offset-3">
+				<h3>School Attended</h3>
+			</div>
+			<div class="col-md-3">
+				<h3><input type="text" name="name"></h3>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<h3>State</h3>
@@ -18,26 +26,16 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
-				<h3>License Number</h3>
+				<h3>Year of Graduation</h3>
 			</div>
 			<div class="col-md-3">
-				<h3><input type="text" name="number"></h3>
+				<h3><input type="text" name="year"></h3>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-3 col-md-offset-3">
-				<h3>Active?</h3>
-			</div>
-			<div class="col-md-3">
-				<h3><input type="checkbox" name="active" value="1"></h3>
-			</div>
-		</div>
-<input type="file" name="fileToUpload" id="driver"><br>
 			<div class="wrapper">
-				<button type="submit" class="btn-lg btn-primary">Submit License Information</button>
+				<button type="submit" class="btn-lg btn-primary">Submit School Information</button>
 			</div>
-		</form>
-	
+	</form>
 	
 </div><!-- container -->
               

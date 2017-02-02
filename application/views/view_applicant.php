@@ -5,8 +5,10 @@
 	 <div>
 	    <h2  class= "mytitle">Application Status</h2>
 			<div class="row">
-			<h3 class="col-md-5 col-md-offset-2">Application Received</h3>
+			<h3 class="col-md-5 col-md-offset-2">Application Start Date:</h3>
 				<h3 class="item col-md-5"><?=$applicant->application_date?></h3>
+                <h3 class="col-md-5 col-md-offset-2">Application Submit Date</h3>
+                <h3 class="item col-md-5"><?=($applicant->submitted ? $applicant->submit_date : "Not Submitted")?></h3>
 				<? if($applicant->complete):?>
 				 <h4 class="col-md-5">Application Marked Complete by: <?=$applicant->complete ?></h4>
 				 <h4 class="col-md-5">Application Complete Date:  <?=$applicant->complete_date ?></h4>
@@ -100,6 +102,7 @@
 			 <h4 class="item col-md-8"><?=$applicant->discipline ?></h4>
 			 <? endif;?>
 		 </div><!-- row -->
+         <div class="section-border">
 		 <h3 class="wrapper">Emergency Contact</h3>
 		 <div class="row">
 			 <h4 class="col-md-1">Name</h4>
@@ -109,6 +112,7 @@
 			 <h4 class="col-md-1">Address</h4>
 			 <h4 class="item col-md-4"><?=$applicant->e_street?>, <?=$applicant->e_city?> <?=$applicant->e_state?>, <?=$applicant->e_zip?></h4>
 		 </div><!-- row  -->
+         </div><!-- section-border -->
 			<h3 class="wrapper">Phone Numbers</h3>
 			<div class="row">
 				<h4 class="col-md-2">Preferred</h4>
