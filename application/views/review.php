@@ -62,7 +62,7 @@
             <h4 class="item col-md-1"><?=$school->state?></h4>
             <h4 class="col-md-2">Graduation Year</h4>
             <h4 class="item col-md-2"><?=$school->year?></h4>
-            <h4 class="col-md-2"><input type="button" class="btn btn-info" onclick="window.location.href='../additional/get/school'"value="Update"></h4>
+            <h4 class="col-md-2"><input type="button" class="btn btn-info" onclick="window.location.href='../additional/get/school'" value="Update"></h4>
         </div><!-- row -->
         <div class="section-border">
             <h3 class="wrapper"><?=(@license?"License(s)":"No Licenses Provided");?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../image/get/license'" value="Update"></h3>
@@ -80,7 +80,7 @@
                 <?php endforeach;?>
             </div><!-- row -->
         </div><!-- section-border -->
-        <h3 class="wrapper">Other Information&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Update"></h3>
+        <h3 class="wrapper">Other Information&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/discipline'"value="Update"></h3>
         <div class="row">
             <h4 class="col-md-3">Disciplinary Action?</h4>
             <h4 class="item col-md-8"><? echo ($applicant->discipline ? "Yes" : "No"); ?></h4>

@@ -11,7 +11,7 @@
                 <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Submit">
             </div>
         </div>
-        
+
               <div class="section-border">
                 <h2  class= "mytitle">Personal Information</h2>
             <div class="wrapper"></div>
