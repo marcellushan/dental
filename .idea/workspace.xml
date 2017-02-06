@@ -2,40 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08b594db-f8a7-4f10-9626-132d7f7f71fc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/additional.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/applicant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/image.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/oldadditional.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/oldapplicant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/oldhome.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/oldimage.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/badreview.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/identification.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/personal.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/returning/oldlogin.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/create_employer.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/create_cpr.php" afterPath="$PROJECT_DIR$/application/views/cpr.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/create_emergency.php" afterPath="$PROJECT_DIR$/application/views/emergency.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/create_license.php" afterPath="$PROJECT_DIR$/application/views/license.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/create_login.php" afterPath="$PROJECT_DIR$/application/views/create_applicant.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/create_school.php" afterPath="$PROJECT_DIR$/application/views/school.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/returning/login.php" afterPath="$PROJECT_DIR$/application/views/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dental.iml" afterPath="$PROJECT_DIR$/.idea/dental.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin.php" afterPath="$PROJECT_DIR$/application/controllers/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/home.php" afterPath="$PROJECT_DIR$/application/controllers/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/demo.php" afterPath="$PROJECT_DIR$/application/views/demo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/discipline.php" afterPath="$PROJECT_DIR$/application/views/discipline.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/employed.php" afterPath="$PROJECT_DIR$/application/views/employed.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/employer.php" afterPath="$PROJECT_DIR$/application/views/employer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/more_employers.php" afterPath="$PROJECT_DIR$/application/views/more_employers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/more_licenses.php" afterPath="$PROJECT_DIR$/application/views/more_licenses.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/program.php" afterPath="$PROJECT_DIR$/application/views/program.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/review.php" afterPath="$PROJECT_DIR$/application/views/review.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/student.php" afterPath="$PROJECT_DIR$/application/views/student.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/view_applicant.php" afterPath="$PROJECT_DIR$/application/views/view_applicant.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/returning.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/welcome.php" afterPath="$PROJECT_DIR$/application/views/welcome.php" />
     </list>
     <ignored path="dental.iws" />
@@ -57,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="employed.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/employed.php">
+      <file leaf-file-name="returning.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/returning.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+            <state relative-caret-position="909">
+              <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -116,9 +83,10 @@
         <option value="$PROJECT_DIR$/application/controllers/additional.php" />
         <option value="$PROJECT_DIR$/application/controllers/applicant.php" />
         <option value="$PROJECT_DIR$/application/controllers/home.php" />
-        <option value="$PROJECT_DIR$/application/views/welcome.php" />
         <option value="$PROJECT_DIR$/application/views/more_licenses.php" />
         <option value="$PROJECT_DIR$/application/views/employed.php" />
+        <option value="$PROJECT_DIR$/application/views/welcome.php" />
+        <option value="$PROJECT_DIR$/application/controllers/returning.php" />
       </list>
     </option>
   </component>
@@ -209,24 +177,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dental" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dental" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -353,12 +303,12 @@
       <workItem from="1486040755206" duration="6000" />
       <workItem from="1486040763784" duration="26000" />
       <workItem from="1486040791897" duration="12107000" />
-      <workItem from="1486064297726" duration="2834000" />
+      <workItem from="1486064297726" duration="3676000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71662000" />
+    <option name="totallyTimeSpent" value="72504000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
@@ -424,13 +374,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/new/employer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/returning/employer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1105,10 +1048,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/oldhome.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/oldimage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1486062603000" expanded="true" signature="111:2045" ph="..." />
+            <marker date="1486062603000" expanded="true" signature="120:187" ph="Present welcome screen to new and returning applicants ..." />
+            <marker date="1486062603000" expanded="true" signature="218:320" ph="{...}" />
+            <marker date="1486062603000" expanded="true" signature="329:469" ph=" Upload image of $imagetype ..." />
+            <marker date="1486062603000" expanded="true" signature="514:2033" ph="{...}" />
+            <marker date="1486062603000" expanded="true" signature="696:1402" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <marker date="1486062603000" expanded="true" signature="111:2045" ph="..." />
+            <marker date="1486062603000" expanded="true" signature="120:187" ph="Present welcome screen to new and returning applicants ..." />
+            <marker date="1486062603000" expanded="true" signature="218:320" ph="{...}" />
+            <marker date="1486062603000" expanded="true" signature="329:469" ph=" Upload image of $imagetype ..." />
+            <marker date="1486062603000" expanded="true" signature="514:2033" ph="{...}" />
+            <marker date="1486062603000" expanded="true" signature="696:1402" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding>
+            <marker date="1486066386000" expanded="true" signature="110:471" ph="..." />
+            <marker date="1486066386000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
+            <marker date="1486066386000" expanded="true" signature="216:295" ph="{...}" />
+            <marker date="1486066386000" expanded="true" signature="305:335" ph=" Asks if employed ..." />
+            <marker date="1486066386000" expanded="true" signature="372:465" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/more_licenses.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+          <folding>
+            <marker date="1486066749000" expanded="true" signature="31:315" ph="..." />
+            <marker date="1486066749000" expanded="true" signature="55:171" ph="..." />
+            <marker date="1486066749000" expanded="true" signature="196:308" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/employed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding>
+            <marker date="1486066849000" expanded="true" signature="28:366" ph="..." />
+            <marker date="1486066849000" expanded="true" signature="108:358" ph="..." />
+            <marker date="1486066849000" expanded="false" signature="222:228" ph=" " />
+            <marker date="1486066849000" expanded="false" signature="228:234" ph=" " />
+            <marker date="1486066849000" expanded="false" signature="234:240" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/applicant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="933">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <marker date="1486066386000" expanded="true" signature="115:2054" ph="..." />
+            <marker date="1486066386000" expanded="true" signature="143:983" ph="{...}" />
+            <marker date="1486066386000" expanded="true" signature="407:813" ph="..." />
+            <marker date="1486066386000" expanded="true" signature="821:975" ph="..." />
+            <marker date="1486066386000" expanded="true" signature="992:1074" ph=" View existing personal information ..." />
+            <marker date="1486066386000" expanded="true" signature="1119:1545" ph="{...}" />
+            <marker date="1486066386000" expanded="true" signature="1554:1716" ph=" Update the applicant table with info stored in the $_POST array ..." />
+            <marker date="1486066386000" expanded="true" signature="1756:2046" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/welcome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="60" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
+          <folding>
+            <marker date="1486067665000" expanded="true" signature="28:291" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/additional.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <marker date="1486066301000" expanded="true" signature="116:817" ph="..." />
+            <marker date="1486066301000" expanded="true" signature="160:805" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/oldhome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="163" column="5" selection-start-line="138" selection-start-column="3" selection-end-line="163" selection-end-column="5" />
           <folding>
             <marker date="1486065730000" expanded="true" signature="110:24522" ph="..." />
             <marker date="1486065730000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
@@ -1212,104 +1263,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/oldimage.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/returning.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1486062603000" expanded="true" signature="111:2045" ph="..." />
-            <marker date="1486062603000" expanded="true" signature="120:187" ph="Present welcome screen to new and returning applicants ..." />
-            <marker date="1486062603000" expanded="true" signature="218:320" ph="{...}" />
-            <marker date="1486062603000" expanded="true" signature="329:469" ph=" Upload image of $imagetype ..." />
-            <marker date="1486062603000" expanded="true" signature="514:2033" ph="{...}" />
-            <marker date="1486062603000" expanded="true" signature="696:1402" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/additional.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <marker date="1486066301000" expanded="true" signature="116:817" ph="..." />
-            <marker date="1486066301000" expanded="true" signature="160:805" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <marker date="1486062603000" expanded="true" signature="111:2045" ph="..." />
-            <marker date="1486062603000" expanded="true" signature="120:187" ph="Present welcome screen to new and returning applicants ..." />
-            <marker date="1486062603000" expanded="true" signature="218:320" ph="{...}" />
-            <marker date="1486062603000" expanded="true" signature="329:469" ph=" Upload image of $imagetype ..." />
-            <marker date="1486062603000" expanded="true" signature="514:2033" ph="{...}" />
-            <marker date="1486062603000" expanded="true" signature="696:1402" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding>
-            <marker date="1486066386000" expanded="true" signature="110:471" ph="..." />
-            <marker date="1486066386000" expanded="true" signature="119:186" ph="Present welcome screen to new and returning applicants ..." />
-            <marker date="1486066386000" expanded="true" signature="216:295" ph="{...}" />
-            <marker date="1486066386000" expanded="true" signature="305:335" ph=" Asks if employed ..." />
-            <marker date="1486066386000" expanded="true" signature="372:465" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/welcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <marker date="1486066503000" expanded="true" signature="28:283" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/applicant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="933">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <marker date="1486066386000" expanded="true" signature="115:2054" ph="..." />
-            <marker date="1486066386000" expanded="true" signature="143:983" ph="{...}" />
-            <marker date="1486066386000" expanded="true" signature="407:813" ph="..." />
-            <marker date="1486066386000" expanded="true" signature="821:975" ph="..." />
-            <marker date="1486066386000" expanded="true" signature="992:1074" ph=" View existing personal information ..." />
-            <marker date="1486066386000" expanded="true" signature="1119:1545" ph="{...}" />
-            <marker date="1486066386000" expanded="true" signature="1554:1716" ph=" Update the applicant table with info stored in the $_POST array ..." />
-            <marker date="1486066386000" expanded="true" signature="1756:2046" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/more_licenses.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-          <folding>
-            <marker date="1486066749000" expanded="true" signature="31:315" ph="..." />
-            <marker date="1486066749000" expanded="true" signature="55:171" ph="..." />
-            <marker date="1486066749000" expanded="true" signature="196:308" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/employed.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        <state relative-caret-position="909">
+          <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
           <folding />
         </state>
       </provider>
