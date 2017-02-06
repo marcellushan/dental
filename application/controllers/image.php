@@ -10,13 +10,14 @@ class Image extends CI_Controller {
     {
         $this->load->view('templates/header');
         $this->load->view('create_login');
+
     }
 
     /**
      * Upload image of $imagetype
      *
      * Display $nextpage view
-     * @param string $imageType
+     * @param string $type
      * @param string $nextPage
      */
     public function post($type, $nextPage)
@@ -47,9 +48,24 @@ class Image extends CI_Controller {
         $this->load->view('templates/header');
         $this->load->view($nextPage, $data);
     }
-	
-	
-	
+
+    /**
+     * Retrieves information for the model sent by $type
+     *
+     * @param string $type Model name
+     */
+    public function get($type)
+    {
+        session_start();
+        $modelName = $type . 'model';
+        $this->load->model($modelName);
+        $image = new $modelName();
+        $data['licenses']= $image->get_list('applicant_id', $_SESSION['applicant_id']);
+        var_dump($data['licenses']);
+        echo $data->submission_date;
+    }
+
+
 
 	
 	

@@ -2,6 +2,14 @@
 
 class Applicant extends CI_Controller {
 
+    /*
+     * post
+     *
+     * Creates a new applicant
+     *
+     * */
+
+
     public function post()
     {
         session_start();
@@ -26,8 +34,13 @@ class Applicant extends CI_Controller {
     }
 
     /**
-     * View existing personal information
-     * @param int $applicant_type
+     * get
+     *
+     * Retrieves existing personal information for applicant ID stored in the session
+     *
+     * @param string $text The view to be displayed
+     *
+     * @param int $student Identfies whether applicant is current GHC student
      */
     public function get($text, $student=0)
     {
@@ -44,11 +57,11 @@ class Applicant extends CI_Controller {
     }
 
     /**
-     * Update the applicant table with info stored in the $_POST array
+     * put
      *
-     * Display the $destination view
+     * Creates an new instance of the item sent as the parameter
      *
-     * @param string $destination
+     * @param string $destination View to be displayed following the action
      */
     public function put($destination)
     {

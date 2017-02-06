@@ -3,15 +3,17 @@
         Name:  <?=$applicant->first_name?>   <?=$applicant->middle_name?> <?=$applicant->last_name?>
     </h1>
     <div>
-        <h2  class= "mytitle">Application Status</h2>
         <div class="row">
-            <h3 class="col-md-5 col-md-offset-2">Application Date</h3>
+            <h3 class="col-md-5 col-md-offset-2">Application Start Date</h3>
             <h3 class="item col-md-5"><?=$applicant->application_date?></h3>
-        </div>
+            <h3 class="col-md-5 col-md-offset-2">Application Submit Date</h3>
+            <h3 class="item col-md-5"><?=($applicant->submitted? $applicant->submit_date:"Not Submitted!")?></h3>
+            <h3 class="col-md-5 col-md-offset-2">Application Complete Date</h3>
+            <h3 class="item col-md-5"><?=($applicant->complete? $applicant->complete_date:"Not Complete")?></h3>
 
         <div class="section-border">
                 <h2  class= "mytitle">Personal Information</h2>
-            <div class="wrapper"><input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../home/viewPersonal'"value="Update"></div>
+            <div class="wrapper"><input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Update"></div>
                 <div class="row">
                     <h4 class="col-md-1">Birthdate</h4>
                     <h4 class="item col-md-2"><?=$applicant->birth_date?></h4>
@@ -22,13 +24,13 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <h3>&nbsp;Identification</h3>
+                        <h3>&nbsp;Identification&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../image/get/identification'"value="Update"></h3>
                         <div class="row">
                             <h4 class="col-md-4">Submission Date</h4>
                             <h4 class="col-md-3"><?=$identification->submission_date?></h4>
                             <h4 class="col-md-3"><a href="<?=$identification->image?>" target="_blank">Image</a></h4>
                         </div><!-- row -->
-                        <h3>&nbsp;CPR Certification</h3>
+                        <h3>&nbsp;CPR Certification&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Update"></h3>
                         <div class="row">
                             <h4 class="col-md-4">Submission Date</h4>
                             <h4 class="col-md-3"><?=$cpr->submission_date?></h4>
@@ -53,7 +55,7 @@
                     </div><!--col-md-6 -->
                 </div><!-- row -->
         </div><!-- section-border -->
-        <h3 class="wrapper">School</h3>
+        <h3 class="wrapper">School&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Update"></h3>
         <div class="row">
             <h4 class="col-md-1">Name</h4>
             <h4 class="item col-md-2"><?=$school->name?></h4>
@@ -63,7 +65,7 @@
             <h4 class="item col-md-2"><?=$school->year?></h4>
         </div><!-- row -->
         <div class="section-border">
-            <h3 class="wrapper">License(s)</h3>
+            <h3 class="wrapper"><?=(@license?"License(s)":"No Licenses Provided");?></h3>
             <div class="row">
                 <?php foreach ($licenses as $license):?>
                     <h4 class="col-md-2">State of Licensure</h4>
@@ -71,13 +73,14 @@
                     <h4 class="col-md-2">License Number</h4>
                     <h4 class="item col-md-1"><?=$license->number?></h4>
                     <h4 class="col-md-1">Active</h4>
-                    <h4 class="item col-md-2"><? echo ($license->active ? "Yes" : "No"); ?></h4>
+                    <h4 class="item col-md-1"><? echo ($license->active ? "Yes" : "No"); ?></h4>
                     <h4 class="col-md-1"><a href="<?=$license->image?>" target="_blank">Image</a></h4>
+                    <h4 class="col-md-1"><input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Update"></h4>
 
                 <?php endforeach;?>
             </div><!-- row -->
         </div><!-- section-border -->
-        <h3 class="wrapper">Other Information</h3>
+        <h3 class="wrapper">Other Information&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Update"></h3>
         <div class="row">
             <h4 class="col-md-3">Disciplinary Action?</h4>
             <h4 class="item col-md-8"><? echo ($applicant->discipline ? "Yes" : "No"); ?></h4>
@@ -86,7 +89,7 @@
                 <h4 class="item col-md-8"><?=$applicant->discipline ?></h4>
             <? endif;?>
         </div><!-- row -->
-        <h3 class="wrapper">Emergency Contact</h3>
+        <h3 class="wrapper">Emergency Contact&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Update"></h3>
         <div class="row">
             <h4 class="col-md-1">Name</h4>
             <h4 class="item col-md-2"><?=$applicant->e_last_name?>, <?=$applicant->e_first_name?></h4>
@@ -103,17 +106,17 @@
             <h4 class="item col-md-3"><?=($applicant->e_backup_phone ? $applicant->e_backup_phone : "None Provided")?></h4>
         </div><!-- row -->
         <div class="section-border">
-            <h3 class="wrapper">Employer(s)</h3>
+            <h3 class="wrapper"><?=(@$employers?"Employer(s)":"No Employers Provided");?></h3>
             <div class="row">
                 <?php foreach ($employers as $employer):?>
                     <h4 class="col-md-2">Company</h4>
-                    <h4 class="item col-md-3"><?=$employer->company?></h4>
+                    <h4 class="item col-md-3"><?=$employer->company?>&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Update"></h4>
                     <h4 class="col-md-2">Phone</h4>
-                    <h4 class="item col-md-3"><?=$employer->phone?></h4>
+                    <h4 class="item col-md-3"><?=$employer->phone?>&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Update"></h4>
                 <?php endforeach;?>
             </div><!-- row -->
         </div><!-- section-border -->
-        <h3 class="wrapper">Program Questions</h3>
+        <h3 class="wrapper">Program Questions&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Update"></h3>
         <div class="row">
             <h4 class="col-md-3">How do you plan to attend?</h4>
             <h4 class="item col-md-8"><? echo ($applicant->student_type ? "Full Time" : "Part Time"); ?></h4>
@@ -121,7 +124,7 @@
             <h4 class="item col-md-8"><?=$applicant->hear ?></h4>
         </div><!-- row -->
         <div class="section-border">
-            <h3 class="wrapper">Demographics</h3>
+            <h3 class="wrapper">Demographics&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Update"></h3>
             <div class="row">
                 <h4 class="col-md-1">Race:</h4>
                 <h4 class="item col-md-4"><?=$race->race_text?></h4>
@@ -132,7 +135,6 @@
                 <h4 class="col-md-1">Foreign?</h4>
                 <h4 class="item col-md-1"><? echo ($applicant->foreign ? "Yes" : "No"); ?></h4>
             </div><!-- row -->
-            <div class="wrapper"> <input type="submit" class="btn btn-info btn-lg" value="Update"></div>
             <p></p>
         </div><!-- section-border -->
         </form>

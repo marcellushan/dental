@@ -3,7 +3,7 @@
 		<div class="col-md-12">
 		<h1 class="wrapper">Returning Applicant</h1>
 			<?php echo validation_errors(); ?>
-			<form action="checkLogin" method="post">
+			<form action="../checkLogin" method="post">
 				<fieldset>
 					<div class="row">
 						<label class="col-md-4">Email </label><input type="text" class="col-md-6" name="email">
