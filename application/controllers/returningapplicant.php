@@ -12,7 +12,7 @@ class ReturningApplicant extends CI_Controller {
         $this->load->view('templates/header');
         $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
 //        $data['student']= $student;
-        $this->load->view($text, $data);
+        $this->load->view('edit/' . $text, $data);
 
     }
 

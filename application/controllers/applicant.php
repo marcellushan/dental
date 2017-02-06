@@ -66,11 +66,10 @@ class Applicant extends CI_Controller {
     public function put($destination)
     {
         session_start();
-        // 	    var_dump($_POST);
         $this->load->model('ApplicantModel');
-        $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
+        (@$_POST? $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST):"");
         $this->load->view('templates/header');
-        $this->load->view($destination);
+        ($destination=="submit"? redirect(base_url('/submit/get')):$this->load->view($destination));
     }
 
 

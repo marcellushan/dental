@@ -20,8 +20,24 @@ class Additional extends CI_Controller {
         $this->load->view('templates/header');
         $this->load->view($nextPage, $data);
     }
-	
-	
+
+    /**
+     * Retrieves information for the model sent by $type
+     *
+     * @param string $type Model name
+     */
+    public function get($type)
+    {
+        session_start();
+        $modelName = $type . 'model';
+        $this->load->model($modelName);
+        $image = new $modelName();
+        $data[$type]= $image->get_item('applicant_id', $_SESSION['applicant_id']);
+//        var_dump($data[$type]);
+//        echo $data->submission_date;
+        $this->load->view('templates/header');
+        $this->load->view('edit/' . $type, $data);
+    }
 	
 
 	

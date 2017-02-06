@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Image extends CI_Controller {
+class License extends CI_Controller {
 
     /**
      *Present welcome screen to new and returning applicants
@@ -55,21 +55,15 @@ class Image extends CI_Controller {
      *
      * @param string $type Model name
      */
-    public function get($type)
+    public function get($id)
     {
         session_start();
-        $modelName = $type . 'model';
-        $this->load->model($modelName);
-        $image = new $modelName();
+        $this->load->model('licenseModel');
+        $license = new licenseModel();
         $this->load->view('templates/header');
-//        ($type== 'license' ? $data['licenses']= $image->get_list('applicant_id', $_SESSION['applicant_id']) : $data[$type]= $image->get_item('applicant_id', $_SESSION['applicant_id']));
-        if($type== 'license') {
-            $data['licenses']= $image->get_list('applicant_id', $_SESSION['applicant_id']);
-            $this->load->view('edit/list_licenses', $data);
-        } else {
-            $data[$type]= $image->get_item('applicant_id', $_SESSION['applicant_id']);
-            $this->load->view('edit/' . $type, $data);
-        }
+        $data['license']= $license->load($id);
+        $this->load->view('edit/license', $data);
+
     }
 
 

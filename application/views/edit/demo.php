@@ -1,7 +1,7 @@
  <div class="main container">
 	<h1 class= "mytitle">Demographic Questions</h1>
 
-	<form action='<?=base_url("applicant/put/submit")?>' method="post">
+	<form action='<?=base_url("applicant/put/thank_you")?>' method="post">
 		<div class="row">
 			<div class="col-md-6">
 				<div class="row">

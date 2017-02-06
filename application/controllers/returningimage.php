@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Image extends CI_Controller {
+class ReturningImage extends CI_Controller {
 
     /**
      *Present welcome screen to new and returning applicants
@@ -49,7 +49,6 @@ class Image extends CI_Controller {
         $this->load->view($nextPage, $data);
     }
 
-
     /**
      * Retrieves information for the model sent by $type
      *
@@ -61,15 +60,9 @@ class Image extends CI_Controller {
         $modelName = $type . 'model';
         $this->load->model($modelName);
         $image = new $modelName();
-        $this->load->view('templates/header');
-//        ($type== 'license' ? $data['licenses']= $image->get_list('applicant_id', $_SESSION['applicant_id']) : $data[$type]= $image->get_item('applicant_id', $_SESSION['applicant_id']));
-        if($type== 'license') {
-            $data['licenses']= $image->get_list('applicant_id', $_SESSION['applicant_id']);
-            $this->load->view('edit/list_licenses', $data);
-        } else {
-            $data[$type]= $image->get_item('applicant_id', $_SESSION['applicant_id']);
-            $this->load->view('edit/' . $type, $data);
-        }
+        $data['licenses']= $image->get_list('applicant_id', $_SESSION['applicant_id']);
+        var_dump($data['licenses']);
+        echo $data->submission_date;
     }
 
 
