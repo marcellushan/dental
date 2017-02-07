@@ -49,11 +49,11 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-//$db['default']['username'] = 'marc';
-//$db['default']['password'] = 'F1agstaff';
+$db['default']['username'] = 'marc';
+$db['default']['password'] = 'F1agstaff';
 // webdev
- $db['default']['username'] = 'root';
- $db['default']['password'] = 'europe-guilty-kaleidoscope-head';
+// $db['default']['username'] = 'root';
+// $db['default']['password'] = 'europe-guilty-kaleidoscope-head';
 // forms - Leela
 // $db['default']['password'] = 'everyonemotiveexplorelately';
 $db['default']['database'] = 'dental';

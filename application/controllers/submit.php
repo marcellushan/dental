@@ -24,5 +24,14 @@ class Submit extends CI_Controller {
         $this->load->view('submit',$data);
 
     }
+
+    public function put($destination)
+    {
+        session_start();
+        $this->load->model('ApplicantModel');
+        $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], array("submitted"=> 1, "submit_date" => date('Y-m-d')));
+        $this->load->view('templates/header');
+        ($destination=="submit"? redirect(base_url('/submit/get')):$this->load->view($destination));
+    }
 	
 }

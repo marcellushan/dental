@@ -6,7 +6,7 @@
 			<form action='<?=base_url("applicant/post")?>' method="post">
 				<fieldset>
 				<div class="row"><h3>
-					<label class="col-md-4">Email </label><input type="email" class="col-md-6" name="email" value="<?=set_value('email') ?>" required>
+					<label class="col-md-4">Email </label><input type="text" class="col-md-6" name="email" value="<?=set_value('email') ?>" required>
 					<label class="col-md-4">Create Password</label> <input type="password" class="col-md-6" name="password" value="<?=set_value('password') ?>" required>
 					<label class="col-md-4">Confirm Password</label><input type="password" class="col-md-6" name="passconf" value="<?=set_value('passconf') ?>" ></h3>
 					<div class="col-md-12"><button type="submit">Submit</button></div>

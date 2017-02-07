@@ -38,14 +38,15 @@ class Home extends CI_Controller {
     {
         session_start();
         $this->load->helper('url');
-        if(@$_POST['email']) {
+//        if(@$_POST['email']) {
             $this->load->model('ApplicantModel');
             $applicant = new ApplicantModel();
-            $returning_app= $applicant->get_login('preferred_email', $_POST['email'], $_POST['password']);
-            if(@$returning_app) {
-                $_SESSION['applicant_id'] = $returning_app->applicant_id;
-//                $this->load->view('templates/header');
-//                $this->load->view('view_sections');
+            $email= $applicant->get_login('preferred_email', $_POST['email']);
+            $password= $applicant->get_login('password', $_POST['password']);
+            if(@email && @$password) {
+                $_SESSION['applicant_id'] = $email->applicant_id;
+                $this->load->view('templates/header');
+                $this->load->view('view_sections');
                 header( "Location: ".base_url() . "review/get");
 
 
@@ -53,13 +54,15 @@ class Home extends CI_Controller {
                 $this->load->view('templates/header');
                 echo "user not found";
             }
-        } else {
-            $this->load->view('templates/header');
-            $this->load->view('view_sections');
+//        } else {
+//            $this->load->view('templates/header');
+//            $this->load->view('view_sections');
+//
+//        }
 
-        }
+
 
 
     }
-	
+
 }

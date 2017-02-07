@@ -1,14 +1,14 @@
 <div class="main container">
     <h1 class= "mytitle">
-        Name:  <?=$applicant->first_name?>   <?=$applicant->applicant_id ?><?=$applicant->middle_name?> <?=$applicant->last_name?>
+        Name:  <?=$applicant->first_name?> <?=$applicant->middle_name?> <?=$applicant->last_name?>
     </h1>
     <div>
         <div class="row">
             <div class="col-md-2 col-md-offset-4">
-                <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Update">
+                <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../review/get'"value="Update">
             </div>
             <div class="col-md-3">
-                <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../returningapplicant/get/returning_personal'"value="Submit">
+                <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../submit/put/thank_you'"value="Submit">
             </div>
         </div>
 

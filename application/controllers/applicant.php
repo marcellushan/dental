@@ -73,6 +73,39 @@ class Applicant extends CI_Controller {
     }
 
 
+    /**
+     * get
+     *
+     * Retrieves existing personal information for applicant ID stored in the session
+     *
+     * @param string $text The view to be displayed
+     *
+     * @param int $student Identfies whether applicant is current GHC student
+     */
+//    public function ghc()
+//    {
+////        session_start();
+////        $this->load->model('ApplicantModel');
+////        $applicant = new ApplicantModel();
+////        $this->load->model('StateModel');
+////        $data['states'] = $this->StateModel->get_states();
+////        $this->load->view('templates/header');
+////        $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
+////        $data['student']= $student;
+////        $this->load->view($text, $data);
+//        $this->load->view('templates/header');
+////        $this->form_validation->set_rules('first_name', 'First Name', 'required');
+//        $this->form_validation->set_rules('GHC_ID', 'GHC_ID', 'required|is_unique[applicant.GHC_ID]');
+//        if ($this->form_validation->run() == FALSE)
+//        {
+//            $this->load->view('personal');
+//        }
+//        else
+//        {
+//            $this->load->view('identification');
+//        }
+//
+//    }
 
 	
 	

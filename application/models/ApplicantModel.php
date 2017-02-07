@@ -65,11 +65,11 @@ class ApplicantModel extends my_model {
 // 		return $data;
 // 	}
 
-public function get_login ($id_name, $id, $password)
+public function get_login ($id_name, $id)
 {
 
     $this->db->where($id_name, $id);
-    $this->db->where("password", $password);
+//    $this->db->where("password", $password);
     $query = $this->db->get($this::DB_TABLE);
     $row = $query->row();
     return $data[$this::DB_TABLE] = $row;
