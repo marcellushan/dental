@@ -1,7 +1,7 @@
  <div class="main container">
 	<h1 class= "mytitle">BSDH PROGRAM QUESTIONS</h1>
 <?php echo validation_errors(); ?>
-	<form action='<?=base_url("applicant/put/demo")?>' method="post">
+	<form action='<?=base_url("applicant/put/have_transcripts")?>' method="post">
 		<div class="row">
 				<h3 class="col-md-7">How do you plan to attend the program?</h3>
 			<div class="col-md-5">
