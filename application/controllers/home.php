@@ -24,8 +24,10 @@ class Home extends CI_Controller {
      */
     public function display($page)
     {
+        $this->load->model('StateModel');
+        $data['states'] = $this->StateModel->get_states();
         $this->load->view('templates/header');
-        $this->load->view($page);
+        $this->load->view($page, $data);
     }
 
 
@@ -47,7 +49,7 @@ class Home extends CI_Controller {
                 $_SESSION['applicant_id'] = $email->applicant_id;
                 $this->load->view('templates/header');
                 $this->load->view('view_sections');
-                header( "Location: ".base_url() . "review/get");
+                header( "Location: ".base_url() . "submit/get");
 
 
             } else {

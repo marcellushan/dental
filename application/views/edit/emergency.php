@@ -11,8 +11,8 @@
 			<h2>Name</h2>
 				<div class="row">
 					
-					<label class="col-sm-2 col-xs-5" >First</label><input type="text" class="col-sm-2 col-xs-6" name="e_first_name" placeholder="required" value="<?=$applicant->first_name ?>">
-					<label class="col-sm-1 col-xs-5" >Last</label><input type="text" class="col-sm-2 col-xs-6"  name="e_last_name" placeholder="required" value="<?=$applicant->last_name ?>">
+					<label class="col-sm-2 col-xs-5" >First</label><input type="text" class="col-sm-2 col-xs-6" name="e_first_name" placeholder="required" value="<?=$applicant->e_first_name ?>">
+					<label class="col-sm-1 col-xs-5" >Last</label><input type="text" class="col-sm-2 col-xs-6"  name="e_last_name" placeholder="required" value="<?=$applicant->e_last_name ?>">
 					<label class="col-sm-2 col-xs-5" >Relationship</label><input type="text" class="col-sm-2 col-xs-6"  name="relationship" value="<?=$applicant->relationship ?>">
 				</div><!-- row -->
 			<div class="row">

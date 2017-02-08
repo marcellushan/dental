@@ -16,21 +16,21 @@ class Applicant extends CI_Controller {
 
         $this->load->model('ApplicantModel');
         $applicant = new ApplicantModel();
+        $this->load->model('StateModel');
+        $data['states'] = $this->StateModel->get_states();
         $this->load->view('templates/header');
-        if(! $data = $this->ApplicantModel->entry_exists('preferred_email', $_POST['email'])) {
+        if($data = $this->ApplicantModel->entry_exists('GHC_ID', @$_POST['GHC_ID'])) {
+            $this->load->view('exists');
+        } else {
+            (@$_POST['GHC_ID'] ? $applicant->GHC_ID = $_POST['GHC_ID'] : $applicant->GHC_ID = "Not Student");
             $applicant->application_date = date('Y-m-d');
-            $applicant->preferred_email = $_POST['email'];
-            $applicant->password = $_POST['password'];
+            $applicant->preferred_email = $_SESSION['email'];
+            $applicant->password = $_SESSION['password'];
             $applicant->save();
             $_SESSION['applicant_id'] = $applicant->applicant_id;
             $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-            $this->load->view('student', $data);
-        } else {
-            $data = array('email' => $_POST['email']);
-            $this->load->view('exists', $data);
-            $this->load->view('welcome');
+            $this->load->view('personal', $data);
         }
-
     }
 
     /**
@@ -73,40 +73,21 @@ class Applicant extends CI_Controller {
     }
 
 
-    /**
-     * get
-     *
-     * Retrieves existing personal information for applicant ID stored in the session
-     *
-     * @param string $text The view to be displayed
-     *
-     * @param int $student Identfies whether applicant is current GHC student
-     */
-//    public function ghc()
-//    {
-////        session_start();
-////        $this->load->model('ApplicantModel');
-////        $applicant = new ApplicantModel();
-////        $this->load->model('StateModel');
-////        $data['states'] = $this->StateModel->get_states();
-////        $this->load->view('templates/header');
-////        $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-////        $data['student']= $student;
-////        $this->load->view($text, $data);
-//        $this->load->view('templates/header');
-////        $this->form_validation->set_rules('first_name', 'First Name', 'required');
-//        $this->form_validation->set_rules('GHC_ID', 'GHC_ID', 'required|is_unique[applicant.GHC_ID]');
-//        if ($this->form_validation->run() == FALSE)
-//        {
-//            $this->load->view('personal');
-//        }
-//        else
-//        {
-//            $this->load->view('identification');
-//        }
-//
-//    }
+    public function save()
+    {
+        session_start();
+        $this->load->model('ApplicantModel');
+        $applicant = new ApplicantModel();
+        $this->load->view('templates/header');
+        if($data = $this->ApplicantModel->entry_exists('preferred_email', $_POST['email'])) {
+            $this->load->view('exists');
+        } else {
+           $_SESSION['email'] = $_POST['email'];
+           $_SESSION['password'] = $_POST['password'];
 
-	
+            $this->load->view('student');
+        }
+
+    }
 	
 }

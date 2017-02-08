@@ -4,6 +4,7 @@
 	</h1>
 	 <div>
 	    <h2  class= "mytitle">Application Status</h2>
+		 <div class="wrapper"> <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../'"value="Return To List"></div>
 			<div class="row">
 			<h3 class="col-md-5 col-md-offset-2">Application Start Date:</h3>
 				<h3 class="item col-md-5"><?=$applicant->application_date?></h3>

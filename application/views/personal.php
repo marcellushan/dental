@@ -7,7 +7,7 @@
 	<h1 class= "mytitle">
 	APPLICANT PERSONAL INFORMATION
 	</h1>
-
+<? echo (@$ghc ? "That GHC ID has already been submitted, if you are returning to complete an application go here" : "") ?>
 	<form action='<?=base_url("applicant/put/identification")?>' method="post">
 		<fieldset>
 			<h2>Name</h2>
@@ -19,12 +19,7 @@
 				</div><!-- row -->
 				<div class="row">
 					<label class="col-sm-2 col-xs-5" >Date of Birth</label><input type="date" class="col-sm-2 col-xs-6"  name="birth_date" placeholder="required" value="<?=set_value('birth_date') ?>"" >
-					 <?if($student):?>
-					<label class="col-sm-2 col-xs-5" >GHC ID</label><input type="text" class="col-sm-2 col-xs-6"  name="GHC_ID" placeholder="required" value="<?=@$applicant->GHC_ID?>">
-					<?else:?>
-					<label class="col-sm-2 col-xs-5" >GHC ID</label><input type="text" class="col-sm-2 col-xs-6"  name="GHC_ID" value="Not applicable" disabled>
-					<?endif?>
-					<label class="col-sm-1 col-xs-5" >Maiden </label><input type="text" class="col-sm-2 col-xs-6"  name="maiden_name" value="<?php echo set_value('maiden_name'); ?>" placeholder="if applicable">
+					<label class="col-sm-2 col-xs-5" >Maiden </label><input type="text" class="col-sm-2 col-xs-6"  name="maiden_name" value="<?php echo set_value('maiden_name'); ?>" placeholder="if applicable">
 				</div><!-- row -->
 			<div class="row">
 				<h2 class="col-lg-6 col-xs-12">Address</h2>

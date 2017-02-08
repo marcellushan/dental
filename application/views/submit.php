@@ -4,6 +4,15 @@
     </h1>
     <div>
         <div class="row">
+            <h3 class="col-md-5 col-md-offset-2">Application Start Date</h3>
+            <h3 class="item col-md-5"><?=$applicant->application_date?></h3>
+            <h3 class="col-md-5 col-md-offset-2">Application Submit Date</h3>
+            <h3 class="item col-md-5"><?=($applicant->submitted? $applicant->submit_date:"Not Submitted!")?></h3>
+            <h3 class="col-md-5 col-md-offset-2">Application Complete Date</h3>
+            <h3 class="item col-md-5"><?=($applicant->complete? $applicant->complete_date:"Not Complete")?></h3>
+        </div>
+        <? if(! $applicant->submitted):?>
+        <div class="row">
             <div class="col-md-2 col-md-offset-4">
                 <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../review/get'"value="Update">
             </div>
@@ -11,6 +20,7 @@
                 <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../submit/put/thank_you'"value="Submit">
             </div>
         </div>
+        <? endif; ?>
 
               <div class="section-border">
                 <h2  class= "mytitle">Personal Information</h2>

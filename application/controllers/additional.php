@@ -14,7 +14,7 @@ class Additional extends CI_Controller {
         $image->applicant_id = $_SESSION['applicant_id'];
         $image_array = $_POST;
         $image_array['applicant_id'] = $_SESSION['applicant_id'];
-//        $image_array['submission_date'] = date('Y-m-d');
+        $image_array['submission_date'] = date('Y-m-d');
 //        var_dump($image_array);
         $image->insert_post($image_array);
 

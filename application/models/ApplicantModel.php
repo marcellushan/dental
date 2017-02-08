@@ -84,6 +84,13 @@ public function get_login ($id_name, $id)
         $row = $query->row();
         return $data[$this::DB_TABLE] = $row;
     }
+
+
+    public function ghc_id($id)
+    {
+        echo $id;
+    }
+
 	
 	
 }

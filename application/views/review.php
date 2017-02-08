@@ -10,7 +10,7 @@
             <h3 class="item col-md-5"><?=($applicant->submitted? $applicant->submit_date:"Not Submitted!")?></h3>
             <h3 class="col-md-5 col-md-offset-2">Application Complete Date</h3>
             <h3 class="item col-md-5"><?=($applicant->complete? $applicant->complete_date:"Not Complete")?></h3>
-
+            <div class="wrapper"> <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='/dental/submit/get'" value="Go To Submit Page"></div>
         <div class="section-border">
                 <h2  class= "mytitle">Personal Information</h2>
             <div class="wrapper"><input type="button" class="btn btn-info" onclick="window.location.href='../returningapplicant/get/personal'" value="Update"></div>
