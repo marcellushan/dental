@@ -29,7 +29,7 @@
 
 <h2>Add a New License</h2>
 	<?php echo validation_errors(); ?>
-	<form action='<?=base_url("home/createImage/license/viewSections")?>' method="post" enctype="multipart/form-data">
+	<form action='<?=base_url("image/post/license")?>' method="post" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<h3>State</h3>
