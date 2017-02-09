@@ -4,11 +4,11 @@ class Admin extends CI_Controller {
 	
 
 	
-	public function index()
+	public function index($type=0)
 	{
 		$this->load->view('templates/header');
 		$this->load->model('ApplicantModel');
-		$data['applicants'] = $this->ApplicantModel->get();
+        ($type ? $data['applicants'] = $this->ApplicantModel->get_category($type) : $data['applicants'] = $this->ApplicantModel->get());
 // 		var_dump($data['applicants']);
 		$this->load->view('all_applications',$data);
 	}
@@ -55,28 +55,23 @@ class Admin extends CI_Controller {
     {
         $this->load->model('ApplicantModel');
         $applicant=$this->ApplicantModel->update($id, array( $type => 'jjones', $type .'_date' => date('Y-m-d')));
-        header( "Location: ".base_url() . "admin/index/".$id);
+        header( "Location: ".base_url() . "admin/get/".$id);
     }
 
     public function verify($id)
     {
-        ini_set('display_errors', '1');
-        $this->load->helper('url');
+//        var_dump($_POST);
         foreach($_POST as $item)
         {
-            $mymodel = $item . 'Model';
-            $type_id= $item . '_id';
+            echo $mymodel = $item . 'Model';
+            echo $type_id= $item . '_id';
             $this->load->model($mymodel);
             $type = $this->$mymodel->get_item('applicant_id', $id);
             $verify=$this->$mymodel->update($type->$type_id, array('verified' => 'jjones', 'verified_date' => date('Y-m-d')));
-//            redirect('index);
-//            header( "Location: /admin/index" );
-//            $this->load->view('templates/header');
-//            $this->load->view('view_applicant',$data);
-
 
         }
-                    header( "Location: ".base_url() . "admin/index/".$id);
+//                    header( "Location: ".base_url() . "admin/index/".$id);
+        redirect(base_url("admin/get/".$id));
 
     }
 }

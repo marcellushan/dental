@@ -40,30 +40,33 @@ class Home extends CI_Controller {
     {
         session_start();
         $this->load->helper('url');
-//        if(@$_POST['email']) {
-            $this->load->model('ApplicantModel');
-            $applicant = new ApplicantModel();
-            $email= $applicant->get_login('preferred_email', $_POST['email']);
-            $password= $applicant->get_login('password', $_POST['password']);
-            if(@email && @$password) {
-                $_SESSION['applicant_id'] = $email->applicant_id;
-                $this->load->view('templates/header');
-                $this->load->view('view_sections');
-                header( "Location: ".base_url() . "submit/get");
+        $this->load->model('ApplicantModel');
+        $applicant = new ApplicantModel();
+        $email= $applicant->get_login('preferred_email', $_POST['email']);
+        $password= $applicant->get_login('password', $_POST['password']);
+        if(@email && @$password) {
+            $_SESSION['applicant_id'] = $email->applicant_id;
+            redirect(base_url("returning/get"));
+        } else {
+            $this->load->view('templates/header');
+            echo "user not found";
+        }
+    }
 
+    public function save()
+    {
+        session_start();
+        $this->load->model('ApplicantModel');
+        $applicant = new ApplicantModel();
+        $this->load->view('templates/header');
+        if($data = $this->ApplicantModel->entry_exists('preferred_email', $_POST['email'])) {
+            $this->load->view('exists');
+        } else {
+            $_SESSION['email'] = $_POST['email'];
+            $_SESSION['password'] = $_POST['password'];
 
-            } else {
-                $this->load->view('templates/header');
-                echo "user not found";
-            }
-//        } else {
-//            $this->load->view('templates/header');
-//            $this->load->view('view_sections');
-//
-//        }
-
-
-
+            $this->load->view('student');
+        }
 
     }
 

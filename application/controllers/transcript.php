@@ -20,7 +20,7 @@ class Transcript extends CI_Controller {
      * @param string $type
      * @param string $nextPage
      */
-    public function post($type, $nextPage)
+    public function post($nextPage)
     {
         session_start();
         $this->load->model('StateModel');
@@ -36,7 +36,7 @@ class Transcript extends CI_Controller {
             $image_url = base_url() . "assets/uploads/" . $myRandom . basename($_FILES["fileToUpload"]["name"]);
         }
         $this->load->model('ApplicantModel');
-        $modelName = $type . 'model';
+        $modelName = 'TranscriptModel';
         $this->load->model($modelName);
         $image = new $modelName();
         $image->applicant_id = $_SESSION['applicant_id'];

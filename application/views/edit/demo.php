@@ -1,7 +1,7 @@
  <div class="main container">
 	<h1 class= "mytitle">Demographic Questions</h1>
 
-	<form action='<?=base_url("applicant/put/thank_you")?>' method="post">
+	<form action='<?=base_url("applicant/put/returning")?>' method="post">
 		<div class="row">
 			<div class="col-md-6">
 				<div class="row">
@@ -39,15 +39,15 @@
 					<h4>Foreign Student?</h4>
 					</div>
 					<div class="col-md-8 col-xs-4">
-						<h4><input type="radio" name="gender" value="1">Yes</h4>
-						<h4><input type="radio" name="gender" value="2">No</h4>
+						<h4><input type="radio" name="foreign" value="1">Yes</h4>
+						<h4><input type="radio" name="foreign" value="2">No</h4>
 						
 					</div>
 				</div>
 		</div>
 	</div>
 			<div class="wrapper">			
-        <button type="submit" class="btn-lg btn-primary">Submit Application</button>
+        <button type="submit" class="btn-lg btn-primary">Update</button>
         	    </div>
 	</form>
 

@@ -1,73 +1,46 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Applicant extends CI_Controller {
+class Returning extends CI_Controller {
 
-    public function post()
+    public function get()
     {
         session_start();
-
+        $id = $_SESSION['applicant_id'];
         $this->load->model('ApplicantModel');
-        $applicant = new ApplicantModel();
+        $data['applicant'] = $this->ApplicantModel->load($id);
+        $this->load->model('RaceModel');
+        $data['race']= $this->RaceModel->load($data['applicant']->race);
+        $this->load->model('IdentificationModel');
+        $data['identification'] = $this->IdentificationModel->get_item('applicant_id',$id);
+        $this->load->model('CprModel');
+        $data['cpr'] = $this->CprModel->get_item('applicant_id',$id);
+        $this->load->model('EmployerModel');
+        $data['employers'] = $this->EmployerModel->get_list('applicant_id',$id);
+        $this->load->model('LicenseModel');
+        $data['licenses'] = $this->LicenseModel->get_list('applicant_id',$id);
+        $this->load->model('SchoolModel');
+        $data['school'] = $this->SchoolModel->get_item('applicant_id',$id);
         $this->load->view('templates/header');
-        if(! $data = $this->ApplicantModel->entry_exists('preferred_email', $_POST['email'])) {
-            $applicant->application_date = date('Y-m-d');
-            $applicant->preferred_email = $_POST['email'];
-            $applicant->password = $_POST['password'];
-            $applicant->save();
-            $_SESSION['applicant_id'] = $applicant->applicant_id;
-            $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-            $this->load->view('student', $data);
-        } else {
-            $data = array('email' => $_POST['email']);
-            $this->load->view('exists', $data);
-            $this->load->view('welcome');
-        }
+        $this->load->view('submit',$data);
 
     }
 
-    /**
-     * View existing personal information
-     * @param int $applicant_type
-     */
-    public function get($text, $student=0)
+    public function put($destination)
     {
         session_start();
         $this->load->model('ApplicantModel');
-        $applicant = new ApplicantModel();
-        $this->load->model('StateModel');
-        $data['states'] = $this->StateModel->get_states();
+        $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], array("submitted"=> 1, "submit_date" => date('Y-m-d')));
+        $this->email->from('webmaster@highlands.edu', 'Webmaster');
+        $this->email->to('mhannah@highlands.edu');
+//        $this->email->cc('another@another-example.com');
+//        $this->email->bcc('them@their-example.com');
+
+        $this->email->subject('Email Test');
+        $this->email->message('Testing the email class.');
+
+        $this->email->send();
         $this->load->view('templates/header');
-        $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-        $data['student']= $student;
-        $this->load->view($text, $data);
-
-    }
-
-    public function checkLogin()
-    {
-        session_start();
-        $this->load->helper('url');
-        if(@$_POST['email']) {
-            $this->load->model('ApplicantModel');
-            $applicant = new ApplicantModel();
-            $returning_app= $applicant->get_login('preferred_email', $_POST['email'], $_POST['password']);
-            if(@$returning_app) {
-                $_SESSION['applicant_id'] = $returning_app->applicant_id;
-//                $this->load->view('templates/header');
-//                $this->load->view('view_sections');
-                header( "Location: ".base_url() . "home/review");
-
-
-            } else {
-                $this->load->view('templates/header');
-            }
-        } else {
-            $this->load->view('templates/header');
-            $this->load->view('view_sections');
-
-        }
-
-
+        ($destination=="submit"? redirect(base_url('/submit/get')):$this->load->view($destination));
     }
 	
 }

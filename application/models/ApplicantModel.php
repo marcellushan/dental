@@ -65,6 +65,17 @@ class ApplicantModel extends my_model {
 // 		return $data;
 // 	}
 
+public function get_category($type) {
+    $this->db->where($type, 1);
+    $query = $this->db->get($this::DB_TABLE);
+
+    foreach ($query->result() as $row)
+ 		{
+ 			$data[] = $row;
+ 		}
+ 		return $data;
+}
+
 public function get_login ($id_name, $id)
 {
 

@@ -42,7 +42,7 @@ class Applicant extends CI_Controller {
      *
      * @param int $student Identfies whether applicant is current GHC student
      */
-    public function get($text, $student=0)
+    public function get($text, $returning=0)
     {
         session_start();
         $this->load->model('ApplicantModel');
@@ -51,8 +51,7 @@ class Applicant extends CI_Controller {
         $data['states'] = $this->StateModel->get_states();
         $this->load->view('templates/header');
         $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-        $data['student']= $student;
-        $this->load->view($text, $data);
+        ($returning ? $this->load->view('edit/' . $text, $data):$this->load->view($text, $data));
 
     }
 
@@ -67,9 +66,10 @@ class Applicant extends CI_Controller {
     {
         session_start();
         $this->load->model('ApplicantModel');
+//        var_dump($_POST);
         (@$_POST? $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST):"");
         $this->load->view('templates/header');
-        ($destination=="submit"? redirect(base_url('/submit/get')):$this->load->view($destination));
+        ($destination=="returning"? redirect(base_url('/returning/get')):$this->load->view($destination));
     }
 
 

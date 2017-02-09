@@ -16,8 +16,15 @@
     	<tr>
     		<td><?=$license->submission_date ?></td>
     		<td><?=$license->number ?></td>
-    		<td><a href="<?=$license->image ?>" >Image</a></td>
-    		<td><a href="../../license/get/<?=$license->license_id ?>" >update</a></td>
+    		<td><? if($license->image =="No Image") :?>
+				No Image
+				<?else:?>
+				<a href="<?=$license->image ?>" >Image</a>
+				<? endif;?>
+				</td>
+				<td><a href="../license/get/<?=$license->license_id ?>" >Update</a>
+				</td>
+
     	</tr>
     	<?php endforeach;?>
     </table>
@@ -29,7 +36,7 @@
 
 <h2>Add a New License</h2>
 	<?php echo validation_errors(); ?>
-	<form action='<?=base_url("image/post/license")?>' method="post" enctype="multipart/form-data">
+	<form action='<?=base_url("license/post/license")?>' method="post" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<h3>State</h3>

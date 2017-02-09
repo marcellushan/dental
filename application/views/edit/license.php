@@ -8,7 +8,7 @@
 	Please upload a copy of your license
 	</h1>
 <?php echo validation_errors(); ?>
-<form action='<?=base_url("image/put/license/$license->license_id")?>' method="post" enctype="multipart/form-data"">
+<form action='<?=base_url("license/put/$license->license_id")?>' method="post" enctype="multipart/form-data"">
 <input type="file" name="fileToUpload" id="cpr"><br>
 
 State
@@ -23,7 +23,7 @@ Active
 
 <input type="text" name="active" placeholder="required" value="<?=$license->active ?>">
 
-	<input type="submit" class="btn btn-primary btn-lg center-block" id="licenseBtn" value="Submit" />
+	<input type="submit" class="btn btn-primary btn-lg center-block" id="licenseBtn" value="Update" />
 	
 
 
