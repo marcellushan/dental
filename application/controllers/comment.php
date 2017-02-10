@@ -1,14 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Employer extends CI_Controller {
+class Comment extends CI_Controller {
 
-    public function post($nextPage, $type)
+    public function post()
     {
         session_start();
-        $this->load->model('StateModel');
-        $data['states'] = $this->StateModel->get_states();
         $this->load->model('ApplicantModel');
-        $modelName = 'EmployerModel';
+        $modelName = 'CommentModel';
         $this->load->model($modelName);
         $image = new $modelName();
         $image->applicant_id = $_SESSION['applicant_id'];
@@ -16,12 +14,8 @@ class Employer extends CI_Controller {
         $image_array['applicant_id'] = $_SESSION['applicant_id'];
         $image_array['submission_date'] = date('Y-m-d');
         $image->insert_post($image_array);
-        if($type) {
-            redirect(base_url('review/get'));
-        } else {
-            $this->load->view('templates/header');
-            $this->load->view($nextPage, $data);
-        }
+        redirect(base_url('admin/get/' . $_SESSION['applicant_id']));
+
 
     }
 
@@ -59,6 +53,19 @@ class Employer extends CI_Controller {
 
     }
 
+    /**
+     * display
+     *
+     * Displays the view that is sent as a parameter
+     *
+     * @param $page
+     */
+    public function display($id)
+    {
+        $data['id'] = $id;
+        $this->load->view('templates/header');
+        $this->load->view('comment', $data);
+    }
 	
 	
 }

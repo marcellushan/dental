@@ -115,7 +115,7 @@
                     <h4 class="item col-md-3"><?=$employer->phone?>&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../employer/get'"value="Update"></h4>
                 <?php endforeach;?>
                 <h3 class="col-md-3 col-md-offset-2">Add a New Employer </h3>
-                <h3 class="col-md-3"><input type="button" class="btn btn-info" onclick="window.location.href='../additional/get/employer'"value="Add"></h3>
+                <h3 class="col-md-3"><input type="button" class="btn btn-info" onclick="window.location.href='../employer/get/1'"value="Add"></h3>
             </div><!-- row -->
         </div><!-- section-border -->
         <h3 class="wrapper">Program Questions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-info" onclick="window.location.href='../applicant/get/program/1'"value="Update"></h3>

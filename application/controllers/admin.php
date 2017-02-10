@@ -30,6 +30,8 @@ class Admin extends CI_Controller {
         $data['licenses'] = $this->LicenseModel->get_list('applicant_id',$id);
         $this->load->model('SchoolModel');
         $data['school'] = $this->SchoolModel->get_item('applicant_id',$id);
+        $this->load->model('CommentModel');
+        $data['comments'] = $this->CommentModel->get_list('applicant_id',$id);
         $this->load->view('templates/header');
         $this->load->view('view_applicant',$data);
     }
@@ -46,7 +48,6 @@ class Admin extends CI_Controller {
 	{
 	    $this->load->model('AdminModel');
 	    $admin = $this->AdminModel->load(1);
-	   var_dump($admin);
 	}
 
 
