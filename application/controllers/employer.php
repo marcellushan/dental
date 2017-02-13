@@ -2,7 +2,7 @@
 
 class Employer extends CI_Controller {
 
-    public function post($nextPage, $type)
+    public function post($nextPage, $type=0)
     {
         session_start();
         $this->load->model('StateModel');

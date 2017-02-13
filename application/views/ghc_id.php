@@ -3,7 +3,7 @@
 Enter GHC ID
 	</h1>
 <?php echo validation_errors(); ?>
-	<form action='<?=base_url("applicant/post")?>' method="post" enctype="multipart/form-data">
+	<form action='<?=base_url("applicant/post")?>' method="post">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<h3>GHC ID</h3>

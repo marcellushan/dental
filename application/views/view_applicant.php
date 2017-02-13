@@ -77,9 +77,7 @@
 					<div class="col-md-6">
 						<h3>&nbsp;Identification</h3>
 						<div class="row">
-							<h4 class="col-md-3">Date</h4>
-							<h4 class="col-md-4"><?=$identification->submission_date?></h4>
-							<h4 class="col-md-3"><a href="<?=$identification->image?>" target="_blank">Image</a></h4>
+							<h4 class="col-md-3"><a href="../../identification/verify/<?=$identification->identification_id?>" target="_blank">Verify</a></h4>
 						</div><!-- row -->
 						<h3>&nbsp;CPR Certification</h3>
 						<div class="row">

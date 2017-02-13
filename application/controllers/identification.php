@@ -91,6 +91,16 @@ class Identification extends CI_Controller {
 
             }
 
+    public function verify($id)
+    {
+        echo $id;
+        $this->load->model('IdentificationModel');
+        $verify = new IdentificationModel();
+        $data['identification']= $verify->load($id);
+        var_dump($data['identification']);
+        $this->load->view('templates/header');
+        $this->load->view('verify', $data);
+    }
 
 
 	
