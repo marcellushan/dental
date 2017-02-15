@@ -16,19 +16,22 @@ class Applicant extends CI_Controller {
 
         $this->load->model('ApplicantModel');
         $applicant = new ApplicantModel();
-        $this->load->model('StateModel');
-        $data['states'] = $this->StateModel->get_states();
+//        $this->load->model('StateModel');
+//        $data['states'] = $this->StateModel->get_states();
         $this->load->view('templates/header');
         if($data = $this->ApplicantModel->entry_exists('GHC_ID', @$_POST['GHC_ID'])) {
             $this->load->view('exists');
         } else {
             (@$_POST['GHC_ID'] ? $applicant->GHC_ID = $_POST['GHC_ID'] : $applicant->GHC_ID = "Not Student");
+            $this->load->model('StateModel');
+            $data['states'] = $this->StateModel->get_states();
             $applicant->application_date = date('Y-m-d');
             $applicant->preferred_email = $_SESSION['email'];
             $applicant->password = $_SESSION['password'];
             $applicant->save();
             $_SESSION['applicant_id'] = $applicant->applicant_id;
             $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
+//            var_dump($data['states']);
             $this->load->view('personal', $data);
         }
     }
@@ -66,10 +69,17 @@ class Applicant extends CI_Controller {
     {
         session_start();
         $this->load->model('ApplicantModel');
-//        var_dump($_POST);
+        $this->load->model('StateModel');
+        $data['states'] = $this->StateModel->get_states();
         (@$_POST? $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST):"");
+        if(@$_POST['submitted']) {
+            $applicant = $this->ApplicantModel->load($_SESSION['applicant_id']);
+            echo $applicant->preferred_email;
+            $this->load->model('MailModel');
+            $this->MailModel->send($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
+        }
         $this->load->view('templates/header');
-        ($destination=="returning"? redirect(base_url('/returning/get')):$this->load->view($destination));
+        ($destination=="returning"? redirect(base_url('/returning/get')):$this->load->view($destination, $data));
     }
 
 

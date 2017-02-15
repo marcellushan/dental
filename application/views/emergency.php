@@ -38,7 +38,7 @@
 					<div class="row">
 						<label class="col-xs-5">Preferred Phone</label><input type="text" class="col-xs-6" name="e_preferred_phone" placeholder="required">
 						<label class="col-xs-5">Backup Phone</label><input type="text" class="col-xs-6" name="e_backup_phone" >
-						<label class="col-xs-5">Preferred Email</label><input type="text" class="col-xs-6" name="e_email" placeholder="required">
+						<label class="col-xs-5">Email</label><input type="text" class="col-xs-6" name="e_email" placeholder="required">
 					</div><!-- row -->
 				</div><!-- col-md-6 col-xs-12 -->
 			</div><!-- row -->

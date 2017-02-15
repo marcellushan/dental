@@ -34,25 +34,25 @@ class School extends CI_Controller {
         $this->load->model($modelName);
         $image = new $modelName();
         $data['school']= $image->get_item('applicant_id', $_SESSION['applicant_id']);
-//        var_dump($data[$type]);
+//        var_dump($data['school']);
 //        echo $data->submission_date;
         $this->load->view('templates/header');
         $this->load->view('edit/school', $data);
     }
 
-    public function put($type)
+    public function put()
     {
         session_start();
-        $modelName = $type . 'model';
+        $modelName = 'Schoolmodel';
         $this->load->model($modelName);
         $applicant = new $modelName();
-        $additional_id= $type . '_id';
+        $additional_id= 'school_id';
         $additional_array = $_POST;
         $additional_array['submission_date'] = date('Y-m-d');
         $test= $applicant->get_item('applicant_id', $_SESSION['applicant_id']);
         var_dump($additional_array);
         $additional=$this->$modelName->update($test->$additional_id, $additional_array);
-        redirect(base_url('review/get'));
+        redirect(base_url('returning/get'));
 
     }
 

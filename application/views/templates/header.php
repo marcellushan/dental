@@ -22,7 +22,8 @@
 	<body>
 		<header class="container">
               <img alt="" src="<?php echo base_url() ?>assets/images/logo.png" class="img-responsive" id="logo">
-				Application for Admission RDH / BSDH PROGRAM
+			Georgia Highlands College<BR>
+			Department of Dental Hygiene
 		</header>
        
        

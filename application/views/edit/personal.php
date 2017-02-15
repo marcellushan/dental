@@ -8,7 +8,7 @@
 	APPLICANT PERSONAL INFORMATION
 	</h1>
 
-	<form action='<?=base_url("returningapplicant/put/")?>' method="post">
+	<form action='<?=base_url("applicant/put/returning")?>' method="post">
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">

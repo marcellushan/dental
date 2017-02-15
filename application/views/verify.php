@@ -3,7 +3,14 @@
 
 
 				
-				<img class="img-responsive" src="<?=$identification->image ?>">
+	 <form action="../../identification/put" method="post" >
+
+		 <img class="img-responsive" src="<?=$identification->image ?>">
+
+		 <input type="submit" value="Verify">
+
+
+	 </form>
 
 </div><!-- container -->
               

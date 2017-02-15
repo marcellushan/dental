@@ -87,17 +87,17 @@ class Identification extends CI_Controller {
         (@$image_url ? $image_array['image'] = $image_url : $image_array['image'] = "No Image");
         $image_array['submission_date'] = date('Y-m-d');
         $image=$this->$modelName->update($id, $image_array);
-        redirect(base_url('review/get'));
+        redirect(base_url('returning/get'));
 
             }
 
     public function verify($id)
     {
-        echo $id;
+//        echo $id;
         $this->load->model('IdentificationModel');
         $verify = new IdentificationModel();
         $data['identification']= $verify->load($id);
-        var_dump($data['identification']);
+//        var_dump($data['identification']);
         $this->load->view('templates/header');
         $this->load->view('verify', $data);
     }

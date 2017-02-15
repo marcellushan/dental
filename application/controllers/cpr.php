@@ -84,10 +84,11 @@ class Cpr extends CI_Controller {
         }
         $modelName = 'CprModel';
         $this->load->model($modelName);
+        $image_array = $_POST;
         (@$image_url ? $image_array['image'] = $image_url : $image_array['image'] = "No Image");
         $image_array['submission_date'] = date('Y-m-d');
         $image=$this->$modelName->update($id, $image_array);
-        redirect(base_url('review/get'));
+        redirect(base_url('returning/get'));
 
             }
 

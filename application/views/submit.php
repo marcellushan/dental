@@ -1,14 +1,19 @@
- <div class="main container">
+<div class="main container" xmlns="http://www.w3.org/1999/html">
 	<h1 class= "mytitle">
         Name:  <?=$applicant->first_name?>   <?=$applicant->middle_name?> <?=$applicant->last_name?>
 	</h1>
-
+	 <form action="../applicant/put/thank_you" method="post">
+		 <input type="hidden" name="submitted" value="1">
+		 <input type="hidden" name="submit_date" value="<? echo date('Y-m-d') ?>">
 	 <div class="row">
-		 <div class="col-md-4 col-md-offset-2">
-			 <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../'"value="Submit Application">
+		 <div class="wrapper">
+			 <input type="submit" class="btn btn-success btn-lg" value="Submit Application">
 		 </div>
-		 <div class="col-md-5">
-			 <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../../home/display/comment'"value="Edit Information">
+	 </div><!-- row -->
+	</form>
+	 <div class="row">
+		 <div class="wrapper">
+			 <input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='../home/display/sections'"value="Modify Application">
 		 </div>
 	 </div><!-- row -->
 		 <div class="section-border">
@@ -46,15 +51,20 @@
 				 </div><!-- row -->
 			<div class="row">
 					<div class="col-md-6">
+
 						<h3>&nbsp;Identification</h3>
 						<div class="row">
-							<h4 class="col-md-3"><a href="../../identification/verify/<?=$identification->identification_id?>" target="_blank">Verify</a></h4>
+							<h4 class="col-md-3">Date</h4>
+							<h4 class="col-md-4"><?=$identification->submission_date?></h4>
+							<h4 class="col-md-3"><a href="<?=$identification->image?>" target="_blank">Image</a></h4>
 						</div><!-- row -->
 						<h3>&nbsp;CPR Certification</h3>
 						<div class="row">
-							<h4 class="col-md-3">Date</h4>
-							<h4 class="col-md-4"><?=$cpr->submission_date?></h4>
-							<h4 class="col-md-3"><a href="<?=$cpr->image?>" target="_blank">Image</a></h4>
+							<h4 class="col-md-1">Date</h4>
+							<h4 class="col-md-3"><?=$cpr->submission_date?></h4>
+							<h4 class="col-md-2">Expiration Date</h4>
+							<h4 class="col-md-3"><?=$cpr->expiration_date?></h4>
+							<h4 class="col-md-1"><a href="<?=$cpr->image?>" target="_blank">Image</a></h4>
 						</div><!-- row -->
 					</div><!--col-md-6 -->
 				<div class="col-md-6">

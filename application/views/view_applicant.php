@@ -4,7 +4,7 @@
 	</h1>
 	 <div>
 	    <h2  class= "mytitle">Application Status</h2>
-		 <div class="wrapper"> <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../'"value="Return To List"> <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../../home/display/comment'"value="Add a Comment"></div>
+		 <div class="wrapper"> <input type="button" class="btn btn-lg btn-primary" onclick="window.location.href='../'"value="Return To List"> <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../../home/display/comment'"value="Add a Comment"></div>
 		 <h3 class="wrapper">Comment(s)</h3>
 		 <?php foreach ($comments as $comment):?>
 			 <div class="row">
@@ -19,26 +19,32 @@
 
 			<div class="row">
 				<div class="col-md-6">
-					<h3 class="col-md-7">Application Start Date:</h3>
-					<h3 class="item col-md-4"><?=$applicant->application_date?></h3>
-					<h3 class="col-md-7">Application Submit Date</h3>
-					<h3 class="item col-md-4"><?=($applicant->submitted ? $applicant->submit_date : "Not Submitted")?></h3>
+					<h3 class="col-md-6">Start Date:</h3>
+					<h3 class="item col-md-5"><?=date_format(date_create($applicant->application_date), 'F d Y') ?></h3>
 				</div>
 				<div class="col-md-6">
-					<? if($applicant->complete):?>
-					 <h4 class="col-md-5">Application Marked Complete by: <?=$applicant->complete ?></h4>
-					 <h4 class="col-md-5">Application Complete Date:  <?=$applicant->complete_date ?></h4>
-					<? else:?>
-					<div class="col-md-11"> <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../update/complete/<?=$applicant->applicant_id ?>'" value="Mark Application Complete"></div>
-					<? endif;?>
-					<? if($applicant->funds):?>
-						<h4 class="col-md-5">Application Funds Received by: <?=$applicant->funds ?></h4>
-						<h4 class="col-md-5">Application Funds Received Date:  <?=$applicant->funds_date ?></h4>
-					<? else:?>
-						<div class="col-md-11"> <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../update/funds/<?=$applicant->applicant_id ?>'"value="Application Funds Received"></div>
-					<? endif;?>
+					<h3 class="col-md-6">Submit Date</h3>
+					<h3 class="item col-md-5"><?=($applicant->submitted ? date_format(date_create($applicant->submit_date), 'F d Y')  : "Not Submitted")?></h3>
 				</div>
 			</div><!--row-->
+		 <div class="row">
+			 <div class="col-md-6">
+				 <? if($applicant->complete):?>
+					 <h3 class="col-md-11">Marked Complete by: <?=$applicant->complete ?></h3>
+					 <h3 class="col-md-11">Complete Date:  <?=date_format(date_create($applicant->complete_date), 'F d Y') ?></h3>
+				 <? else:?>
+					 <div class="col-md-11"> <input type="button" class="btn btn-warning btn-lg" onclick="window.location.href='../update/complete/<?=$applicant->applicant_id ?>'" value="Mark Complete"></div>
+				 <? endif;?>
+			 </div>
+			 <div class="col-md-6">
+				 <? if($applicant->funds):?>
+					 <h3 class="col-md-11">Funds Received by: <?=$applicant->funds ?></h3>
+					 <h3 class="col-md-11">Funds Received Date:  <?=date_format(date_create($applicant->funds_date), 'F d Y') ?></h3>
+				 <? else:?>
+					 <div class="col-md-11"> <input type="button" class="btn btn-success btn-lg" onclick="window.location.href='../update/funds/<?=$applicant->applicant_id ?>'"value="Funds Received"></div>
+				 <? endif;?>
+			 </div>
+		 </div><!--row-->
 
 		 <div class="section-border">
 			<h2  class= "mytitle">Personal Information</h2>
@@ -53,7 +59,7 @@
 					 <div class="col-md-6">
 						 <h3 class="wrapper">Other Information</h3>
 						 <div class="row">
-							 <h4 class="col-md-6">Birth Date</h4><h4 class="item col-md-5"><?=$applicant->birth_date?></h4> <h4 class="col-md-6">GHC ID</h4><h4 class="item col-md-5"><?=$applicant->GHC_ID?></h4>
+							 <h4 class="col-md-6">Birth Date</h4><h4 class="item col-md-5"><?=date_format(date_create($applicant->birth_date), 'F d Y')?></h4> <h4 class="col-md-6">GHC ID</h4><h4 class="item col-md-5"><?=$applicant->GHC_ID?></h4>
 						 </div>
 					 </div>
 			 </div><!-- row -->
@@ -77,12 +83,14 @@
 					<div class="col-md-6">
 						<h3>&nbsp;Identification</h3>
 						<div class="row">
+							<h4 class="col-md-3">Date</h4>
+							<h4 class="col-md-4"><?=date_format(date_create($identification->submission_date), 'F d Y')?></h4>
 							<h4 class="col-md-3"><a href="../../identification/verify/<?=$identification->identification_id?>" target="_blank">Verify</a></h4>
 						</div><!-- row -->
 						<h3>&nbsp;CPR Certification</h3>
 						<div class="row">
 							<h4 class="col-md-3">Date</h4>
-							<h4 class="col-md-4"><?=$cpr->submission_date?></h4>
+							<h4 class="col-md-4"><?=date_format(date_create($cpr->submission_date), 'F d Y')?></h4>
 							<h4 class="col-md-3"><a href="<?=$cpr->image?>" target="_blank">Image</a></h4>
 						</div><!-- row -->
 					</div><!--col-md-6 -->
