@@ -17,7 +17,7 @@ class Employer extends CI_Controller {
         $image_array['submission_date'] = date('Y-m-d');
         $image->insert_post($image_array);
         if($type) {
-            redirect(base_url('review/get'));
+            redirect(base_url('home/display/sections'));
         } else {
             $this->load->view('templates/header');
             $this->load->view($nextPage, $data);
@@ -30,17 +30,17 @@ class Employer extends CI_Controller {
      *
      * @param string $type Model name
      */
-    public function get($type=0)
+    public function get($id=0)
     {
         session_start();
         $modelName = 'EmployerModel';
         $this->load->model($modelName);
         $image = new $modelName();
-        $data['employer']= $image->get_item('applicant_id', $_SESSION['applicant_id']);
+        ($id?$data['employer']= $image->get_item('employer_id', $id):$data['employers']= $image->get_list('applicant_id', $_SESSION['applicant_id']));
 //        var_dump($data[$type]);
 //        echo $data->submission_date;
         $this->load->view('templates/header');
-        ($type? $this->load->view('edit/new_employer') :$this->load->view('edit/employer', $data));
+        ($id? $this->load->view('edit/employer', $data) :$this->load->view('edit/list_employers', $data));
     }
 
     public function put($type)

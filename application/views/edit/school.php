@@ -9,7 +9,7 @@ DENTAL HYGIENE SCHOOL
 				<h3>School Attended</h3>
 			</div>
 			<div class="col-md-3">
-				<h3><input type="text" name="name" value="<?=$school->name ?>"></h3>
+				<h3><input type="text" name="name" value="<?=@$school->name ?>"></h3>
 			</div>
 		</div>
 		<div class="row">
@@ -17,7 +17,7 @@ DENTAL HYGIENE SCHOOL
 				<h3>State</h3>
 			</div>
 			<div class="col-md-3">
-				<h3><input type="text" name="state" value="<?=$school->state ?>"></h3>
+				<h3><input type="text" name="state" value="<?=@$school->state ?>"></h3>
 			</div>
 		</div>
 		<div class="row">
@@ -25,7 +25,7 @@ DENTAL HYGIENE SCHOOL
 				<h3>Year of Graduation</h3>
 			</div>
 			<div class="col-md-3">
-				<h3><input type="text" name="year"  value="<?=$school->year ?>"></h3>
+				<h3><input type="text" name="year"  value="<?=@$school->year ?>"></h3>
 			</div>
 		</div>
 					<div class="wrapper">

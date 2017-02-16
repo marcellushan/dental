@@ -1,14 +1,14 @@
  <div class="main container">
  <h2>The following CPR information has been submitted:</h2>
- <h3><?=$cpr->submission_date ?>
- <a href="<?=$cpr->image ?>" >Image</a>
- <?=$cpr->expiration_date ?></h3>
+ <h3><?=@$cpr->submission_date ?>
+ <a href="<?=@$cpr->image ?>" >Image</a>
+ <?=@$cpr->expiration_date ?></h3>
 
 	<h1>
 	Please upload a copy of your current valid CPR certificate
 	</h1>
 <?php echo validation_errors(); ?>
-<form action="../../cpr/put/<?=$cpr->cpr_id ?>" method="post" enctype="multipart/form-data" onsubmit="return Validate(this);">
+<form action="../../cpr/put/<?=@$cpr->cpr_id ?>" method="post" enctype="multipart/form-data" onsubmit="return Validate(this);">
 <input type="file" name="fileToUpload" id="cpr"><br>
 
 Expiration Date

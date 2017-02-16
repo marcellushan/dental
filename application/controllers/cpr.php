@@ -93,7 +93,26 @@ class Cpr extends CI_Controller {
             }
 
 
+    public function update($id)
+    {
+        session_start();
+        $this->load->model('CprModel');
+        $cpr=$this->CprModel->update($id, $_POST);
+        $cpr = new CprModel();
+        $applicant = $cpr->load($id);
+        echo $applicant->applicant_id;
+        redirect(base_url('/admin/get/'. $applicant->applicant_id));
+    }
 
+    public function verify($id)
+    {
+//        echo $id;
+        $this->load->model('CprModel');
+        $verify = new CprModel();
+        $data['cpr']= $verify->load($id);
+        $this->load->view('templates/header');
+        $this->load->view('cpr_verify', $data);
+    }
 	
 	
 }

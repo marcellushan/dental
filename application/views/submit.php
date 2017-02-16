@@ -2,6 +2,20 @@
 	<h1 class= "mytitle">
         Name:  <?=$applicant->first_name?>   <?=$applicant->middle_name?> <?=$applicant->last_name?>
 	</h1>
+	<div class="row">
+		<h3 class="col-md-4 col-md-offset-3">Application Start Date:</h3>
+		<h3 class="item col-md-5"><?=date_format(date_create($applicant->application_date), 'F d Y') ?></h3>
+	</div><!--row-->
+	<? if($applicant->submitted) : ?>
+		<div class="row">
+			<h3 class="col-md-4 col-md-offset-3">Application Submit Date:</h3>
+			<h3 class="item col-md-5"><?=date_format(date_create($applicant->submit_date), 'F d Y') ?></h3>
+		<div class="row">
+			<h3 class="col-md-4 col-md-offset-3">Application Status</h3>
+			<h3 class="item col-md-5"><? echo ($applicant->complete ? "Complete " . $applicant->complete_date : "Not Complete") ?> </h3>
+		</div><!--row-->
+		</div><!--row-->
+	<? else: ?>
 	 <form action="../applicant/put/thank_you" method="post">
 		 <input type="hidden" name="submitted" value="1">
 		 <input type="hidden" name="submit_date" value="<? echo date('Y-m-d') ?>">
@@ -11,11 +25,7 @@
 		 </div>
 	 </div><!-- row -->
 	</form>
-	 <div class="row">
-		 <div class="wrapper">
-			 <input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='../home/display/sections'"value="Modify Application">
-		 </div>
-	 </div><!-- row -->
+	<?endif; ?>
 		 <div class="section-border">
 			<h2  class= "mytitle">Personal Information</h2>
 				 <div class="row">
@@ -55,27 +65,27 @@
 						<h3>&nbsp;Identification</h3>
 						<div class="row">
 							<h4 class="col-md-3">Date</h4>
-							<h4 class="col-md-4"><?=$identification->submission_date?></h4>
-							<h4 class="col-md-3"><a href="<?=$identification->image?>" target="_blank">Image</a></h4>
+							<h4 class="col-md-4"><?=@$identification->submission_date?></h4>
+							<h4 class="col-md-3"><a href="<?=@$identification->image?>" target="_blank">Image</a></h4>
 						</div><!-- row -->
 						<h3>&nbsp;CPR Certification</h3>
 						<div class="row">
 							<h4 class="col-md-1">Date</h4>
-							<h4 class="col-md-3"><?=$cpr->submission_date?></h4>
+							<h4 class="col-md-3"><?=@$cpr->submission_date?></h4>
 							<h4 class="col-md-2">Expiration Date</h4>
-							<h4 class="col-md-3"><?=$cpr->expiration_date?></h4>
-							<h4 class="col-md-1"><a href="<?=$cpr->image?>" target="_blank">Image</a></h4>
+							<h4 class="col-md-3"><?=@$cpr->expiration_date?></h4>
+							<h4 class="col-md-1"><a href="<?=@$cpr->image?>" target="_blank">Image</a></h4>
 						</div><!-- row -->
 					</div><!--col-md-6 -->
 				<div class="col-md-6">
 					<h3>School</h3>
 					<div class="row">
 						<h4 class="col-md-4">Name</h4>
-						<h4 class="item col-md-7"><?=$school->name?></h4>
+						<h4 class="item col-md-7"><?=@$school->name?></h4>
 						<h4 class="col-md-4">State</h4>
-						<h4 class="item col-md-7"><?=$school->state?></h4>
+						<h4 class="item col-md-7"><?=@$school->state?></h4>
 						<h4 class="col-md-4">Graduation Year</h4>
-						<h4 class="item col-md-7"><?=$school->year?></h4>
+						<h4 class="item col-md-7"><?=@$school->year?></h4>
 					</div><!-- row -->
 				</div><!--col-md-6 -->
 		 </div><!-- section-border -->
@@ -119,8 +129,8 @@
 				<h4 class="item col-md-3"><?=($applicant->e_backup_phone ? $applicant->e_backup_phone : "None Provided")?></h4>
 			</div><!-- row -->
 		 </div><!-- section-border -->
+			 <div class="section-border">
 		 <? if($employers):?>
-		 <div class="section-border">
 		<h3 class="wrapper">Employer(s)</h3>
 		<div class="row">
 			<?php foreach ($employers as $employer):?>
@@ -143,12 +153,12 @@
 					<h4 class="col-md-12">How did you hear about us?</h4>
 					<h4 class="item col-md-12"><?=$applicant->hear ?></h4>
 				</div><!-- row -->
-			 </div>
+			 </div><!--col-md-6 -->
 			 <div class="col-md-6">
 				 <h3>Demographics</h3>
 				 <div class="row">
 					 <h4 class="col-md-3">Race</h4>
-					 <h4 class="item col-md-2"><?=$race->race_text?></h4>
+					 <h4 class="item col-md-2"><?=@$race->race_text?></h4>
 					 <h4 class="col-md-3">Gender</h4>
 					 <h4 class="item col-md-2"><? echo ($applicant->gender ? "Male" : "Female"); ?></h4>
 					 <h4 class="col-md-3">Latino</h4>
@@ -156,6 +166,15 @@
 					 <h4 class="col-md-3">Foreign</h4>
 					 <h4 class="item col-md-2"><? echo ($applicant->foreign ? "Yes" : "No"); ?></h4>
 				 </div><!-- row -->
-			 </div>
+			 </div><!--col-md-6 -->
+		 </div><!-- row -->
+		 <? if(! $applicant->complete) : ?>
+		 <div class="wrapper">
+			 <input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='../home/display/sections'"value="Modify Application">
+		 </div>
+		 <? endif; ?>
+			 <p></p>
+
+
  </div><!-- main container -->
 

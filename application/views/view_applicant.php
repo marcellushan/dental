@@ -52,14 +52,16 @@
 					 <div class="col-md-6">
 						 <h3 class="wrapper">Address</h3>
 				 		<div class="row">
-						<h4 class="col-md-2">Street</h4><h4 class="item col-md-9"><?=$applicant->street?></h4> <h4 class="col-md-2">City</h4><h4 class="item col-md-2"><?=$applicant->city?></h4>
-					 	<h4 class="col-md-1">State</h4><h4 class="item col-md-1"><?=$applicant->state?></h4><h4 class="col-md-1">Zip</h4><h4 class="item col-md-1"><?=$applicant->zip?></h4>
+						<h4 class="col-md-2">Street</h4><h4 class="item col-md-9"><? echo ($applicant->street ? $applicant->street : "Not Provided" )?></h4>
+						<h4 class="col-md-2">City</h4><h4 class="item col-md-2"><? echo ($applicant->city ? $applicant->city : "Not Provided" )?></h4>
+					 	<h4 class="col-md-1">State</h4><h4 class="item col-md-1"><? echo ($applicant->state ? $applicant->state : "Not Provided" )?></h4>
+						<h4 class="col-md-1">Zip</h4><h4 class="item col-md-1"><? echo ($applicant->zip ? $applicant->zip : "Not Provided" )?></h4>
 					 </div>
 			 		</div>
 					 <div class="col-md-6">
 						 <h3 class="wrapper">Other Information</h3>
 						 <div class="row">
-							 <h4 class="col-md-6">Birth Date</h4><h4 class="item col-md-5"><?=date_format(date_create($applicant->birth_date), 'F d Y')?></h4> <h4 class="col-md-6">GHC ID</h4><h4 class="item col-md-5"><?=$applicant->GHC_ID?></h4>
+							 <h4 class="col-md-6">Birth Date</h4><h4 class="item col-md-5"><? echo ($applicant->birth_date ? date_format(date_create($applicant->birth_date), 'F d Y') : "Not Provided" )?></h4> <h4 class="col-md-6">GHC ID</h4><h4 class="item col-md-5"><?=$applicant->GHC_ID?></h4>
 						 </div>
 					 </div>
 			 </div><!-- row -->
@@ -67,15 +69,15 @@
 					 <div class="col-md-6">
 						 <h3 class="wrapper">Phone Numbers</h3>
 						 <div class="row">
-							 <h4 class="col-md-2">Preferred</h4><h4 class="item col-md-9"><?=$applicant->preferred_phone?></h4>
-							 <h4 class="col-md-2">Backup</h4><h4 class="item col-md-9"><?=$applicant->backup_phone?></h4>
+							 <h4 class="col-md-2">Preferred</h4><h4 class="item col-md-9"><? echo ($applicant->preferred_phone ? $applicant->preferred_phone : "Not Provided" )?></h4>
+							 <h4 class="col-md-2">Backup</h4><h4 class="item col-md-9"><? echo ($applicant->backup_phone ? $applicant->backup_phone : "Not Provided" )?></h4>
 						 </div>
 					 </div>
 					 <div class="col-md-6">
 						 <h3 class="wrapper">Email Addresses</h3>
 						 <div class="row">
 							 <h4 class="col-md-2">Preferred</h4><h4 class="item col-md-9"><?=$applicant->preferred_email?></h4>
-							 <h4 class="col-md-2">Backup</h4><h4 class="item col-md-9"><?=$applicant->backup_email?></h4>
+							 <h4 class="col-md-2">Backup</h4><h4 class="item col-md-9"><? echo ($applicant->backup_email ? $applicant->backup_email : "Not Provided" )?></h4>
 						 </div>
 					 </div>
 				 </div><!-- row -->
@@ -83,19 +85,35 @@
 					<div class="col-md-6">
 						<h3>&nbsp;Identification</h3>
 						<div class="row">
-							<h4 class="col-md-3">Date</h4>
-							<h4 class="col-md-4"><?=date_format(date_create($identification->submission_date), 'F d Y')?></h4>
-							<h4 class="col-md-3"><a href="../../identification/verify/<?=$identification->identification_id?>" target="_blank">Verify</a></h4>
+							<? if($identification): ?>
+								<h4 class="col-md-3">Date</h4>
+								<h4 class="col-md-4"><?=date_format(date_create($identification->submission_date), 'F d Y')?></h4>
+								<h4 class="col-md-3">
+									<? if($identification->verified): ?>
+										Verified <?=$identification->verified_date ?>
+									<? else: ?>
+										<a href="../../identification/verify/<?=$identification->identification_id?>">Verify</a></h4>
+									<? endif; ?>
+							<? endif; ?>
 						</div><!-- row -->
 						<h3>&nbsp;CPR Certification</h3>
+
 						<div class="row">
+							<? if($cpr): ?>
 							<h4 class="col-md-3">Date</h4>
 							<h4 class="col-md-4"><?=date_format(date_create($cpr->submission_date), 'F d Y')?></h4>
-							<h4 class="col-md-3"><a href="<?=$cpr->image?>" target="_blank">Image</a></h4>
+							<h4 class="col-md-3">
+								<? if($cpr->verified): ?>
+									Verified <?=$cpr->verified_date ?>
+								<? else: ?>
+									<a href="../../cpr/verify/<?=$cpr->cpr_id?>">Verify</a></h4>
+								<? endif; ?>
+							<? endif; ?>
 						</div><!-- row -->
 					</div><!--col-md-6 -->
 				<div class="col-md-6">
 					<h3>School</h3>
+					<? if($school): ?>
 					<div class="row">
 						<h4 class="col-md-4">Name</h4>
 						<h4 class="item col-md-7"><?=$school->name?></h4>
@@ -104,10 +122,12 @@
 						<h4 class="col-md-4">Graduation Year</h4>
 						<h4 class="item col-md-7"><?=$school->year?></h4>
 					</div><!-- row -->
+					<? endif; ?>
 				</div><!--col-md-6 -->
 		 </div><!-- section-border -->
 			 <div class="section-border">
 			<h3 class="wrapper">License(s)</h3>
+				 <? if($licenses): ?>
 			<div class="row">
 				<?php foreach ($licenses as $license):?>
 					<h4 class="col-md-2">State of Licensure</h4>
@@ -116,10 +136,17 @@
 					<h4 class="item col-md-1"><?=$license->number?></h4>
 					<h4 class="col-md-1">Active</h4>
 					<h4 class="item col-md-2"><? echo ($license->active ? "Yes" : "No"); ?></h4>
-					<h4 class="col-md-1"><a href="<?=$license->image?>" target="_blank">Image</a></h4>
+					<h4 class="col-md-1">
+						<? if($license->verified): ?>
+							Verified <?=$license->verified_date ?>
+						<? else: ?>
+							<a href="../../license/verify/<?=$license->license_id?>">Verify</a></h4>
+						<? endif; ?>
+					</h4>
 
 				<?php endforeach;?>
 			</div><!-- row -->
+				 <? endif; ?>
 		</div><!-- section-border -->
 		 <? if($applicant->discipline):?>
 		 <h3 class="wrapper">Disciplinary Action</h3>
@@ -175,7 +202,7 @@
 				 <h3>Demographics</h3>
 				 <div class="row">
 					 <h4 class="col-md-3">Race</h4>
-					 <h4 class="item col-md-2"><?=$race->race_text?></h4>
+					 <h4 class="item col-md-2"><?=@$race->race_text?></h4>
 					 <h4 class="col-md-3">Gender</h4>
 					 <h4 class="item col-md-2"><? echo ($applicant->gender ? "Male" : "Female"); ?></h4>
 					 <h4 class="col-md-3">Latino</h4>

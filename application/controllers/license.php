@@ -20,7 +20,7 @@ class License extends CI_Controller {
      * @param string $type
      * @param string $nextPage
      */
-    public function post($nextPage)
+    public function post($nextPage="")
     {
         session_start();
         $this->load->model('StateModel');
@@ -45,9 +45,14 @@ class License extends CI_Controller {
         $image_array['applicant_id'] = $_SESSION['applicant_id'];
         $image_array['submission_date'] = date('Y-m-d');
         $image->insert_post($image_array);
-        $this->load->view('templates/header');
-        $this->load->view($nextPage, $data);
-//        redirect(base_url('/review/get'));
+        if($nextPage) {
+            $this->load->view('templates/header');
+            $this->load->view($nextPage, $data);
+        } else {
+            redirect(base_url('home/display/sections'));
+        }
+
+
     }
 
 
@@ -59,6 +64,8 @@ class License extends CI_Controller {
     public function get($id=0)
     {
         session_start();
+        $this->load->model('StateModel');
+        $data['states'] = $this->StateModel->get_states();
         $this->load->model('licenseModel');
         $license = new licenseModel();
         $this->load->view('templates/header');
@@ -91,11 +98,30 @@ class License extends CI_Controller {
         $image_array = $_POST;
         $image_array['submission_date'] = date('Y-m-d');
         $image=$this->$modelName->update($id, $image_array);
-        redirect(base_url('review/get'));
+        redirect(base_url('home/display/sections'));
 
     }
 
+    public function update($id)
+    {
+        session_start();
+        $this->load->model('LicenseModel');
+        $license=$this->LicenseModel->update($id, $_POST);
+        $license = new LicenseModel();
+        $applicant = $license->load($id);
+        echo $applicant->applicant_id;
+        redirect(base_url('/admin/get/'. $applicant->applicant_id));
+    }
 
+    public function verify($id)
+    {
+//        echo $id;
+        $this->load->model('LicenseModel');
+        $verify = new LicenseModel();
+        $data['license']= $verify->load($id);
+        $this->load->view('templates/header');
+        $this->load->view('license_verify', $data);
+    }
 
 	
 	

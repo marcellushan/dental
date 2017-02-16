@@ -3,12 +3,12 @@
 
 
 				
-	 <form action="../../identification/update/<?=$identification->identification_id ?>" method="post" >
+	 <form action="../../cpr/update/<?=$cpr->cpr_id ?>" method="post" >
 		 <input type="hidden" name="verified" value="1">
 		 <input type="hidden" name="verified_date" value="<?=date('Y-m-d') ?>">
 
 
-		 <img class="img-responsive" src="<?=$identification->image ?>">
+		 <img class="img-responsive" src="<?=$cpr->image ?>">
 
 		 <input type="submit" class="btn btn-lg btn-success" value="Verify">  <input type="button" class="btn btn-lg btn-danger" onclick="window.location.href='../'"value="Return To List">
 

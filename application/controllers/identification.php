@@ -91,13 +91,24 @@ class Identification extends CI_Controller {
 
             }
 
+
+    public function update($id)
+    {
+        session_start();
+        $this->load->model('IdentificationModel');
+        $identification=$this->IdentificationModel->update($id, $_POST);
+        $identification = new IdentificationModel();
+        $applicant = $identification->load($id);
+        echo $applicant->applicant_id;
+        redirect(base_url('/admin/get/'. $applicant->applicant_id));
+    }
+
     public function verify($id)
     {
 //        echo $id;
         $this->load->model('IdentificationModel');
         $verify = new IdentificationModel();
         $data['identification']= $verify->load($id);
-//        var_dump($data['identification']);
         $this->load->view('templates/header');
         $this->load->view('verify', $data);
     }
