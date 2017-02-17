@@ -17,7 +17,7 @@
 			webshims.polyfill('forms');
 			webshims.cfg.no$Switch = true;
 		</script>
-	      <script src="<?php echo base_url() ?>assets/js/js_functions.js"></script>
+	      <!--<script src="<?php echo base_url() ?>assets/js/js_functions.js"></script> -->
      </head>
 	<body>
 		<header class="container">
