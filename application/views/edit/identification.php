@@ -11,9 +11,9 @@ Select a new file to update identification
 
 
 <form action="../put/<?=@$identification->identification_id ?>" method="post" enctype="multipart/form-data"  onsubmit="return Validate(this);">
-<input type="file" name="fileToUpload" id="driver"><br>
+<input type="file" name="fileToUpload" id="identification"><br>
 
-	<input type="submit" class="btn btn-primary btn-lg center-block" id="driverBtn" value="Update Identification" />
+	<input type="submit" class="btn btn-primary btn-lg center-block" id="identificationBtn" value="Update Identification" />
 
 </form>
 </div>

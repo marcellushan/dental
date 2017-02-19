@@ -11,8 +11,8 @@
 		 <li>Valid Federal Passport</li>
 	 </ul>
  </h2>
-<form action='<?=base_url("identification/post/cpr")?>' method="post" enctype="multipart/form-data"  onsubmit="return Validate(this);">
-<input type="file" name="fileToUpload" id="driver"><br>
+<form action='<?=base_url("identification/post/cpr")?>' method="post" enctype="multipart/form-data"  id="identification" onsubmit="return Validate(this);">
+<input type="file" name="fileToUpload"><br>
 
 	<input type="submit" class="btn btn-primary btn-lg center-block" id="driverBtn" value="Submit" />
 

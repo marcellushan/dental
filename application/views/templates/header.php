@@ -12,12 +12,14 @@
 	    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css" />
 	     <script src="<?php echo base_url() ?>assets/jquery/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/webshim/1.16.0/dev/polyfiller.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.js"></script>
+
 		<script>
 			webshim.activeLang('en');
 			webshims.polyfill('forms');
 			webshims.cfg.no$Switch = true;
 		</script>
-	      <!--<script src="<?php echo base_url() ?>assets/js/js_functions.js"></script> -->
+	      <script src="<?php echo base_url() ?>assets/jquery/jquery_validation.js"></script>
      </head>
 	<body>
 		<header class="container">

@@ -6,19 +6,26 @@
 			<h2>It is required that you create an account prior to submitting an application.</h2>
 
 			<h2>Please create an an account using a valid email address and a unique password.</h2>
-			<?php echo validation_errors(); ?>
-			<form action='<?=base_url("home/save")?>' method="post">
-				<fieldset>
-				<div class="row"><h3>
-					<label class="col-lg-3 col-lg-offset-2">Email </label><input type="text" class="col-lg-4" name="email" value="<?=set_value('email') ?>" required>
-					<label class="col-lg-3 col-lg-offset-2">Create Password</label> <input type="password" class="col-lg-4" name="password" value="<?=set_value('password') ?>" required>
-					<label class="col-lg-3 col-lg-offset-2">Confirm Password</label><input type="password" class="col-lg-4" name="passconf" value="<?=set_value('passconf') ?>" ></h3>
-					<div class="col-lg-12 col-lg-offset-5"><button type="submit" class="btn btn-lg btn-success">Submit</button></div>
-				</div>
-				
-				
-				</fieldset>
-			</form>
+
+            <h3>
+                <form action='<?=base_url("home/save")?>' id="create" method="post">
+                    <fieldset>
+                    <div class="row">
+                            <label class="col-lg-3 col-lg-offset-2">Email </label><input type="text" class="col-lg-4" name="email">
+                    </div>
+                    <div class="row">
+                            <label class="col-lg-3 col-lg-offset-2">Create Password</label> <input type="password" class="col-lg-4" name="password" id="password"  minlength="8" >
+                    </div>
+                    <div class="row">
+                            <label class="col-lg-3 col-lg-offset-2">Confirm Password</label><input type="password" class="col-lg-4" name="passconf" id="passconf"   >
+                    </div>
+                        <div class="col-lg-12 col-lg-offset-5"><button type="submit" class="btn btn-lg btn-success">Submit</button></div>
+                    </div>
+
+
+                    </fieldset>
+                </form>
+            </h3>
 
 			<h2>If an account has been previously created, please proceed to the user login page</h2>
 
