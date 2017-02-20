@@ -9,7 +9,7 @@ class Admin extends CI_Controller {
 		$this->load->view('templates/header');
 		$this->load->model('ApplicantModel');
         ($type ? $data['applicants'] = $this->ApplicantModel->get_category($type) : $data['applicants'] = $this->ApplicantModel->get());
-// 		var_dump($data['applicants']);
+ 		var_dump($data['applicants']);
 		$this->load->view('applications',$data);
 	}
 
