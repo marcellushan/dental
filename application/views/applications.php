@@ -1,6 +1,6 @@
  <div class="main container">
  <h1 class= "mytitle">
-	ALL APPLICATIONS
+	<? echo ($type ? strtoupper($type) : "ALL") ?> APPLICATIONS
 </h1>
 
 <table class="table table-striped table-responsive">

@@ -52,7 +52,7 @@ class School extends CI_Controller {
         $test= $applicant->get_item('applicant_id', $_SESSION['applicant_id']);
         var_dump($additional_array);
         $additional=$this->$modelName->update($test->$additional_id, $additional_array);
-        redirect(base_url('returning/get'));
+        redirect(base_url('/home/display/sections'));
 
     }
 

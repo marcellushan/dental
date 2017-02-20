@@ -191,7 +191,8 @@
                      required: true
                  },
                  year: {
-                     required: true
+                     required: true,
+                     range: [1900, 2050]
                  }
 
              },

@@ -6,7 +6,7 @@
 	</h1>
 
 <?php echo validation_errors(); ?>
-	<form action='<?=base_url("applicant/put/returning")?>' method="post">
+	<form action='<?=base_url("applicant/put/returning")?>' id="emergency" method="post">
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">
@@ -31,8 +31,8 @@
 				<div class="col-md-6 col-xs-12">
 					<div class="row">
 						<label class="col-xs-5">Preferred Phone</label><input type="text" class="col-xs-6" name="e_preferred_phone" placeholder="required" value="<?=$applicant->e_preferred_phone ?>">
-						<label class="col-xs-5">Backup Phone</label><input type="text" class="col-xs-6" name="e_backup_phone"  value="<?=$applicant->e_backup_phone ?>">
-						<label class="col-xs-5">Preferred Email</label><input type="text" class="col-xs-6" name="e_email" placeholder="required" value="<?=$applicant->e_email ?>">
+						<label class="col-xs-5">Backup Phone</label><input type="email" class="col-xs-6" name="e_backup_phone"  value="<?=$applicant->e_backup_phone ?>">
+						<label class="col-xs-5">Preferred Email</label><input type="email" class="col-xs-6" name="e_email" placeholder="required" value="<?=$applicant->e_email ?>">
 					</div><!-- row -->
 				</div><!-- col-md-6 col-xs-12 -->
 			</div><!-- row -->
