@@ -66,7 +66,16 @@ class ApplicantModel extends my_model {
 // 	}
 
 public function get_category($type) {
-    $this->db->where($type, 1);
+    $data = array();
+    if($type=="submitted") {
+        $this->db->where('complete !=', 1);
+        $this->db->where($type, 1);
+    } elseif($type=="complete") {
+        $this->db->where('funds !=', 1);
+        $this->db->where($type, 1);
+    } else {
+            $this->db->where($type, 1);
+    }
     $query = $this->db->get($this::DB_TABLE);
 
     foreach ($query->result() as $row)

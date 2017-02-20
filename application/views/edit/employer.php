@@ -1,7 +1,7 @@
  <div class="main container">
 	<h1 class= "mytitle">EMPLOYMENT INFORMATION	</h1>
 
-	 <form action='<?=base_url("employer/put")?>' method="post">
+	 <form action='<?=base_url("employer/put")?>' id="employer" method="post">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<h3>Name of Employer</h3>

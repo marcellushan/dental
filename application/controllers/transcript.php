@@ -20,7 +20,7 @@ class Transcript extends CI_Controller {
      * @param string $type
      * @param string $nextPage
      */
-    public function post($nextPage)
+    public function post($nextPage="")
     {
         session_start();
         $this->load->model('StateModel');
@@ -46,27 +46,55 @@ class Transcript extends CI_Controller {
         $image_array['submission_date'] = date('Y-m-d');
         $image->insert_post($image_array);
         $this->load->view('templates/header');
-        $this->load->view($nextPage, $data);
+        if($nextPage) {
+            $this->load->view('templates/header');
+            $this->load->view($nextPage, $data);
+        } else {
+            redirect(base_url('home/display/sections'));
+        }
     }
 
 
-    /**
-     * Retrieves information for the model sent by $type
-     *
-     * @param string $type Model name
-     */
-    public function get($id)
+    public function get($id=0)
     {
         session_start();
-        $this->load->model('licenseModel');
-        $license = new licenseModel();
+        $this->load->model('StateModel');
+        $data['states'] = $this->StateModel->get_states();
+        $this->load->model('transcriptModel');
+        $transcript = new transcriptModel();
         $this->load->view('templates/header');
-        $data['license']= $license->load($id);
-        $this->load->view('edit/license', $data);
+        if(! $id) {
+            $data['transcripts'] = $transcript->get_list('applicant_id', $_SESSION['applicant_id']);
+            $this->load->view('edit/list_transcripts', $data);
+        } else {
+            $data['transcript']= $transcript->load($id);
+            $this->load->view('edit/transcript', $data);
+        }
 
     }
 
+    public function put($id)
+    {
+        if (!@$_FILES['fileToUpload']['error']) {
+            $myRandom = rand(1, 10000);
+            ($_SERVER['SERVER_NAME'] == 'localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/" : $target_dir = "/var/www/html/dental/assets/uploads/");
+            $target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+            $myFile = basename($_FILES["fileToUpload"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+            echo $image_url = base_url() . "assets/uploads/" . $myRandom . basename($_FILES["fileToUpload"]["name"]);
 
+        }
+        $modelName = 'TranscriptModel';
+        $this->load->model($modelName);
+        (@$image_url ? $image_array['image'] = $image_url : $image_array['image'] = "No Image");
+        $image_array = $_POST;
+        $image_array['submission_date'] = date('Y-m-d');
+        $image=$this->$modelName->update($id, $image_array);
+        redirect(base_url('home/display/sections'));
+
+    }
 
 	
 	

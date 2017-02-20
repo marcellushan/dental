@@ -14,4 +14,5 @@
     <h2><a href="../../applicant/get/discipline/1">Discipline</a></h2>
     <h2><a href="../../applicant/get/emergency/1">Emergency</a></h2>
     <h2><a href="../../employer/get/">Employer</a></h2>
+    <h2><a href="../../transcript/get/">Transcript</a></h2>
 

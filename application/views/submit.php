@@ -144,6 +144,20 @@
 				 <h3 class="wrapper">No Employers Given</h3>
 		 <?endif;?>
 		</div><!-- section-border -->
+			 <? if($transcripts): ?>
+				 <div class="section-border">
+					 <h3 class="wrapper">Transcript(s)</h3>
+
+					 <?php foreach ($transcripts as $transcript):?>
+						 <div class="row">
+							 <h4 class="col-md-3">School</h4>
+							 <h4 class="item col-md-3"><?=$transcript->school?></h4>
+							 <h4 class="col-md-3">Image</h4>
+							 <h4 class="item col-md-2"><a href="<?=$transcript->image?>">Image</a></h4>
+						 </div><!-- row -->
+					 <?php endforeach;?>
+				 </div><!-- section-border -->
+			 <? endif; ?>
 		 <div class="row">
 			 <div class="col-md-6">
 				<h3>Program Questions</h3>

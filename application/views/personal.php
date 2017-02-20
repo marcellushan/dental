@@ -7,18 +7,17 @@
 	<h1 class= "mytitle">
 	APPLICANT PERSONAL INFORMATION
 	</h1>
-<? echo (@$ghc ? "That GHC ID has already been submitted, if you are returning to complete an application go here" : "") ?>
-	<form action='<?=base_url("applicant/put/identification")?>' method="post">
+	<form action='<?=base_url("applicant/put/identification")?>' id="personal" method="post">
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">
 					
-					<label class="col-sm-2 col-xs-5" >First </label><input type="text" class="col-sm-2 col-xs-6" name="first_name" placeholder="required" value="<?=set_value('first_name') ?>">
+					<label class="col-sm-2 col-xs-5" id="first_name">First </label><input type="text" class="col-sm-2 col-xs-6 ignore" name="first_name" placeholder="required" >
 					<label class="col-sm-2 col-xs-5" >Middle</label><input type="text" class="col-sm-2 col-xs-6"  name="middle_name" value="<?=set_value('middle_name') ?>">
 					<label class="col-sm-1 col-xs-5" >Last</label><input type="text" class="col-sm-2 col-xs-6"  name="last_name" placeholder="required" value="<?=set_value('last_name') ?>">
 				</div><!-- row -->
 				<div class="row">
-					<label class="col-sm-2 col-xs-5" >Date of Birth</label><input type="date" class="col-sm-2 col-xs-6"  name="birth_date" placeholder="required" value="<?=set_value('birth_date') ?>"  required>
+					<label class="col-sm-2 col-xs-5" >Date of Birth</label><input type="date" class="col-sm-2 col-xs-6"  name="birth_date" placeholder="MM/DD/YYY" value="<?=set_value('birth_date') ?>" >
 					<label class="col-sm-2 col-xs-5" >Maiden </label><input type="text" class="col-sm-2 col-xs-6"  name="maiden_name" value="<?php echo set_value('maiden_name'); ?>" placeholder="if applicable">
 				</div><!-- row -->
 			<div class="row">

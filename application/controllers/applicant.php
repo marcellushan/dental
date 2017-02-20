@@ -79,7 +79,7 @@ class Applicant extends CI_Controller {
             $this->MailModel->send($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
         }
         $this->load->view('templates/header');
-        ($destination=="returning"? redirect(base_url('/returning/get')):$this->load->view($destination, $data));
+        ($destination=="returning"? redirect(base_url('/home/display/sections')):$this->load->view($destination, $data));
     }
 
 

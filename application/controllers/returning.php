@@ -20,6 +20,8 @@ class Returning extends CI_Controller {
         $data['licenses'] = $this->LicenseModel->get_list('applicant_id',$id);
         $this->load->model('SchoolModel');
         $data['school'] = $this->SchoolModel->get_item('applicant_id',$id);
+        $this->load->model('TranscriptModel');
+        $data['transcripts'] = $this->TranscriptModel->get_list('applicant_id',$id);
         $this->load->view('templates/header');
         $this->load->view('submit',$data);
 
