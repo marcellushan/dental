@@ -65,17 +65,9 @@
                      required: true,
                      range: [90000000 , 90099999]
                  }
-             }
-         });
-     });
-
-     $(document).ready(function(){
-         $( "#GHC" ).validate({
-             rules: {
-                 GHC_ID: {
-                     required: true,
-                     range: [90000000 , 90099999]
-                 }
+             },
+             messages: {
+                 GHC_ID: "Please enter valid GHC ID in the form 900XXXXX"
              }
          });
      });

@@ -74,7 +74,6 @@ class Applicant extends CI_Controller {
         (@$_POST? $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST):"");
         if(@$_POST['submitted']) {
             $applicant = $this->ApplicantModel->load($_SESSION['applicant_id']);
-            echo $applicant->preferred_email;
             $this->load->model('MailModel');
             $this->MailModel->send($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
         }

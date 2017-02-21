@@ -14,6 +14,13 @@ class Home extends CI_Controller {
 		$this->load->view('welcome');
 	}
 
+    public function mail($type, $id)
+    {
+        $this->load->model('ApplicantModel');
+        $applicant = $this->ApplicantModel->load($id);
+        $this->load->model('MailModel');
+        $this->MailModel->$type($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
+    }
 
 
     /**
