@@ -9,7 +9,7 @@
   Please have the following items prior to submitting an application:
 </h4>
 <h4>
-  <ul>
+  <ol>
    <li>A copy of one of the following forms of identification</li>
     <ul>
       <li>Valid State issued Driver's License</li>
@@ -20,9 +20,9 @@
    <li>Copies of all Dental Hygiene licenses</li>
    <li>Copies of any unofficial transcripts you would like to provide to GHC for evaluation</li>
    <li>Name and phone number of an emergency contact</li>
-   <li>GHC Identification number, if you are a current student</li>
+   <li>GHC Identification number, if you are a current student or former student</li>
 
-  </ul>
+  </ol>
   </h4>
 <div class="wrapper" ><a class="btn btn-lg btn-success" href='<?=base_url("home/display/create_applicant")?>'>Begin Application</a></div>
   <p>

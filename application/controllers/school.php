@@ -40,22 +40,37 @@ class School extends CI_Controller {
         $this->load->view('edit/school', $data);
     }
 
-    public function put()
+//    public function put()
+//    {
+//        session_start();
+//        $modelName = 'Schoolmodel';
+//        $this->load->model($modelName);
+//        $applicant = new $ApplicantName();
+//        $additional_id= 'school_id';
+//        $additional_array = $_POST;
+//        $additional_array['submission_date'] = date('Y-m-d');
+//        $test= $applicant->get_item('applicant_id', $_SESSION['applicant_id']);
+//        var_dump($additional_array);
+//        $additional=$this->$modelName->update($test->$additional_id, $additional_array);
+//        redirect(base_url('/home/display/sections'));
+//
+//    }
+
+    public function put($id)
     {
         session_start();
-        $modelName = 'Schoolmodel';
-        $this->load->model($modelName);
-        $applicant = new $modelName();
-        $additional_id= 'school_id';
-        $additional_array = $_POST;
-        $additional_array['submission_date'] = date('Y-m-d');
-        $test= $applicant->get_item('applicant_id', $_SESSION['applicant_id']);
-        var_dump($additional_array);
-        $additional=$this->$modelName->update($test->$additional_id, $additional_array);
+//        $modelName = 'SchoolModel';
+        $this->load->model('SchoolModel');
+
+        $image_array = $_POST;
+
+//        (@$image_url ? $image_array['image'] = $image_url : $image_array['image'] = "No Image");
+        echo $_SESSION['applicant_id'];
+        $image_array['submission_date'] = date('Y-m-d');
+        var_dump($image_array);
+        $image = $this->SchoolModel->update($id, $image_array);
         redirect(base_url('/home/display/sections'));
-
     }
-
 	
 	
 }

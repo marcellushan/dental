@@ -3,7 +3,7 @@
 		Dental Transcript
 	</h1>
 <?php echo validation_errors(); ?>
-	<form action='<?=base_url("transcript/post/more_transcripts")?>' method="post" enctype="multipart/form-data">
+	<form action='<?=base_url("transcript/post/more_transcripts")?>' method="post" id="transcript" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<h3>School</h3>

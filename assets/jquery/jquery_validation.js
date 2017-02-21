@@ -20,25 +20,25 @@
      //     });
      // });
 
-     jQuery(function(){
-    	 $("#cprBtn").click(function(){
-    	 	if(! $('#cpr').val())
-    	 	{
-    	 	 alert("Please attach a copy your current CPR Certificate");
-    	 	 return false;
-    	 	}
-    	 });
-    	 });
-
-     jQuery(function(){
-         $("#identificationBtn").click(function(){
-             if(! $('#identification').val())
-             {
-                 alert("Please attach a copy your valid identification");
-                 return false;
-             }
-         });
-     });
+     // jQuery(function(){
+    	//  $("#cprBtn").click(function(){
+    	//  	if(! $('#cpr').val())
+    	//  	{
+    	//  	 alert("Please attach a copy your current CPR Certificate");
+    	//  	 return false;
+    	//  	}
+    	//  });
+    	//  });
+     //
+     // jQuery(function(){
+     //     $("#identificationBtn").click(function(){
+     //         if(! $('#identification').val())
+     //         {
+     //             alert("Please attach a copy your valid identification");
+     //             return false;
+     //         }
+     //     });
+     // });
 
      $(document).ready(function(){
              $( "#create" ).validate({
@@ -54,6 +54,9 @@
                      passconf: {
                          equalTo: "#password"
                      }
+                 },
+                 messages: {
+                     email:"Enter your email address"
                  }
          });
      });
@@ -262,6 +265,41 @@
 
          });
      });
+
+     $(document).ready(function(){
+         $( "#transcript" ).validate({
+             rules: {
+                 school: {
+                     required: true
+                 },
+                 fileToUpload: {
+                     required: true
+                 }
+             },
+             messages: {
+                 school: "Please enter the name of the school",
+                 fileToUpload: "Please upload a copy of your transcript"
+             }
+         });
+     });
+
+     $(document).ready(function(){
+         $( "#program" ).validate({
+             rules: {
+                 student_type: {
+                     required: true
+                 },
+                 hear: {
+                     required: true
+                 }
+             },
+             messages: {
+                 student_type: "Please select the program you're interested in",
+                 hear: "Please tell us how you heard about our program"
+             }
+         });
+     });
+
      var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"];    
      function Validate(oForm) {
          var arrInputs = oForm.getElementsByTagName("input");

@@ -3,7 +3,7 @@
 DENTAL HYGIENE SCHOOL
 	</h1>
 <?php echo validation_errors(); ?>
-	<form action='<?=base_url("school/put/")?>' method="post" id="school">
+	<form action='<?=base_url("school/put/" . $school->school_id)?>' method="post" id="school">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<h3>School Attended</h3>
