@@ -43,7 +43,7 @@
 				</div><!-- col-md-6 col-xs-12 -->
 				<div class="col-md-6 col-xs-12">
 					<div class="row">
-						<<label class="col-xs-5">Preferred Phone</label><input type="phone" class="col-xs-6" name="preferred_phone" placeholder="required" value="<?=@$applicant->preferred_phone?>">
+						<label class="col-xs-5">Preferred Phone</label><input type="phone" class="col-xs-6" name="preferred_phone" placeholder="required" value="<?=@$applicant->preferred_phone?>">
 						<label class="col-xs-5">Backup Phone</label><input type="text" class="col-xs-6" name="backup_phone" value="<?=@$applicant->backup_phone?>">
 						<label class="col-xs-5">Preferred Email</label><input type="text" class="col-xs-6" name="preferred_email" placeholder="required" value="<?=@$applicant->preferred_email?>">
 						<label class="col-xs-5">Backup Email</label><input type="text" class="col-xs-6" name="backup_email" value="<?=@$applicant->backup_email?>" >
