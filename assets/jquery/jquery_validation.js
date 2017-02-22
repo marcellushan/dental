@@ -56,7 +56,8 @@
                      }
                  },
                  messages: {
-                     email:"Enter your email address"
+                     email:"Enter your email address",
+                     password: "Select a password"
                  }
          });
      });

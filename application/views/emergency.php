@@ -10,9 +10,8 @@
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">
-					
-					<label class="col-sm-2 col-xs-5" >First</label><input type="text" class="col-sm-2 col-xs-6" name="e_first_name" placeholder="required" value="<?php echo set_value('first_name'); ?>">
-					<label class="col-sm-1 col-xs-5" >Last</label><input type="text" class="col-sm-2 col-xs-6"  name="e_last_name" placeholder="required" value="<?php echo set_value('last_name'); ?>">
+					<div class="col-sm-2 col-xs-5"> <label>First</label></div><div class="col-sm-2 col-xs-6"><input type="text" name="e_first_name" placeholder="required"></div>
+					<div class="col-sm-2 col-xs-5"> <label>Last</label></div><div class="col-sm-2 col-xs-6"><input type="text" name="e_last_name" placeholder="required"></div>
 					<label class="col-sm-2 col-xs-5" >Relationship</label>
 								<select class="col-lg-1 col-xs-7" name="relationship">
 									<option value="">Select</option>
@@ -29,8 +28,8 @@
 			<div class="row">
 				<div class="col-md-6 col-xs-12">
 					<div class="row">
-						<label class="col-lg-2 col-xs-4">Street</label><input type="text" class="col-lg-10 col-xs-7" name="e_street" placeholder="required" >
-						<label class="col-lg-2 col-xs-4">City</label><input type="text" class="col-lg-4 col-xs-7" name="e_city" placeholder="required">
+						<div class="col-lg-2 col-xs-4"><label>Street</label></div><div><input  class="col-lg-10 col-xs-7" type="text" name="e_street" placeholder="required" ></div>
+						<div class="col-lg-2 col-xs-4"><label>City</label></div><div><input type="text" class="col-lg-10 col-xs-7" name="e_city" placeholder="required" ></div>
 						<label class="col-lg-1 col-xs-4">State</label>	<select class="col-lg-1 col-xs-7" name="e_state">
 																			<option value="GA">GA</option>
 																				<?php
@@ -43,9 +42,9 @@
 				</div><!-- col-md-6 col-xs-12 -->
 				<div class="col-md-6 col-xs-12">
 					<div class="row">
-						<label class="col-xs-5">Preferred Phone</label><input type="text" class="col-xs-6" name="e_preferred_phone" placeholder="required">
-						<label class="col-xs-5">Backup Phone</label><input type="text" class="col-xs-6" name="e_backup_phone" >
-						<label class="col-xs-5">Email</label><input type="email" class="col-xs-6" name="e_email" >
+						<div class="col-xs-5"><label>Preferred Phone</label></div><div><input type="text" class="col-xs-6"name="e_preferred_phone" placeholder="required"></div>
+						<div class="col-xs-5"><label>Backup Phone</label></div><div class="col-xs-6"><input type="text" name="e_backup_phone"></div>
+						<div class="col-xs-5"><label>Email</label></div><div class="col-xs-6"><input type="text" name="e_email"></div>
 					</div><!-- row -->
 				</div><!-- col-md-6 col-xs-12 -->
 			</div><!-- row -->

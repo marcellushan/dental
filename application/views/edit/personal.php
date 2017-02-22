@@ -10,17 +10,17 @@
 				<div class="row">
 					
                     <div class="col-sm-2 col-xs-5"><label id="first_name">First </label></div>
-                    <div class="col-sm-2 col-xs-6" ><input type="text" name="first_name" placeholder="required"  required></div>
-                    <label class="col-sm-2 col-xs-5" >Middle</label><input type="text" class="col-sm-2 col-xs-6"  name="middle_name" value="<?=set_value('middle_name') ?>">
+                    <div class="col-sm-2 col-xs-6" ><input type="text" name="first_name" placeholder="required" value="<?=@$applicant->first_name?>"></div>
+                    <label class="col-sm-2 col-xs-5" >Middle</label><input type="text" class="col-sm-2 col-xs-6"  name="middle_name" value="<?=@$applicant->middle_name?>">
                     <div class="col-sm-2 col-xs-5"><label id="last_name">Last </label></div>
-                    <div class="col-sm-2 col-xs-6" ><input type="text" name="last_name" placeholder="required"  required></div>
+                    <div class="col-sm-2 col-xs-6" ><input type="text" name="last_name" placeholder="required"  value="<?=@$applicant->last_name?>"></div>
 
 
 				</div><!-- row -->
 				<div class="row">
                     <div class="col-sm-2 col-xs-5"><label>Date of Birth</label></div>
-                        <div class="col-sm-2 col-xs-6"><input type="date" name="birth_date" placeholder="MM/DD/YYY" value="<?=set_value('birth_date') ?>" required ></div>
-					<label class="col-sm-2 col-xs-5" >Maiden </label><input type="text" class="col-sm-2 col-xs-6"  name="maiden_name" value="<?php echo set_value('maiden_name'); ?>" placeholder="if applicable">
+                        <div class="col-sm-2 col-xs-6"><input type="date" name="birth_date" placeholder="MM/DD/YYY" value="<?=@$applicant->birth_date ?>" ></div>
+					<label class="col-sm-2 col-xs-5" >Maiden </label><input type="text" class="col-sm-2 col-xs-6"  name="maiden_name" value="<?=@$applicant->maiden_name?>" placeholder="if applicable">
 				</div><!-- row -->
 			<div class="row">
 				<h2 class="col-lg-6 col-xs-12">Address</h2>
