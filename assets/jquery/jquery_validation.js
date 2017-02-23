@@ -57,7 +57,10 @@
                  },
                  messages: {
                      email:"Enter your email address",
-                     password: "Select a password"
+                     password: {
+                         required: "Select a password",
+                         minlength: "Password must be at least 8 characters"
+                     }
                  }
          });
      });

@@ -11,7 +11,7 @@
 
 Expiration Date
 
-<input type="date" name="expiration_date" placeholder="required" value="<?php echo set_value('expiration_date'); ?>">
+<input type="date" name="expiration_date" placeholder="YYYY-MM-DD">
 
 	<input type="submit" class="btn btn-primary btn-lg center-block" value="Submit" />
 	
