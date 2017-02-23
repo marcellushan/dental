@@ -54,7 +54,8 @@ class Applicant extends CI_Controller {
         $data['states'] = $this->StateModel->get_states();
         $this->load->view('templates/header');
         $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-        ($returning ? $this->load->view('edit/' . $text, $data):$this->load->view($text, $data));
+        ($returning ? $data['edit'] = 1:"");
+        $this->load->view($text, $data);
 
     }
 
@@ -78,8 +79,36 @@ class Applicant extends CI_Controller {
             $this->MailModel->send($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
         }
         $this->load->view('templates/header');
-        ($destination=="returning"? redirect(base_url('/home/display/sections')):
-            ($destination=="new"? redirect(base_url('/home/get')):$this->load->view($destination, $data)));
+        ($destination=="edit"? redirect(base_url('/home/display/sections')):$this->load->view($destination, $data));
+    }
+
+    public function post($nextPage)
+    {
+        session_start();
+        $this->load->model('StateModel');
+        $data['states'] = $this->StateModel->get_states();
+        if (!@$_FILES['fileToUpload']['error']) {
+            $myRandom = rand(1, 10000);
+            ($_SERVER['SERVER_NAME'] == 'localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/" : $target_dir = "/var/www/html/dental/assets/uploads/");
+            $target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+            $myFile = basename($_FILES["fileToUpload"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+            $image_url = base_url() . "assets/uploads/" . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+        }
+        $this->load->model('ApplicantModel');
+        $modelName = 'IdentificationModel';
+        $this->load->model($modelName);
+        $image = new $modelName();
+        $image->applicant_id = $_SESSION['applicant_id'];
+        $image_array = $_POST;
+        (@$_FILES["fileToUpload"]["name"] ? $image_array['image'] = $image_url : $image_array['image'] = "No Image");
+        $image_array['applicant_id'] = $_SESSION['applicant_id'];
+        $image_array['submission_date'] = date('Y-m-d');
+        $image->insert_post($image_array);
+        $this->load->view('templates/header');
+        $this->load->view($nextPage, $data);
     }
 
 
