@@ -1,9 +1,16 @@
  <div class="main container">
+     <? (@$edit ? $destination="edit" : $destination = "have_license") ?>
+     <?php if(@$applicant->school) :?>
+         <h2>The following CPR Certificate has been submitted:</h2>
+         <h3><?=$applicant->school ?></h3>
+         <h3><?=$applicant->school_state ?></h3>
+         <h3><?=$applicant->school_year ?></h3>
+
+     <?php endif ?>
 	<h1 class= "mytitle">
 DENTAL HYGIENE SCHOOL
 	</h1>
-<?php echo validation_errors(); ?>
-	<form action='<?=base_url("applicant/put/have_license")?>' method="post" id="school" enctype="multipart/form-data">
+	<form action='<?=base_url("applicant/put/" . $destination)?>' method="post" id="school">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
 				<h3>School Attended</h3>

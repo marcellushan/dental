@@ -64,28 +64,24 @@
 
 						<h3>&nbsp;Identification</h3>
 						<div class="row">
-							<h4 class="col-md-3">Date</h4>
-							<h4 class="col-md-4"><?=@$identification->submission_date?></h4>
-							<h4 class="col-md-3"><a href="<?=@$identification->image?>" target="_blank">Image</a></h4>
+							<h4 class="col-md-3"><a href="<?=@$applicant->identification ?>" target="_blank">Image</a></h4>
 						</div><!-- row -->
 						<h3>&nbsp;CPR Certification</h3>
 						<div class="row">
-							<h4 class="col-md-1">Date</h4>
-							<h4 class="col-md-3"><?=@$cpr->submission_date?></h4>
 							<h4 class="col-md-2">Expiration Date</h4>
-							<h4 class="col-md-3"><?=@$cpr->expiration_date?></h4>
-							<h4 class="col-md-1"><a href="<?=@$cpr->image?>" target="_blank">Image</a></h4>
+							<h4 class="col-md-3"><?=@$applicant->cpr_expiration_date?></h4>
+							<h4 class="col-md-1"><a href="<?=@$applicant->cpr ?>" target="_blank">Image</a></h4>
 						</div><!-- row -->
 					</div><!--col-md-6 -->
 				<div class="col-md-6">
 					<h3>School</h3>
 					<div class="row">
 						<h4 class="col-md-4">Name</h4>
-						<h4 class="item col-md-7"><?=@$school->name?></h4>
+						<h4 class="item col-md-7"><?=@$applicant->school ?></h4>
 						<h4 class="col-md-4">State</h4>
-						<h4 class="item col-md-7"><?=@$school->state?></h4>
+						<h4 class="item col-md-7"><?=@$applicant->school_state?></h4>
 						<h4 class="col-md-4">Graduation Year</h4>
-						<h4 class="item col-md-7"><?=@$school->year?></h4>
+						<h4 class="item col-md-7"><?=@$applicant->school_year?></h4>
 					</div><!-- row -->
 				</div><!--col-md-6 -->
 		 </div><!-- section-border -->
