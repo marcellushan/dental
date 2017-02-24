@@ -45,7 +45,7 @@ class Applicant extends CI_Controller {
      *
      * @param int $student Identfies whether applicant is current GHC student
      */
-    public function get($text, $returning=0)
+    public function get($text, $edit=0)
     {
         session_start();
         $this->load->model('ApplicantModel');
@@ -54,7 +54,7 @@ class Applicant extends CI_Controller {
         $data['states'] = $this->StateModel->get_states();
         $this->load->view('templates/header');
         $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-        ($returning ? $data['edit'] = 1:"");
+        ($edit ? $data['edit'] = 1:"");
         $this->load->view($text, $data);
 
     }
@@ -82,9 +82,10 @@ class Applicant extends CI_Controller {
         ($destination=="edit"? redirect(base_url('/home/display/sections')):$this->load->view($destination, $data));
     }
 
-    public function post($nextPage)
+    public function put_image($type, $destination)
     {
         session_start();
+        $this->load->model('ApplicantModel');
         $this->load->model('StateModel');
         $data['states'] = $this->StateModel->get_states();
         if (!@$_FILES['fileToUpload']['error']) {
@@ -97,18 +98,12 @@ class Applicant extends CI_Controller {
             move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
             $image_url = base_url() . "assets/uploads/" . $myRandom . basename($_FILES["fileToUpload"]["name"]);
         }
-        $this->load->model('ApplicantModel');
-        $modelName = 'IdentificationModel';
-        $this->load->model($modelName);
-        $image = new $modelName();
-        $image->applicant_id = $_SESSION['applicant_id'];
-        $image_array = $_POST;
-        (@$_FILES["fileToUpload"]["name"] ? $image_array['image'] = $image_url : $image_array['image'] = "No Image");
-        $image_array['applicant_id'] = $_SESSION['applicant_id'];
-        $image_array['submission_date'] = date('Y-m-d');
-        $image->insert_post($image_array);
+            $_POST[$type] = $image_url;
+            $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
         $this->load->view('templates/header');
-        $this->load->view($nextPage, $data);
+        ($destination=="edit"? redirect(base_url('/home/display/sections')):$this->load->view($destination, $data));
+
+//
     }
 
 

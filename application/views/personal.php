@@ -11,17 +11,17 @@
 				<div class="row">
 					
                     <div class="col-md-2"><label id="first_name">First </label></div>
-                    <div class="col-md-2" ><input type="text" name="first_name" placeholder="required"  value="<?=@$applicant->first_name ?>" required></div>
+                    <div class="col-md-2" ><input type="text" name="first_name" placeholder="required"  value="<?=@$applicant->first_name ?>"></div>
 					<div class="col-md-1"><label id="first_name">Middle </label></div>
 					<div class="col-md-2" ><input type="text" name="middle_name" value="<?=@$applicant->middle_name ?>"></div>
                     <div class="col-md-2"><label id="last_name">Last </label></div>
-                    <div class="col-md-2" ><input type="text" name="last_name" placeholder="required" value="<?=@$applicant->last_name ?>" required></div>
+                    <div class="col-md-2" ><input type="text" name="last_name" placeholder="required" value="<?=@$applicant->last_name ?>"></div>
 
 
 				</div><!-- row -->
 				<div class="row">
                     <div class="col-md-2"><label>Date of Birth</label></div>
-                        <div class="col-md-2"><input type="date" name="birth_date" placeholder="MM/DD/YYY" value="<?=@$applicant->birth_date ?>" required ></div>
+                        <div class="col-md-2"><input type="date" name="birth_date" placeholder="MM/DD/YYY" value="<?=@$applicant->birth_date ?>"></div>
 					<div class="col-md-1"><label>Maiden </label></div>
 					<div class="col-md-2"><input type="text"  name="maiden_name" value="<?=@$applicant->maiden_name ?>" placeholder="if applicable"></div>
 				</div><!-- row -->
