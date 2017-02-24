@@ -8,12 +8,27 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('templates/header');
 		$this->load->model('ApplicantModel');
+        $data['type'] = $type;
         ($type ? $data['applicants'] = $this->ApplicantModel->get_category($type) : $data['applicants'] = $this->ApplicantModel->get());
+        echo ($data['applicants'] ? $this->load->view('applications',$data) : "No " . $type . "applications");
 // 		var_dump($data['applicants']);
-		$this->load->view('applications',$data);
+
 	}
 
-    public function get($id)
+    /**
+     * display
+     *
+     * Displays the view that is sent as a parameter
+     *
+     * @param $page
+     */
+    public function display($page)
+    {
+        $this->load->view('templates/header');
+        $this->load->view($page);
+    }
+
+	public function get($id)
     {
         ini_set('display_errors', '1');
         $this->load->model('ApplicantModel');
@@ -31,6 +46,8 @@ class Admin extends CI_Controller {
         $this->load->model('SchoolModel');
         $data['school'] = $this->SchoolModel->get_item('applicant_id',$id);
         $this->load->model('CommentModel');
+        $this->load->model('TranscriptModel');
+        $data['transcripts'] = $this->TranscriptModel->get_list('applicant_id',$id);
         $data['comments'] = $this->CommentModel->get_list('applicant_id',$id);
         $this->load->view('templates/header');
         $this->load->view('view_applicant',$data);

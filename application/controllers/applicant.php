@@ -45,7 +45,7 @@ class Applicant extends CI_Controller {
      *
      * @param int $student Identfies whether applicant is current GHC student
      */
-    public function get($text, $returning=0)
+    public function get($text, $edit=0)
     {
         session_start();
         $this->load->model('ApplicantModel');
@@ -54,7 +54,8 @@ class Applicant extends CI_Controller {
         $data['states'] = $this->StateModel->get_states();
         $this->load->view('templates/header');
         $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-        ($returning ? $this->load->view('edit/' . $text, $data):$this->load->view($text, $data));
+        ($edit ? $data['edit'] = 1:"");
+        $this->load->view($text, $data);
 
     }
 
@@ -74,12 +75,35 @@ class Applicant extends CI_Controller {
         (@$_POST? $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST):"");
         if(@$_POST['submitted']) {
             $applicant = $this->ApplicantModel->load($_SESSION['applicant_id']);
-            echo $applicant->preferred_email;
             $this->load->model('MailModel');
             $this->MailModel->send($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
         }
         $this->load->view('templates/header');
-        ($destination=="returning"? redirect(base_url('/returning/get')):$this->load->view($destination, $data));
+        ($destination=="edit"? redirect(base_url('/home/display/sections')):$this->load->view($destination, $data));
+    }
+
+    public function put_image($type, $destination)
+    {
+        session_start();
+        $this->load->model('ApplicantModel');
+        $this->load->model('StateModel');
+        $data['states'] = $this->StateModel->get_states();
+        if (!@$_FILES['fileToUpload']['error']) {
+            $myRandom = rand(1, 10000);
+            ($_SERVER['SERVER_NAME'] == 'localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/" : $target_dir = "/var/www/html/dental/assets/uploads/");
+            $target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+            $myFile = basename($_FILES["fileToUpload"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+            $image_url = base_url() . "assets/uploads/" . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+        }
+            $_POST[$type] = $image_url;
+            $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
+        $this->load->view('templates/header');
+        ($destination=="edit"? redirect(base_url('/home/display/sections')):$this->load->view($destination, $data));
+
+//
     }
 
 

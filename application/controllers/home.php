@@ -14,6 +14,39 @@ class Home extends CI_Controller {
 		$this->load->view('welcome');
 	}
 
+    public function get()
+    {
+        session_start();
+        $id = $_SESSION['applicant_id'];
+        $this->load->model('ApplicantModel');
+        $data['applicant'] = $this->ApplicantModel->load($id);
+        $this->load->model('RaceModel');
+        $data['race']= $this->RaceModel->load($data['applicant']->race);
+        $this->load->model('IdentificationModel');
+        $data['identification'] = $this->IdentificationModel->get_item('applicant_id',$id);
+        $this->load->model('CprModel');
+        $data['cpr'] = $this->CprModel->get_item('applicant_id',$id);
+        $this->load->model('EmployerModel');
+        $data['employers'] = $this->EmployerModel->get_list('applicant_id',$id);
+        $this->load->model('LicenseModel');
+        $data['licenses'] = $this->LicenseModel->get_list('applicant_id',$id);
+        $this->load->model('SchoolModel');
+        $data['school'] = $this->SchoolModel->get_item('applicant_id',$id);
+        $this->load->model('TranscriptModel');
+        $data['transcripts'] = $this->TranscriptModel->get_list('applicant_id',$id);
+        $this->load->view('templates/header');
+        $this->load->view('submit',$data);
+
+    }
+
+	public function mail($type, $id)
+    {
+        $this->load->model('ApplicantModel');
+        $applicant = $this->ApplicantModel->load($id);
+        $this->load->model('MailModel');
+        $this->MailModel->$type($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
+    }
+
 
     /**
      * display
@@ -46,7 +79,7 @@ class Home extends CI_Controller {
         $password= $applicant->get_login('password', $_POST['password']);
         if(@email && @$password) {
             $_SESSION['applicant_id'] = $email->applicant_id;
-            redirect(base_url("returning/get"));
+            redirect(base_url("home/get"));
         } else {
             $this->load->view('templates/header');
             echo "user not found";
