@@ -69,14 +69,14 @@ class License extends CI_Controller {
         $this->load->model('licenseModel');
         $license = new licenseModel();
         $this->load->view('templates/header');
-        if(! $id) {
-            $data['licenses'] = $license->get_list('applicant_id', $_SESSION['applicant_id']);
-            $this->load->view('edit/list_licenses', $data);
-        } else {
-            $data['license']= $license->load($id);
-            $this->load->view('edit/license', $data);
-        }
-
+//        if(! $id) {
+//            $data['licenses'] = $license->get_list('applicant_id', $_SESSION['applicant_id']);
+//            $this->load->view('list_licenses', $data);
+//        } else {
+//            $data['license']= $license->load($id);
+//            $this->load->view('license', $data);
+//        }
+//
     }
 
     public function put($id)
