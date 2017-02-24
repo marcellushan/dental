@@ -1,7 +1,7 @@
  <div class="main container">
 	<h1 class= "mytitle">Demographics</h1>
 	<h2 class="wrapper">For Data Collection purposes only</h2>
-	<form action='<?=base_url("applicant/put/new")?>' method="post">
+	<form action='<?=base_url("applicant/put/complete")?>' method="post">
 		<div class="row">
 			<div class="col-md-6">
 				<div class="row">
@@ -39,8 +39,8 @@
 					<h4>Foreign Student?</h4>
 					</div>
 					<div class="col-md-8 col-xs-4">
-						<h4><input type="radio" name="gender" value="1">Yes</h4>
-						<h4><input type="radio" name="gender" value="2">No</h4>
+						<h4><input type="radio" name="foreign" value="1">Yes</h4>
+						<h4><input type="radio" name="foreign" value="2">No</h4>
 						
 					</div>
 				</div>

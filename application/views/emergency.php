@@ -13,9 +13,10 @@
 					<div class="col-sm-2 col-xs-5"> <label>First</label></div><div class="col-sm-2 col-xs-6"><input type="text" name="e_first_name" placeholder="required"></div>
 					<div class="col-sm-2 col-xs-5"> <label>Last</label></div><div class="col-sm-2 col-xs-6"><input type="text" name="e_last_name" placeholder="required"></div>
 					<label class="col-sm-2 col-xs-5" >Relationship</label>
-								<select class="col-lg-1 col-xs-7" name="relationship">
+								<select class="col-lg-1 col-xs-7" name="relationship" required>
 									<option value="">Select</option>
 									<option value="Parent">Parent</option>
+                                    <option value="Spouse">Spouse</option>
 									<option value="Sibling">Sibling</option>
 									<option value="Other Relative">Other Relative</option>
 									<option value="Friend">Friend</option>
@@ -42,7 +43,7 @@
 				</div><!-- col-md-6 col-xs-12 -->
 				<div class="col-md-6 col-xs-12">
 					<div class="row">
-						<div class="col-xs-5"><label>Preferred Phone</label></div><div><input type="text" class="col-xs-6"name="e_preferred_phone" placeholder="required"></div>
+						<div class="col-xs-5"><label>Preferred Phone</label></div><div  class="col-xs-6"><input type="text"name="e_preferred_phone" placeholder="required"></div>
 						<div class="col-xs-5"><label>Backup Phone</label></div><div class="col-xs-6"><input type="text" name="e_backup_phone"></div>
 						<div class="col-xs-5"><label>Email</label></div><div class="col-xs-6"><input type="text" name="e_email"></div>
 					</div><!-- row -->
