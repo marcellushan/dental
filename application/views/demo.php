@@ -47,7 +47,7 @@
 		</div>
 	</div>
 			<div class="wrapper">			
-        <button type="submit" class="btn-lg btn-primary">Submit Application</button>
+        <button type="submit" class="btn-lg btn-primary">Next</button>
         	    </div>
 	</form>
 

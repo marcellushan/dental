@@ -148,16 +148,16 @@
                  fileToUpload: {
                      required: true
                  },
-                expiration_date: {
+                cpr_expiration_date: {
                      required: true,
                      date: true
                 }
              },
              messages: {
                  fileToUpload: "Please upload a copy of your current CPR certification",
-                 expiration_date: {
+                 cpr_expiration_date: {
                      required: "Please enter the expiration date of your current CPR certification",
-                     date: "Please use the format MM/DD/YYYY"
+                     date: "Please use the format YYYY-MM-DD"
                  }
              }
          });
@@ -186,18 +186,18 @@
      $(document).ready(function(){
          $( "#school" ).validate({
              rules: {
-                 name: {
+                 school: {
                      required: true
                  },
-                 year: {
+                 school_year: {
                      required: true,
                      range: [1900, 2050]
                  }
 
              },
              messages: {
-                 name: "Please enter the name of the school",
-                 year: "Please enter your graduation year"
+                 school: "Please enter the name of the school",
+                 school_year: "Please enter your graduation year"
              }
 
 

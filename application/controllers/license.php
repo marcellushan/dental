@@ -69,14 +69,15 @@ class License extends CI_Controller {
         $this->load->model('licenseModel');
         $license = new licenseModel();
         $this->load->view('templates/header');
-//        if(! $id) {
-//            $data['licenses'] = $license->get_list('applicant_id', $_SESSION['applicant_id']);
-//            $this->load->view('list_licenses', $data);
-//        } else {
-//            $data['license']= $license->load($id);
-//            $this->load->view('license', $data);
-//        }
-//
+        if(! $id) {
+            $data['licenses'] = $license->get_list('applicant_id', $_SESSION['applicant_id']);
+            $this->load->view('list_licenses', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $data['license']= $license->load($id);
+            $this->load->view('edit_license', $data);
+        }
+
     }
 
     public function put($id)
@@ -89,13 +90,15 @@ class License extends CI_Controller {
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
             move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-            echo $image_url = base_url() . "assets/uploads/" . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+            $image_url = base_url() . "assets/uploads/" . $myRandom . basename($_FILES["fileToUpload"]["name"]);
 
         }
         $modelName = 'LicenseModel';
         $this->load->model($modelName);
         (@$image_url ? $image_array['image'] = $image_url : $image_array['image'] = "No Image");
+        echo $image_url;
         $image_array = $_POST;
+        $image_array['image'] = $image_url;
         $image_array['submission_date'] = date('Y-m-d');
         $image=$this->$modelName->update($id, $image_array);
         redirect(base_url('home/display/sections'));

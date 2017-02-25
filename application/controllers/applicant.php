@@ -54,8 +54,16 @@ class Applicant extends CI_Controller {
         $data['states'] = $this->StateModel->get_states();
         $this->load->view('templates/header');
         $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
-        ($edit ? $data['edit'] = 1:"");
-        $this->load->view($text, $data);
+        if($edit) {
+            $data['edit'] = 1;
+            $this->load->view($text, $data);
+            $this->load->view('templates/footer');
+        } else {
+            $this->load->view($text, $data);
+        }
+
+
+
 
     }
 

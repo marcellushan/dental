@@ -21,7 +21,7 @@
 				</div><!-- row -->
 				<div class="row">
                     <div class="col-md-2"><label>Date of Birth</label></div>
-                        <div class="col-md-2"><input type="date" name="birth_date" placeholder="MM/DD/YYY" value="<?=@$applicant->birth_date ?>"></div>
+                        <div class="col-md-2"><input type="date" name="birth_date" placeholder="YYYY-MM-DD" value="<?=@$applicant->birth_date ?>"></div>
 					<div class="col-md-1"><label>Maiden </label></div>
 					<div class="col-md-2"><input type="text"  name="maiden_name" value="<?=@$applicant->maiden_name ?>" placeholder="if applicable"></div>
 				</div><!-- row -->

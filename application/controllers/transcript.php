@@ -45,7 +45,6 @@ class Transcript extends CI_Controller {
         $image_array['applicant_id'] = $_SESSION['applicant_id'];
         $image_array['submission_date'] = date('Y-m-d');
         $image->insert_post($image_array);
-        $this->load->view('templates/header');
         if($nextPage) {
             $this->load->view('templates/header');
             $this->load->view($nextPage, $data);
@@ -65,10 +64,10 @@ class Transcript extends CI_Controller {
         $this->load->view('templates/header');
         if(! $id) {
             $data['transcripts'] = $transcript->get_list('applicant_id', $_SESSION['applicant_id']);
-            $this->load->view('edit/list_transcripts', $data);
+            $this->load->view('list_transcripts', $data);
         } else {
             $data['transcript']= $transcript->load($id);
-            $this->load->view('edit/transcript', $data);
+            $this->load->view('edit_transcript', $data);
         }
 
     }

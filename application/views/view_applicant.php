@@ -85,42 +85,38 @@
 					<div class="col-md-6">
 						<h3>&nbsp;Identification</h3>
 						<div class="row">
-							<? if($identification): ?>
-								<h4 class="col-md-3">Date</h4>
-								<h4 class="col-md-4"><?=date_format(date_create($identification->submission_date), 'F d Y')?></h4>
+							<? if($applicant->identification): ?>
 								<h4 class="col-md-3">
-									<? if($identification->verified): ?>
-										Verified <?=$identification->verified_date ?>
+									<? if($applicant->identification_verified): ?>
+										Verified <?=$applicant->identification_verified_date ?>
 									<? else: ?>
-										<a href="../../identification/verify/<?=$identification->identification_id?>">Verify</a></h4>
+										<a href="../../identification/verify">Verify</a></h4>
 									<? endif; ?>
 							<? endif; ?>
 						</div><!-- row -->
 						<h3>&nbsp;CPR Certification</h3>
 
 						<div class="row">
-							<? if($cpr): ?>
-							<h4 class="col-md-3">Date</h4>
-							<h4 class="col-md-4"><?=date_format(date_create($cpr->submission_date), 'F d Y')?></h4>
+							<? if($applicant->cpr): ?>
 							<h4 class="col-md-3">
-								<? if($cpr->verified): ?>
-									Verified <?=$cpr->verified_date ?>
+								<? if($applicant->cpr_verified): ?>
+									Verified <?=$applicant->cpr_verified_date ?>
 								<? else: ?>
-									<a href="../../cpr/verify/<?=$cpr->cpr_id?>">Verify</a></h4>
+									<a href="../../cpr/verify">Verify</a></h4>
 								<? endif; ?>
 							<? endif; ?>
 						</div><!-- row -->
 					</div><!--col-md-6 -->
 				<div class="col-md-6">
 					<h3>School</h3>
-					<? if($school): ?>
+					<? if($applicant->school): ?>
 					<div class="row">
 						<h4 class="col-md-4">Name</h4>
-						<h4 class="item col-md-7"><?=$school->name?></h4>
+						<h4 class="item col-md-7"><?=$applicant->school?></h4>
 						<h4 class="col-md-4">State</h4>
-						<h4 class="item col-md-7"><?=$school->state?></h4>
+						<h4 class="item col-md-7"><?=$applicant->school_state?></h4>
 						<h4 class="col-md-4">Graduation Year</h4>
-						<h4 class="item col-md-7"><?=$school->year?></h4>
+						<h4 class="item col-md-7"><?=$applicant->school_year?></h4>
 					</div><!-- row -->
 					<? endif; ?>
 				</div><!--col-md-6 -->
