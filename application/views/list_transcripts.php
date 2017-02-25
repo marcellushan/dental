@@ -2,7 +2,7 @@
 	<h1 class= "mytitle">
 		TRANSCRIPT INFORMATION
 	</h1>
- <? if(@transcripts):?>
+ <? if(@$transcripts):?>
  <h2>Existing Transcripts(s)</h2>
     <table class="table">
     	<tr>
@@ -19,10 +19,10 @@
     		<td><?=$transcript->school ?></td>
 			<td><?=$transcript->state ?></td>
     		<td><? if($transcript->image =="No Image") :?>
-				No Image
-				<?else:?>
-				<a href="<?=$transcript->image ?>" >Image</a>
-				<? endif;?>
+                    No Image
+                    <? else: ?>
+                    <a href="<? echo $transcript->image ?>" target="_blank" >Image</a>
+                <? endif;?>
 				</td>
 				<td><a href="../get/<?=$transcript->transcript_id ?>" >Update</a>
 				</td>
@@ -30,11 +30,7 @@
     	</tr>
     	<?php endforeach;?>
     </table>
-    <? else :?>	
-    
-    No Images
-    
-    <? endif?>
+    <? endif;?>
 
 <h2>Add a New Transcript</h2>
 	<?php echo validation_errors(); ?>
@@ -64,6 +60,7 @@
 			<div class="wrapper">
 				<button type="submit" class="btn-lg btn-primary">Submit Transcript Information</button>
 			</div>
+        <p></p>
 		</form>
 	
 	

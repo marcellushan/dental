@@ -71,12 +71,12 @@ class Home extends CI_Controller {
         $applicant = new ApplicantModel();
         $email= $applicant->get_login('preferred_email', $_POST['email']);
         $password= $applicant->get_login('password', $_POST['password']);
-        if(@email && @$password) {
+        if(@$email && @$password) {
             $_SESSION['applicant_id'] = $email->applicant_id;
             redirect(base_url("home/get"));
         } else {
             $this->load->view('templates/header');
-            echo "user not found";
+            $this->load->view('fail_login');
         }
     }
 

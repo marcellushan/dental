@@ -49,7 +49,7 @@ class Transcript extends CI_Controller {
             $this->load->view('templates/header');
             $this->load->view($nextPage, $data);
         } else {
-            redirect(base_url('home/display/sections'));
+            redirect(base_url('transcript/get'));
         }
     }
 
@@ -65,6 +65,7 @@ class Transcript extends CI_Controller {
         if(! $id) {
             $data['transcripts'] = $transcript->get_list('applicant_id', $_SESSION['applicant_id']);
             $this->load->view('list_transcripts', $data);
+            $this->load->view('templates/footer');
         } else {
             $data['transcript']= $transcript->load($id);
             $this->load->view('edit_transcript', $data);

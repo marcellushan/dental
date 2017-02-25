@@ -2,7 +2,7 @@
 
 class Employer extends CI_Controller {
 
-    public function post($nextPage, $type=0)
+    public function post($nextPage)
     {
         session_start();
         $this->load->model('StateModel');
@@ -16,8 +16,8 @@ class Employer extends CI_Controller {
         $image_array['applicant_id'] = $_SESSION['applicant_id'];
         $image_array['submission_date'] = date('Y-m-d');
         $image->insert_post($image_array);
-        if($type) {
-            redirect(base_url('home/display/sections'));
+        if(! $nextPage) {
+            redirect(base_url('employer/get'));
         } else {
             $this->load->view('templates/header');
             $this->load->view($nextPage, $data);
@@ -35,15 +35,22 @@ class Employer extends CI_Controller {
         session_start();
         $modelName = 'EmployerModel';
         $this->load->model($modelName);
-        $image = new $modelName();
-        ($id?$data['employer']= $image->get_item('employer_id', $id):$data['employers']= $image->get_list('applicant_id', $_SESSION['applicant_id']));
-//        var_dump($data[$type]);
-//        echo $data->submission_date;
+        $employer = new $modelName();
         $this->load->view('templates/header');
-        ($id? $this->load->view('edit/employer', $data) :$this->load->view('edit/list_employers', $data));
+//        if($id) {
+//            $data
+//        }? $this->load->view('employer', $data) :$this->load->view('list_employers', $data));
+        if(! $id) {
+            $data['employers'] = $employer->get_list('applicant_id', $_SESSION['applicant_id']);
+            $this->load->view('list_employers', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $data['employer']= $employer->load($id);
+            $this->load->view('edit_employer', $data);
+        }
     }
 
-    public function put($type)
+    public function put()
     {
         session_start();
         $modelName = 'EmployerModel';
