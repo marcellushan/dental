@@ -4,7 +4,8 @@
 	</h1>
 	 <div>
 	    <h2  class= "mytitle">Application Status</h2>
-		 <div class="wrapper"> <input type="button" class="btn btn-lg btn-primary" onclick="window.location.href='../'"value="Return To List"> <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='../../home/display/comment'"value="Add a Comment"></div>
+		 <div class="wrapper"> <input type="button" class="btn btn-lg btn-primary" onclick="window.location.href='../'"value="Return To List">
+			 <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='<? echo base_url() ?>admin/display/comment<?=$applicant->applicant_id ?>'"value="Add a Comment"></div>
 		 <h3 class="wrapper">Comment(s)</h3>
 		 <?php foreach ($comments as $comment):?>
 			 <div class="row">
@@ -46,7 +47,7 @@
 			 </div>
 		 </div><!--row-->
 
-		 <div class="section-border">
+		<div class="section-border">
 			<h2  class= "mytitle">Personal Information</h2>
 				 <div class="row">
 					 <div class="col-md-6">
@@ -81,6 +82,7 @@
 						 </div>
 					 </div>
 				 </div><!-- row -->
+		</div><!--section-border -->
 			<div class="row">
 					<div class="col-md-6">
 						<h3>&nbsp;Identification</h3>
@@ -90,7 +92,7 @@
 									<? if($applicant->identification_verified): ?>
 										Verified <?=$applicant->identification_verified_date ?>
 									<? else: ?>
-										<a href="../../identification/verify">Verify</a></h4>
+										<a href="<?echo base_url() ?>admin/verify/identification/<?=$applicant->applicant_id ?>">Verify</a></h4>
 									<? endif; ?>
 							<? endif; ?>
 						</div><!-- row -->
@@ -102,7 +104,7 @@
 								<? if($applicant->cpr_verified): ?>
 									Verified <?=$applicant->cpr_verified_date ?>
 								<? else: ?>
-									<a href="../../cpr/verify">Verify</a></h4>
+									<a href="<?echo base_url() ?>admin/verify/cpr/<?=$applicant->applicant_id ?>">Verify</a></h4>
 								<? endif; ?>
 							<? endif; ?>
 						</div><!-- row -->
@@ -120,8 +122,10 @@
 					</div><!-- row -->
 					<? endif; ?>
 				</div><!--col-md-6 -->
-		 </div><!-- section-border -->
-			 <div class="section-border">
+				</div>
+		 <div class="section-border">
+		 <div class="row">
+
 			<h3 class="wrapper">License(s)</h3>
 				 <? if($licenses): ?>
 			<div class="row">
@@ -143,14 +147,14 @@
 				<?php endforeach;?>
 			</div><!-- row -->
 				 <? endif; ?>
-		</div><!-- section-border -->
+
 		 <? if($applicant->discipline):?>
 		 <h3 class="wrapper">Disciplinary Action</h3>
 		 <div class="row">
 			 <h4 class="item col-md-8 col-md-offset-2"><?=$applicant->discipline ?></h4>
 			 <? endif;?>
 		 </div><!-- row -->
-         <div class="section-border">
+
 		 <h2 class="wrapper">Emergency Contact</h2>
 		 <div class="row">
 			 <h4 class="col-md-1">Name</h4>
@@ -168,9 +172,9 @@
 				<h4 class="col-md-2">Backup</h4>
 				<h4 class="item col-md-3"><?=($applicant->e_backup_phone ? $applicant->e_backup_phone : "None Provided")?></h4>
 			</div><!-- row -->
-		 </div><!-- section-border -->
+		 </div><!--section-border -->
 		 <? if($employers):?>
-		 <div class="section-border">
+
 		<h3 class="wrapper">Employer(s)</h3>
 		<div class="row">
 			<?php foreach ($employers as $employer):?>
@@ -183,10 +187,10 @@
 			 <? else: ?>
 				 <h3 class="wrapper">No Employers Given</h3>
 		 <?endif;?>
-		</div><!-- section-border -->
+
 
 				 <? if($transcripts): ?>
-             <div class="section-border">
+
                  <h3 class="wrapper">Transcript(s)</h3>
 
 						 <?php foreach ($transcripts as $transcript):?>
@@ -197,7 +201,7 @@
                              <h4 class="item col-md-2"><a href="<?=$transcript->image?>">Image</a></h4>
                          </div><!-- row -->
 						 <?php endforeach;?>
-             </div><!-- section-border -->
+
 				 <? endif; ?>
 
 		 <div class="row">

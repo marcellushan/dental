@@ -68,16 +68,12 @@ class ApplicantModel extends my_model {
 public function get_category($type) {
     $data = array();
     if($type=="submitted") {
-        $this->db->where('complete !=', 1);
-        $this->db->where($type, 1);
+        $query = $this->db->query('SELECT * FROM applicant where submitted = 1 and (complete is NULL OR complete = 0)');
     } elseif($type=="complete") {
-        $this->db->where('funds !=', 1);
-        $this->db->where($type, 1);
+        $query = $this->db->query('SELECT * FROM applicant where complete = 1 and (funds is NULL OR funds = 0)');
     } else {
-            $this->db->where($type, 1);
+        $query = $this->db->query('SELECT * FROM applicant where funds = 1');
     }
-    $query = $this->db->get($this::DB_TABLE);
-
     foreach ($query->result() as $row)
  		{
  			$data[] = $row;

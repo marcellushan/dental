@@ -1,10 +1,14 @@
  <div class="main container">
      <? (@$edit ? $destination="edit" : $destination = "have_license") ?>
      <?php if(@$applicant->school) :?>
-         <h2>The following CPR Certificate has been submitted:</h2>
-         <h3><?=$applicant->school ?></h3>
-         <h3><?=$applicant->school_state ?></h3>
-         <h3><?=$applicant->school_year ?></h3>
+         <h2>The following School information has been submitted:</h2>
+		 <div class="row">
+			 <div class="col-md-4 col-md-offset-2">
+				 <h3><?=$applicant->school ?></h3>
+			 </div>
+			 <div class="col-md-2"><h3><?=$applicant->school_state ?></h3></div>
+			 <div class="col-md-2"><h3><?=$applicant->school_year ?></h3></div>
+		 </div>
 
      <?php endif ?>
 	<h1 class= "mytitle">

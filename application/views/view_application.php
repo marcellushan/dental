@@ -10,11 +10,15 @@
 		<div class="row">
 			<h3 class="col-md-4 col-md-offset-3">Application Submit Date:</h3>
 			<h3 class="item col-md-5"><?=date_format(date_create($applicant->submit_date), 'F d Y') ?></h3>
+		</div><!--row-->
 		<div class="row">
-			<h3 class="col-md-4 col-md-offset-3">Application Status</h3>
-			<h3 class="item col-md-5"><? echo ($applicant->complete ? "Complete " . $applicant->complete_date : "Not Complete") ?> </h3>
+			<h3 class="col-md-4 col-md-offset-3">Application Complete</h3>
+			<h3 class="item col-md-5"><? echo ($applicant->complete ? date_format(date_create($applicant->complete_date), 'F d Y') : "Not Complete") ?> </h3>
 		</div><!--row-->
-		</div><!--row-->
+			<div class="row">
+				<h3 class="col-md-4 col-md-offset-3">Fund Receipt</h3>
+				<h3 class="item col-md-5"><? echo ($applicant->funds ? date_format(date_create($applicant->funds_date), 'F d Y') : "Not Received") ?> </h3>
+			</div><!--row-->
 	<? else: ?>
 	 <form action="../applicant/put/thank_you" method="post">
 		 <input type="hidden" name="submitted" value="1">
@@ -26,7 +30,7 @@
 	 </div><!-- row -->
 	</form>
 	<?endif; ?>
-		 <div class="section-border">
+		<div class="section-border">
 			<h2  class= "mytitle">Personal Information</h2>
 				 <div class="row">
 					 <div class="col-md-6">
@@ -59,6 +63,7 @@
 						 </div>
 					 </div>
 				 </div><!-- row -->
+		</div><!-- section-border -->
 			<div class="row">
 					<div class="col-md-6">
 
@@ -84,8 +89,8 @@
 						<h4 class="item col-md-7"><?=@$applicant->school_year?></h4>
 					</div><!-- row -->
 				</div><!--col-md-6 -->
-		 </div><!-- section-border -->
-			 <div class="section-border">
+			</div>
+		<div class="row">
 			<h3 class="wrapper">License(s)</h3>
 			<div class="row">
 				<?php foreach ($licenses as $license):?>
@@ -99,14 +104,13 @@
 
 				<?php endforeach;?>
 			</div><!-- row -->
-		</div><!-- section-border -->
 		 <? if($applicant->discipline):?>
 		 <h3 class="wrapper">Disciplinary Action</h3>
 		 <div class="row">
 			 <h4 class="item col-md-8 col-md-offset-2"><?=$applicant->discipline ?></h4>
 			 <? endif;?>
 		 </div><!-- row -->
-         <div class="section-border">
+		<div class="section-border">
 		 <h2 class="wrapper">Emergency Contact</h2>
 		 <div class="row">
 			 <h4 class="col-md-1">Name</h4>
@@ -124,8 +128,7 @@
 				<h4 class="col-md-2">Backup</h4>
 				<h4 class="item col-md-3"><?=($applicant->e_backup_phone ? $applicant->e_backup_phone : "None Provided")?></h4>
 			</div><!-- row -->
-		 </div><!-- section-border -->
-			 <div class="section-border">
+		</div><!-- section-border -->
 		 <? if($employers):?>
 		<h3 class="wrapper">Employer(s)</h3>
 		<div class="row">
@@ -139,9 +142,7 @@
 			 <? else: ?>
 				 <h3 class="wrapper">No Employers Given</h3>
 		 <?endif;?>
-		</div><!-- section-border -->
 			 <? if($transcripts): ?>
-				 <div class="section-border">
 					 <h3 class="wrapper">Transcript(s)</h3>
 
 					 <?php foreach ($transcripts as $transcript):?>
@@ -152,7 +153,6 @@
 							 <h4 class="item col-md-2"><a href="<?=$transcript->image?>">Image</a></h4>
 						 </div><!-- row -->
 					 <?php endforeach;?>
-				 </div><!-- section-border -->
 			 <? endif; ?>
 		 <div class="row">
 			 <div class="col-md-6">

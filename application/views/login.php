@@ -4,8 +4,7 @@
 		<h1 class="wrapper">Returning Applicant Login</h1>
 
 			<h2 class="wrapper">Please login using your email address and password</h2>
-			<?php echo validation_errors(); ?>
-			<form action="../checkLogin" method="post">
+			<form action="../checkLogin" method="post" id="login">
 				<fieldset>
 					<div class="row">
 						<label class="col-md-2 col-md-offset-2">Email </label><input type="text" class="col-md-6" name="email">

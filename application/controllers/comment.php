@@ -2,21 +2,19 @@
 
 class Comment extends CI_Controller {
 
-    public function post()
+    public function post($id)
     {
         session_start();
         $this->load->model('ApplicantModel');
-        $modelName = 'CommentModel';
-        $this->load->model($modelName);
-        $image = new $modelName();
-        $image->applicant_id = $_SESSION['applicant_id'];
-        $image_array = $_POST;
-        $image_array['applicant_id'] = $_SESSION['applicant_id'];
-        $image_array['submission_date'] = date('Y-m-d');
-        $image->insert_post($image_array);
-        redirect(base_url('admin/get/' . $_SESSION['applicant_id']));
-
-
+        $applicant = $this->ApplicantModel->load($id);
+        $this->load->model('CommentModel');
+        $comment = new CommentModel();
+        $_POST['applicant_id'] = $id;
+        $_POST['submission_date'] = date('Y-m-d');
+        $comment->insert_post($_POST);
+        $this->load->model('MailModel');
+        $this->MailModel->comment($applicant->preferred_email, $applicant->first_name, $applicant->last_name, $_POST['comment']);
+        redirect(base_url('admin/get/' . $id));
     }
 
     /**
@@ -31,8 +29,6 @@ class Comment extends CI_Controller {
         $this->load->model($modelName);
         $image = new $modelName();
         $data['employer']= $image->get_item('applicant_id', $_SESSION['applicant_id']);
-//        var_dump($data[$type]);
-//        echo $data->submission_date;
         $this->load->view('templates/header');
         ($type? $this->load->view('edit/new_employer') :$this->load->view('edit/employer', $data));
     }
@@ -47,7 +43,6 @@ class Comment extends CI_Controller {
         $additional_array = $_POST;
         $additional_array['submission_date'] = date('Y-m-d');
         $test= $applicant->get_item('applicant_id', $_SESSION['applicant_id']);
-//        var_dump($additional_array);
         $additional=$this->$modelName->update($test->$additional_id, $additional_array);
         redirect(base_url('review/get'));
 
