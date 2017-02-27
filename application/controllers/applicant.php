@@ -20,7 +20,7 @@ class Applicant extends CI_Controller {
 //        $data['states'] = $this->StateModel->get_states();
         $this->load->view('templates/header');
         if($data = $this->ApplicantModel->entry_exists('GHC_ID', @$_POST['GHC_ID'])) {
-            $this->load->view('exists');
+            $this->load->view('ghc_duplicate');
         } else {
             (@$_POST['GHC_ID'] ? $applicant->GHC_ID = $_POST['GHC_ID'] : $applicant->GHC_ID = "Not Student");
             $this->load->model('StateModel');
@@ -61,9 +61,6 @@ class Applicant extends CI_Controller {
         } else {
             $this->load->view($text, $data);
         }
-
-
-
 
     }
 
@@ -132,5 +129,7 @@ class Applicant extends CI_Controller {
         }
 
     }
+
+
 	
 }

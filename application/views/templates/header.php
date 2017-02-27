@@ -19,7 +19,7 @@
 			webshims.polyfill('forms');
 			webshims.cfg.no$Switch = true;
 		</script>
-	     <script src="<?php echo base_url() ?>assets/jquery/jquery_validation.js"></script>
+	    <!-- <script src="<?php echo base_url() ?>assets/jquery/jquery_validation.js"></script>  -->
      </head>
 	<body>
 		<header class="container">

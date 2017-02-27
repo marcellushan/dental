@@ -87,7 +87,7 @@ class Home extends CI_Controller {
         $applicant = new ApplicantModel();
         $this->load->view('templates/header');
         if($data = $this->ApplicantModel->entry_exists('preferred_email', $_POST['email'])) {
-            $this->load->view('exists');
+            $this->load->view('email_duplicate');
         } else {
             $_SESSION['email'] = $_POST['email'];
             $_SESSION['password'] = $_POST['password'];

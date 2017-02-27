@@ -10,8 +10,7 @@ class Admin extends CI_Controller {
 		$this->load->model('ApplicantModel');
         $data['type'] = $type;
         ($type ? $data['applicants'] = $this->ApplicantModel->get_category($type) : $data['applicants'] = $this->ApplicantModel->get());
-        echo ($data['applicants'] ? $this->load->view('applications',$data) : "No " . $type . "applications");
-// 		var_dump($data['applicants']);
+        $this->load->view('applications',$data);
 
 	}
 
@@ -22,10 +21,11 @@ class Admin extends CI_Controller {
      *
      * @param $page
      */
-    public function display($page)
+    public function display($page="", $id=0)
     {
+        $data['id'] = $id;
         $this->load->view('templates/header');
-        $this->load->view($page);
+        $this->load->view($page, $data);
     }
 
 	public function get($id)
@@ -45,6 +45,14 @@ class Admin extends CI_Controller {
         $data['transcripts'] = $this->TranscriptModel->get_list('applicant_id',$id);
         $this->load->view('templates/header');
         $this->load->view('view_applicant',$data);
+    }
+
+    public function put($id)
+    {
+        session_start();
+        $this->load->model('ApplicantModel');
+        (@$_POST? $applicant=$this->ApplicantModel->update($id, $_POST):"");
+        redirect(base_url('admin/get/' . $id));
     }
 	
 	public function getrace()
@@ -70,20 +78,31 @@ class Admin extends CI_Controller {
         header( "Location: ".base_url() . "admin/get/".$id);
     }
 
-    public function verify($id)
+//    public function verify($id)
+//    {
+////        var_dump($_POST);
+//        foreach($_POST as $item)
+//        {
+//            echo $mymodel = $item . 'Model';
+//            echo $type_id= $item . '_id';
+//            $this->load->model($mymodel);
+//            $type = $this->$mymodel->get_item('applicant_id', $id);
+//            $verify=$this->$mymodel->update($type->$type_id, array('verified' => 'jjones', 'verified_date' => date('Y-m-d')));
+//
+//        }
+////                    header( "Location: ".base_url() . "admin/index/".$id);
+//        redirect(base_url("admin/get/".$id));
+//
+//    }
+
+    public function verify($type, $id)
     {
-//        var_dump($_POST);
-        foreach($_POST as $item)
-        {
-            echo $mymodel = $item . 'Model';
-            echo $type_id= $item . '_id';
-            $this->load->model($mymodel);
-            $type = $this->$mymodel->get_item('applicant_id', $id);
-            $verify=$this->$mymodel->update($type->$type_id, array('verified' => 'jjones', 'verified_date' => date('Y-m-d')));
-
-        }
-//                    header( "Location: ".base_url() . "admin/index/".$id);
-        redirect(base_url("admin/get/".$id));
-
+        session_start();
+        $this->load->model('ApplicantModel');
+        $verify = new ApplicantModel();
+        $data['applicant']= $verify->load($id);
+        $this->load->view('templates/header');
+        $this->load->view($type . '_verify', $data);
     }
+
 }

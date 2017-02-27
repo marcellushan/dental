@@ -1,6 +1,6 @@
  <div class="main container">
 
-	<form action='<?=base_url("comment/post")?>' method="post">
+	<form action='<?=base_url("comment/post/" . $id)?>' method="post">
 			<fieldset class="mytitle">
 						<h2>&nbsp;Add Comments for Application</h2>
 						<div class="row">

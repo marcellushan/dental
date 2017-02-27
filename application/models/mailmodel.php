@@ -56,7 +56,7 @@ class MailModel extends CI_Model {
         $this->email->send();
     }
 
-    public function comment($email, $first, $last)
+    public function comment($email, $first, $last, $comment)
     {
         $this->load->library('email');
         $config['mailtype'] = 'html';
@@ -66,9 +66,10 @@ class MailModel extends CI_Model {
         $this->email->to($email);
         $body = "<h1>Hello " . $first ." " . $last . "</h1>";
         $body = $body . "<h2>Thank you for your interest in the Dental Hygiene Program at Georgia Highlands College.</h2>";
-        $body = $body . "<h2>Your application has been received and you will be notified as soon as a decision is made.</h2>";
+        $body = $body . "<h2>There is an issue with your application</h2>";
+        $body = $body . "<h2>" . $comment . "</h2>";
         $body = $body . "<h2>Feel free to use this <a href='" . base_url('/home/display/login') . "'>link</a> to check the status of your application</h2>";
-        $this->email->subject('Your Application to the Georgia Highlands Dental Hygiene School has been received');
+        $this->email->subject('There is a problem with your GHC Dental Application');
         $this->email->message($body);
 
         $this->email->send();

@@ -60,7 +60,6 @@ class Employer extends CI_Controller {
         $additional_array = $_POST;
         $additional_array['submission_date'] = date('Y-m-d');
         $test= $applicant->get_item('applicant_id', $_SESSION['applicant_id']);
-//        var_dump($additional_array);
         $additional=$this->$modelName->update($test->$additional_id, $additional_array);
         redirect(base_url('/home/display/sections'));
 

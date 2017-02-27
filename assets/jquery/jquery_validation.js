@@ -79,6 +79,32 @@
          });
      });
 
+     $(document).ready(function(){
+         $( "#login" ).validate({
+             rules: {
+                 email: {
+                     required: true,
+                     email: true
+                 },
+                 password: {
+                     required: true,
+                     minlength: 8
+                 }
+                 // passconf: {
+                 //     equalTo: "#password"
+                 // }
+             },
+             messages: {
+                 email:"Enter your email address",
+                 password: {
+                     required: "Select a password",
+                     minlength: "Password must be at least 8 characters"
+                 }
+             }
+         });
+     });
+
+
 
      $(document).ready(function(){
          $( "#personal" ).validate({
