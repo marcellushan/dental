@@ -15,7 +15,7 @@
                     </div>
                     <div class="row">
                             <label class="col-lg-3 col-lg-offset-2">Create Password</label>
-                        <input type="password" class="col-lg-4" name="password" id="password" >
+                        <input type="password" class="col-lg-4 " name="password" id="password" >
                     </div>
                     <div class="row">
                             <label class="col-lg-3 col-lg-offset-2">Confirm Password</label><input type="password" class="col-lg-4" name="passconf" id="passconf"   >

@@ -71,6 +71,8 @@ public function get_category($type) {
         $query = $this->db->query('SELECT * FROM applicant where submitted = 1 and (complete is NULL OR complete = 0)');
     } elseif($type=="complete") {
         $query = $this->db->query('SELECT * FROM applicant where complete = 1 and (funds is NULL OR funds = 0)');
+    } elseif ($type=="incomplete") {
+        $query = $this->db->query('SELECT * FROM applicant where submitted is NULL OR submitted = 0');
     } else {
         $query = $this->db->query('SELECT * FROM applicant where funds = 1');
     }
