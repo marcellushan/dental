@@ -1,6 +1,6 @@
  <div class="main container">
 	<h1 class= "mytitle">EMPLOYMENT INFORMATION	</h1>
-
+	<h2 class="wrapper">Please enter the employer name and telephone number</h2>
 	<form action='<?=base_url("employer/post")?>' id="employer" method="post">
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">

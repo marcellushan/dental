@@ -28,7 +28,7 @@
 	 <?php endforeach;?>
 </table>
 	 <? else: ?>
-	 No Applicants
+	 <h2 class="wrapper">There are no <?=strtoupper($type) ?> Applications</h2>
 	 <? endif; ?>
 	
  

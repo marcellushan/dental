@@ -1,11 +1,11 @@
  <div class="main container">
 	<h1 class= "mytitle">
-Enter GHC ID
+Please enter your Georgia Highlands College ID number
 	</h1>
 	<form action='<?=base_url("applicant/post")?>' id="GHC" method="post">
 		<div class="row">
-			<div class="col-md-3 col-md-offset-3">
-				<h3>GHC ID</h3>
+			<div class="col-md-4 col-md-offset-2">
+				<h3>Georgia Highlands 900#</h3>
 			</div>
 			<div class="col-md-3">
 				<h3><input type="text" name="GHC_ID" id="GHC_ID"></h3>
