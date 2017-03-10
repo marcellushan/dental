@@ -15,8 +15,10 @@
 		 <li>Valid Federal Passport</li>
 	 </ul>
  </h2>
-<form action='<?=base_url("applicant/put_image/identification/" . $destination)?>' method="post" enctype="multipart/form-data"  id="identification" onsubmit="return Validate(this);">
-<input type="file" name="fileToUpload"><br>
+ <br><br>
+<form action='<?=base_url("applicant/put_image/identification/" . $destination)?>' method="post" enctype="multipart/form-data"  id="identification" >
+
+    <h3 class="wrapper"><input type="file" name="fileToUpload"></h3>
 
 	<input type="submit" class="btn btn-primary btn-lg center-block" id="driverBtn" value="Submit" />
 

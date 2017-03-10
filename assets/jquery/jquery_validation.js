@@ -150,6 +150,9 @@
                      required: "Please enter your zip code",
                      range: "Please enter a valid zip code"
                  },
+                 preferred_phone: {
+                     required: "Please enter your preferred phone"
+                 }
 
              }
          });
@@ -159,11 +162,16 @@
          $( "#identification" ).validate({
              rules: {
                  fileToUpload: {
-                     required: true
+                     required: true,
+                     extension: "jpg|jpeg|bmp|gif|png"
                  }
              },
              messages: {
-                 fileToUpload: "Please upload a copy of your identification"
+                 fileToUpload:
+                     {
+                         required: "Please select an identification file to attach",
+                         extension: "Please select a jpg, jpeg, bmp, gif or png file"
+                     }
              }
          });
      });
@@ -172,7 +180,8 @@
          $( "#cpr" ).validate({
              rules: {
                  fileToUpload: {
-                     required: true
+                     required: true,
+                     extension: "jpg|jpeg|bmp|gif|png"
                  },
                 cpr_expiration_date: {
                      required: true,
@@ -180,7 +189,10 @@
                 }
              },
              messages: {
-                 fileToUpload: "Please upload a copy of your current CPR certification",
+                 fileToUpload: {
+                     required: "Please select an CPR file to attach",
+                     extension: "Please select a jpg, jpeg, bmp, gif or png file"
+                 },
                  cpr_expiration_date: {
                      required: "Please enter the expiration date of your current CPR certification",
                      date: "Please use the format YYYY-MM-DD"
@@ -196,13 +208,17 @@
                      required: true
                  },
                  fileToUpload: {
-                     required: true
+                     required: true,
+                     extension: "jpg|jpeg|bmp|gif|png"
                  }
 
              },
              messages: {
                  number: "Please enter your license number",
-                 fileToUpload: "Please upload a copy of your license"
+                 fileToUpload: {
+                     required: "Please select a License file to attach",
+                     extension: "Please select a jpg, jpeg, bmp, gif or png file"
+                 }
              }
 
 
@@ -332,7 +348,7 @@
 
      var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"];    
      function Validate(oForm) {
-         var arrInputs = oForm.getElementsByTagName("input");
+         var arrInputs = oForm.getElementsByClassNameName("upload");
          for (var i = 0; i < arrInputs.length; i++) {
              var oInput = arrInputs[i];
              if (oInput.type == "file") {

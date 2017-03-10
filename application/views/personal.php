@@ -1,6 +1,4 @@
  <div class="main container">
- <h3 class="mytitle">Admission Information</h3>
- 
  	<h1 class= "mytitle">
 	APPLICANT PERSONAL INFORMATION <?=@$edit ?>
 	</h1>
@@ -27,13 +25,18 @@
 				</div><!-- row -->
 			<div class="row">
 				<h2 class="col-md-6">Address</h2>
-
 			</div><!-- row -->
 			<div class="row">
-                        <div class="col-md-2"><label>Street</label></div>
-						<div><input type="text" class="col-md-10" name="street" placeholder="required" class="form-control" value="<?=@$applicant->street?>"></div>
-                        <div class="col-md-2"><label>City</label></div>
-						<div><input type="text" class="col-md-10" name="city" placeholder="required" class="form-control" value="<?=@$applicant->city?>"></div>
+                <div class="col-md-2"><label>Street</label></div>
+                <div><input type="text" class="col-md-6" name="street" placeholder="required" class="form-control"
+                            value="<?=@$applicant->street?>"></div>
+            </div><!--row-->
+            <div class="row">
+                <div class="col-md-2"><label>City</label></div>
+                <div><input type="text" class="col-md-6" name="city" placeholder="required" class="form-control"
+                            value="<?=@$applicant->city?>"></div>
+            </div><!--row-->
+            <div class="row">
 						<label class="col-md-2">State</label>
 							<? if(@$edit) :?>
 								<div><input type="text"  class="col-md-2" name="state" class="form-control" value="<?=@$applicant->state?>" ></div>
@@ -47,7 +50,7 @@
 								</select>
 							<? endif; ?>
                         <div><label class="col-md-2">Zip</label></div>
-						<div><input type="text"  class="col-md-2" name="zip" class="form-control" value="<?=@$applicant->zip?>" ></div>
+						<div><input type="text"  class="col-md-2" name="zip" class="form-control" value="<?=@$applicant->zip?>" placeholder="required" ></div>
 				</div><!-- row -->
 
 			<div class="row">
@@ -57,13 +60,15 @@
 
 			<div class="row">
 				<div class="col-md-3"><label>Preferred Phone</label></div>
-				<div class="col-md-3"><input type="phone" name="preferred_phone" placeholder="required" class="form-control" value="<?=@$applicant->preferred_phone?>"></div>
+				<div class="col-md-3"><input type="phone" name="preferred_phone" placeholder="required"
+                                             class="form-control" value="<?=@$applicant->preferred_phone?>"></div>
 				<div class="col-md-3"><label>Backup Phone</label></div>
 				<div class="col-md-3"><input type="text" name="backup_phone" class="form-control" value="<?=@$applicant->backup_phone?>"></div>
 				</div><!-- row -->
 			<div class="row">
 				<div class="col-md-3"><label>Preferred Email</label></div>
-				<div class="col-md-3"><input type="phone" name="preferred_email" placeholder="required" class="form-control" value="<?=@$applicant->preferred_email?>"></div>
+				<div class="col-md-3"><input type="phone" name="preferred_email" placeholder="required"
+                                             class="form-control" value="<?=@$applicant->preferred_email?>" disabled></div>
 				<div class="col-md-3"><label>Backup Email</label></div>
 				<div class="col-md-3"><input type="text" name="backup_email" class="form-control" value="<?=@$applicant->backup_email?>"></div>
 			</div><!-- row -->

@@ -12,8 +12,9 @@
 	</h1>
 
 	 <h2>The expiration date must be beyond the semester start date.</h2>
+         <br><br>
 <form action='<?=base_url("applicant/put_image/cpr/" . $destination)?>' method="post" enctype="multipart/form-data" id="cpr" onsubmit="return Validate(this);">
-<h4><input type="file" name="fileToUpload" id="cpr"></h4>
+<h3><input type="file" name="fileToUpload" id="cpr"></h3>
 
 <h3>Expiration Date
 

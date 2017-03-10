@@ -12,8 +12,8 @@
 	    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css" />
 	     <script src="<?php echo base_url() ?>assets/jquery/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/webshim/1.16.0/dev/polyfiller.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.min.js"></script>
 		<script>
 			webshim.activeLang('en');
 			webshims.polyfill('forms');

@@ -27,13 +27,13 @@ DENTAL HYGIENE SCHOOL
 			<div class="col-md-3 col-md-offset-3">
 				<h3>State</h3>
 			</div>
-			<select class="col-lg-1 col-xs-7" name="school_state">
+			<h3><select class="col-lg-1 col-xs-7" name="school_state">
 			<option value="GA">GA</option>
 			<?php
 				foreach ($states as $state):?>
-			  <option value="<?=$state->abbreviation?>"><?=$state->abbreviation?></option>
+			 <option value="<?=$state->abbreviation?>"><?=$state->abbreviation?></option>
 				<? endforeach;?>
-			</select>
+			</select></h3>
 		</div>
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">

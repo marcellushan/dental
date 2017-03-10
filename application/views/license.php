@@ -8,13 +8,13 @@
 			<div class="col-md-3 col-md-offset-3">
 				<h3>State</h3>
 			</div>
-			<select class="col-lg-1 col-xs-7" name="state">
+			<h3><select class="col-lg-1 col-xs-7" name="state">
 			<option value="GA">GA</option>
 			<?php
 				foreach ($states as $state):?>
 			  <option value="<?=$state->abbreviation?>"><?=$state->abbreviation?></option>
 				<? endforeach;?>
-			</select>
+			</select></h3>
 		</div>
 		<div class="row">
 			<div class="col-md-3 col-md-offset-3">
@@ -31,8 +31,10 @@
 			<div class="col-md-3">
 				<h3><input type="checkbox" name="active" value="1"></h3>
 			</div>
-		</div>
-<input type="file" name="fileToUpload"><br>
+		</div><!--row-->
+        <div class="row">
+            <h3 class="col-md-3 col-md-offset-4"><input type="file" name="fileToUpload" id="license" class="upload" onsubmit="return Validate(this);"></h3>
+        </div><!--row-->
 			<div class="wrapper">
 				<button type="submit" class="btn-lg btn-primary">Submit License Information</button>
 			</div>
