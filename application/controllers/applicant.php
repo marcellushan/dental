@@ -104,6 +104,8 @@ class Applicant extends CI_Controller {
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
             move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
             $image_url = base_url() . "assets/uploads/" . $myRandom . basename($_FILES["fileToUpload"]["name"]);
+        } else {
+            var_dump($_FILES['fileToUpload']['error']);
         }
             $_POST[$type] = $image_url;
             $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
