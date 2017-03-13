@@ -168,13 +168,13 @@
 				 <h3>Demographics</h3>
 				 <div class="row">
 					 <h4 class="col-md-3">Race</h4>
-					 <h4 class="item col-md-2"><?=@$race->race_text?></h4>
+					 <h4 class="item col-md-2"><? echo (@$race->race_text ? $race->race_text : 'Not Provided')?></h4>
 					 <h4 class="col-md-3">Gender</h4>
-					 <h4 class="item col-md-2"><? echo ($applicant->gender ? "Male" : "Female"); ?></h4>
+					 <h4 class="item col-md-2"><? echo (! @$applicant->gender ? 'Not Provided' : ($applicant->gender== 1 ? "Male" : "Female")); ?></h4>
 					 <h4 class="col-md-3">Latino</h4>
-					 <h4 class="item col-md-2"><? echo ($applicant->latino ? "Yes" : "No"); ?></h4>
+					 <h4 class="item col-md-2"><? echo (! @$applicant->latino ? 'Not Provided' : ($applicant->latino== 1 ? "Yes" : "No")); ?></h4>
 					 <h4 class="col-md-3">Foreign</h4>
-					 <h4 class="item col-md-2"><? echo ($applicant->foreign ? "Yes" : "No"); ?></h4>
+					 <h4 class="item col-md-2"><? echo (! @$applicant->foreign ? 'Not Provided' : ($applicant->foreign== 1 ? "Yes" : "No")); ?></h4>
 				 </div><!-- row -->
 			 </div><!--col-md-6 -->
 		 </div><!-- row -->

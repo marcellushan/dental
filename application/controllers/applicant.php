@@ -81,7 +81,8 @@ class Applicant extends CI_Controller {
         if(@$_POST['submitted']) {
             $applicant = $this->ApplicantModel->load($_SESSION['applicant_id']);
             $this->load->model('MailModel');
-            $this->MailModel->send($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
+            $this->MailModel->submit($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
+            $this->MailModel->received($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
         }
         $this->load->view('templates/header');
         ($destination=="edit"? redirect(base_url('/home/display/sections')): ($destination=="complete"

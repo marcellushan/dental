@@ -26,7 +26,7 @@
 					</div>
 					<div class="col-md-8">
 						<h4><input type="radio" name="latino" value="1">Hispanic/Latino</h4>
-						<h4><input type="radio" name="latino" value="0">Non Hispanic/Latino</h4>
+						<h4><input type="radio" name="latino" value="2">Non Hispanic/Latino</h4>
 					</div>
 					<div class="col-md-4">
 						<h4>Gender</h4>

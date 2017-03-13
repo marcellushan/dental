@@ -33,7 +33,7 @@
 			</div>
 		</div><!--row-->
         <div class="row">
-            <h3 class="col-md-3 col-md-offset-4"><input type="file" name="fileToUpload" id="license" class="upload" onsubmit="return Validate(this);"></h3>
+            <div class="col-md-3 col-md-offset-4"><input type="file" name="fileToUpload" id="license" class="upload" onsubmit="return Validate(this);"></div>
         </div><!--row-->
 			<div class="wrapper">
 				<button type="submit" class="btn-lg btn-primary">Submit License Information</button>

@@ -74,7 +74,10 @@ class Admin extends CI_Controller {
     public function update($type,$id)
     {
         $this->load->model('ApplicantModel');
-        $applicant=$this->ApplicantModel->update($id, array( $type => 'jjones', $type .'_date' => date('Y-m-d')));
+        $applicant=$this->ApplicantModel->update($id, array( $type => 1, $type. '_by' => 'jjones', $type .'_date' => date('Y-m-d')));
+        $this->MailModel->$type0
+        ($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
+
         header( "Location: ".base_url() . "admin/get/".$id);
     }
 

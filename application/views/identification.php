@@ -18,7 +18,11 @@
  <br><br>
 <form action='<?=base_url("applicant/put_image/identification/" . $destination)?>' method="post" enctype="multipart/form-data"  id="identification" >
 
-    <h3 class="wrapper"><input type="file" name="fileToUpload"></h3>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-5">
+            <input type="file" name="fileToUpload">
+        </div>
+    </div>
 
 	<input type="submit" class="btn btn-primary btn-lg center-block" id="driverBtn" value="Submit" />
 

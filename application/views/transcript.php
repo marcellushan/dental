@@ -25,7 +25,7 @@
 			</select></h3>
 		</div>
         <div class="row">
-            <h3 class="col-md-3 col-md-offset-4"><input type="file" name="fileToUpload"></h3>
+            <div class="col-md-3 col-md-offset-4"><input type="file" name="fileToUpload"></div>
         </div><!--row-->
 			<div class="wrapper">
 				<button type="submit" class="btn-lg btn-primary">Submit Transcript Information</button>

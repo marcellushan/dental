@@ -5,7 +5,7 @@
 	 <div>
 	    <h2  class= "mytitle">Application Status</h2>
 		 <div class="wrapper"> <input type="button" class="btn btn-lg btn-primary" onclick="window.location.href='../'"value="Return To List">
-			 <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='<? echo base_url() ?>admin/display/comment<?=$applicant->applicant_id ?>'"value="Add a Comment"></div>
+			 <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='<? echo base_url() ?>admin/display/comment/<?=$applicant->applicant_id ?>'"value="Add a Comment"></div>
 		 <h3 class="wrapper">Comment(s)</h3>
 		 <?php foreach ($comments as $comment):?>
 			 <div class="row">
@@ -31,15 +31,15 @@
 		 <div class="row">
 			 <div class="col-md-6">
 				 <? if($applicant->complete):?>
-					 <h3 class="col-md-11">Marked Complete by: <?=$applicant->complete ?></h3>
+					 <h3 class="col-md-11">Marked Complete by: <?=$applicant->complete_by ?></h3>
 					 <h3 class="col-md-11">Complete Date:  <?=date_format(date_create($applicant->complete_date), 'F d Y') ?></h3>
 				 <? else:?>
-					 <div class="col-md-11"> <input type="button" class="btn btn-warning btn-lg" onclick="window.location.href='../update/complete/<?=$applicant->applicant_id ?>'" value="Mark Complete"></div>
+					 <div class="col-md-11"> <input type="button" class="btn btn-warning btn-lg" onclick="window.location.href='<? echo base_url() ?>admin/update/complete/<?=$applicant->applicant_id ?>'" value="Mark Complete"></div>
 				 <? endif;?>
 			 </div>
 			 <div class="col-md-6">
 				 <? if($applicant->funds):?>
-					 <h3 class="col-md-11">Funds Received by: <?=$applicant->funds ?></h3>
+					 <h3 class="col-md-11">Funds Received by: <?=$applicant->funds_by ?></h3>
 					 <h3 class="col-md-11">Funds Received Date:  <?=date_format(date_create($applicant->funds_date), 'F d Y') ?></h3>
 				 <? else:?>
 					 <div class="col-md-11"> <input type="button" class="btn btn-success btn-lg" onclick="window.location.href='../update/funds/<?=$applicant->applicant_id ?>'"value="Funds Received"></div>
