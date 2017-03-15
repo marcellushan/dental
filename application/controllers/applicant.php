@@ -33,6 +33,7 @@ class Applicant extends CI_Controller {
             $data['applicant'] = $applicant->load($_SESSION['applicant_id']);
 //            var_dump($data['states']);
             $this->load->view('personal', $data);
+            $this->load->view('templates/exit_footer');
         }
     }
 
@@ -60,6 +61,7 @@ class Applicant extends CI_Controller {
             $this->load->view('templates/footer');
         } else {
             $this->load->view($text, $data);
+            $this->load->view('templates/exit_footer');
         }
 
     }
@@ -85,8 +87,16 @@ class Applicant extends CI_Controller {
             $this->MailModel->received($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
         }
         $this->load->view('templates/header');
-        ($destination=="edit"? redirect(base_url('/home/display/sections')): ($destination=="complete"
-            ? redirect(base_url('/home/get')) : $this->load->view($destination, $data)));
+//        ($destination=="edit"? redirect(base_url('/home/display/sections')): ($destination=="complete"
+//            ? redirect(base_url('/home/get')) : $this->load->view($destination, $data)));
+        if($destination=="edit") {
+            redirect(base_url('/home/get'));
+        } elseif ($destination=="complete") {
+            redirect(base_url('/home/get'));
+        } else {
+            $this->load->view($destination, $data);
+            $this->load->view('templates/exit_footer');
+        }
     }
 
     public function put_image($type, $destination)
@@ -110,7 +120,15 @@ class Applicant extends CI_Controller {
             $_POST[$type] = $image_url;
             $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
         $this->load->view('templates/header');
-        ($destination=="edit"? redirect(base_url('/home/display/sections')) : $this->load->view($destination, $data));
+//        ($destination=="edit"? redirect(base_url('/home/display/sections')) : $this->load->view($destination, $data));
+        if($destination=="edit") {
+            redirect(base_url('/home/get'));
+        } elseif ($destination=="complete") {
+            redirect(base_url('/home/get'));
+        } else {
+            $this->load->view($destination, $data);
+            $this->load->view('templates/exit_footer');
+        }
 
 //
     }

@@ -1,6 +1,6 @@
  <div class="main container">
  	<h1 class= "mytitle">
-	APPLICANT PERSONAL INFORMATION <?=@$edit ?>
+	APPLICANT PERSONAL INFORMATION
 	</h1>
 	 <? (@$edit ? $destination="edit" : $destination = "identification") ?>
 	<form action='<?=base_url("applicant/put/" . $destination)?>' id="personal" method="post">
@@ -63,14 +63,14 @@
 				<div class="col-md-3"><input type="phone" name="preferred_phone" placeholder="required"
                                              class="form-control" value="<?=@$applicant->preferred_phone?>"></div>
 				<div class="col-md-3"><label>Backup Phone</label></div>
-				<div class="col-md-3"><input type="text" name="backup_phone" class="form-control" value="<?=@$applicant->backup_phone?>"></div>
+				<div class="col-md-3"><input type="text" name="backup_phone" class="form-control" value="<?=@$applicant->backup_phone?>" placeholder="optional"></div>
 				</div><!-- row -->
 			<div class="row">
 				<div class="col-md-3"><label>Preferred Email</label></div>
 				<div class="col-md-3"><input type="phone" name="preferred_email" placeholder="required"
                                              class="form-control" value="<?=@$applicant->preferred_email?>" disabled></div>
 				<div class="col-md-3"><label>Backup Email</label></div>
-				<div class="col-md-3"><input type="text" name="backup_email" class="form-control" value="<?=@$applicant->backup_email?>"></div>
+				<div class="col-md-3"><input type="text" name="backup_email" class="form-control" value="<?=@$applicant->backup_email?>" placeholder="optional"></div>
 			</div><!-- row -->
 
 

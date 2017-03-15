@@ -1,6 +1,6 @@
  <div class="main container">
 	<h1 class= "mytitle">
-        Name:  <?=$applicant->first_name?>   <?=$applicant->middle_name?> <?=$applicant->last_name?>
+        Name:  <?=$applicant->first_name?>   <?=$applicant->middle_name?> <?=$applicant->last_name?><?=@$verified ?>
 	</h1>
 	 <div>
 	    <h2  class= "mytitle">Application Status</h2>
@@ -12,7 +12,7 @@
 					 <h4 class="col-md-1">Comment</h4>
 					 <h4 class="item col-md-5"><?=$comment->comment?></h4>
 					 <h4 class="col-md-1">Admin</h4>
-					 <h4 class="item col-md-1"><?=$comment->admin_id?></h4>
+					 <h4 class="item col-md-1"><?=$comment->admin?></h4>
 					 <h4 class="col-md-1">Date</h4>
 					 <h4 class="item col-md-2"><?=$comment->submission_date?></h4>
 			 </div><!-- row -->
@@ -34,7 +34,8 @@
 					 <h3 class="col-md-11">Marked Complete by: <?=$applicant->complete_by ?></h3>
 					 <h3 class="col-md-11">Complete Date:  <?=date_format(date_create($applicant->complete_date), 'F d Y') ?></h3>
 				 <? else:?>
-					 <div class="col-md-11"> <input type="button" class="btn btn-warning btn-lg" onclick="window.location.href='<? echo base_url() ?>admin/update/complete/<?=$applicant->applicant_id ?>'" value="Mark Complete"></div>
+					 <div class="col-md-11"> <input type="button" class="btn btn-warning btn-lg"
+													onclick="window.location.href='<? echo base_url() ?>admin/update/complete/<?=$applicant->applicant_id ?>'" value="Mark Complete" <? echo (@$verified ? "" : "disabled") ?>></div>
 				 <? endif;?>
 			 </div>
 			 <div class="col-md-6">
@@ -88,11 +89,11 @@
 						<h3>&nbsp;Identification</h3>
 						<div class="row">
 							<? if($applicant->identification): ?>
-								<h4 class="col-md-3">
+								<h4 class="col-md-8">
 									<? if($applicant->identification_verified): ?>
-										Verified <?=$applicant->identification_verified_date ?>
+										Verified by <?=$applicant->identification_verified_by ?> on <?=$applicant->identification_verified_date ?>
 									<? else: ?>
-										<a href="<?echo base_url() ?>admin/verify/identification/<?=$applicant->applicant_id ?>">Verify</a></h4>
+										<input type="button" class="btn btn-info btn-lg" onclick="window.location.href='<?echo base_url() ?>admin/verify/identification/<?=$applicant->applicant_id ?>'"value="Verify">
 									<? endif; ?>
 							<? endif; ?>
 						</div><!-- row -->
@@ -100,11 +101,12 @@
 
 						<div class="row">
 							<? if($applicant->cpr): ?>
-							<h4 class="col-md-3">
+							<h4 class="col-md-8">
 								<? if($applicant->cpr_verified): ?>
-									Verified <?=$applicant->cpr_verified_date ?>
+									Verified by <?=$applicant->cpr_verified_by ?> on  <?=$applicant->cpr_verified_date ?>
 								<? else: ?>
-									<a href="<?echo base_url() ?>admin/verify/cpr/<?=$applicant->applicant_id ?>">Verify</a></h4>
+
+									<input type="button" class="btn btn-info btn-lg" onclick="window.location.href='<?echo base_url() ?>admin/verify/cpr/<?=$applicant->applicant_id ?>'"value="Verify">
 								<? endif; ?>
 							<? endif; ?>
 						</div><!-- row -->
@@ -123,29 +125,29 @@
 					<? endif; ?>
 				</div><!--col-md-6 -->
 				</div>
+
 		 <div class="section-border">
 		 <div class="row">
-
 			<h3 class="wrapper">License(s)</h3>
 				 <? if($licenses): ?>
-			<div class="row">
 				<?php foreach ($licenses as $license):?>
-					<h4 class="col-md-2">State of Licensure</h4>
+					<h4 class="col-md-1">State</h4>
 					<h4 class="item col-md-1"><?=$license->state?></h4>
-					<h4 class="col-md-2">License Number</h4>
+					<h4 class="col-md-1">Number</h4>
 					<h4 class="item col-md-1"><?=$license->number?></h4>
 					<h4 class="col-md-1">Active</h4>
 					<h4 class="item col-md-2"><? echo ($license->active ? "Yes" : "No"); ?></h4>
-					<h4 class="col-md-1">
+					<h4 class="col-md-4">
 						<? if($license->verified): ?>
-							Verified <?=$license->verified_date ?>
+							Verified by <?=$license->verified_by ?> on <?=$license->verified_date ?>
 						<? else: ?>
-							<a href="../../license/verify/<?=$license->license_id?>">Verify</a></h4>
+							<!--<a href="../../license/verify/<?=$license->license_id?>/<?=$applicant->applicant_id?>">Verify</a></h4>-->
+						<input type="button" class="btn btn-info btn-lg" onclick="window.location.href='<? echo base_url() ?>license/verify/<?=$license->license_id?>/<?=$applicant->applicant_id?>'"value="Verify">
 						<? endif; ?>
 					</h4>
 
 				<?php endforeach;?>
-			</div><!-- row -->
+
 				 <? endif; ?>
 
 		 <? if($applicant->discipline):?>

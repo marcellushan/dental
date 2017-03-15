@@ -3,8 +3,8 @@
 	EMERGENCY CONTACT INFORMATION
 	</h1>
 
-<?php echo validation_errors(); ?>
-	<form action='<?=base_url("applicant/put/employed")?>' id="emergency" method="post">
+     <? (@$edit ? $destination="edit" : $destination = "employed") ?>
+	<form action='<?=base_url("applicant/put/" . $destination)?>' id="emergency" method="post">
 		<fieldset>
 			<h2>Name</h2>
 				<div class="row">
@@ -12,7 +12,7 @@
 					<div class="col-sm-2 col-xs-5"> <label>Last</label></div><div class="col-sm-2 col-xs-6"><input type="text" name="e_last_name" value="<?=@$applicant->e_last_name ?>" placeholder="required"></div>
 					<label class="col-sm-2 col-xs-5" >Relationship</label>
 					<? if(@$edit) :?>
-						<div><input type="text"  class="col-md-2" name="state" value="<?=@$applicant->relationship?>" ></div>
+						<div><input type="text"  class="col-md-2" name="relationship" value="<?=@$applicant->relationship?>" ></div>
 					<? else: ?>
 						<select class="col-lg-1 col-xs-7" name="relationship" required>
 							<option value="">Select</option>
@@ -42,7 +42,7 @@
                 <? if(@$edit) :?>
                     <div><input type="text"  class="col-md-2" name="e_state" class="form-control" value="<?=@$applicant->e_state?>" ></div>
                 <? else: ?>
-                    <select class="col-md-2" name="state" class="form-control" >
+                    <select class="col-md-2" name="e_state" class="form-control" >
                         <option value="GA">GA</option>
                         <?php
                         foreach ($states as $state):?>

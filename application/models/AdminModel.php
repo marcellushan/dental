@@ -10,5 +10,15 @@ class AdminModel extends My_Model {
  	public $first_name;
  	public $last_name;
  		
-	
+	public function verify($id)
+    {
+
+        $this->db->where('applicant_id', $id);
+//    $this->db->where("password", $password);
+        $query = $this->db->get($this::DB_TABLE);
+        $row = $query->row();
+        return $data[$this::DB_TABLE] = $row;
+    }
+
+    }
 }

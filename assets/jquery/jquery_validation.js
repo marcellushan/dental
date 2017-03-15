@@ -70,11 +70,11 @@
              rules: {
                  GHC_ID: {
                      required: true,
-                     range: [90000000 , 90099999]
+                     range: [900000000 , 900999999]
                  }
              },
              messages: {
-                 GHC_ID: "Please enter valid GHC ID in the form 900XXXXX"
+                 GHC_ID: "Please enter valid GHC ID in the form 900XXXXXX"
              }
          });
      });
@@ -319,15 +319,43 @@
                      required: true
                  },
                  fileToUpload: {
-                     required: true
+                     required: true,
+                     extension: "jpg|jpeg|bmp|gif|png"
                  }
              },
              messages: {
                  school: "Please enter the name of the school",
-                 fileToUpload: "Please upload a copy of your transcript"
+                 fileToUpload: {
+                     required:  "Please upload a copy of your transcript",
+                     extension: "Please select a jpg, jpeg, bmp, gif or png file"
+                 }
              }
          });
      });
+
+     // $(document).ready(function(){
+     //     $( "#license" ).validate({
+     //         rules: {
+     //             number: {
+     //                 required: true
+     //             },
+     //             fileToUpload: {
+     //                 required: true,
+     //                 extension: "jpg|jpeg|bmp|gif|png"
+     //             }
+     //
+     //         },
+     //         messages: {
+     //             number: "Please enter your license number",
+     //             fileToUpload: {
+     //                 required: "Please select a License file to attach",
+     //                 extension: "Please select a jpg, jpeg, bmp, gif or png file"
+     //             }
+     //         }
+     //
+     //
+     //     });
+     // });
 
      $(document).ready(function(){
          $( "#program" ).validate({

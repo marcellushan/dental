@@ -33,6 +33,10 @@ class Admin extends CI_Controller {
         ini_set('display_errors', '1');
         $this->load->model('ApplicantModel');
         $data['applicant'] = $this->ApplicantModel->load($id);
+        if($data['applicant']->cpr_verified && $data['applicant']->identification_verified)
+        {
+            $data['verified']=1;
+        }
         $this->load->model('RaceModel');
         $data['race']= $this->RaceModel->load($data['applicant']->race);
         $this->load->model('EmployerModel');
@@ -75,8 +79,10 @@ class Admin extends CI_Controller {
     {
         $this->load->model('ApplicantModel');
         $applicant=$this->ApplicantModel->update($id, array( $type => 1, $type. '_by' => 'jjones', $type .'_date' => date('Y-m-d')));
-        $this->MailModel->$type0
-        ($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
+        $applicant=$this->ApplicantModel->load($id);
+        $this->load->model('MailModel');
+//        $this->MailModel->submit($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
+        $this->MailModel->$type($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
 
         header( "Location: ".base_url() . "admin/get/".$id);
     }

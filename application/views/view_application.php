@@ -31,7 +31,12 @@
 	</form>
 	<?endif; ?>
 		<div class="section-border">
-			<h2  class= "mytitle">Personal Information</h2>
+			<h2  class= "mytitle">Personal Information&nbsp;
+				<? if(! $applicant->complete) : ?>
+				<input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='<? echo base_url() ?>applicant/get/personal/1'"value="Update Personal">
+				<? endif; ?>
+			</h2>
+
 				 <div class="row">
 					 <div class="col-md-6">
 						 <h3 class="wrapper">Address</h3>
@@ -67,7 +72,11 @@
 			<div class="row">
 					<div class="col-md-6">
 
-						<h3>&nbsp;Identification</h3>
+						<h3>&nbsp;Identification
+							<? if(! $applicant->complete) : ?>
+								<input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='<? echo base_url() ?>applicant/get/identification/1'"value="Update Identification">
+							<? endif; ?>
+						</h3>
 						<div class="row">
 							<h4 class="col-md-3"><a href="<?=@$applicant->identification ?>" target="_blank">Image</a></h4>
 						</div><!-- row -->
@@ -79,7 +88,11 @@
 						</div><!-- row -->
 					</div><!--col-md-6 -->
 				<div class="col-md-6">
-					<h3>School</h3>
+					<h3>School
+						<? if(! $applicant->complete) : ?>
+							<input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='<? echo base_url() ?>applicant/get/school/1'"value="Update School">
+						<? endif; ?>
+					</h3>
 					<div class="row">
 						<h4 class="col-md-4">Name</h4>
 						<h4 class="item col-md-7"><?=@$applicant->school ?></h4>
@@ -91,7 +104,10 @@
 				</div><!--col-md-6 -->
 			</div>
 		<div class="row">
-			<h3 class="wrapper">License(s)</h3>
+			<h3 class="wrapper">License(s)
+				<? if(! $applicant->complete) : ?>
+					<input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='<? echo base_url() ?>license/get'"value="Update License">
+				<? endif; ?></h3>
 			<div class="row">
 				<?php foreach ($licenses as $license):?>
 					<h4 class="col-md-2">State of Licensure</h4>
@@ -111,7 +127,11 @@
 			 <? endif;?>
 		 </div><!-- row -->
 		<div class="section-border">
-		 <h2 class="wrapper">Emergency Contact</h2>
+		 <h2 class="wrapper">Emergency Contact
+			 <? if(! $applicant->complete) : ?>
+				 <input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='<? echo base_url() ?>applicant/get/emergency/1'"value="Update Emergency Contact">
+			 <? endif; ?>
+		 </h2>
 		 <div class="row">
 			 <h4 class="col-md-1">Name</h4>
 			 <h4 class="item col-md-2"><?=$applicant->e_last_name?>, <?=$applicant->e_first_name?></h4>
@@ -130,7 +150,13 @@
 			</div><!-- row -->
 		</div><!-- section-border -->
 		 <? if($employers):?>
-		<h3 class="wrapper">Employer(s)</h3>
+		<h3 class="wrapper">Employer(s)
+			<? if(! $applicant->complete) : ?>
+				<input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='<? echo base_url() ?>employer/get'"value="Update Employers">
+			<? endif; ?>
+		</h3>
+
+		</h3>
 		<div class="row">
 			<?php foreach ($employers as $employer):?>
 				<h4 class="col-md-2">Company</h4>
@@ -140,7 +166,11 @@
 			<?php endforeach;?>
 		</div><!-- row -->
 			 <? else: ?>
-				 <h3 class="wrapper">No Employers Given</h3>
+				 <h3 class="wrapper">No Employers Given
+					 <? if(! $applicant->complete) : ?>
+						 <input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='<? echo base_url() ?>employer/get'"value="Add Employers">
+					 <? endif; ?>
+				 </h3>
 		 <?endif;?>
 			 <? if($transcripts): ?>
 					 <h3 class="wrapper">Transcript(s)</h3>
@@ -178,12 +208,7 @@
 				 </div><!-- row -->
 			 </div><!--col-md-6 -->
 		 </div><!-- row -->
-		 <? if(! $applicant->complete) : ?>
-		 <div class="wrapper">
-			 <input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='../home/display/sections'"value="Modify Application">
-		 </div>
-		 <? endif; ?>
-			 <p></p>
+					 <p></p>
 
 
  </div><!-- main container -->

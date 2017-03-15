@@ -28,8 +28,8 @@ class MailModel extends CI_Model {
         $this->email->initialize($config);
 
         $this->email->from('webmaster@highlands.edu', 'Georgia Highlands College');
-        $this->email->to('mhannah@highlands.edu');
-//        $this->email->to('dental@highlands');
+//        $this->email->to('mhannah@highlands.edu');
+        $this->email->to('dental@highlands.edu');
         $body = "<h1>" . $first ." " . $last . "</h1>";
         $body = $body . "<h2>Has submitted an application to the Dental Hygiene Program at Georgia Highlands College.</h2>";
 //        $body = $body . "<h2>Your application has been received and you will be notified as soon as a decision is made.</h2>";
@@ -89,10 +89,10 @@ class MailModel extends CI_Model {
         $this->email->to('mhannah@highlands.edu');
         $body = "<h1>Hello " . $first ." " . $last . "</h1>";
         $body = $body . "<h2>Thank you for your interest in the Dental Hygiene Program at Georgia Highlands College.</h2>";
-        $body = $body . "<h2>There is an issue with your application</h2>";
+        $body = $body . "<h2>Please see the following comments regarding your application:</h2>";
         $body = $body . "<h2>" . $comment . "</h2>";
-        $body = $body . "<h2>Please login to the <a href='" . base_url('/home/display/login') . "'>Online application</a> to address the issue</h2>";
-        $this->email->subject('There is a problem with your GHC Dental Application');
+        $body = $body . "<h2>Please login to the <a href='" . base_url('/home/display/login') . "'>Online application</a> to take appropriate action</h2>";
+        $this->email->subject('Information needed regarding your GHC Dental Hygiene School Application');
         $this->email->message($body);
 
         $this->email->send();

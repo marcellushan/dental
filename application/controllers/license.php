@@ -116,9 +116,9 @@ class License extends CI_Controller {
         redirect(base_url('/admin/get/'. $applicant->applicant_id));
     }
 
-    public function verify($id)
+    public function verify($id, $applicant_id)
     {
-//        echo $id;
+        $data['applicant_id'] = $applicant_id;
         $this->load->model('LicenseModel');
         $verify = new LicenseModel();
         $data['license']= $verify->load($id);
