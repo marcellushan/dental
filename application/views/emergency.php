@@ -62,7 +62,7 @@
                 <div class="col-md-3"><label>Preferred Phone</label></div>
                 <div class="col-md-3"><input type="phone" name="e_preferred_phone" placeholder="required" class="form-control" value="<?=@$applicant->e_preferred_phone?>"></div>
                 <div class="col-md-3"><label>Backup Phone</label></div>
-                <div class="col-md-3"><input type="text" name="e_backup_phone" class="form-control" value="<?=@$applicant->e_backup_phone?>"></div>
+                <div class="col-md-3"><input type="text" name="e_backup_phone" class="form-control" value="<?=@$applicant->e_backup_phone?>"  placeholder="optional"></div>
             </div><!-- row -->
             <div class="row">
                 <div class="col-md-3"><label>Email</label></div>

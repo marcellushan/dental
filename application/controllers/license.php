@@ -49,7 +49,7 @@ class License extends CI_Controller {
             $this->load->view('templates/header');
             $this->load->view($nextPage, $data);
         } else {
-            redirect(base_url('home/display/sections'));
+            redirect(base_url('license/get'));
         }
 
 
@@ -101,7 +101,7 @@ class License extends CI_Controller {
         $image_array['image'] = $image_url;
         $image_array['submission_date'] = date('Y-m-d');
         $image=$this->$modelName->update($id, $image_array);
-        redirect(base_url('home/display/sections'));
+        redirect(base_url('license/get/'));
 
     }
 

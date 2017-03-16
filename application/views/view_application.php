@@ -80,7 +80,12 @@
 						<div class="row">
 							<h4 class="col-md-3"><a href="<?=@$applicant->identification ?>" target="_blank">Image</a></h4>
 						</div><!-- row -->
-						<h3>&nbsp;CPR Certification</h3>
+						<h3>&nbsp;CPR Certification
+                            <? if(! $applicant->complete) : ?>
+                            <input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='<? echo base_url() ?>applicant/get/cpr/1'"value="Update CPR">
+                            <? endif; ?>
+                        </h3>
+
 						<div class="row">
 							<h4 class="col-md-2">Expiration Date</h4>
 							<h4 class="col-md-3"><?=@$applicant->cpr_expiration_date?></h4>
@@ -121,7 +126,11 @@
 				<?php endforeach;?>
 			</div><!-- row -->
 		 <? if($applicant->discipline):?>
-		 <h3 class="wrapper">Disciplinary Action</h3>
+		 <h3 class="wrapper">Disciplinary Action
+             <? if(! $applicant->complete) : ?>
+                 <input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='<? echo base_url() ?>applicant/get/discipline/1'"value="Update Discipline">
+             <? endif; ?>
+         </h3>
 		 <div class="row">
 			 <h4 class="item col-md-8 col-md-offset-2"><?=$applicant->discipline ?></h4>
 			 <? endif;?>
@@ -173,7 +182,11 @@
 				 </h3>
 		 <?endif;?>
 			 <? if($transcripts): ?>
-					 <h3 class="wrapper">Transcript(s)</h3>
+					 <h3 class="wrapper">Transcript(s)
+                         <? if(! $applicant->complete) : ?>
+                             <input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='<? echo base_url() ?>transcript/get'"value="Update Transcript">
+                         <? endif; ?></h3>
+                     </h3>
 
 					 <?php foreach ($transcripts as $transcript):?>
 						 <div class="row">
@@ -186,16 +199,25 @@
 			 <? endif; ?>
 		 <div class="row">
 			 <div class="col-md-6">
-				<h3>Program Questions</h3>
+				<h3>Program Questions
+                    <? if(! $applicant->complete) : ?>
+                        <input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='<? echo base_url() ?>applicant/get/program/1'"value="Update Program">
+                    <? endif; ?>
+                </h3>
 				<div class="row">
 					<h4 class="col-md-6">How do you plan to attend?</h4>
-					<h4 class="item col-md-5"><? echo ($applicant->student_type ? "Full Time" : "Part Time"); ?></h4>
+					<h4 class="item col-md-5"><? echo ($applicant->student_type==2 ? "Full Time" :($applicant->student_type==1 ? "Part Time" : "Not Provided")); ?></h4>
 					<h4 class="col-md-12">How did you hear about us?</h4>
 					<h4 class="item col-md-12"><?=$applicant->hear ?></h4>
 				</div><!-- row -->
 			 </div><!--col-md-6 -->
 			 <div class="col-md-6">
-				 <h3>Demographics</h3>
+				 <h3>Demographics
+                     <? if(! $applicant->complete) : ?>
+                         <input type="button" class="btn btn-danger btn-lg" onclick="window.location.href='<? echo base_url() ?>applicant/get/demo/1'"value="Update Demographics">
+                     <? endif; ?>
+
+                 </h3>
 				 <div class="row">
 					 <h4 class="col-md-3">Race</h4>
 					 <h4 class="item col-md-2"><? echo (@$race->race_text ? $race->race_text : 'Not Provided')?></h4>

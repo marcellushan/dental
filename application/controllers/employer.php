@@ -37,9 +37,6 @@ class Employer extends CI_Controller {
         $this->load->model($modelName);
         $employer = new $modelName();
         $this->load->view('templates/header');
-//        if($id) {
-//            $data
-//        }? $this->load->view('employer', $data) :$this->load->view('list_employers', $data));
         if(! $id) {
             $data['employers'] = $employer->get_list('applicant_id', $_SESSION['applicant_id']);
             $this->load->view('list_employers', $data);
@@ -61,7 +58,7 @@ class Employer extends CI_Controller {
         $additional_array['submission_date'] = date('Y-m-d');
         $test= $applicant->get_item('applicant_id', $_SESSION['applicant_id']);
         $additional=$this->$modelName->update($test->$additional_id, $additional_array);
-        redirect(base_url('/home/display/sections'));
+        redirect(base_url('employer/get'));
 
     }
 

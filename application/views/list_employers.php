@@ -17,19 +17,15 @@
     		<td><?=$employer->submission_date ?></td>
     		<td><?=$employer->company ?></td>
     		<td><?=$employer->phone ?></td>
-				<td><a href="../get/<?=$employer->employer_id ?>" >Update</a>
+				<td><a href="<? echo base_url() ?>employer/get/<?=$employer->employer_id ?>" >Update</a>
 				</td>
 
     	</tr>
     	<?php endforeach;?>
     </table>
-    <? else :?>	
-    
- No Employers
-    
     <? endif?>
 
-	 <input type="button" class="btn btn-lg btn-info" onclick="window.location.href='<? echo base_url() ?>home/display/add_employer'"value="Add a New Employer">
+     <div class="wrapper"><input type="button" class="btn btn-lg btn-info" onclick="window.location.href='<? echo base_url() ?>home/display/add_employer'"value="Add a New Employer"></div>
 	
 </div><!-- container -->
               

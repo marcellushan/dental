@@ -22,19 +22,15 @@
 				<a href="<?=$license->image ?>" >Image</a>
 				<? endif;?>
 				</td>
-				<td><a href="../get/<?=$license->license_id ?>" >Update</a>
+				<td><a href="<?=base_url()?>license/get/<?=$license->license_id ?>" >Update</a>
 				</td>
 
     	</tr>
     	<?php endforeach;?>
     </table>
-    <? else :?>	
-    
-    No Images
-    
     <? endif?>
 
-<h2>Add a New License</h2>
+<h2 class="wrapper">Add a New License</h2>
 	<?php echo validation_errors(); ?>
 	<form action='<?=base_url("license/post/")?>' method="post" id="license" enctype="multipart/form-data">
 		<div class="row">

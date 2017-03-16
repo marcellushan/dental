@@ -92,7 +92,7 @@ class Transcript extends CI_Controller {
         $image_array = $_POST;
         $image_array['submission_date'] = date('Y-m-d');
         $image=$this->$modelName->update($id, $image_array);
-        redirect(base_url('home/display/sections'));
+        redirect(base_url('transcript/get'));
 
     }
 
