@@ -5,6 +5,7 @@ class Comment extends CI_Controller {
     public function post($id)
     {
         session_start();
+        $data['admin'] = $_SESSION['admin'];
         $this->load->model('ApplicantModel');
         $applicant = $this->ApplicantModel->load($id);
         $this->load->model('CommentModel');

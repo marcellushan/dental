@@ -6,7 +6,7 @@
 	 <form action="<? echo base_url() ?>admin/put/<?=$applicant->applicant_id ?>" method="post" >
 		 <input type="hidden" name="cpr_verified" value="1">
 		 <input type="hidden" name="cpr_verified_date" value="<?=date('Y-m-d') ?>">
-		 <input type="hidden" name="cpr_verified_by" value="mhannah">
+		 <input type="hidden" name="cpr_verified_by" value="<?=$admin ?>">
 
 
 		 <img class="img-responsive" src="<?=$applicant->identification ?>">

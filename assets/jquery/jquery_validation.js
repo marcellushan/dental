@@ -136,6 +136,7 @@
                      minlength: 10,
                      maxlength: 10
                  }
+
              },
              messages: {
                  first_name: "Please specify your first name",

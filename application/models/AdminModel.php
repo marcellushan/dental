@@ -20,5 +20,13 @@ class AdminModel extends My_Model {
         return $data[$this::DB_TABLE] = $row;
     }
 
+    public function get_login ($id_name, $id)
+    {
+
+        $this->db->where($id_name, $id);
+//    $this->db->where("password", $password);
+        $query = $this->db->get($this::DB_TABLE);
+        $row = $query->row();
+        return $data[$this::DB_TABLE] = $row;
     }
 }

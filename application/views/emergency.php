@@ -66,7 +66,7 @@
             </div><!-- row -->
             <div class="row">
                 <div class="col-md-3"><label>Email</label></div>
-                <div class="col-md-3"><input type="phone" name="e_email" placeholder="required"
+                <div class="col-md-3"><input type="phone" name="e_email" placeholder="optional"
                                              class="form-control" value="<?=@$applicant->e_email?>"></div>
             </div><!-- row -->
 	

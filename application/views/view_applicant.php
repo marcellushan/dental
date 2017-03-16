@@ -3,7 +3,7 @@
         Name:  <?=$applicant->first_name?>   <?=$applicant->middle_name?> <?=$applicant->last_name?><?=@$verified ?>
 	</h1>
 	 <div>
-	    <h2  class= "mytitle">Application Status</h2>
+	    <h2  class= "mytitle">Application Status <?=$admin ?></h2>
 		 <div class="wrapper"> <input type="button" class="btn btn-lg btn-primary" onclick="window.location.href='../'"value="Return To List">
 			 <input type="button" class="btn btn-info btn-lg" onclick="window.location.href='<? echo base_url() ?>admin/display/comment/<?=$applicant->applicant_id ?>'"value="Add a Comment"></div>
 		 <h3 class="wrapper">Comment(s)</h3>
@@ -43,7 +43,7 @@
 					 <h3 class="col-md-11">Funds Received by: <?=$applicant->funds_by ?></h3>
 					 <h3 class="col-md-11">Funds Received Date:  <?=date_format(date_create($applicant->funds_date), 'F d Y') ?></h3>
 				 <? else:?>
-					 <div class="col-md-11"> <input type="button" class="btn btn-success btn-lg" onclick="window.location.href='../update/funds/<?=$applicant->applicant_id ?>'"value="Funds Received"></div>
+					 <div class="col-md-11"> <input type="button" class="btn btn-success btn-lg" onclick="window.location.href='<? echo base_url() ?>admin/update/funds/<?=$applicant->applicant_id ?>'"value="Funds Received"></div>
 				 <? endif;?>
 			 </div>
 		 </div><!--row-->
@@ -200,7 +200,7 @@
                              <h4 class="col-md-3">School</h4>
                              <h4 class="item col-md-3"><?=$transcript->school?></h4>
                              <h4 class="col-md-3">Image</h4>
-                             <h4 class="item col-md-2"><a href="<?=$transcript->image?>">Image</a></h4>
+                             <h4 class="item col-md-2"><a href="<?=$transcript->image?>" target="_blank">Image</a></h4>
                          </div><!-- row -->
 						 <?php endforeach;?>
 

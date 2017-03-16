@@ -1,7 +1,7 @@
  <div class="main container">
 
 	<form action='<?=base_url("comment/post/" . $id)?>' method="post">
-		<input type="hidden" name="admin" value="mhannah">
+		<input type="hidden" name="admin" value="<?=$admin ?>">
 			<fieldset class="mytitle">
 						<h2>&nbsp;Add Comments for Application</h2>
 						<div class="row">

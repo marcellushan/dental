@@ -56,6 +56,8 @@ $db['default']['password'] = 'F1agstaff';
 // $db['default']['password'] = 'europe-guilty-kaleidoscope-head';
 // forms - Leela
 // $db['default']['password'] = 'everyonemotiveexplorelately';
+// Hypnotoad
+// $db['default']['password'] = 'presume-latitude-pizza-plans';
 $db['default']['database'] = 'dental';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

@@ -78,7 +78,7 @@
 							<? endif; ?>
 						</h3>
 						<div class="row">
-							<h4 class="col-md-3"><a href="<?=@$applicant->identification ?>" target="_blank">Image</a></h4>
+							<h4 class="col-md-3"><a href="<?=@$applicant->identification ?>" target="_blank"><? echo ($applicant->identification ? "Image" : "No Image Available") ?></a></h4>
 						</div><!-- row -->
 						<h3>&nbsp;CPR Certification
                             <? if(! $applicant->complete) : ?>
@@ -89,7 +89,7 @@
 						<div class="row">
 							<h4 class="col-md-2">Expiration Date</h4>
 							<h4 class="col-md-3"><?=@$applicant->cpr_expiration_date?></h4>
-							<h4 class="col-md-1"><a href="<?=@$applicant->cpr ?>" target="_blank">Image</a></h4>
+							<h4 class="col-md-1"><a href="<?=@$applicant->cpr ?>" target="_blank"><? echo ($applicant->cpr ? "Image" : "No Image Available") ?></a></h4>
 						</div><!-- row -->
 					</div><!--col-md-6 -->
 				<div class="col-md-6">
@@ -193,7 +193,7 @@
 							 <h4 class="col-md-3">School</h4>
 							 <h4 class="item col-md-3"><?=$transcript->school?></h4>
 							 <h4 class="col-md-3">Image</h4>
-							 <h4 class="item col-md-2"><a href="<?=$transcript->image?>">Image</a></h4>
+							 <h4 class="item col-md-2"><a href="<?=$transcript->image?>" target="_blank">Image</a></h4>
 						 </div><!-- row -->
 					 <?php endforeach;?>
 			 <? endif; ?>

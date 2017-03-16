@@ -108,6 +108,7 @@ class License extends CI_Controller {
     public function update($id)
     {
         session_start();
+        $data['admin'] = $_SESSION['admin'];
         $this->load->model('LicenseModel');
         $license=$this->LicenseModel->update($id, $_POST);
         $license = new LicenseModel();
@@ -118,6 +119,8 @@ class License extends CI_Controller {
 
     public function verify($id, $applicant_id)
     {
+        session_start();
+        $data['admin'] = $_SESSION['admin'];
         $data['applicant_id'] = $applicant_id;
         $this->load->model('LicenseModel');
         $verify = new LicenseModel();

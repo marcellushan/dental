@@ -6,7 +6,7 @@
 	 <form action="<? echo base_url() ?>license/update/<?=$license->license_id ?>" method="post" >
 		 <input type="hidden" name="verified" value="1">
 		 <input type="hidden" name="verified_date" value="<?=date('Y-m-d') ?>">
-		 <input type="hidden" name="verified_by" value="mhannah">
+		 <input type="hidden" name="verified_by" value="<?=$admin ?>">
 
 
 		 <img class="img-responsive" src="<?=$license->image ?>">

@@ -6,6 +6,11 @@ class Admin extends CI_Controller {
 	
 	public function index($type=0)
 	{
+        session_start();
+        if(! $_SESSION['username']) {
+            redirect(base_url('/home/display/admin_login'));
+        }
+        $data['admin'] = $_SESSION['username'];
 		$this->load->view('templates/header');
 		$this->load->model('ApplicantModel');
         $data['type'] = $type;
@@ -23,6 +28,11 @@ class Admin extends CI_Controller {
      */
     public function display($page="", $id=0)
     {
+        session_start();
+        if(! $_SESSION['username']) {
+            redirect(base_url('/home/display/admin_login'));
+        }
+        $data['admin'] = $_SESSION['username'];
         $data['id'] = $id;
         $this->load->view('templates/header');
         $this->load->view($page, $data);
@@ -30,6 +40,11 @@ class Admin extends CI_Controller {
 
 	public function get($id)
     {
+        session_start();
+        if(! $_SESSION['username']) {
+            redirect(base_url('/home/display/admin_login'));
+        }
+        $data['admin'] = $_SESSION['username'];
         ini_set('display_errors', '1');
         $this->load->model('ApplicantModel');
         $data['applicant'] = $this->ApplicantModel->load($id);
@@ -61,6 +76,8 @@ class Admin extends CI_Controller {
 	
 	public function getrace()
 	{
+        session_start();
+        $data['admin'] = $_SESSION['username'];
 	    $this->load->model('RaceModel');
 	    $data['race']= $this->RaceModel->load(1);
 	    var_dump($data['race']);
@@ -69,6 +86,8 @@ class Admin extends CI_Controller {
 	
 	public function user()
 	{
+        session_start();
+        $data['admin'] = $_SESSION['username'];
 	    $this->load->model('AdminModel');
 	    $admin = $this->AdminModel->load(1);
 	}
@@ -77,8 +96,10 @@ class Admin extends CI_Controller {
 
     public function update($type,$id)
     {
+        session_start();
+        $data['admin'] = $_SESSION['username'];
         $this->load->model('ApplicantModel');
-        $applicant=$this->ApplicantModel->update($id, array( $type => 1, $type. '_by' => 'jjones', $type .'_date' => date('Y-m-d')));
+        $applicant=$this->ApplicantModel->update($id, array( $type => 1, $type. '_by' => $data['admin'], $type .'_date' => date('Y-m-d')));
         $applicant=$this->ApplicantModel->load($id);
         $this->load->model('MailModel');
 //        $this->MailModel->submit($applicant->preferred_email, $applicant->first_name, $applicant->last_name);
@@ -107,11 +128,34 @@ class Admin extends CI_Controller {
     public function verify($type, $id)
     {
         session_start();
+        $data['admin'] = $_SESSION['username'];
         $this->load->model('ApplicantModel');
         $verify = new ApplicantModel();
         $data['applicant']= $verify->load($id);
         $this->load->view('templates/header');
         $this->load->view($type . '_verify', $data);
+    }
+
+    /**
+     * checkLogin
+     *
+     * Validates if user is logged into the system
+     */
+    public function checkLogin()
+    {
+        session_start();
+        $this->load->helper('url');
+        $this->load->model('AdminModel');
+        $admin = new AdminModel();
+        @$username= $admin->get_login('username', $_POST['username']);
+        $password= $admin->get_login('password', $_POST['password']);
+        if(@$username && @$password) {
+            $_SESSION['username'] = $username->username;
+            redirect(base_url("admin/display/applicant_status"));
+        } else {
+            $this->load->view('templates/header');
+            $this->load->view('admin_fail_login');
+        }
     }
 
 }

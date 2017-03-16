@@ -2,6 +2,7 @@
  <h1 class= "mytitle">
 	<? echo ($type ? strtoupper($type) : "ALL") ?> APPLICATIONS
 </h1>
+	 <h3 class="wrapper">Welcome <?=$admin ?></h3>
 <? if ($applicants): ?>
 <table class="table table-striped table-responsive">
 	<thead>
