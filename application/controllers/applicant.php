@@ -95,7 +95,9 @@ class Applicant extends CI_Controller {
             redirect(base_url('/home/get'));
         } else {
             $this->load->view($destination, $data);
-            $this->load->view('templates/exit_footer');
+            if($destination<>'thank_you') {
+                $this->load->view('templates/exit_footer');
+            }
         }
     }
 

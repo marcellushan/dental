@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
 	{
         session_start();
         if(! $_SESSION['username']) {
-            redirect(base_url('/home/display/admin_login'));
+            redirect(base_url('/admin/display/admin_login'));
         }
         $data['admin'] = $_SESSION['username'];
 		$this->load->view('templates/header');
@@ -29,10 +29,10 @@ class Admin extends CI_Controller {
     public function display($page="", $id=0)
     {
         session_start();
-        if(! $_SESSION['username']) {
-            redirect(base_url('/home/display/admin_login'));
+        if(! @$_SESSION['username'] && $page <> 'admin_login') {
+            redirect(base_url('/admin/display/admin_login'));
         }
-        $data['admin'] = $_SESSION['username'];
+        $data['admin'] = @$_SESSION['username'];
         $data['id'] = $id;
         $this->load->view('templates/header');
         $this->load->view($page, $data);
@@ -42,7 +42,7 @@ class Admin extends CI_Controller {
     {
         session_start();
         if(! $_SESSION['username']) {
-            redirect(base_url('/home/display/admin_login'));
+            redirect(base_url('/admin/display/admin_login'));
         }
         $data['admin'] = $_SESSION['username'];
         ini_set('display_errors', '1');

@@ -55,7 +55,7 @@ class Home extends CI_Controller {
         $data['states'] = $this->StateModel->get_states();
         $this->load->view('templates/header');
         $this->load->view($page, $data);
-        if( !$page=='exit_application') {
+        if($page<>'exit_application' && $page<>'login') {
             $this->load->view('templates/exit_footer');
         }
 
