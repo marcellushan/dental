@@ -120,7 +120,7 @@ class License extends CI_Controller {
     public function verify($id, $applicant_id)
     {
         session_start();
-        $data['admin'] = $_SESSION['admin'];
+        $data['admin'] = $_SESSION['username'];
         $data['applicant_id'] = $applicant_id;
         $this->load->model('LicenseModel');
         $verify = new LicenseModel();

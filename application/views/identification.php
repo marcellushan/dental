@@ -16,6 +16,7 @@
 	 </ul>
  </h2>
  <br><br>
+	 <h1 class="wrapper">File size cannot exceed 8 MB!!</h1>
 <form action='<?=base_url("applicant/put_image/identification/" . $destination)?>' method="post" enctype="multipart/form-data"  id="identification" >
 
     <div class="row">

@@ -9,8 +9,8 @@ class MailModel extends CI_Model {
         $this->email->initialize($config);
 
         $this->email->from('webmaster@highlands.edu', 'Georgia Highlands College');
-//        $this->email->to($email);
-        $this->email->to('mhannah@highlands.edu');
+        $this->email->to($email);
+//        $this->email->to('mhannah@highlands.edu');
         $body = "<h1>Hello " . $first ." " . $last . "</h1>";
         $body = $body . "<h2>Thank you for your interest in the Dental Hygiene Program at Georgia Highlands College.</h2>";
         $body = $body . "<h2>Your application has been received and you will be notified as soon as a decision is made.</h2>";
@@ -47,8 +47,8 @@ class MailModel extends CI_Model {
         $this->email->initialize($config);
 
         $this->email->from('webmaster@highlands.edu', 'Georgia Highlands College');
-//        $this->email->to($email);
-        $this->email->to('mhannah@highlands.edu');
+        $this->email->to($email);
+//        $this->email->to('mhannah@highlands.edu');
         $body = "<h1>Hello " . $first ." " . $last . "</h1>";
         $body = $body . "<h2>Thank you for your interest in the Dental Hygiene Program at Georgia Highlands College.</h2>";
         $body = $body . "<h2>All necessary documentation has been received to consider you application</h2>";
@@ -66,8 +66,8 @@ class MailModel extends CI_Model {
         $this->email->initialize($config);
 
         $this->email->from('webmaster@highlands.edu', 'Georgia Highlands College');
-//        $this->email->to($email);
-        $this->email->to('mhannah@highlands.edu');
+        $this->email->to($email);
+//        $this->email->to('mhannah@highlands.edu');
         $body = "<h1>Hello " . $first ." " . $last . "</h1>";
         $body = $body . "<h2>Thank you for your interest in the Dental Hygiene Program at Georgia Highlands College.</h2>";
         $body = $body . "<h2>The fee necessary to process your application has been received.</h2>";
@@ -85,8 +85,8 @@ class MailModel extends CI_Model {
         $this->email->initialize($config);
 
         $this->email->from('webmaster@highlands.edu', 'Georgia Highlands College');
-//        $this->email->to($email);
-        $this->email->to('mhannah@highlands.edu');
+        $this->email->to($email);
+//        $this->email->to('mhannah@highlands.edu');
         $body = "<h1>Hello " . $first ." " . $last . "</h1>";
         $body = $body . "<h2>Thank you for your interest in the Dental Hygiene Program at Georgia Highlands College.</h2>";
         $body = $body . "<h2>Please see the following comments regarding your application:</h2>";

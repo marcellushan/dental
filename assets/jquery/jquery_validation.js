@@ -41,6 +41,31 @@
      // });
 
      $(document).ready(function(){
+         $( "#welcome" ).validate({
+             rules: {
+                 identification: {
+                     required: true
+                 },
+                 cpr: {
+                     required: true
+                 },
+                 emergency: {
+                     required: true
+                 },
+                 hygienist: {
+                     required: true
+                 }
+             },
+             messages: {
+                 identification: "You must have a valid ID to continue",
+                 cpr: "You must have a valid CPR Certificate to continue",
+                 emergency: "You must have emergency contact information to continue",
+                 hygienist: "Please verify that you're qualified for this program"
+             }
+         });
+     });
+
+     $(document).ready(function(){
              $( "#create" ).validate({
                  rules: {
                      email: {

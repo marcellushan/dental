@@ -122,7 +122,6 @@ class Applicant extends CI_Controller {
             $_POST[$type] = $image_url;
             $applicant=$this->ApplicantModel->update($_SESSION['applicant_id'], $_POST);
         $this->load->view('templates/header');
-//        ($destination=="edit"? redirect(base_url('/home/display/sections')) : $this->load->view($destination, $data));
         if($destination=="edit") {
             redirect(base_url('/home/get'));
         } elseif ($destination=="complete") {
