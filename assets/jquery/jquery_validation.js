@@ -72,6 +72,9 @@
                          required: true,
                          email: true
                      },
+                     emailconf: {
+                         equalTo: "#email"
+                     },
                      password: {
                          required: true,
                          minlength: 8

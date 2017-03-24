@@ -28,7 +28,7 @@
 			 <input type="submit" class="btn btn-success btn-lg" value="Submit Application">
 		 </div>
 	 </div><!-- row -->
-	</form>
+
 	<?endif; ?>
 		<div class="section-border">
 			<h2  class= "mytitle">Personal Information&nbsp;
@@ -78,7 +78,7 @@
 							<? endif; ?>
 						</h3>
 						<div class="row">
-							<h4 class="col-md-3"><a href="<?=@$applicant->identification ?>" target="_blank"><? echo ($applicant->identification ? "Image" : "No Image Available") ?></a></h4>
+							<h4 class="col-md-3"><a href="<? echo base_url() ?>applicant/viewImage/identification"><? echo ($applicant->identification ? "Image" : "No Image Available") ?></a></h4>
 						</div><!-- row -->
 						<h3>&nbsp;CPR Certification
                             <? if(! $applicant->complete) : ?>
@@ -89,7 +89,7 @@
 						<div class="row">
 							<h4 class="col-md-2">Expiration Date</h4>
 							<h4 class="col-md-3"><?=@$applicant->cpr_expiration_date?></h4>
-							<h4 class="col-md-1"><a href="<?=@$applicant->cpr ?>" target="_blank"><? echo ($applicant->cpr ? "Image" : "No Image Available") ?></a></h4>
+							<h4 class="col-md-1"><a href="<? echo base_url() ?>applicant/viewImage/cpr"><? echo ($applicant->cpr ? "Image" : "No Image Available") ?></a></h4>
 						</div><!-- row -->
 					</div><!--col-md-6 -->
 				<div class="col-md-6">
@@ -121,7 +121,7 @@
 					<h4 class="item col-md-1"><?=$license->number?></h4>
 					<h4 class="col-md-1">Active</h4>
 					<h4 class="item col-md-2"><? echo ($license->active ? "Yes" : "No"); ?></h4>
-					<h4 class="col-md-1"><a href="<?=$license->image?>" target="_blank">Image</a></h4>
+					<h4 class="col-md-1"><a href="<? echo base_url() ?>license/viewImage/<?=$license->license_id ?>">Image</a></h4>
 
 				<?php endforeach;?>
 			</div><!-- row -->
@@ -231,7 +231,14 @@
 			 </div><!--col-md-6 -->
 		 </div><!-- row -->
 					 <p></p>
-
+			<? if(! $applicant->submitted) : ?>
+				<div class="row">
+					<div class="wrapper">
+						<input type="submit" class="btn btn-success btn-lg" value="Submit Application">
+					</div>
+				</div><!-- row -->
+				</form>
+			<? endif; ?>
 
  </div><!-- main container -->
 

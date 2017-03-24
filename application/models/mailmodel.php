@@ -13,7 +13,7 @@ class MailModel extends CI_Model {
 //        $this->email->to('mhannah@highlands.edu');
         $body = "<h1>Hello " . $first ." " . $last . "</h1>";
         $body = $body . "<h2>Thank you for your interest in the Dental Hygiene Program at Georgia Highlands College.</h2>";
-        $body = $body . "<h2>Your application has been received and you will be notified as soon as a decision is made.</h2>";
+        $body = $body . "<h2>The Dental Hygiene department has received your BSDH application and will be in contact with you once it has been reviewed</h2>";
         $body = $body . "<h2>Feel free to use this <a href='" . base_url('/home/display/login') . "'>link</a> to check the status of your application</h2>";
         $this->email->subject('Your Application to the Georgia Highlands Dental Hygiene School has been received');
         $this->email->message($body);
@@ -51,7 +51,7 @@ class MailModel extends CI_Model {
 //        $this->email->to('mhannah@highlands.edu');
         $body = "<h1>Hello " . $first ." " . $last . "</h1>";
         $body = $body . "<h2>Thank you for your interest in the Dental Hygiene Program at Georgia Highlands College.</h2>";
-        $body = $body . "<h2>All necessary documentation has been received to consider you application</h2>";
+        $body = $body . "<h2>Your application has been reviewed and all documents have been verified.</h2>";
         $body = $body . "<h2>Feel free to use this <a href='" . base_url('/home/display/login') . "'>link</a> to check the status of your application</h2>";
         $this->email->subject('All documentation for your Georgia Highlands Dental Hygiene School application has been received');
         $this->email->message($body);
@@ -70,7 +70,7 @@ class MailModel extends CI_Model {
 //        $this->email->to('mhannah@highlands.edu');
         $body = "<h1>Hello " . $first ." " . $last . "</h1>";
         $body = $body . "<h2>Thank you for your interest in the Dental Hygiene Program at Georgia Highlands College.</h2>";
-        $body = $body . "<h2>The fee necessary to process your application has been received.</h2>";
+        $body = $body . "<h2>Your BSDH application fee of $30 has been received by the GHC Dental Hygiene Department.</h2>";
         $body = $body . "<h2>Feel free to use this <a href='" . base_url('/home/display/login') . "'>link</a> to check the status of your application</h2>";
         $this->email->subject('Your Application fee to the Georgia Highlands Dental Hygiene School has been received');
         $this->email->message($body);
@@ -89,7 +89,7 @@ class MailModel extends CI_Model {
 //        $this->email->to('mhannah@highlands.edu');
         $body = "<h1>Hello " . $first ." " . $last . "</h1>";
         $body = $body . "<h2>Thank you for your interest in the Dental Hygiene Program at Georgia Highlands College.</h2>";
-        $body = $body . "<h2>Please see the following comments regarding your application:</h2>";
+        $body = $body . "<h2>Your BSDH application is under review and the following info needs your attention:</h2>";
         $body = $body . "<h2>" . $comment . "</h2>";
         $body = $body . "<h2>Please login to the <a href='" . base_url('/home/display/login') . "'>Online application</a> to take appropriate action</h2>";
         $this->email->subject('Information needed regarding your GHC Dental Hygiene School Application');

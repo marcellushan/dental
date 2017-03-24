@@ -109,7 +109,8 @@ class Applicant extends CI_Controller {
         $data['states'] = $this->StateModel->get_states();
         if (!@$_FILES['fileToUpload']['error']) {
             $myRandom = rand(1, 10000);
-            ($_SERVER['SERVER_NAME'] == 'localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/" : $target_dir = "/var/www/html/dental/assets/uploads/");
+            ($_SERVER['SERVER_NAME'] == 'localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/" :
+                ($_SERVER['SERVER_NAME'] == 'webdev.highlands.edu' ? $target_dir = "/var/www/html/dental/assets/uploads/" : $target_dir = "/var/www/forms/dental/assets/uploads/" ));
             $target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
             $myFile = basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
@@ -150,6 +151,16 @@ class Applicant extends CI_Controller {
             $this->load->view('student');
         }
 
+    }
+
+    public function viewImage($type)
+    {
+        session_start();
+        $this->load->model('ApplicantModel');
+        $verify = new ApplicantModel();
+        $data['applicant']= $verify->load($_SESSION['applicant_id']);
+        $this->load->view('templates/header');
+        $this->load->view($type . '_image_view', $data);
     }
 
 

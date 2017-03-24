@@ -11,8 +11,11 @@
                 <form action='<?=base_url("home/save")?>' id="create" method="post">
                     <fieldset>
                     <div class="row">
-                            <label class="col-md-5 col-sm-12">Email Address </label><input type="text" class="col-md-5  col-sm-12" name="email">
+                            <label class="col-md-5 col-sm-12">Email Address </label><input type="text" class="col-md-5  col-sm-12" name="email" id="email">
                     </div><!--row -->
+                        <div class="row">
+                            <label class="col-md-5 col-sm-12">Confirm Email Address </label><input type="text" class="col-md-5  col-sm-12" name="emailconf">
+                        </div><!--row -->
                     <div class="row">
                         <label class="col-md-5 col-sm-12">Create Password</label>
                         <input type="password" class="col-md-5  col-sm-12" name="password" id="password" >

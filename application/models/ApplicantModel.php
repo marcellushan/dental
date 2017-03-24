@@ -110,5 +110,4 @@ public function get_login ($id_name, $id)
     }
 
 	
-	
 }

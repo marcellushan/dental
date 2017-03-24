@@ -12,7 +12,7 @@
 		 <img class="img-responsive" src="<?=$applicant->identification ?>">
 
 		 <input type="submit" class="btn btn-lg btn-success" value="Verify">
-		 <input type="button" class="btn btn-lg btn-danger" onclick="window.location.href='<? echo base_url() ?>admin/get/<?=$applicant->applicant_id ?>'"value="Return To List">
+		 <input type="button" class="btn btn-lg btn-danger" onclick="window.location.href='<? echo base_url() ?>admin/get/<?=$applicant->applicant_id ?>'"value="Return To Application">
 
 
 	 </form>

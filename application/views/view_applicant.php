@@ -92,6 +92,7 @@
 								<h4 class="col-md-8">
 									<? if($applicant->identification_verified): ?>
 										Verified by <?=$applicant->identification_verified_by ?> on <?=$applicant->identification_verified_date ?>
+										<a href="<? echo base_url() ?>admin/viewImage/identification/<?=$applicant->applicant_id ?>"><? echo ($applicant->identification ? "Image" : "No Image Available") ?></a>
 									<? else: ?>
 										<input type="button" class="btn btn-info btn-lg" onclick="window.location.href='<?echo base_url() ?>admin/verify/identification/<?=$applicant->applicant_id ?>'"value="Verify">
 									<? endif; ?>
@@ -104,6 +105,7 @@
 							<h4 class="col-md-8">
 								<? if($applicant->cpr_verified): ?>
 									Verified by <?=$applicant->cpr_verified_by ?> on  <?=$applicant->cpr_verified_date ?>
+									<a href="<? echo base_url() ?>admin/viewImage/cpr/<?=$applicant->applicant_id ?>"><? echo ($applicant->cpr ? "Image" : "No Image Available") ?></a>
 								<? else: ?>
 
 									<input type="button" class="btn btn-info btn-lg" onclick="window.location.href='<?echo base_url() ?>admin/verify/cpr/<?=$applicant->applicant_id ?>'"value="Verify">
@@ -136,10 +138,11 @@
 					<h4 class="col-md-1">Number</h4>
 					<h4 class="item col-md-1"><?=$license->number?></h4>
 					<h4 class="col-md-1">Active</h4>
-					<h4 class="item col-md-2"><? echo ($license->active ? "Yes" : "No"); ?></h4>
-					<h4 class="col-md-4">
+					<h4 class="item col-md-1"><? echo ($license->active ? "Yes" : "No"); ?></h4>
+					<h4 class="col-md-5">
 						<? if($license->verified): ?>
 							Verified by <?=$license->verified_by ?> on <?=$license->verified_date ?>
+							<a href="<? echo base_url() ?>license/viewImage/<?=$license->license_id ?>">Image</a>
 						<? else: ?>
 							<!--<a href="../../license/verify/<?=$license->license_id?>/<?=$applicant->applicant_id?>">Verify</a></h4>-->
 						<input type="button" class="btn btn-info btn-lg" onclick="window.location.href='<? echo base_url() ?>license/verify/<?=$license->license_id?>/<?=$applicant->applicant_id?>'"value="Verify">

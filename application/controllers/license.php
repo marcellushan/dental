@@ -27,7 +27,8 @@ class License extends CI_Controller {
         $data['states'] = $this->StateModel->get_states();
         if (!@$_FILES['fileToUpload']['error']) {
             $myRandom = rand(1, 10000);
-            ($_SERVER['SERVER_NAME'] == 'localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/" : $target_dir = "/var/www/html/dental/assets/uploads/");
+            ($_SERVER['SERVER_NAME'] == 'localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/" :
+                ($_SERVER['SERVER_NAME'] == 'webdev.highlands.edu' ? $target_dir = "/var/www/html/dental/assets/uploads/" : $target_dir = "/var/www/forms/dental/assets/uploads/" ));
             $target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
             $myFile = basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
@@ -84,7 +85,8 @@ class License extends CI_Controller {
     {
         if (!@$_FILES['fileToUpload']['error']) {
             $myRandom = rand(1, 10000);
-            ($_SERVER['SERVER_NAME'] == 'localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/" : $target_dir = "/var/www/html/dental/assets/uploads/");
+            ($_SERVER['SERVER_NAME'] == 'localhost' ? $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/dental/assets/uploads/" :
+                ($_SERVER['SERVER_NAME'] == 'webdev.highlands.edu' ? $target_dir = "/var/www/html/dental/assets/uploads/" : $target_dir = "/var/www/forms/dental/assets/uploads/" ));
             $target_file = $target_dir . $myRandom . basename($_FILES["fileToUpload"]["name"]);
             $myFile = basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
@@ -129,6 +131,20 @@ class License extends CI_Controller {
         $this->load->view('license_verify', $data);
     }
 
-	
-	
+    public function viewImage($id)
+    {
+        session_start();
+//        $data['applicant_id'] = $_SESSION['$applicant_id'];
+        $this->load->model('LicenseModel');
+        $verify = new LicenseModel();
+        $data['license']= $verify->load($id);
+        $this->load->view('templates/header');
+        $this->load->view('license_image_view', $data);
+    }
+
+
+
+
+
+
 }

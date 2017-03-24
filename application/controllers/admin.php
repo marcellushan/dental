@@ -48,16 +48,17 @@ class Admin extends CI_Controller {
         ini_set('display_errors', '1');
         $this->load->model('ApplicantModel');
         $data['applicant'] = $this->ApplicantModel->load($id);
-        if($data['applicant']->cpr_verified && $data['applicant']->identification_verified)
-        {
-            $data['verified']=1;
-        }
         $this->load->model('RaceModel');
         $data['race']= $this->RaceModel->load($data['applicant']->race);
         $this->load->model('EmployerModel');
         $data['employers'] = $this->EmployerModel->get_list('applicant_id',$id);
         $this->load->model('LicenseModel');
         $data['licenses'] = $this->LicenseModel->get_list('applicant_id',$id);
+        echo $licenses_verified = $this->LicenseModel->image_verified('applicant_id',$id);
+        if($data['applicant']->cpr_verified && $data['applicant']->identification_verified  && ! @$licenses_verified)
+        {
+            $data['verified']=1;
+        }
         $this->load->model('CommentModel');
         $data['comments'] = $this->CommentModel->get_list('applicant_id',$id);
         $this->load->model('TranscriptModel');
@@ -156,6 +157,17 @@ class Admin extends CI_Controller {
             $this->load->view('templates/header');
             $this->load->view('admin_fail_login');
         }
+    }
+
+    public function viewImage($type, $id)
+    {
+        session_start();
+        $data['admin'] = "admin";
+        $this->load->model('ApplicantModel');
+        $verify = new ApplicantModel();
+        $data['applicant']= $verify->load($id);
+        $this->load->view('templates/header');
+        $this->load->view($type . '_image_view', $data);
     }
 
 }
