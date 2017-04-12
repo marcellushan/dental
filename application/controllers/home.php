@@ -58,7 +58,7 @@ class Home extends CI_Controller {
         if($page<>'exit_application' && $page<>'login' && $page <> 'thank_you') {
             $this->load->view('templates/exit_footer');
         }
-        }
+    }
 
     /**
      * checkLogin
@@ -97,6 +97,23 @@ class Home extends CI_Controller {
             $this->load->view('student');
         }
 
+    }
+
+    public function verifyEmail()
+    {
+        session_start();
+        $this->load->model('ApplicantModel');
+        $applicant = new ApplicantModel();
+        $this->load->view('templates/header');
+        if($data = $this->ApplicantModel->entry_exists('preferred_email', $_POST['email'])) {
+            $this->load->model('MailModel');
+            $this->MailModel->password($_POST['email'], $data->applicant_id);
+            $_SESSION['applicant_id'] = $data->applicant_id;
+            $this->load->view('email_sent');
+//            var_dump($data->applicant_id);
+        } else {
+            $this->load->view('email_not_found');
+        }
     }
 
 }

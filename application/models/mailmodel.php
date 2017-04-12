@@ -98,4 +98,21 @@ class MailModel extends CI_Model {
         $this->email->send();
     }
 
+    public function password($email, $id)
+    {
+        $this->load->library('email');
+        $config['mailtype'] = 'html';
+        $this->email->initialize($config);
+
+        $this->email->from('webmaster@highlands.edu', 'Georgia Highlands College');
+        $this->email->to($email);
+//        $this->email->to('mhannah@highlands.edu');
+        $body = "<h2>Please click the <a href='" . base_url('/applicant/display/forgot_password/') . "/" . $id . "'>link</a> to reset your password</h2>";
+//        $body = $body . "<h2>Please login to the <a href='" . base_url('/home/display/login') . "'>Online application</a> to take appropriate action</h2>";
+        $this->email->subject('Password reset requested');
+        $this->email->message($body);
+
+        $this->email->send();
+    }
+
 }

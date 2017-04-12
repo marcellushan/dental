@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Application for Admission RN/BSN PROGRAM</title>
+		<title>Application for Admission RDH/BSDH PROGRAM</title>
 		
 	    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">

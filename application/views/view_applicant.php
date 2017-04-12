@@ -152,7 +152,7 @@
 				<?php endforeach;?>
 
 				 <? endif; ?>
-
+		</div>
 		 <? if($applicant->discipline):?>
 		 <h3 class="wrapper">Disciplinary Action</h3>
 		 <div class="row">
@@ -164,8 +164,8 @@
 		 <div class="row">
 			 <h4 class="col-md-1">Name</h4>
 			 <h4 class="item col-md-2"><?=$applicant->e_last_name?>, <?=$applicant->e_first_name?></h4>
-			 <h4 class="col-md-1">Relationship</h4>
-			 <h4 class="item col-md-2"><?=$applicant->relationship?></h4>
+			 <h4 class="col-md-2">Relationship</h4>
+			 <h4 class="item col-md-1"><?=$applicant->relationship?></h4>
 			 <h4 class="col-md-1">Address</h4>
 			 <h4 class="item col-md-4"><?=$applicant->e_street?>, <?=$applicant->e_city?> <?=$applicant->e_state?>, <?=$applicant->e_zip?></h4>
 		 </div><!-- row  -->

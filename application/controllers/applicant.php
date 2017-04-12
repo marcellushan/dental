@@ -164,5 +164,39 @@ class Applicant extends CI_Controller {
     }
 
 
-	
+//    public function resetPassword()
+//    {
+//        session_start();
+//        $modelName = 'EmployerModel';
+//        $this->load->model($modelName);
+//        $applicant = new $modelName();
+//        $additional_id= 'employer_id';
+//        $additional_array = $_POST;
+//        $additional_array['submission_date'] = date('Y-m-d');
+//        $test= $applicant->get_item('applicant_id', $_SESSION['applicant_id']);
+//        $additional=$this->$modelName->update($test->$additional_id, $additional_array);
+//        redirect(base_url('employer/get'));
+//
+//    }
+
+    public function resetPassword($id)
+    {
+        session_start();
+        $data = array( 'password' => $_POST['password']);
+        $this->load->model('ApplicantModel');
+        $applicant=$this->ApplicantModel->update($id, $data);
+        $this->load->view('templates/header');
+        $this->load->view('password_reset');
+        $this->load->view('login');
+    }
+
+    public function display($page, $id)
+    {
+        $data['id'] =$id;
+        $this->load->view('templates/header');
+        $this->load->view($page, $data);
+//        if($page<>'exit_application' && $page<>'login' && $page <> 'thank_you') {
+//            $this->load->view('templates/exit_footer');
+//        }
+    }
 }

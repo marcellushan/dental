@@ -1,7 +1,7 @@
 <div class="main container">
     <div class="row">
-		<div class="col-sm-12">
-            <h1 class="wrapper">Create Dental Hygiene Application Account</h1>
+		<div class="col-sm-12>
+            <h1 class="wrapper">New Applicants</h1>
 
             <h2>It is required that you create an account prior to submitting an application.</h2>
 
@@ -29,7 +29,7 @@
                     </fieldset>
                 </form>
             </h4>
-        </div><!--col-sm-12 -->
+        </div><!--col-sm-6 -->
      </div><!--row -->
     </div><!-- container -->
 
